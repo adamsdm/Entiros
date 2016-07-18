@@ -28,19 +28,14 @@ node {
 	overlay-color: #fff;
 }
  
-edge[interaction = "cc"] {
-	line-color: #a9c742;
-	opacity: 0.666;
-	z-index: 9;
-	width: 4;
-}
+
  
 node[NodeType = "Customer"],
-node[NodeType = "CustomerType"] {
+node[NodeType = "Evangelist"], {
 	background-color: #a9c742;
 	text-outline-color: #a9c742;
-	width: mapData(AnnRevenue, 70, 100, 20, 100);
-	height: mapData(AnnRevenue, 70, 100, 20, 100);
+	width: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
+	height: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
 }
 node[NodeType = "Prospect"] {
 	background-color: #a6a6a6;
@@ -48,26 +43,29 @@ node[NodeType = "Prospect"] {
 	width: 30;
 	height: 30;
 }
+
+edge[interaction = "cc"] {
+	line-color: #a9c742;
+	opacity: 0.666;
+	z-index: 9;
+	width: 4;
+}
 edge[interaction = "cp"] {
 	line-color: white;
+	width: 4;
 }
- 
-node[NodeType = "WhiteWine"] {
-	background-color: white;
-	text-outline-color: white;
-}
+
  
 edge[interaction = "cw"] {
 	line-color: white;
+	width: 4;
 }
  
-node[NodeType = "RedWine"] {
-	background-color: #87888a;
-	text-outline-color: #87888a;
-}
+
  
 edge[interaction = "cr"] {
 	line-color: #87888a;
+	width: 4;
 }
  
 node[NodeType = "Cider"] {

@@ -1,0 +1,544 @@
+{
+ "elements": {
+  "nodes": [
+   {
+    "data": {
+     "id": "Eniro",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "eniro.se",
+     "City": "Stockholm",
+     "NodeType": "",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "eniro.se",
+     "AnnRevenue": 10000000,
+     "NodeTypeFormatted": ""
+    },
+    "position": {
+     "x": 701,
+     "y": 540
+    }
+   },
+   {
+    "data": {
+     "id": "SBAB",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "sbab.se",
+     "City": "Stockholm",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "sbab.se",
+     "AnnRevenue": 50000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 182,
+     "y": 206
+    }
+   },
+   {
+    "data": {
+     "id": "Reitan Convenience Sweden",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "reitangruppen.no",
+     "City": "Trondheim",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Norway",
+     "WebsiteURL": "reitangruppen.no",
+     "AnnRevenue": 1000000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 107,
+     "y": 182
+    }
+   },
+   {
+    "data": {
+     "id": "Schibsted Centralen AB",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "schibsted.se",
+     "City": "Stockholm",
+     "NodeType": "Evangelist",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "schibsted.se",
+     "AnnRevenue": 10000000,
+     "NodeTypeFormatted": "Evangelist"
+    },
+    "position": {
+     "x": 213,
+     "y": 565
+    }
+   },
+   {
+    "data": {
+     "id": "Montico",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "montico.se",
+     "City": "Tranås",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "montico.se",
+     "AnnRevenue": 250000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 547,
+     "y": 582
+    }
+   },
+   {
+    "data": {
+     "id": "Recipharm",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "recipharm.com",
+     "City": "Haninge",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "recipharm.com",
+     "AnnRevenue": 1000000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 942.9551650278465,
+     "y": 110.3053726760412
+    }
+   },
+   {
+    "data": {
+     "id": "Keolis Sverige AB",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "keolis.se",
+     "City": "Stockholm",
+     "NodeType": "Evangelist",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "keolis.se",
+     "AnnRevenue": 1000000000,
+     "NodeTypeFormatted": "Evangelist"
+    },
+    "position": {
+     "x": 916,
+     "y": 36
+    }
+   },
+   {
+    "data": {
+     "id": "ELLOS GROUP",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "ellos.se",
+     "City": "Borås",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "ellos.se",
+     "AnnRevenue": 250000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 514,
+     "y": 796
+    }
+   },
+   {
+    "data": {
+     "id": "op5 AB",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "op5.se",
+     "City": "Kista",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "op5.se",
+     "AnnRevenue": 10000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 370,
+     "y": 866
+    }
+   },
+   {
+    "data": {
+     "id": "Ericsson",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "ericsson.se",
+     "City": "Stockholm",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "ericsson.se",
+     "AnnRevenue": 1000000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 642,
+     "y": 258
+    }
+   },
+   {
+    "data": {
+     "id": "Ambu A/S",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "ambu.com",
+     "City": "Ballerup",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Denmark",
+     "WebsiteURL": "ambu.com",
+     "AnnRevenue": 50000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 350,
+     "y": 184
+    }
+   },
+   {
+    "data": {
+     "id": "Bilprovningen",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "http://www.bilprovningen.se/",
+     "City": "Ume?",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "bilprovningen.se",
+     "AnnRevenue": 700000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 201,
+     "y": 673
+    }
+   },
+   {
+    "data": {
+     "id": "Folksam",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "folksam.se",
+     "City": "Stockholm",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "folksam.se",
+     "AnnRevenue": 1000000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 82,
+     "y": 720
+    }
+   },
+   {
+    "data": {
+     "id": "Boss Media (out of business)",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "bossmedia.se",
+     "City": "",
+     "NodeType": "Other",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "bossmedia.se",
+     "AnnRevenue": 0,
+     "NodeTypeFormatted": "Other"
+    },
+    "position": {
+     "x": 49,
+     "y": 785
+    }
+   },
+   {
+    "data": {
+     "id": "A.P.C.",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "apc.fr",
+     "City": "Paris",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "France",
+     "WebsiteURL": "apc.fr",
+     "AnnRevenue": 250000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 319,
+     "y": 951
+    }
+   },
+   {
+    "data": {
+     "id": "Kaller",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "kaller.com",
+     "City": "TranÃ¥s",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "kaller.com",
+     "AnnRevenue": 1000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 337,
+     "y": 11
+    }
+   },
+   {
+    "data": {
+     "id": "Tradedoubler",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "www.tradedoubler.com/",
+     "City": "",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "www.tradedoubler.com/",
+     "AnnRevenue": 120000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 940,
+     "y": 348
+    }
+   },
+   {
+    "data": {
+     "id": "Tranås Kommun",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "tranas.se",
+     "City": "",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "tranas.se",
+     "AnnRevenue": 1000000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 668,
+     "y": 704
+    }
+   },
+   {
+    "data": {
+     "id": "Vattenfall Eldistribution",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "vattenfall.se",
+     "City": "Ume?",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "",
+     "WebsiteURL": "vattenfall.se",
+     "AnnRevenue": 1000000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 107,
+     "y": 601
+    }
+   },
+   {
+    "data": {
+     "id": "ICA",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "ica.se",
+     "City": "Solna",
+     "NodeType": "Sales Qualified Lead",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "ica.se",
+     "AnnRevenue": null,
+     "NodeTypeFormatted": "Sales Qualified Lead"
+    },
+    "position": {
+     "x": 339,
+     "y": 333
+    }
+   },
+   {
+    "data": {
+     "id": "GANT AB",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "gant.com",
+     "City": "New York",
+     "NodeType": "Evangelist",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "gant.com",
+     "AnnRevenue": 1400000000,
+     "NodeTypeFormatted": "Evangelist"
+    },
+    "position": {
+     "x": 542.5353355092388,
+     "y": 646.5128131083557
+    }
+   },
+   {
+    "data": {
+     "id": "Taberg Media Group",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "http://tabergmediagroup.se/",
+     "City": "",
+     "NodeType": "Evangelist",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "http://tabergmediagroup.se/",
+     "AnnRevenue": 500000000,
+     "NodeTypeFormatted": "Evangelist"
+    },
+    "position": {
+     "x": 242,
+     "y": 639
+    }
+   },
+   {
+    "data": {
+     "id": "Volvo Cars Corporation",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "volvocars.com",
+     "City": "Rockleigh",
+     "NodeType": "Customer",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Sweden",
+     "WebsiteURL": "volvocars.com",
+     "AnnRevenue": 20000000000,
+     "NodeTypeFormatted": "Customer"
+    },
+    "position": {
+     "x": 542,
+     "y": 82
+    }
+   },
+   {
+    "data": {
+     "id": "Markup Digital Ltd",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "usemarkup.com",
+     "City": "Glasgow",
+     "NodeType": "Opportunity",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "United Kingdom",
+     "WebsiteURL": "usemarkup.com",
+     "AnnRevenue": 10000000,
+     "NodeTypeFormatted": "Opportunity"
+    },
+    "position": {
+     "x": 218,
+     "y": 146
+    }
+   },
+   {
+    "data": {
+     "id": "CRM Toolbox",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "crmtoolbox.com",
+     "City": "",
+     "NodeType": "Subscriber",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "",
+     "Country": "Germany",
+     "WebsiteURL": "crmtoolbox.com",
+     "AnnRevenue": null,
+     "NodeTypeFormatted": "Subscriber"
+    },
+    "position": {
+     "x": 959,
+     "y": 469
+    }
+   },
+   {
+    "data": {
+     "id": "Tactel AB",
+     "Strength": 5,
+     "Type": "Semi-soft",
+     "Company Domain Name": "tactel.se",
+     "City": "Malm",
+     "NodeType": "Other",
+     "CompanyRelationIntegratedAt": "",
+     "CompanyRelationAppTeamAt": "GANT AB",
+     "Country": "Sweden",
+     "WebsiteURL": "tactel.se",
+     "AnnRevenue": 50000000,
+     "NodeTypeFormatted": "Other"
+    },
+    "position": {
+     "x": 523.6245857943198,
+     "y": 699.1960743170664
+    }
+   }
+  ],
+  "edges": [
+   {
+    "data": {
+     "source": "Tactel AB",
+     "target": "GANT AB",
+     "interaction": "cw",
+     "id": "c409936b-44e0-49dd-bb05-15fd42ab2e76"
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   }
+  ]
+ }
+}

@@ -6,7 +6,7 @@ $(function(){
 
   // get exported json from cytoscape desktop via ajax
   var graphP = $.ajax({
-    url: './data/dataTemp2.json', // wine-and-cheese.json
+    url: './data/dataHubspot2.json', // wine-and-cheese.json
     type: 'GET',
     dataType: 'json'
   });
@@ -19,9 +19,12 @@ $(function(){
   });
   
   var infoTemplate = Handlebars.compile([
-    '<p class="ac-name">{{name}}</p>',
+    '<p class="ac-name">{{id}}</p>',
     '<p class="ac-node-type"><i class="fa fa-info-circle"></i> {{NodeTypeFormatted}}</p>',
-    '{{#if Country}}<p class="ac-country"><i class="fa fa-map-marker"></i> {{Country}}</p>{{/if}}'
+    '{{#if Country}}<p class="ac-country"><i class="fa fa-map-marker"></i> {{Country}}</p>{{/if}}',
+    '{{#if WebsiteURL}}<p class="ac-more"><i class="fa fa-external-link"></i><a target="_blank" href="http://www.{{WebsiteURL}}">{{id}}</a></p>{{/if}}',
+    '{{#if AnnRevenue}}<p class="ac-more"><i class="fa fa-usd"></i> {{AnnRevenue}}</p>{{/if}}',
+
   ].join(''));
 
   // when both graph export json and style loaded, init cy
@@ -98,25 +101,42 @@ $(function(){
 
   function addEdges(){
 
+    //loop through all nodes
     for(var ind = 0; ind<cy.json().elements.nodes.length; ind++){
-      var compRel = cy.json().elements.nodes[ind].data.CompanyRelationRelatedTo;
+      var relTo = [cy.json().elements.nodes[ind].data.CompanyRelationRelatedTo];     //Store relations in arrays
+      var intAt = [cy.json().elements.nodes[ind].data.CompanyRelationIntegratedAt];
+      var apTeAt = [cy.json().elements.nodes[ind].data.CompanyRelationAppTeamAt];
+      
       var thisId = cy.json().elements.nodes[ind].data.id; 
 
-      if(compRel){
-        for(var j = 0; j<compRel.length; j++){
+      //If there is any known connections, add an edge between nodes
+      if(relTo[0]){
+        for(var j = 0; j<relTo.length; j++){
           cy.add({
               group: "edges",
-              data: { source: thisId, target: compRel[j], interaction: "cc" }
+              data: { source: thisId, target: relTo[j], interaction: "cc" }
           });
         }
       }
+      if(intAt[0]){
+        for(var j = 0; j<relTo.length; j++){
+          cy.add({
+              group: "edges",
+              data: { source: thisId, target: intAt[j], interaction: "cr" }
+          });
+        }
+      }
+      if(apTeAt[0]){
+        for(var j = 0; j<apTeAt.length; j++){
+          cy.add({
+              group: "edges",
+              data: { source: thisId, target: apTeAt[j], interaction: "cw" }
+          });
+        }
+      }   
     }
-
-    // cy.add({
-    //     group: "edges",
-    //     data: { source: "Gant", target: "Gant Sweden", interaction: "cc" }
-    // });
   }
+
 
   function initCy( then ){
     var loading = document.getElementById('loading');
@@ -140,18 +160,19 @@ $(function(){
     var cy = window.cy = cytoscape({
       container: document.getElementById('cy'),
       layout: { 
-        name: 'preset', 
+        name: 'preset',
+        boundingBox: {x1: 0, y1: 0, x2: 1000, y2: 1000},
         padding: layoutPadding,
 
       },
-      maxZoom: 15,
-      minZoom: 0.30,
-      style: styleJson,
-      elements: elements,
-      motionBlur: true,
-      selectionType: 'single',
-      boxSelectionEnabled: false,
-      autoungrabify: true
+      // maxZoom: 15,
+      // minZoom: 0.30,
+       style: styleJson,
+       elements: elements,
+      // motionBlur: true,
+      // selectionType: 'single',
+      // boxSelectionEnabled: false,
+      // autolock: true
     });
     
     cy.on('free', 'node', function( e ){
@@ -200,7 +221,7 @@ $(function(){
         return str.match( q );
       }
       
-      var fields = ['name', 'NodeType', 'Country', 'Type', 'Milk'];
+      var fields = ['id', 'NodeType', 'Country', 'Type', 'Milk'];
       
       function anyFieldMatches( n ){
         for( var i = 0; i < fields.length; i++ ){
@@ -221,9 +242,9 @@ $(function(){
       }
       
       function sortByName(n1, n2){
-        if( n1.data('name') < n2.data('name') ){
+        if( n1.data('id') < n2.data('id') ){
           return -1;
-        } else if( n1.data('name') > n2.data('name') ){
+        } else if( n1.data('id') > n2.data('id') ){
           return 1;
         }
         
