@@ -20,8 +20,7 @@ $(function(){
   
   var infoTemplate = Handlebars.compile([
     '<p class="ac-name">{{name}}</p>',
-    '<p class="ac-node-type"><i class="fa fa-info-circle"></i> {{NodeTypeFormatted}} {{#if Type}}({{Type}}){{/if}}</p>',
-    '{{#if Milk}}<p class="ac-milk"><i class="fa fa-angle-double-right"></i> {{Milk}}</p>{{/if}}',
+    '<p class="ac-node-type"><i class="fa fa-info-circle"></i> {{NodeTypeFormatted}}</p>',
     '{{#if Country}}<p class="ac-country"><i class="fa fa-map-marker"></i> {{Country}}</p>{{/if}}'
   ].join(''));
 
@@ -129,13 +128,7 @@ $(function(){
       var data = n.data;
       
       data.NodeTypeFormatted = data.NodeType;
-      
-      if( data.NodeTypeFormatted === 'RedWine' ){
-        data.NodeTypeFormatted = 'Red Wine';
-      } else if( data.NodeTypeFormatted === 'WhiteWine' ){
-        data.NodeTypeFormatted = 'White Wine';
-      }
-      
+            
       n.data.orgPos = {
         x: n.position.x,
         y: n.position.y
