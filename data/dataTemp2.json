@@ -20,7 +20,6 @@
         "AnnRevenue" : 100,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Gant",
         "Country" : "USA",
         "CompanyRelationRelatedTo" : ["Gant Sweden", "Gant Norway", "Gant Denmark"]
       },
@@ -38,7 +37,6 @@
         "AnnRevenue" : 80,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Gant Sweden",
         "Country" : "Sweden"
       },
       "position" : {
@@ -55,7 +53,6 @@
         "AnnRevenue" : 85,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Gant Norway",
         "Country" : "Norway"
       },
       "position" : {
@@ -72,7 +69,6 @@
         "AnnRevenue" : 75,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Gant Denmark",
         "Country" : "Denmark"
       },
       "position" : {
@@ -89,7 +85,6 @@
         "AnnRevenue" : 80,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Keolis",
         "Country" : "Sweden",
         "CompanyRelationRelatedTo" : ["Västtrafik AB"]
       },
@@ -106,7 +101,6 @@
         "Milk" : "Raw cow's milk",
         "Type" : "Semi-soft",
         "NodeType" : "Prospect",
-        "name" : "Västtrafik AB",
         "Country" : "Sweden"
       },
       "position" : {
