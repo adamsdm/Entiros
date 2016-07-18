@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<!-- Template: http://js.cytoscape.org/demos/cde4db55e581d10405f5/ -->
+<head>
+<meta charset=utf-8 />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+
+<title>Wine and cheese</title>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link href="./libs/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet">
+
+  <script src="./libs/fastclick.min.js"></script>
+  <script src="./libs/jquery.min.js"></script>
+  <script src="./libs/cytoscape.min.js"></script>
+  <script src="./libs/jquery.qtip.min.js"></script>
+  <script src="./libs/cytoscape-qtip.js"></script>
+  <script src="./libs/bluebird.min.js"></script>
+  <script src="./libs/bootstrap.min.js"></script>
+  <script src="./libs/typeahead.bundle.js"></script>
+  <script src="./libs/handlebars.min.js"></script>
+  <script src="demo.js"></script>
+
+</head>
+<body>
+  <div id="cy"></div>
+  <div id="loading">
+    <span class="fa fa-refresh fa-spin fa-3x"></span>
+  </div>
+  
+  <div id="search-wrapper">
+    <input type="text" class="form-control" id="search" autofocus placeholder="Search">
+  </div>
+  
+  <div id="info">
+  </div>
+
+
+  
+  <button id="reset" class="btn btn-default"><i class="fa fa-arrows-h"></i></button>
+  
+  <button id="filter" class="btn btn-default"><i class="fa fa-filter"></i></button>
+  
+  <div id="filters">
+    <!-- <strong>Cheese</strong>
+    <input id="soft" type="checkbox" checked></input><label for="soft">Soft</label><br />
+    <input id="semi-soft" type="checkbox" checked></input><label for="semi-soft">Semi-soft</label><br />
+    <input id="na" type="checkbox" checked></input><label for="na">N/A</label><br />
+    <input id="semi-hard" type="checkbox" checked></input><label for="semi-hard">Semi-hard</label><br />
+    <input id="hard" type="checkbox" checked></input><label for="hard">Hard</label>
+    
+    <hr />
+     -->
+    <strong>Type</strong>
+    <input id="cust" type="checkbox" checked></input><label for="cust">Customer</label><br />
+    <input id="prosp" type="checkbox" checked></input><label for="red">Prospect</label><br />
+    <input id="cider" type="checkbox" checked></input><label for="cider">Cider</label>
+  </div>
+  
+      <a href="http://www.entiros.se"><img src="./img/snurran_4F.png" style="position:absolute; right: 40px; bottom: 40px;"></a>
+
+  </body>
+</html>
