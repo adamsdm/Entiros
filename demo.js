@@ -20,7 +20,7 @@ $(function(){
   
   var infoTemplate = Handlebars.compile([
     '<p class="ac-name">{{id}}</p>',
-    '<p class="ac-node-type"><i class="fa fa-info-circle"></i> {{NodeTypeFormatted}}</p>',
+    '{{#if NodeType}}<p class="ac-node-type"><i class="fa fa-info-circle"></i> {{NodeType}}</p>{{/if}}',
     '{{#if Country}}<p class="ac-country"><i class="fa fa-map-marker"></i> {{Country}}</p>{{/if}}',
     '{{#if WebsiteURL}}<p class="ac-more"><i class="fa fa-external-link"></i><a target="_blank" href="http://www.{{WebsiteURL}}">{{id}}</a></p>{{/if}}',
     '{{#if AnnRevenue}}<p class="ac-more"><i class="fa fa-usd"></i> {{AnnRevenue}}</p>{{/if}}',
@@ -146,9 +146,7 @@ $(function(){
 
     elements.nodes.forEach(function(n){
       var data = n.data;
-      
-      data.NodeTypeFormatted = data.NodeType;
-            
+              
       n.data.orgPos = {
         x: n.position.x,
         y: n.position.y
@@ -282,10 +280,16 @@ $(function(){
   
   $('#filters').on('click', 'input', function(){
     
-    var customer = $('#cust').is(':checked');
-    var prospect = $('#prosp').is(':checked');
-    var cider = $('#cider').is(':checked');
-    
+    var cust = $('#cust').is(':checked');
+    var evan = $('#evan').is(':checked');
+    var subs = $('#subs').is(':checked');
+    var lead = $('#lead').is(':checked');
+    var markQualLead = $('#markQualLead').is(':checked');
+    var saleQualLead = $('#saleQualLead').is(':checked');
+    var opp = $('#opp').is(':checked');
+
+
+
     cy.batch(function(){
       
       cy.nodes().forEach(function( n ){
@@ -301,17 +305,33 @@ $(function(){
 
         if( type === 'Customer' ){
           
-          if( !customer ){ filter(); }
+          if( !cust ){ filter(); }
           
-        } else if( type === 'Prospect' ){
+        } else if( type === 'Evangelist' ){
           
-          if( !prospect ){ filter(); }
+          if( !evan ){ filter(); }
           
-        } else if( type === 'Cider' ){
+        } else if( type === 'Subscriber' ){
           
-          if( !cider ){ filter(); }
+          if( !subs ){ filter(); }
           
-        }
+        } else if( type === 'Lead' ){
+          
+          if( !lead ){ filter(); }
+          
+        } else if( type === 'Marketing Qualified Lead' ){
+          
+          if( !markQualLead ){ filter(); }
+          
+        } else if( type === 'Sales Qualified Lead' ){
+          
+          if( !saleQualLead ){ filter(); }
+          
+        } else if( type === 'Opportunity' ){
+          
+          if( !opp ){ filter(); }
+          
+        }      
         
       });
       

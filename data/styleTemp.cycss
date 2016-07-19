@@ -26,20 +26,34 @@ node {
 	text-outline-color: #fff;
 	text-outline-opacity: 1;
 	overlay-color: #fff;
+	font-size: mapData(AnnRevenue, 1000000, 20000000000, 10, 20);
 }
  
 
+
  
-node[NodeType = "Customer"],
-node[NodeType = "Evangelist"], {
+node[NodeType = "Customer"] {
 	background-color: #a9c742;
 	text-outline-color: #a9c742;
 	width: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
 	height: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
 }
-node[NodeType = "Prospect"] {
-	background-color: #a6a6a6;
-	text-outline-color: #a6a6a6;
+
+node[NodeType = "Evangelist"]{
+	background-color: #cfe09e;
+	text-outline-color: #cfe09e;
+	width: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
+	height: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
+}
+node[NodeType = "Sales Qualified Lead"] {
+	background-color: #b1b2b4;
+	text-outline-color: #a9c742;
+	width: 30;
+	height: 30;
+}
+node[NodeType = "Other"] {
+	background-color: #b1b2b4;
+	text-outline-color: #b1b2b4;
 	width: 30;
 	height: 30;
 }
