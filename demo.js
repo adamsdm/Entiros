@@ -2,18 +2,18 @@
 $(function(){
 
   var layoutPadding = 100;
-  var layoutDuration = 500;
+  var layoutDuration = 1000;
 
   // get exported json from cytoscape desktop via ajax
   var graphP = $.ajax({
-    url: './data/dataHubspot2.json', // wine-and-cheese.json
+    url: './data/dataCalcs.json', // wine-and-cheese.json
     type: 'GET',
     dataType: 'json'
   });
 
   // also get style via ajax
   var styleP = $.ajax({
-    url: './data/styleTemp.cycss', // wine-and-cheese-style.cycss
+    url: './data/style.cycss', // wine-and-cheese-style.cycss
     type: 'GET',
     dataType: 'text'
   });
@@ -31,7 +31,8 @@ $(function(){
   Promise.all([ graphP, styleP ]).then(initCy);
 
   function highlight( node ){
-    var nhood = node.closedNeighborhood();
+
+    var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
 
     cy.batch(function(){
       cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
@@ -41,6 +42,7 @@ $(function(){
       var w = window.innerWidth;
       var h = window.innerHeight;
       
+
       cy.stop().animate({
         fit: {
           eles: cy.elements(),
@@ -50,27 +52,36 @@ $(function(){
         duration: layoutDuration
       }).delay( layoutDuration, function(){
         nhood.layout({
-          name: 'concentric',
+
+
+          name: 'breadthfirst',
           padding: layoutPadding,
           animate: true,
           animationDuration: layoutDuration,
-          boundingBox: {
-            x1: npos.x - w/2,
-            x2: npos.x + w/2,
-            y1: npos.y - w/2,
-            y2: npos.y + w/2
-          },
-          fit: true,
-          concentric: function( n ){
-            if( node.id() === n.id() ){
-              return 2;
-            } else {
-              return 1;
-            }
-          },
-          levelWidth: function(){
-            return 1;
-          }
+          fit: true  
+
+
+          // name: 'concentric',
+          // padding: layoutPadding,
+          // animate: true,
+          // animationDuration: layoutDuration,
+          // boundingBox: {
+          //   x1: npos.x - w/2,
+          //   x2: npos.x + w/2,
+          //   y1: npos.y - w/2,
+          //   y2: npos.y + w/2
+          // },
+          // fit: true,
+          // concentric: function( n ){
+          //   if( node.id() === n.id() ){
+          //     return 2;
+          //   } else {
+          //     return 1;
+          //   }
+          // },
+          // levelWidth: function(){
+          //   return 1;
+          // }
         });
       } );
       
@@ -103,23 +114,15 @@ $(function(){
 
     //loop through all nodes
     for(var ind = 0; ind<cy.json().elements.nodes.length; ind++){
-      var relTo = [cy.json().elements.nodes[ind].data.CompanyRelationRelatedTo];     //Store relations in arrays
-      var intAt = [cy.json().elements.nodes[ind].data.CompanyRelationIntegratedAt];
-      var apTeAt = [cy.json().elements.nodes[ind].data.CompanyRelationAppTeamAt];
+       //Store relations in arrays
+      var intAt = cy.json().elements.nodes[ind].data.CompanyRelationIntegratedAt;
+      var apTeAt = cy.json().elements.nodes[ind].data.CompanyRelationAppTeamAt;
       
       var thisId = cy.json().elements.nodes[ind].data.id; 
 
       //If there is any known connections, add an edge between nodes
-      if(relTo[0]){
-        for(var j = 0; j<relTo.length; j++){
-          cy.add({
-              group: "edges",
-              data: { source: thisId, target: relTo[j], interaction: "cc" }
-          });
-        }
-      }
       if(intAt[0]){
-        for(var j = 0; j<relTo.length; j++){
+        for(var j = 0; j<intAt.length; j++){
           cy.add({
               group: "edges",
               data: { source: thisId, target: intAt[j], interaction: "cr" }
@@ -159,7 +162,7 @@ $(function(){
       container: document.getElementById('cy'),
       layout: { 
         name: 'preset',
-        boundingBox: {x1: 0, y1: 0, x2: 1000, y2: 1000},
+        boundingBox: {x1: 0, y1: 0, x2: 5000, y2: 3000},
         padding: layoutPadding,
 
       },
@@ -202,7 +205,7 @@ $(function(){
       hideNodeInfo();
     });
 
-    addEdges();
+    //addEdges();
   }
   
   $('#search').typeahead({
@@ -264,6 +267,13 @@ $(function(){
   });
 
   function reset(){
+
+    // //Open JSON file in new tab
+    // var data = JSON.stringify(cy.json(),null,1);
+    // var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
+    // window.open(url, '_blank');
+    // window.focus();
+
     cy.animate({
       fit: {
         eles: cy.elements(),
@@ -273,6 +283,14 @@ $(function(){
     });
   }
   
+  $('#save').on('click', function(){
+    //Open JSON file in new tab
+    var data = JSON.stringify(cy.json(),null,1);
+    var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
+    window.open(url, '_blank');
+    window.focus();
+  });
+
   $('#reset').on('click', function(){
     console.log(graphP);
     reset();

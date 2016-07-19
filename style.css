@@ -130,7 +130,8 @@ body.calc #loading {
 }
 
 #reset,
-#filter {
+#filter,
+#save {
   width: 3em;
   margin: 0.5em;
   position: absolute;
@@ -144,6 +145,10 @@ body.calc #loading {
 
 #filter {
   right: 4em;
+}
+
+#save {
+  right: 8em;
 }
 
 #reset i {

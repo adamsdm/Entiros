@@ -1,14 +1,5 @@
+
 {
-  "format_version" : "1.0",
-  "generated_by" : "cytoscape-3.2.0",
-  "target_cytoscapejs_version" : "~2.1",
-  "data" : {
-    "selected" : true,
-    "__Annotations" : [ ],
-    "shared_name" : "WineCustomerNetwork",
-    "SUID" : 52,
-    "name" : "WineCustomerNetwork"
-  },
   "elements" : {
     "nodes" : [
     {
@@ -20,9 +11,8 @@
         "AnnRevenue" : 100,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Gant",
         "Country" : "USA",
-        
+        "CompanyRelationRelatedTo" : ["Gant Sweden", "Gant Norway", "Gant Denmark"]
       },
       "position" : {
         "x" : 4491.9853515625,
@@ -38,7 +28,6 @@
         "AnnRevenue" : 80,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Gant Sweden",
         "Country" : "Sweden"
       },
       "position" : {
@@ -55,7 +44,6 @@
         "AnnRevenue" : 85,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Gant Norway",
         "Country" : "Norway"
       },
       "position" : {
@@ -72,7 +60,6 @@
         "AnnRevenue" : 75,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Gant Denmark",
         "Country" : "Denmark"
       },
       "position" : {
@@ -89,8 +76,8 @@
         "AnnRevenue" : 80,
         "Type" : "Semi-soft",
         "NodeType" : "Customer",
-        "name" : "Keolis",
-        "Country" : "Sweden"
+        "Country" : "Sweden",
+        "CompanyRelationRelatedTo" : ["Västtrafik AB"]
       },
       "position" : {
         "x" : 5200.9853515625,
@@ -105,7 +92,6 @@
         "Milk" : "Raw cow's milk",
         "Type" : "Semi-soft",
         "NodeType" : "Prospect",
-        "name" : "Västtrafik AB",
         "Country" : "Sweden"
       },
       "position" : {
@@ -114,39 +100,6 @@
       },
       "selected" : false
     }
-    ], 
-
-
-
-
-
-    "edges" : [ 
-    {
-      "data" : {
-        "source" : "Gant",
-        "target" : "Gant Sweden",
-        "interaction" : "cc"
-      }
-    }, {
-      "data" : {
-        "source" : "Gant",
-        "target" : "Gant Norway",
-        "selected" : false,
-        "interaction" : "cc"
-      }
-    }, {
-      "data" : {
-        "source" : "Gant",
-        "target" : "Gant Denmark",
-        "interaction" : "cc"
-      }
-    }, {
-      "data" : {
-        "source" : "Keolis",
-        "target" : "Västtrafik AB",
-        "interaction" : "cp"
-      }
-    }    
     ]
   }
 }

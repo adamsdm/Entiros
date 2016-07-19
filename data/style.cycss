@@ -18,7 +18,7 @@ node {
 	font-size: 10;
 	font-weight: bold;
 	min-zoomed-font-size: 4;
-	content: data(name);
+	content: data(id);
 	text-valign: center;
 	text-halign: center;
 	color: #000;
@@ -26,39 +26,60 @@ node {
 	text-outline-color: #fff;
 	text-outline-opacity: 1;
 	overlay-color: #fff;
+	font-size: mapData(AnnRevenue, 1000000, 20000000000, 10, 20);
 }
  
+
+
+ 
+node[NodeType = "Customer"] {
+	background-color: #a9c742;
+	text-outline-color: #a9c742;
+	width: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
+	height: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
+}
+
+node[NodeType = "Evangelist"]{
+	background-color: #cfe09e;
+	text-outline-color: #cfe09e;
+	width: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
+	height: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
+}
+node[NodeType = "Sales Qualified Lead"] {
+	background-color: #b1b2b4;
+	text-outline-color: #a9c742;
+	width: 30;
+	height: 30;
+}
+node[NodeType = "Other"] {
+	background-color: #b1b2b4;
+	text-outline-color: #b1b2b4;
+	width: 30;
+	height: 30;
+}
+
 edge[interaction = "cc"] {
 	line-color: #a9c742;
 	opacity: 0.666;
 	z-index: 9;
 	width: 4;
 }
- 
-node[NodeType = "Customer"],
-node[NodeType = "CustomerType"] {
-	background-color: #a9c742;
-	text-outline-color: #a9c742;
-	width: mapData(Quality, 70, 100, 20, 100);
-	height: mapData(Quality, 70, 100, 20, 100);
+edge[interaction = "cp"] {
+	line-color: white;
+	width: 4;
 }
- 
-node[NodeType = "WhiteWine"] {
-	background-color: white;
-	text-outline-color: white;
-}
+
  
 edge[interaction = "cw"] {
 	line-color: white;
+	width: 4;
 }
  
-node[NodeType = "RedWine"] {
-	background-color: #87888a;
-	text-outline-color: #87888a;
-}
+
  
 edge[interaction = "cr"] {
 	line-color: #87888a;
+	width: 4;
 }
  
 node[NodeType = "Cider"] {
@@ -90,8 +111,7 @@ node.faded {
 }
  
 node:selected {
-	width: 40;
-	height: 40;
+
 	border-color: rgb(187, 219, 247);
 	border-opacity: 0.5;
 	border-width: 10;
