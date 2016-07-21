@@ -131,7 +131,8 @@ body.calc #loading {
 
 #reset,
 #filter,
-#save {
+#save,
+#debug {
   width: 3em;
   margin: 0.5em;
   position: absolute;
@@ -149,6 +150,9 @@ body.calc #loading {
 
 #save {
   right: 8em;
+}
+#debug {
+  right: 12em;
 }
 
 #reset i {

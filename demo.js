@@ -2,18 +2,19 @@
 $(function(){
 
   var layoutPadding = 100;
-  var layoutDuration = 1000;
+  var layoutDuration = 700;
 
   // get exported json from cytoscape desktop via ajax
   var graphP = $.ajax({
-    url: './data/dataCalcs.json', // wine-and-cheese.json
+    //url: './data/dataCalcsPolCoordRESULT.json', 
+    url: './data/pyFormatedData.json', 
     type: 'GET',
     dataType: 'json'
   });
 
   // also get style via ajax
   var styleP = $.ajax({
-    url: './data/style.cycss', // wine-and-cheese-style.cycss
+    url: './data/style.cycss', 
     type: 'GET',
     dataType: 'text'
   });
@@ -52,7 +53,6 @@ $(function(){
         duration: layoutDuration
       }).delay( layoutDuration, function(){
         nhood.layout({
-
 
           name: 'breadthfirst',
           padding: layoutPadding,
@@ -111,33 +111,37 @@ $(function(){
   }
 
   function addEdges(){
+    var nodes = cy.elements('node');
+    var intAt;
+    var apTeAt;
+    var thisId;
 
-    //loop through all nodes
-    for(var ind = 0; ind<cy.json().elements.nodes.length; ind++){
-       //Store relations in arrays
-      var intAt = cy.json().elements.nodes[ind].data.CompanyRelationIntegratedAt;
-      var apTeAt = cy.json().elements.nodes[ind].data.CompanyRelationAppTeamAt;
-      
-      var thisId = cy.json().elements.nodes[ind].data.id; 
+    //Loop through all the nodes
+    for(var i=0; i<nodes.length; i++){
+      intAt = nodes[i].data().CompanyRelationIntegratedAt;
+      apTeAt = nodes[i].data().CompanyRelationAppTeamAt;
 
-      //If there is any known connections, add an edge between nodes
-      if(intAt[0]){
-        for(var j = 0; j<intAt.length; j++){
+      thisId = nodes[i].data().id;
+
+      //If curr node has intAt connections, add them
+      if(intAt){
+        for(var j=0; j<intAt.length; j++){
           cy.add({
-              group: "edges",
-              data: { source: thisId, target: intAt[j], interaction: "cr" }
-          });
+            group:"edges",
+            data:{ source: thisId, target: intAt[j], interaction: "cr" }
+          })
         }
       }
-      if(apTeAt[0]){
-        for(var j = 0; j<apTeAt.length; j++){
+      //If curr node has apTeAt connections, add them
+      if(apTeAt){
+        for(var j=0; j<apTeAt.length; j++){
           cy.add({
-              group: "edges",
-              data: { source: thisId, target: apTeAt[j], interaction: "cw" }
-          });
-        }
-      }   
-    }
+            group:"edges",
+            data:{ source: thisId, target: apTeAt[j], interaction: "cw" }
+          })
+        } //for j    
+      }
+    } //for i
   }
 
 
@@ -205,7 +209,7 @@ $(function(){
       hideNodeInfo();
     });
 
-    //addEdges();
+    addEdges();
   }
   
   $('#search').typeahead({
@@ -222,7 +226,7 @@ $(function(){
         return str.match( q );
       }
       
-      var fields = ['id', 'NodeType', 'Country', 'Type', 'Milk'];
+      var fields = ['id', 'NodeType', 'Country', 'CompanyType', 'Milk'];
       
       function anyFieldMatches( n ){
         for( var i = 0; i < fields.length; i++ ){
@@ -267,13 +271,6 @@ $(function(){
   });
 
   function reset(){
-
-    // //Open JSON file in new tab
-    // var data = JSON.stringify(cy.json(),null,1);
-    // var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
-    // window.open(url, '_blank');
-    // window.focus();
-
     cy.animate({
       fit: {
         eles: cy.elements(),
@@ -282,7 +279,70 @@ $(function(){
       duration: layoutDuration
     });
   }
+
+  function positionAlgorithm(){
+    var nodes = cy.elements("node");
+    
+    var radius;
+    var angle; 
+    var closeDate;   
+
+    function scaleDate(_closeDate){
+      var maxRad = 3000;
+      var startDate = new Date(2013,1,1);
+      var endDate   = new Date(2016,8,0);
+      
+      // Get time returns time (in ms) since jan 1, 1970
+      // Map closeDate between startDate - endDate from value 0-1 and scale with maxRad 
+      var result = (_closeDate.getTime()-startDate.getTime() ) / (endDate.getTime()-startDate.getTime())*maxRad;
+      
+      return result;
+    }
+    
+
+    for(var i =0; i < nodes.length; i++){
+      closeDate = new Date(nodes[i].data().closeDate);
+
+      if(nodes[i].data().NodeType != "Prospect"){
+        radius = scaleDate(closeDate);
+
+        if(nodes[i].data().CompanyType == "Clothing"){
+          angle = 0*Math.PI/5 + Math.random()*Math.PI/5;
+        }
+        else if(nodes[i].data().CompanyType == "Cars"){
+          angle = 2*Math.PI/5 + Math.random()*Math.PI/5;
+        }
+        else if(nodes[i].data().CompanyType == "Food"){
+          angle = 4*Math.PI/5 + Math.random()*Math.PI/5;
+        }
+        else if(nodes[i].data().CompanyType == "Electronics"){
+          angle = 6*Math.PI/5 + Math.random()*Math.PI/5;
+        }
+        else if(nodes[i].data().CompanyType == "Candy"){
+          angle = 8*Math.PI/5 + Math.random()*Math.PI/5;
+        }
+        
+        //Set customer position
+        nodes[i].position().x = radius*Math.cos(angle);
+        nodes[i].position().y = radius*Math.sin(angle);
+        
+      } else { //Position of prospects
+        nodes[i].position().x = 0;
+        nodes[i].position().y = 0;
+
+        console.log(nodes[i].id(), nodes[i].position());
+      }
+    }
+    console.log("Finished!");
+  }
+
+
+
   
+  $('#debug').on('click', function(){
+    positionAlgorithm();    
+  });
+
   $('#save').on('click', function(){
     //Open JSON file in new tab
     var data = JSON.stringify(cy.json(),null,1);
@@ -292,7 +352,6 @@ $(function(){
   });
 
   $('#reset').on('click', function(){
-    console.log(graphP);
     reset();
   });
   
@@ -318,8 +377,6 @@ $(function(){
         var filter = function(){
           n.addClass('filtered');
         };
-        
-        var cType = n.data('Type');
 
         if( type === 'Customer' ){
           
@@ -345,7 +402,7 @@ $(function(){
           
           if( !saleQualLead ){ filter(); }
           
-        } else if( type === 'Opportunity' ){
+        } else if( type === 'Prospect' ){
           
           if( !opp ){ filter(); }
           
