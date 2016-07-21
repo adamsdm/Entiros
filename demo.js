@@ -209,7 +209,7 @@ $(function(){
       hideNodeInfo();
     });
 
-   //addEdges();
+   addEdges();
   }
   
   $('#search').typeahead({
@@ -285,26 +285,13 @@ $(function(){
     
     var radius;
     var angle; 
-    var closeDate;   
-
-    function scaleDate(_closeDate){
-      var maxRad = 3000;
-      var startDate = new Date(2013,1,1);
-      var endDate   = new Date(2016,8,0);
-      
-      // Get time returns time (in ms) since jan 1, 1970
-      // Map closeDate between startDate - endDate from value 0-1 and scale with maxRad 
-      var result = (_closeDate.getTime()-startDate.getTime() ) / (endDate.getTime()-startDate.getTime())*maxRad;
-      
-      return result;
-    }
-    
-
+    var closeDate;  
+  
     for(var i =0; i < nodes.length; i++){
       closeDate = new Date(nodes[i].data().closeDate);
 
       if(nodes[i].data().NodeType != "Prospect"){
-        radius = scaleDate(closeDate);
+        radius = 100+scaleDate(closeDate);
 
         if(nodes[i].data().CompanyType == "Clothing"){
           angle = 0*Math.PI/5 + Math.random()*Math.PI/5;
@@ -326,14 +313,29 @@ $(function(){
         nodes[i].position().x = radius*Math.cos(angle);
         nodes[i].position().y = radius*Math.sin(angle);
         
-      } else { //Position of prospects
-        nodes[i].position().x = 0;
-        nodes[i].position().y = 0;
+        var neighbors = nodes[i].openNeighborhood('node');
+        for(var j=0; j<neighbors.length; j++ ){
+          neighbors[j].position().x = nodes[i].position().x + ( 200*Math.cos(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
+          neighbors[j].position().y = nodes[i].position().y + ( 200*Math.sin(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
+        }
 
-        console.log(nodes[i].id(), nodes[i].position());
+      } else { //Position of prospects
+        //nodes[i].position().x = 0;
+        //nodes[i].position().y = 0;
       }
     }
-    console.log("Finished!");
+
+    function scaleDate(_closeDate){
+      var maxRad = 3000;
+      var startDate = new Date(2013,1,1);
+      var endDate   = new Date(2016,8,0);
+      
+      // Get time returns time (in ms) since jan 1, 1970
+      // Map closeDate between startDate - endDate from value 0-1 and scale with maxRad 
+      var result = (_closeDate.getTime()-startDate.getTime() ) / (endDate.getTime()-startDate.getTime())*maxRad;
+      
+      return result;
+    }
   }
 
 
@@ -438,4 +440,6 @@ $(function(){
 
     content: $('#filters')
   });
+
+
 });

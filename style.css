@@ -171,3 +171,12 @@ body.calc #loading {
 #filters hr {
   margin: 0.25em 0;
 }
+
+#ex1Slider {
+  position: absolute;
+  top: 6em;
+  right: 1em;
+}
+#ex1Slider .slider-selection {
+  background: #BABABA;
+}
