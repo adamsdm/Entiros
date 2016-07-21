@@ -209,7 +209,7 @@ $(function(){
       hideNodeInfo();
     });
 
-    addEdges();
+   //addEdges();
   }
   
   $('#search').typeahead({
