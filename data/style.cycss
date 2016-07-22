@@ -39,6 +39,11 @@ node[NodeType = "Customer"] {
 	height: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
 }
 
+node[NodeType = "Application"] {
+	background-color: #fff;
+	text-outline-color: #fff;
+}
+
 node[NodeType = "Evangelist"]{
 	background-color: #cfe09e;
 	text-outline-color: #cfe09e;
@@ -72,6 +77,7 @@ edge[interaction = "cp"] {
  
 edge[interaction = "cw"] {
 	line-color: white;
+	opacity: 0.05;
 	width: 4;
 }
  

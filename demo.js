@@ -209,7 +209,7 @@ $(function(){
       hideNodeInfo();
     });
 
-   addEdges();
+    //addEdges();
   }
   
   $('#search').typeahead({
@@ -281,49 +281,54 @@ $(function(){
   }
 
   function positionAlgorithm(){
-    var nodes = cy.elements("node");
-    
+    var custNodes = cy.elements('node[NodeType="Customer"]');
+    var appNodes = cy.elements('node[NodeType="Application"]');
+
+
     var radius;
     var angle; 
     var closeDate;  
-  
-    for(var i =0; i < nodes.length; i++){
-      closeDate = new Date(nodes[i].data().closeDate);
+    
+    //Position the customer and prospect custNodes  
+    for(var ci =0; ci < custNodes.length; ci++){
+      closeDate = new Date(custNodes[ci].data().closeDate);
 
-      if(nodes[i].data().NodeType != "Prospect"){
-        radius = 100+scaleDate(closeDate);
+      radius = 100+scaleDate(closeDate);
 
-        if(nodes[i].data().CompanyType == "Clothing"){
-          angle = 0*Math.PI/5 + Math.random()*Math.PI/5;
-        }
-        else if(nodes[i].data().CompanyType == "Cars"){
-          angle = 2*Math.PI/5 + Math.random()*Math.PI/5;
-        }
-        else if(nodes[i].data().CompanyType == "Food"){
-          angle = 4*Math.PI/5 + Math.random()*Math.PI/5;
-        }
-        else if(nodes[i].data().CompanyType == "Electronics"){
-          angle = 6*Math.PI/5 + Math.random()*Math.PI/5;
-        }
-        else if(nodes[i].data().CompanyType == "Candy"){
-          angle = 8*Math.PI/5 + Math.random()*Math.PI/5;
-        }
-        
-        //Set customer position
-        nodes[i].position().x = radius*Math.cos(angle);
-        nodes[i].position().y = radius*Math.sin(angle);
-        
-        var neighbors = nodes[i].openNeighborhood('node');
-        for(var j=0; j<neighbors.length; j++ ){
-          neighbors[j].position().x = nodes[i].position().x + ( 200*Math.cos(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
-          neighbors[j].position().y = nodes[i].position().y + ( 200*Math.sin(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
-        }
-
-      } else { //Position of prospects
-        //nodes[i].position().x = 0;
-        //nodes[i].position().y = 0;
+      if(custNodes[ci].data().CompanyType == "Clothing"){
+        angle = 0*Math.PI/5 + Math.random()*Math.PI/5;
+      }
+      else if(custNodes[ci].data().CompanyType == "Cars"){
+        angle = 2*Math.PI/5 + Math.random()*Math.PI/5;
+      }
+      else if(custNodes[ci].data().CompanyType == "Food"){
+        angle = 4*Math.PI/5 + Math.random()*Math.PI/5;
+      }
+      else if(custNodes[ci].data().CompanyType == "Electronics"){
+        angle = 6*Math.PI/5 + Math.random()*Math.PI/5;
+      }
+      else if(custNodes[ci].data().CompanyType == "Candy"){
+        angle = 8*Math.PI/5 + Math.random()*Math.PI/5;
+      }
+      
+      //Set customer position
+      custNodes[ci].position().x = radius*Math.cos(angle);
+      custNodes[ci].position().y = radius*Math.sin(angle);
+      
+      //Get prospect neighbours and place them near root customer 
+      var neighbors = custNodes[ci].openNeighborhood('node[NodeType="Prospect"]');
+      for(var j=0; j<neighbors.length; j++ ){
+        neighbors[j].position().x = custNodes[ci].position().x + ( 200*Math.cos(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
+        neighbors[j].position().y = custNodes[ci].position().y + ( 200*Math.sin(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
       }
     }
+
+
+    for(var ai=0; ai<appNodes.length; ai++){
+      appNodes[ai].position().x = -4000;
+      appNodes[ai].position().y = -3000 + ( ai*6000/appNodes.length);
+    }
+
 
     function scaleDate(_closeDate){
       var maxRad = 3000;
@@ -347,7 +352,7 @@ $(function(){
 
   $('#save').on('click', function(){
     //Open JSON file in new tab
-    var data = JSON.stringify(cy.json(),null,1);
+    var data = JSON.stringify(cy.json());
     var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
     window.open(url, '_blank');
     window.focus();

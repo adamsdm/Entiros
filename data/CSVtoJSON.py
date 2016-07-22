@@ -27,7 +27,8 @@ if row1["CompanyRelationAppTeamAt"]:
 	jsonfile.write('\n     "CompanyRelationAppTeamAt": '+row1["CompanyRelationAppTeamAt"]+',')	
 jsonfile.write('\n     "Country": "'+row1["Country"]+'",')
 jsonfile.write('\n     "WebsiteURL": "'+row1["WebsiteURL"]+'",')
-jsonfile.write('\n     "AnnRevenue": '+row1["AnnRevenue"]+',')	
+if row1["AnnRevenue"]:
+	jsonfile.write('\n     "AnnRevenue": '+row1["AnnRevenue"]+',')	
 jsonfile.write('\n     "closeDate": "'+row1["closeDate"]+'"')	
 jsonfile.write('\n    },')
 jsonfile.write('\n    "position": {')
@@ -59,7 +60,8 @@ for row in reader:
 		jsonfile.write('\n     "CompanyRelationAppTeamAt": '+row["CompanyRelationAppTeamAt"]+',')
 	jsonfile.write('\n     "Country": "'+row["Country"]+'",')
 	jsonfile.write('\n     "WebsiteURL": "'+row["WebsiteURL"]+'",')
-	jsonfile.write('\n     "AnnRevenue": '+row["AnnRevenue"]+',')	
+	if row["AnnRevenue"]:
+		jsonfile.write('\n     "AnnRevenue": '+row["AnnRevenue"]+',')	
 	jsonfile.write('\n     "closeDate": "'+row["closeDate"]+'"')		
 	jsonfile.write('\n    },')
 	jsonfile.write('\n    "position": {')
