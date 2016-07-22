@@ -108,11 +108,11 @@ edge.highlighted {
 }
  
 edge.faded {
-	opacity: 0.1;
+	opacity: 0.01;
 }
  
 node.faded {
-	opacity: 0.5;
+	opacity: 0.3;
 	text-opacity: 0;
 }
  

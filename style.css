@@ -139,6 +139,17 @@ body.calc #loading {
   top: 0;
   z-index: 999;
 }
+#appFilter{
+  background-color: white;
+  padding: 5px;
+  position: absolute;;
+  z-index: 999;
+  top: 3em;
+  right: 0;
+  margin: 0.5em;
+  border-radius: 0.25em;
+
+}
 
 #reset {
   right: 0;
@@ -159,7 +170,7 @@ body.calc #loading {
   transform: rotate(45deg);
 }
 
-#filters label {
+#filters label, #appFilter label {
   font-weight: normal;
   padding: 0 0.25em;
 }

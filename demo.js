@@ -3,6 +3,7 @@ $(function(){
 
   var layoutPadding = 100;
   var layoutDuration = 700;
+  var inCompView = false;
 
   // get exported json from cytoscape desktop via ajax
   var graphP = $.ajax({
@@ -32,7 +33,7 @@ $(function(){
   Promise.all([ graphP, styleP ]).then(initCy);
 
   function highlight( node ){
-
+    inCompView = true;
     var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
 
     cy.batch(function(){
@@ -43,7 +44,6 @@ $(function(){
       var w = window.innerWidth;
       var h = window.innerHeight;
       
-
       cy.stop().animate({
         fit: {
           eles: cy.elements(),
@@ -53,42 +53,18 @@ $(function(){
         duration: layoutDuration
       }).delay( layoutDuration, function(){
         nhood.layout({
-
           name: 'breadthfirst',
           padding: layoutPadding,
           animate: true,
           animationDuration: layoutDuration,
           fit: true  
-
-
-          // name: 'concentric',
-          // padding: layoutPadding,
-          // animate: true,
-          // animationDuration: layoutDuration,
-          // boundingBox: {
-          //   x1: npos.x - w/2,
-          //   x2: npos.x + w/2,
-          //   y1: npos.y - w/2,
-          //   y2: npos.y + w/2
-          // },
-          // fit: true,
-          // concentric: function( n ){
-          //   if( node.id() === n.id() ){
-          //     return 2;
-          //   } else {
-          //     return 1;
-          //   }
-          // },
-          // levelWidth: function(){
-          //   return 1;
-          // }
         });
-      } );
-      
+      });   
     });
   }
 
   function clear(){
+    inCompView = false;
     cy.batch(function(){
       cy.$('.highlighted').forEach(function(n){
         n.animate({
@@ -100,6 +76,28 @@ $(function(){
     });
 
     setTimeout(function(){ reset(); }, layoutDuration);
+  }
+
+  function focus( node ){
+
+    var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
+
+    cy.batch(function(){
+      cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
+      nhood.removeClass('faded').addClass('highlighted');
+      
+      var npos = node.position();
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+    });
+  }
+
+  function unfocus(){
+    if(!inCompView){
+      cy.batch(function(){
+        cy.elements().removeClass('highlighted').removeClass('faded');
+      });
+    }
   }
 
   function showNodeInfo( node ){
@@ -209,11 +207,23 @@ $(function(){
       hideNodeInfo();
     });
 
+    cy.on('mouseover', 'node', function(e){
+      var node = this;
+
+      focus(node);
+
+    });
+
+    cy.on('mouseout', 'node', function(e){
+      var node = this;
+      unfocus();
+    });
+
     //addEdges();
   }
   
   $('#search').typeahead({
-    minLength: 2,
+    minLength: 1,
     highlight: true,
   },
   {
@@ -325,8 +335,8 @@ $(function(){
 
 
     for(var ai=0; ai<appNodes.length; ai++){
-      appNodes[ai].position().x = -4000;
-      appNodes[ai].position().y = -3000 + ( ai*6000/appNodes.length);
+      appNodes[ai].position().x = 4000;
+      appNodes[ai].position().y = -2500 + ( ai*5000/appNodes.length);
     }
 
 
@@ -352,7 +362,7 @@ $(function(){
 
   $('#save').on('click', function(){
     //Open JSON file in new tab
-    var data = JSON.stringify(cy.json());
+    var data = JSON.stringify(cy.json(),null,2);
     var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
     window.open(url, '_blank');
     window.focus();
@@ -370,7 +380,8 @@ $(function(){
     var lead = $('#lead').is(':checked');
     var markQualLead = $('#markQualLead').is(':checked');
     var saleQualLead = $('#saleQualLead').is(':checked');
-    var opp = $('#opp').is(':checked');
+    var prosp = $('#prosp').is(':checked');
+
 
 
 
@@ -409,16 +420,40 @@ $(function(){
           
           if( !saleQualLead ){ filter(); }
           
-        } else if( type === 'Prospect' ){
+        } else if( type === 'Prospect' || type ==='Application' ){
           
-          if( !opp ){ filter(); }
-          
-        }      
-        
+          if( !prosp ){ filter(); }
+       
+        }   
       });
       
     }); 
     
+  });
+
+  $('#appFilter').on('click', 'input', function(){
+
+    var app = $('#app').is(':checked');
+
+
+    cy.batch(function(){
+      
+      cy.nodes().forEach(function( n ){
+        var type = n.data('NodeType');
+        
+        n.removeClass('filtered');
+        
+        var filter = function(){
+          n.addClass('filtered');
+        };
+
+        if( type === 'Application' ){
+          
+          if( !app ){ filter(); }
+          
+        } 
+      });
+    }); 
   });
   
   $('#filter').qtip({
