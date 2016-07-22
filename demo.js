@@ -93,11 +93,9 @@ $(function(){
   }
 
   function unfocus(){
-    if(!inCompView){
-      cy.batch(function(){
-        cy.elements().removeClass('highlighted').removeClass('faded');
-      });
-    }
+    cy.batch(function(){
+      cy.elements().removeClass('highlighted').removeClass('faded');
+    });
   }
 
   function showNodeInfo( node ){
@@ -209,14 +207,15 @@ $(function(){
 
     cy.on('mouseover', 'node', function(e){
       var node = this;
-
-      focus(node);
+      if(!inCompView)
+        focus(node);
 
     });
 
     cy.on('mouseout', 'node', function(e){
       var node = this;
-      unfocus();
+      if(!inCompView)
+        unfocus();
     });
 
     //addEdges();
