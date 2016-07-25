@@ -3,7 +3,7 @@ $(function(){
 
   var layoutPadding = 100;
   var layoutDuration = 700;
-  var inCompView = false;
+  var inCompFocusView = false;
 
   // get exported json from cytoscape desktop via ajax
   var graphP = $.ajax({
@@ -26,6 +26,7 @@ $(function(){
     '{{#if Country}}<p class="ac-country"><i class="fa fa-map-marker"></i> {{Country}}</p>{{/if}}',
     '{{#if WebsiteURL}}<p class="ac-more"><i class="fa fa-external-link"></i><a target="_blank" href="http://www.{{WebsiteURL}}">{{id}}</a></p>{{/if}}',
     '{{#if AnnRevenue}}<p class="ac-more"><i class="fa fa-usd"></i> {{AnnRevenue}}</p>{{/if}}',
+    '{{#if CompanyType}}<p class="ac-more"><i class="fa fa-usd"></i> {{CompanyType}}</p>{{/if}}',    
 
   ].join(''));
 
@@ -33,7 +34,7 @@ $(function(){
   Promise.all([ graphP, styleP ]).then(initCy);
 
   function highlight( node ){
-    inCompView = true;
+    inCompFocusView = true;
     var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
 
     cy.batch(function(){
@@ -54,6 +55,7 @@ $(function(){
       }).delay( layoutDuration, function(){
         nhood.layout({
           name: 'breadthfirst',
+          directed: true,
           padding: layoutPadding,
           animate: true,
           animationDuration: layoutDuration,
@@ -64,7 +66,7 @@ $(function(){
   }
 
   function clear(){
-    inCompView = false;
+    inCompFocusView = false;
     cy.batch(function(){
       cy.$('.highlighted').forEach(function(n){
         n.animate({
@@ -85,10 +87,7 @@ $(function(){
     cy.batch(function(){
       cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
       nhood.removeClass('faded').addClass('highlighted');
-      
-      var npos = node.position();
-      var w = window.innerWidth;
-      var h = window.innerHeight;
+
     });
   }
 
@@ -207,14 +206,14 @@ $(function(){
 
     cy.on('mouseover', 'node', function(e){
       var node = this;
-      if(!inCompView)
-        focus(node);
 
+      if(!inCompFocusView)
+        focus(node);
     });
 
     cy.on('mouseout', 'node', function(e){
       var node = this;
-      if(!inCompView)
+      if(!inCompFocusView)
         unfocus();
     });
 
@@ -356,7 +355,8 @@ $(function(){
 
   
   $('#debug').on('click', function(){
-    positionAlgorithm();    
+    positionAlgorithm(); 
+    alert("Position algorithm done, click save to export as json.");
   });
 
   $('#save').on('click', function(){

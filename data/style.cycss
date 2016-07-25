@@ -35,8 +35,8 @@ node {
 node[NodeType = "Customer"] {
 	background-color: #a9c742;
 	text-outline-color: #a9c742;
-	width: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
-	height: mapData(AnnRevenue, 1000000, 20000000000, 20, 120);
+	width: mapData(AnnRevenue, 1000000, 20000000000, 40, 120);
+	height: mapData(AnnRevenue, 1000000, 20000000000, 40, 120);
 }
 
 node[NodeType = "Application"] {
