@@ -192,9 +192,10 @@ $(function(){
 
     cy.on('select', 'node', function(e){
       var node = this;
-
-      highlight( node );
-      showNodeInfo( node );
+      if( node.data().NodeType =='Customer'){
+        highlight( node );
+        showNodeInfo( node );
+      }
     });
 
     cy.on('unselect', 'node', function(e){
