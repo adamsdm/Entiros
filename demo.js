@@ -35,15 +35,18 @@ $(function(){
 
   function highlight( node ){
     inCompFocusView = true;
-    var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
+    
+    //Get two levels of connected nodes
+    var nhood = node.closedNeighborhood().closedNeighborhood(); 
+    //Get the root of the neighborhood
+    root = nhood.roots();
+    //Update nhood with the roots closed neighbourhood
+    nhood = root.closedNeighborhood().closedNeighborhood();
 
     cy.batch(function(){
       cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
       nhood.removeClass('faded').addClass('highlighted');
       
-      var npos = node.position();
-      var w = window.innerWidth;
-      var h = window.innerHeight;
       
       cy.stop().animate({
         fit: {
@@ -177,8 +180,8 @@ $(function(){
     });
     
     cy.on('free', 'node', function( e ){
-      var n = e.cyTarget;
-      var p = n.position();
+      // var n = e.cyTarget;
+      // var p = n.position();
       
       // n.data('orgPos', {
       //   x: p.x,
@@ -193,10 +196,10 @@ $(function(){
 
     cy.on('select', 'node', function(e){
       var node = this;
-      if( node.data().NodeType =='Customer'){
+      //if( node.data().NodeType =='Customer'){
         highlight( node );
         showNodeInfo( node );
-      }
+      //}
     });
 
     cy.on('unselect', 'node', function(e){
@@ -272,7 +275,13 @@ $(function(){
       }
       
       var res = cy.nodes().stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
+
+      // cy.batch(function(){
+      //   cy.elements().stdFilter( anyFieldMatches ).removeClass('filtered');
+      //   cy.elements().not( cy.elements().stdFilter( anyFieldMatches ) ).addClass('filtered');
+      // });
       
+
       cb( res );
     },
     templates: {
