@@ -85,9 +85,9 @@ $(function(){
     var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
 
     cy.batch(function(){
-      cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
+      //cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
       nhood.removeClass('faded').addClass('highlighted');
-
+      nhood.addClass('highlighted');
     });
   }
 
@@ -146,6 +146,7 @@ $(function(){
     var styleJson = then[1];
     var elements = expJson.elements;
 
+
     elements.nodes.forEach(function(n){
       var data = n.data;
               
@@ -179,10 +180,10 @@ $(function(){
       var n = e.cyTarget;
       var p = n.position();
       
-      n.data('orgPos', {
-        x: p.x,
-        y: p.y
-      });
+      // n.data('orgPos', {
+      //   x: p.x,
+      //   y: p.y
+      // });
 
     });
     
@@ -208,14 +209,19 @@ $(function(){
     cy.on('mouseover', 'node', function(e){
       var node = this;
 
-      if(!inCompFocusView)
+      if(!inCompFocusView){
         focus(node);
+        showNodeInfo( node );
+      }
+
     });
 
     cy.on('mouseout', 'node', function(e){
       var node = this;
-      if(!inCompFocusView)
+      if(!inCompFocusView){
         unfocus();
+        hideNodeInfo();
+      }
     });
 
     //addEdges();
@@ -382,6 +388,12 @@ $(function(){
     var saleQualLead = $('#saleQualLead').is(':checked');
     var prosp = $('#prosp').is(':checked');
 
+    var cloth = $('#cloth').is(':checked');
+    var cars = $('#cars').is(':checked');
+    var food = $('#food').is(':checked');
+    var elect = $('#elect').is(':checked');
+    var candy = $('#candy').is(':checked');
+
 
 
 
@@ -389,7 +401,8 @@ $(function(){
       
       cy.nodes().forEach(function( n ){
         var type = n.data('NodeType');
-        
+        var CompanyType = n.data('CompanyType');
+
         n.removeClass('filtered');
         
         var filter = function(){
@@ -420,10 +433,36 @@ $(function(){
           
           if( !saleQualLead ){ filter(); }
           
-        } else if( type === 'Prospect' || type ==='Application' ){
+        } else if( type === 'Prospect' ){
           
           if( !prosp ){ filter(); }
-       
+        }
+
+
+
+
+
+
+        if( CompanyType === 'Clothing' ){
+          
+          if( !cloth ){ filter(); }
+          
+        } else if( CompanyType === 'Cars' ){
+          
+          if( !cars ){ filter(); }
+          
+        } else if( CompanyType === 'Food' ){
+          
+          if( !food ){ filter(); }
+          
+        } else if( CompanyType === 'Electronics' ){
+          
+          if( !elect ){ filter(); }
+          
+        } else if( CompanyType === 'Candy' ){
+          
+          if( !candy ){ filter(); }
+          
         }   
       });
       
