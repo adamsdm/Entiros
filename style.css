@@ -191,3 +191,12 @@ body.calc #loading {
 #ex1Slider .slider-selection {
   background: #BABABA;
 }
+
+
+
+node:selected {
+
+  border-color: rgb(187, 219, 247);
+  border-opacity: 0.5;
+  border-width: 10;
+}

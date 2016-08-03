@@ -36,6 +36,7 @@ $(function(){
   function highlight( node ){
     inCompFocusView = true;
     
+    //BUG: s is undefined. Fix by getting root of nhood
     //Get two levels of connected nodes
     var nhood = node.closedNeighborhood().closedNeighborhood(); 
     //Get the root of the neighborhood
@@ -118,6 +119,7 @@ $(function(){
     for(var i=0; i<nodes.length; i++){
       intAt = nodes[i].data().CompanyRelationIntegratedAt;
       apTeAt = nodes[i].data().CompanyRelationAppTeamAt;
+      RelTo = nodes[i].data().CompanyRelationRelatedTo;
 
       thisId = nodes[i].data().id;
 
@@ -139,6 +141,14 @@ $(function(){
           })
         } //for j    
       }
+      if(RelTo){
+        for(var j=0; j<RelTo.length; j++){
+          cy.add({
+            group:"edges",
+            data:{ source: thisId, target: RelTo[j], interaction: "cc" }
+          })
+        } //for j    
+      }      
     } //for i
   }
 
@@ -379,6 +389,7 @@ $(function(){
     //Open JSON file in new tab
     var data = JSON.stringify(cy.json(),null,2);
     var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
+
     window.open(url, '_blank');
     window.focus();
   });
