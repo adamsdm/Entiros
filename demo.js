@@ -206,6 +206,8 @@ $(function(){
 
     cy.on('select', 'node', function(e){
       var node = this;
+
+      cy.nodes().removeClass('hidden');
       //if( node.data().NodeType =='Customer'){
         highlight( node );
         showNodeInfo( node );
@@ -241,7 +243,7 @@ $(function(){
   }
   
   $('#search').typeahead({
-    minLength: 1,
+    minLength: 0,
     highlight: true,
   },
   {
@@ -286,12 +288,12 @@ $(function(){
       
       var res = cy.nodes().stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
 
-      // cy.batch(function(){
-      //   cy.elements().stdFilter( anyFieldMatches ).removeClass('filtered');
-      //   cy.elements().not( cy.elements().stdFilter( anyFieldMatches ) ).addClass('filtered');
-      // });
+      cy.batch(function(){
+        cy.nodes().stdFilter( anyFieldMatches ).removeClass('hidden');
+        cy.nodes().not( cy.elements().stdFilter( anyFieldMatches ) ).addClass('hidden');
+      });
       
-
+      console.log(res);
       cb( res );
     },
     templates: {

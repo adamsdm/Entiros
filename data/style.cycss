@@ -126,3 +126,7 @@ node:selected {
 .filtered {
 	display: none;
 }
+
+.hidden {
+	display:none;
+}
