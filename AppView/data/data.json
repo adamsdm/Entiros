@@ -1,0 +1,28 @@
+[
+  {
+    "id": "Gant",
+    "type":"Customer",
+    "Applications": ["En applikation","En annan applikation med ett långt namn","Appen","En till","och en sista"],
+    "edges":[
+      {"source":"En applikation", "target":"En annan applikation med ett långt namn"},
+      {"source":"En applikation", "target":"Appen"},
+      {"source":"En annan applikation med ett långt namn", "target":"En till"},
+      {"source":"En annan applikation med ett långt namn", "target":"och en sista"}
+    ]
+  },
+  {
+    "id": "Schibsted",
+    "type":"Customer",
+    "Applications": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "edges":[
+      {"source":1, "target":2},
+      {"source":1, "target":5},
+      {"source":3, "target":6},
+      {"source":5, "target":6},
+      {"source":6, "target":8},
+      {"source":6, "target":12},
+      {"source":7, "target":11},
+      {"source":9, "target":10}
+    ]
+  }
+]
