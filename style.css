@@ -1,51 +1,39 @@
-body { 
+html, body { 
   font: 14px helvetica neue, helvetica, arial, sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
 #cy {
-  height: 90%;
+  height: 100%;
   width: 100%;
   position: absolute;
   left: 0;
-  top: 10%;
-  background: white;
+  top: 0;
+  background: #000;
 }
 
-#addExperience{
-	position: absolute;
-	bottom: 20px;
-	left: 10px;
-}
-#addProcess{
-	position: absolute;
-	bottom: 40px;
-	left: 10px;
-}
-
-#addSystem{
-	position: absolute;
-	bottom: 60px;
-	left: 10px;	
-}
-#addApp{
-	position: absolute;
-	bottom: 80px;
-	left: 10px;	
-}
-#debug{
-	position: absolute;
-	bottom: 100px;
-	left: 10px;	
-}
-#clear{
-	position: absolute;
-	bottom: 120px;
-	left: 10px;	
+#loading {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  margin-top: -0.5em;
+  font-size: 2em;
+  color: #fff;
 }
 
-#title{
-	position: absolute;
-	font-size: 40px;
+#loading.loaded {
+  display: none;
+}
+
+#clear {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0.25em;
+  visibility: hidden;
 }
 
 #search-wrapper {
@@ -59,6 +47,26 @@ body {
 
 #search {
   width: 14em;
+}
+
+body.has-start #clear {
+  visibility: visible;
+}
+
+#end {
+  display: none;
+}
+
+body.has-start:not(.has-end) #end {
+  display: inline;
+}
+
+body.has-start:not(.has-end) #start {
+  display: none;
+}
+
+body.calc #loading {
+  display: block;
 }
 
 .tt-dropdown-menu {
@@ -121,12 +129,14 @@ body {
   z-index: 999;
 }
 
-#filter{
+#reset,
+#filter,
+#save,
+#debug {
   width: 3em;
   margin: 0.5em;
   position: absolute;
   top: 0;
-  right: 4em;
   z-index: 999;
 }
 #appFilter{
@@ -141,6 +151,24 @@ body {
 
 }
 
+#reset {
+  right: 0;
+}
+
+#filter {
+  right: 4em;
+}
+
+#save {
+  right: 8em;
+}
+#debug {
+  right: 12em;
+}
+
+#reset i {
+  transform: rotate(45deg);
+}
 
 #filters label, #appFilter label {
   font-weight: normal;
@@ -155,9 +183,20 @@ body {
   margin: 0.25em 0;
 }
 
-#compSelect{
-  position: relative;
-  margin-left: 40%;
-  margin-right: 40%;
-  margin-top: .5em;
+#ex1Slider {
+  position: absolute;
+  top: 6em;
+  right: 1em;
+}
+#ex1Slider .slider-selection {
+  background: #BABABA;
+}
+
+
+
+node:selected {
+
+  border-color: rgb(187, 219, 247);
+  border-opacity: 0.5;
+  border-width: 10;
 }

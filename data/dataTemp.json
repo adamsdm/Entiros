@@ -1,0 +1,105 @@
+
+{
+  "elements" : {
+    "nodes" : [
+    {
+      "data" : {
+        "id" : "Gant",
+        "Strength" : 5,
+        "selected" : false,
+        "Milk" : "Raw cow's milk",
+        "AnnRevenue" : 100,
+        "Type" : "Semi-soft",
+        "NodeType" : "Customer",
+        "Country" : "USA",
+        "CompanyRelationRelatedTo" : ["Gant Sweden", "Gant Norway", "Gant Denmark"]
+      },
+      "position" : {
+        "x" : 4491.9853515625,
+        "y" : 4520.1904296875
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "Gant Sweden",
+        "Strength" : 5,
+        "selected" : false,
+        "Milk" : "Raw cow's milk",
+        "AnnRevenue" : 80,
+        "Type" : "Semi-soft",
+        "NodeType" : "Customer",
+        "Country" : "Sweden"
+      },
+      "position" : {
+        "x" : 4700.9853515625,
+        "y" : 4520.1904296875
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "Gant Norway",
+        "Strength" : 5,
+        "selected" : false,
+        "Milk" : "Raw cow's milk",
+        "AnnRevenue" : 85,
+        "Type" : "Semi-soft",
+        "NodeType" : "Customer",
+        "Country" : "Norway"
+      },
+      "position" : {
+        "x" : 4600.9853515625,
+        "y" : 4320.1904296875
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "Gant Denmark",
+        "Strength" : 5,
+        "selected" : false,
+        "Milk" : "Raw cow's milk",
+        "AnnRevenue" : 75,
+        "Type" : "Semi-soft",
+        "NodeType" : "Customer",
+        "Country" : "Denmark"
+      },
+      "position" : {
+        "x" : 4300.9853515625,
+        "y" : 4500.1904296875
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "Keolis",
+        "Strength" : 5,
+        "selected" : false,
+        "Milk" : "Raw cow's milk",
+        "AnnRevenue" : 80,
+        "Type" : "Semi-soft",
+        "NodeType" : "Customer",
+        "Country" : "Sweden",
+        "CompanyRelationRelatedTo" : ["Västtrafik AB"]
+      },
+      "position" : {
+        "x" : 5200.9853515625,
+        "y" : 4500.1904296875
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "Västtrafik AB",
+        "Strength" : 5,
+        "selected" : false,
+        "Milk" : "Raw cow's milk",
+        "Type" : "Semi-soft",
+        "NodeType" : "Prospect",
+        "Country" : "Sweden"
+      },
+      "position" : {
+        "x" : 5300.9853515625,
+        "y" : 4400.1904296875
+      },
+      "selected" : false
+    }
+    ]
+  }
+}
