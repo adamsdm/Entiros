@@ -71,17 +71,21 @@ $(function(){
 
   function clear(){
     inCompFocusView = false;
-    cy.batch(function(){
-      cy.$('.highlighted').forEach(function(n){
-        n.animate({
-          position: n.data('orgPos')
-        });
-      });
-      
-      cy.elements().removeClass('highlighted').removeClass('faded');
-    });
 
-    setTimeout(function(){ reset(); }, layoutDuration);
+    reset();
+    setTimeout( function(){
+      cy.batch( function(){
+        cy.$('.highlighted').forEach(function(n){
+          n.animate({
+            position: n.data('orgPos')
+          });
+        });
+        
+        cy.elements().removeClass('highlighted').removeClass('faded');
+      });
+    }, layoutDuration);
+
+    //setTimeout(function(){ reset(); }, layoutDuration);
   }
 
   function focus( node ){
@@ -319,8 +323,6 @@ $(function(){
   function positionAlgorithm(){
     var custNodes = cy.elements('node[NodeType="Customer"]');
     var appNodes = cy.elements('node[NodeType="Application"]');
-
-
     var radius;
     var angle; 
     var closeDate;  
