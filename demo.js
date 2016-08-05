@@ -32,6 +32,7 @@ $(function(){
 
   // when both graph export json and style loaded, init cy
   Promise.all([ graphP, styleP ]).then(initCy);
+  
   function clear(){
     inCompFocusView = false;
     $('#lvl2Filter').hide();
@@ -44,7 +45,7 @@ $(function(){
         cy.$('.highlighted').forEach(function(n){
           n.animate({
             position: n.data('orgPos')
-          });
+          },{duration: layoutDuration});
         });
         
         cy.elements('.levelTwo').removeClass('filtered');
@@ -60,69 +61,204 @@ $(function(){
     inCompFocusView = true;
     $('#lvl2Filter').show();
     
-    var conNodes = node.connectedEdges().connectedNodes("node[id!='"+node.id()+"']");
+    var intAtNodes = node.connectedEdges('edge[interaction="cr"]').connectedNodes("node[id!='"+node.id()+"']");
+    var aTeAtNodes = node.connectedEdges('edge[interaction="cw"]').connectedNodes("node[id!='"+node.id()+"']");
+    var relToNodes = node.connectedEdges('edge[interaction="cc"]').connectedNodes("node[id!='"+node.id()+"']");
+
     var posX;
     var posY;
+    var levelHeight = 200;
     var lvl1width = 1200;
     var lvl2width = 200;
-    var spacing = lvl1width/conNodes.length;
+    var spacing;  
 
 
-    //First level
-    for(var i=0; i<conNodes.length; i++){ 
-      posX = node.position().x +i*spacing-((conNodes.length-1)/2*spacing);        
-      posY = node.position().y+200;
+    /*******************/
+    /*** First level ***/
+    /*******************/
 
-       conNodes[i].animate({
+    //Integrated at nodes
+    spacing = lvl1width/intAtNodes.length;  
+    for(var i=0; i<intAtNodes.length; i++){
+      posX = node.position().x +i*spacing-((intAtNodes.length-1)/2*spacing);
+      posY = node.position().y - levelHeight;
+
+      intAtNodes[i].animate({
           position: { x: posX, y: posY } 
         }, {
           duration: layoutDuration 
        });
-
     }
 
+    //App team at nodes
+    for(var i=0; i<aTeAtNodes.length; i++){
+      posX = node.position().x + levelHeight - 100*i;
+      posY = node.position().y + levelHeight;
 
-
-  //Second level
-  setTimeout( function(){
-    for(var i=0; i<conNodes.length; i++){ 
-      var secondLvlNodes = conNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
-
-      for(var j=0; j<secondLvlNodes.length; j++){
-        spacing = lvl2width/secondLvlNodes.length;
-        secondLvlNodes[j].addClass('levelTwo');
-
-        secondLvlNodes[j].animate({
-          position: { 
-            x: conNodes[i].position().x +j*spacing-((secondLvlNodes.length-1)/2*spacing),
-            y: node.position().y+400 
-          } 
+      aTeAtNodes[i].animate({
+          position: { x: posX, y: posY } 
         }, {
           duration: layoutDuration 
        });
+    }
+
+    //Related to nodes
+    for(var i=0; i<relToNodes.length; i++){
+      posX = node.position().x - levelHeight + 100*i;
+      posY = node.position().y + levelHeight;
+
+      relToNodes[i].animate({
+          position: { x: posX, y: posY } 
+        }, {
+          duration: layoutDuration 
+       });
+    }
+
+    /*******************/
+    /*** Second level ***/
+    /*******************/
+    setTimeout( function(){
+
+      //Int at nodes
+      for(var i=0; i<intAtNodes.length; i++){
+        var secondLvlNodes = intAtNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
+        for(var j=0; j<secondLvlNodes.length; j++){
+          spacing = lvl2width/secondLvlNodes.length;
+          secondLvlNodes[j].addClass('levelTwo');
+
+          secondLvlNodes[j].animate({
+            position: { 
+              x: intAtNodes[i].position().x +j*spacing-((secondLvlNodes.length-1)/2*spacing),
+              y: node.position().y-2*levelHeight
+            } 
+          }, {
+            duration: layoutDuration 
+         });
+        }
       }
-     }
+
+      // Ap te at nodes
+      for(var i=0; i<aTeAtNodes.length; i++){
+        var secondLvlNodes = aTeNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
+        for(var j=0; j<secondLvlNodes.length; j++){
+          spacing = lvl2width/secondLvlNodes.length;          
+          secondLvlNodes[j].addClass('levelTwo');
+
+          secondLvlNodes[j].animate({
+            position: { 
+              x: aTeAtNodes[i].position().x + j*spacing,
+              y: node.position().y+2*levelHeight
+            } 
+          }, {
+            duration: layoutDuration 
+         });
+        }
+      }
+
+      // Related to nodes
+      for(var i=0; i<relToNodes.length; i++){
+        var secondLvlNodes = relToNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
+        for(var j=0; j<secondLvlNodes.length; j++){
+          spacing = lvl2width/secondLvlNodes.length;          
+          secondLvlNodes[j].addClass('levelTwo');
+
+          secondLvlNodes[j].animate({
+            position: { 
+              x: relToNodes[i].position().x - j*spacing,
+              y: node.position().y+2*levelHeight
+            } 
+          }, {
+            duration: layoutDuration 
+         });
+        }
+      }      
+
+
     }, layoutDuration );
 
+    //Update viewport to fit elements
+    setTimeout( function(){
+      cy.animate({
+        fit: {
+          eles: node.closedNeighborhood().closedNeighborhood(),
+          padding: 20
+        }
+      }, {
+        duration: layoutDuration
+      });
+    }, 2*layoutDuration+100 );
+       
 
-  //Update viewport to fit elements
-  setTimeout( function(){
-    cy.animate({
-      fit: {
-        eles: node.closedNeighborhood().closedNeighborhood(),
-        padding: 20
-      }
-    }, {
-      duration: layoutDuration
-    });
-  }, 2*layoutDuration+100 );
-     
-
-    
+    //highlight relevant nodes, and fade irrelevant nodes
     cy.batch(function(){ 
         cy.elements().removeClass('highlighted').addClass('faded');
         node.closedNeighborhood().closedNeighborhood().removeClass('faded').addClass('highlighted');
     });
+
+
+    // var conNodes = node.connectedEdges().connectedNodes("node[id!='"+node.id()+"']");
+    // var posX;
+    // var posY;
+    // var lvl1width = 1200;
+    // var lvl2width = 200;
+    // var spacing = lvl1width/conNodes.length;
+
+
+    // //First level
+    // for(var i=0; i<conNodes.length; i++){ 
+    //   posX = node.position().x +i*spacing-((conNodes.length-1)/2*spacing);        
+    //   posY = node.position().y+200;
+
+    //    conNodes[i].animate({
+    //       position: { x: posX, y: posY } 
+    //     }, {
+    //       duration: layoutDuration 
+    //    });
+
+    // }
+
+
+
+    // //Second level
+    // setTimeout( function(){
+    //   for(var i=0; i<conNodes.length; i++){ 
+    //     var secondLvlNodes = conNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
+
+    //     for(var j=0; j<secondLvlNodes.length; j++){
+    //       spacing = lvl2width/secondLvlNodes.length;
+    //       secondLvlNodes[j].addClass('levelTwo');
+
+    //       secondLvlNodes[j].animate({
+    //         position: { 
+    //           x: conNodes[i].position().x +j*spacing-((secondLvlNodes.length-1)/2*spacing),
+    //           y: node.position().y+400 
+    //         } 
+    //       }, {
+    //         duration: layoutDuration 
+    //      });
+    //     }
+    //    }
+    //   }, layoutDuration );
+
+
+    // //Update viewport to fit elements
+    // setTimeout( function(){
+    //   cy.animate({
+    //     fit: {
+    //       eles: node.closedNeighborhood().closedNeighborhood(),
+    //       padding: 20
+    //     }
+    //   }, {
+    //     duration: layoutDuration
+    //   });
+    // }, 2*layoutDuration+100 );
+       
+
+    // //highlight relevant nodes, and fade irrelevant nodes
+    // cy.batch(function(){ 
+    //     cy.elements().removeClass('highlighted').addClass('faded');
+    //     node.closedNeighborhood().closedNeighborhood().removeClass('faded').addClass('highlighted');
+    // });
 
   }
 
@@ -545,6 +681,8 @@ $(function(){
     
     if(!lvl2){
       cy.elements('.levelTwo').addClass('filtered');
+    } else {
+      cy.elements('.levelTwo').removeClass('filtered');      
     }
   });
   
