@@ -107,6 +107,8 @@ edge.highlighted {
 	z-index: 9999;
 }
 
+
+
 node.focused {
 	min-zoomed-font-size: 0;
     text-outline-width: 2;

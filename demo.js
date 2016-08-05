@@ -34,6 +34,9 @@ $(function(){
   Promise.all([ graphP, styleP ]).then(initCy);
   function clear(){
     inCompFocusView = false;
+    $('#lvl2Filter').hide();
+    $('#lvl2').prop('checked', true);
+
 
     reset();
     setTimeout( function(){
@@ -44,7 +47,8 @@ $(function(){
           });
         });
         
-        cy.elements().removeClass('highlighted').removeClass('faded');
+        cy.elements('.levelTwo').removeClass('filtered');
+        cy.elements().removeClass('highlighted').removeClass('faded').removeClass('levelTwo').removeClass('focused');
       });
     }, layoutDuration);
 
@@ -54,6 +58,7 @@ $(function(){
 
   function highlight( node ){
     inCompFocusView = true;
+    $('#lvl2Filter').show();
     
     var conNodes = node.connectedEdges().connectedNodes("node[id!='"+node.id()+"']");
     var posX;
@@ -76,6 +81,8 @@ $(function(){
 
     }
 
+
+
   //Second level
   setTimeout( function(){
     for(var i=0; i<conNodes.length; i++){ 
@@ -83,6 +90,8 @@ $(function(){
 
       for(var j=0; j<secondLvlNodes.length; j++){
         spacing = lvl2width/secondLvlNodes.length;
+        secondLvlNodes[j].addClass('levelTwo');
+
         secondLvlNodes[j].animate({
           position: { 
             x: conNodes[i].position().x +j*spacing-((secondLvlNodes.length-1)/2*spacing),
@@ -96,17 +105,17 @@ $(function(){
     }, layoutDuration );
 
 
-
-     setTimeout( function(){
-      cy.animate({
-        fit: {
-          eles: node.closedNeighborhood().closedNeighborhood(),
-          padding: 20
-        }
-      }, {
-        duration: layoutDuration
-      });
-     }, 2*layoutDuration+100 );
+  //Update viewport to fit elements
+  setTimeout( function(){
+    cy.animate({
+      fit: {
+        eles: node.closedNeighborhood().closedNeighborhood(),
+        padding: 20
+      }
+    }, {
+      duration: layoutDuration
+    });
+  }, 2*layoutDuration+100 );
      
 
     
@@ -114,6 +123,7 @@ $(function(){
         cy.elements().removeClass('highlighted').addClass('faded');
         node.closedNeighborhood().closedNeighborhood().removeClass('faded').addClass('highlighted');
     });
+
   }
 
 
@@ -441,6 +451,7 @@ $(function(){
     var markQualLead = $('#markQualLead').is(':checked');
     var saleQualLead = $('#saleQualLead').is(':checked');
     var prosp = $('#prosp').is(':checked');
+    var app = $('#app').is(':checked');
 
     var cloth = $('#cloth').is(':checked');
     var cars = $('#cars').is(':checked');
@@ -490,7 +501,11 @@ $(function(){
         } else if( type === 'Prospect' ){
           
           if( !prosp ){ filter(); }
-        }
+
+        } else if( type === 'Application' ){
+          
+          if( !app ){ filter(); }
+        }        
 
 
 
@@ -524,29 +539,13 @@ $(function(){
     
   });
 
-  $('#appFilter').on('click', 'input', function(){
+  $('#lvl2Filter').on('click', 'input', function(){
 
-    var app = $('#app').is(':checked');
-
-
-    cy.batch(function(){
-      
-      cy.nodes().forEach(function( n ){
-        var type = n.data('NodeType');
-        
-        n.removeClass('filtered');
-        
-        var filter = function(){
-          n.addClass('filtered');
-        };
-
-        if( type === 'Application' ){
-          
-          if( !app ){ filter(); }
-          
-        } 
-      });
-    }); 
+    var lvl2 = $('#lvl2').is(':checked');
+    
+    if(!lvl2){
+      cy.elements('.levelTwo').addClass('filtered');
+    }
   });
   
   $('#filter').qtip({
