@@ -55,52 +55,6 @@ $(function(){
   function highlight( node ){
     inCompFocusView = true;
     
-/*    //BUG: s is undefined. Fix by getting root of nhood
-    //Get two levels of connected nodes
-    var nhood = node.closedNeighborhood().closedNeighborhood(); 
-    //Get the root of the neighborhood
-    root = nhood.roots();
-    //Update nhood with the roots closed neighbourhood
-    nhood = root.closedNeighborhood().closedNeighborhood();
-*/
-    
-    // var nhood = node;
-    // nhood = nhood.add(node.connectedEdges());
-    // nhood = nhood.add(node.connectedEdges().connectedNodes());
-    // nhood = nhood.add(node.connectedEdges().connectedNodes('node[NodeType!="Customer"]').connectedEdges());
-    // nhood = nhood.add(node.connectedEdges().connectedNodes('node[NodeType!="Customer"]').connectedEdges().connectedNodes());
-
-    // var nhood = node;
-    // //nhood = nhood.add(node.connectedEdges());
-    // nhood = nhood.add(node.connectedEdges().connectedNodes('node[NodeType="Customer"]'));
-    // nhood = nhood.add(node.connectedEdges().connectedNodes('node[NodeType="Prospect"]'));
-    
-    
-
-    // cy.batch(function(){
-    //   cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
-    //   nhood.removeClass('faded').addClass('highlighted');
-      
-      
-    //   cy.stop().animate({
-    //     fit: {
-    //       eles: cy.elements(),
-    //       padding: layoutPadding
-    //     }
-    //   }, {
-    //     duration: layoutDuration
-    //   }).delay( layoutDuration, function(){
-    //     nhood.layout({
-    //       name: 'breadthfirst',
-    //       // directed: true,
-    //       // padding: layoutPadding,
-    //       animate: true,
-    //       animationDuration: layoutDuration,
-    //       fit: true  
-    //     });
-    //   });   
-    // });
-    
     var conNodes = node.connectedEdges().connectedNodes("node[id!='"+node.id()+"']");
     var posX;
     var posY;
@@ -166,8 +120,7 @@ $(function(){
   function focus( node ){
 
     //var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
-    var nhood = node.connectedNodes();
-    nhood = nhood.add(node.connectedEdges());
+    var nhood = node.closedNeighborhood().closedNeighborhood();
 
     cy.batch(function(){
       nhood.removeClass('faded').addClass('focused');
