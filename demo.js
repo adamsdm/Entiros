@@ -32,43 +32,6 @@ $(function(){
 
   // when both graph export json and style loaded, init cy
   Promise.all([ graphP, styleP ]).then(initCy);
-
-  function highlight( node ){
-    inCompFocusView = true;
-    
-    //BUG: s is undefined. Fix by getting root of nhood
-    //Get two levels of connected nodes
-    var nhood = node.closedNeighborhood().closedNeighborhood(); 
-    //Get the root of the neighborhood
-    root = nhood.roots();
-    //Update nhood with the roots closed neighbourhood
-    nhood = root.closedNeighborhood().closedNeighborhood();
-
-    cy.batch(function(){
-      cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
-      nhood.removeClass('faded').addClass('highlighted');
-      
-      
-      cy.stop().animate({
-        fit: {
-          eles: cy.elements(),
-          padding: layoutPadding
-        }
-      }, {
-        duration: layoutDuration
-      }).delay( layoutDuration, function(){
-        nhood.layout({
-          name: 'breadthfirst',
-          directed: true,
-          padding: layoutPadding,
-          animate: true,
-          animationDuration: layoutDuration,
-          fit: true  
-        });
-      });   
-    });
-  }
-
   function clear(){
     inCompFocusView = false;
 
@@ -88,20 +51,133 @@ $(function(){
     //setTimeout(function(){ reset(); }, layoutDuration);
   }
 
+
+  function highlight( node ){
+    inCompFocusView = true;
+    
+/*    //BUG: s is undefined. Fix by getting root of nhood
+    //Get two levels of connected nodes
+    var nhood = node.closedNeighborhood().closedNeighborhood(); 
+    //Get the root of the neighborhood
+    root = nhood.roots();
+    //Update nhood with the roots closed neighbourhood
+    nhood = root.closedNeighborhood().closedNeighborhood();
+*/
+    
+    // var nhood = node;
+    // nhood = nhood.add(node.connectedEdges());
+    // nhood = nhood.add(node.connectedEdges().connectedNodes());
+    // nhood = nhood.add(node.connectedEdges().connectedNodes('node[NodeType!="Customer"]').connectedEdges());
+    // nhood = nhood.add(node.connectedEdges().connectedNodes('node[NodeType!="Customer"]').connectedEdges().connectedNodes());
+
+    // var nhood = node;
+    // //nhood = nhood.add(node.connectedEdges());
+    // nhood = nhood.add(node.connectedEdges().connectedNodes('node[NodeType="Customer"]'));
+    // nhood = nhood.add(node.connectedEdges().connectedNodes('node[NodeType="Prospect"]'));
+    
+    
+
+    // cy.batch(function(){
+    //   cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
+    //   nhood.removeClass('faded').addClass('highlighted');
+      
+      
+    //   cy.stop().animate({
+    //     fit: {
+    //       eles: cy.elements(),
+    //       padding: layoutPadding
+    //     }
+    //   }, {
+    //     duration: layoutDuration
+    //   }).delay( layoutDuration, function(){
+    //     nhood.layout({
+    //       name: 'breadthfirst',
+    //       // directed: true,
+    //       // padding: layoutPadding,
+    //       animate: true,
+    //       animationDuration: layoutDuration,
+    //       fit: true  
+    //     });
+    //   });   
+    // });
+    
+    var conNodes = node.connectedEdges().connectedNodes("node[id!='"+node.id()+"']");
+    var posX;
+    var posY;
+    var lvl1width = 1200;
+    var lvl2width = 200;
+    var spacing = lvl1width/conNodes.length;
+
+
+    //First level
+    for(var i=0; i<conNodes.length; i++){ 
+      posX = node.position().x +i*spacing-((conNodes.length-1)/2*spacing);        
+      posY = node.position().y+200;
+
+       conNodes[i].animate({
+          position: { x: posX, y: posY } 
+        }, {
+          duration: layoutDuration 
+       });
+
+    }
+
+  //Second level
+  setTimeout( function(){
+    for(var i=0; i<conNodes.length; i++){ 
+      var secondLvlNodes = conNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
+
+      for(var j=0; j<secondLvlNodes.length; j++){
+        spacing = lvl2width/secondLvlNodes.length;
+        secondLvlNodes[j].animate({
+          position: { 
+            x: conNodes[i].position().x +j*spacing-((secondLvlNodes.length-1)/2*spacing),
+            y: node.position().y+400 
+          } 
+        }, {
+          duration: layoutDuration 
+       });
+      }
+     }
+    }, layoutDuration );
+
+
+
+     setTimeout( function(){
+      cy.animate({
+        fit: {
+          eles: node.closedNeighborhood().closedNeighborhood(),
+          padding: 20
+        }
+      }, {
+        duration: layoutDuration
+      });
+     }, 2*layoutDuration+100 );
+     
+
+    
+    cy.batch(function(){ 
+        cy.elements().removeClass('highlighted').addClass('faded');
+        node.closedNeighborhood().closedNeighborhood().removeClass('faded').addClass('highlighted');
+    });
+  }
+
+
   function focus( node ){
 
-    var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
+    //var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
+    var nhood = node.connectedNodes();
+    nhood = nhood.add(node.connectedEdges());
 
     cy.batch(function(){
-      //cy.elements().not( nhood ).removeClass('highlighted').addClass('faded');
-      nhood.removeClass('faded').addClass('highlighted');
-      nhood.addClass('highlighted');
+      nhood.removeClass('faded').addClass('focused');
+      nhood.addClass('focused');
     });
   }
 
   function unfocus(){
     cy.batch(function(){
-      cy.elements().removeClass('highlighted').removeClass('faded');
+      cy.elements().removeClass('focused').removeClass('faded');
     });
   }
 
@@ -243,6 +319,7 @@ $(function(){
       }
     });
 
+    //cy.remove('edge');
     //addEdges();
   }
   
