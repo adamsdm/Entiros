@@ -10,6 +10,10 @@ edge {
 	width: 2;
 	z-index: 0;
 	overlay-opacity: 0;
+	text-rotation: autorotate;
+	text-outline-color: white;
+	text-outline-width: 1px;
+	color:black;
 }
  
 node {
@@ -63,7 +67,7 @@ node[NodeType = "Other"] {
 	height: 30;
 }
 
-edge[interaction = "cc"] {
+edge[interaction = "RelToEdge"] {
 	line-color: #a9c742;
 	opacity: 0.666;
 	z-index: 9;
@@ -75,7 +79,7 @@ edge[interaction = "cp"] {
 }
 
  
-edge[interaction = "cw"] {
+edge[interaction = "apTeAtEdge"] {
 	line-color: white;
 	opacity: 0.2;
 	width: 4;
@@ -83,7 +87,7 @@ edge[interaction = "cw"] {
  
 
  
-edge[interaction = "cr"] {
+edge[interaction = "intAtEdge"] {
 	line-color: #87888a;
 	width: 4;
 }
@@ -102,7 +106,7 @@ node.highlighted {
 }
  
 edge.highlighted {
-	opacity: 0.8;
+	opacity: 1.0;
 	width: 4;
 	z-index: 9999;
 }

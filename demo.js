@@ -49,7 +49,7 @@ $(function(){
         });
         
         cy.elements('.levelTwo').removeClass('filtered');
-        cy.elements().removeClass('highlighted').removeClass('faded').removeClass('levelTwo').removeClass('focused');
+        cy.elements().removeClass('highlighted').removeClass('faded').removeClass('levelTwo');
       });
     }, layoutDuration);
 
@@ -61,9 +61,9 @@ $(function(){
     inCompFocusView = true;
     $('#lvl2Filter').show();
     
-    var intAtNodes = node.connectedEdges('edge[interaction="cr"]').connectedNodes("node[id!='"+node.id()+"']");
-    var aTeAtNodes = node.connectedEdges('edge[interaction="cw"]').connectedNodes("node[id!='"+node.id()+"']");
-    var relToNodes = node.connectedEdges('edge[interaction="cc"]').connectedNodes("node[id!='"+node.id()+"']");
+    var intAtNodes = node.connectedEdges('edge[interaction="intAtEdge"]').connectedNodes("node[id!='"+node.id()+"']");
+    var aTeAtNodes = node.connectedEdges('edge[interaction="apTeAtEdge"]').connectedNodes("node[id!='"+node.id()+"']");
+    var relToNodes = node.connectedEdges('edge[interaction="RelToEdge"]').connectedNodes("node[id!='"+node.id()+"']");
 
     var posX;
     var posY;
@@ -181,7 +181,7 @@ $(function(){
       cy.animate({
         fit: {
           eles: node.closedNeighborhood().closedNeighborhood(),
-          padding: 20
+          padding: 30
         }
       }, {
         duration: layoutDuration
@@ -191,7 +191,7 @@ $(function(){
 
     //highlight relevant nodes, and fade irrelevant nodes
     cy.batch(function(){ 
-        cy.elements().removeClass('highlighted').addClass('faded');
+        cy.elements().removeClass('highlighted').removeClass('focused').addClass('faded');
         node.closedNeighborhood().closedNeighborhood().removeClass('faded').addClass('highlighted');
     });
 
@@ -307,7 +307,7 @@ $(function(){
         for(var j=0; j<intAt.length; j++){
           cy.add({
             group:"edges",
-            data:{ source: thisId, target: intAt[j], interaction: "cr" }
+            data:{ source: thisId, target: intAt[j], interaction: "intAtEdge" }
           })
         }
       }
@@ -316,7 +316,7 @@ $(function(){
         for(var j=0; j<apTeAt.length; j++){
           cy.add({
             group:"edges",
-            data:{ source: thisId, target: apTeAt[j], interaction: "cw" }
+            data:{ source: thisId, target: apTeAt[j], interaction: "apTeAtEdge" }
           })
         } //for j    
       }
@@ -324,7 +324,7 @@ $(function(){
         for(var j=0; j<RelTo.length; j++){
           cy.add({
             group:"edges",
-            data:{ source: thisId, target: RelTo[j], interaction: "cc" }
+            data:{ source: thisId, target: RelTo[j], interaction: "RelToEdge" }
           })
         } //for j    
       }      
@@ -418,8 +418,8 @@ $(function(){
       }
     });
 
-    //cy.remove('edge');
-    //addEdges();
+    // cy.remove('edge');
+    // addEdges();
   }
   
   $('#search').typeahead({
