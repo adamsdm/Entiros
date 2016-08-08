@@ -90,6 +90,7 @@ function initCy( then ){
   }
 
   if (hash){
+      hash=hash.replace('+',' ');
       var comp = getCompData(hash);
 
     if (comp)

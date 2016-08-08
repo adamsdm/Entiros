@@ -27,5 +27,17 @@
       {"source":6, "target":11},
       {"source":6, "target":12}
     ]
-  }
+  },
+  {
+    "id": "Ex Customer",
+    "type":"Customer",
+    "Applications": ["Applikation 1", "Applikation 2", "Applikation 3","Applikation 4"],
+    "edges":[
+      {"source":"Applikation 1", "target":"Applikation 2"},
+      {"source":"Applikation 2", "target":"Applikation 3"},
+      {"source":"Applikation 4", "target":"Applikation 1"},
+      {"source":"Applikation 3", "target":"Applikation 4"}
+    ]
+  }  
+
 ]

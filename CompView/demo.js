@@ -387,10 +387,8 @@ $(function(){
       var node = this;
 
       cy.nodes().removeClass('hidden');
-      //if( node.data().NodeType =='Customer'){
-        highlight( node );
-        showNodeInfo( node );
-      //}
+      highlight( node );
+      showNodeInfo( node );
     });
 
     cy.on('unselect', 'node', function(e){

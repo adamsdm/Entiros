@@ -12,10 +12,13 @@ node{
 
 
 node:selected{
-  
-  
   border-width: 2;
 }
+edge:active{
+  overlay-opacity: 0;
+}
+
+
 
 node[type="eShape"]{
   label: ;
