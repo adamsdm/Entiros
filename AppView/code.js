@@ -406,8 +406,8 @@ function readData2( data ){
       //Edges below, bad edges
       { group: "edges", data: { source: dataSource, target: dataTarget, type: 'spaghEdge' } },
 
-      { group: "nodes", data: { type: 'conPointNodeBad', id:'sBadConP'+i}, position: {x: sourceConPosX, y: 400-i*15 }, selectable: false, locked: true, classes: 'filtered' },
-      { group: "nodes", data: { type: 'conPointNodeBad', id:'tBadConP'+i}, position: {x: targetConPosX, y: 400-i*15 }, selectable: false, locked: true, classes: 'filtered' },
+      { group: "nodes", data: { type: 'conPointNodeBad', id:'sBadConP'+i}, position: {x: sourceConPosX, y: 400+i*15 }, selectable: false, locked: true, classes: 'filtered' },
+      { group: "nodes", data: { type: 'conPointNodeBad', id:'tBadConP'+i}, position: {x: targetConPosX, y: 400+i*15 }, selectable: false, locked: true, classes: 'filtered' },
       { group: "edges", data: { source: dataSource, target: 'sBadConP'+i, type: 'straightSpaghEdge' } },
       { group: "edges", data: { source: 'sBadConP'+i, target: 'tBadConP'+i, type: 'straightSpaghEdge' } },
       { group: "edges", data: { source: 'tBadConP'+i, target: dataTarget, type: 'straightSpaghEdge' } },
