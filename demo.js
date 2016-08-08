@@ -69,7 +69,7 @@ $(function(){
     var posY;
     var levelHeight = 200;
     var lvl1width = 1200;
-    var lvl2width = 200;
+    var lvl2width = 600;
     var spacing;  
 
 
@@ -139,7 +139,7 @@ $(function(){
 
       // Ap te at nodes
       for(var i=0; i<aTeAtNodes.length; i++){
-        var secondLvlNodes = aTeNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
+        var secondLvlNodes = aTeAtNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
         for(var j=0; j<secondLvlNodes.length; j++){
           spacing = lvl2width/secondLvlNodes.length;          
           secondLvlNodes[j].addClass('levelTwo');
@@ -473,7 +473,6 @@ $(function(){
         cy.nodes().not( cy.elements().stdFilter( anyFieldMatches ) ).addClass('hidden');
       });
       
-      console.log(res);
       cb( res );
     },
     templates: {
@@ -502,46 +501,41 @@ $(function(){
     var radius;
     var angle; 
     var closeDate;  
-    
-    //Position the customer and prospect custNodes  
-    for(var ci =0; ci < custNodes.length; ci++){
-      closeDate = new Date(custNodes[ci].data().closeDate);
+    var typeArray = [];  
+    var typeInd;
 
-      radius = 100+scaleDate(closeDate);
+    //Get unique company types and store them in typeArray
+    for(var i=0; i<custNodes.length; i++){
+        typeArray.push(custNodes[i].data().CompanyType);
+    }
+    typeArray = typeArray.filter( onlyUnique );
 
-      if(custNodes[ci].data().CompanyType == "Clothing"){
-        angle = 0*Math.PI/5 + Math.random()*Math.PI/5;
-      }
-      else if(custNodes[ci].data().CompanyType == "Cars"){
-        angle = 2*Math.PI/5 + Math.random()*Math.PI/5;
-      }
-      else if(custNodes[ci].data().CompanyType == "Food"){
-        angle = 4*Math.PI/5 + Math.random()*Math.PI/5;
-      }
-      else if(custNodes[ci].data().CompanyType == "Electronics"){
-        angle = 6*Math.PI/5 + Math.random()*Math.PI/5;
-      }
-      else if(custNodes[ci].data().CompanyType == "Candy"){
-        angle = 8*Math.PI/5 + Math.random()*Math.PI/5;
-      }
-      
-      //Set customer position
-      custNodes[ci].position().x = radius*Math.cos(angle);
-      custNodes[ci].position().y = radius*Math.sin(angle);
-      
-      //Get prospect neighbours and place them near root customer 
-      var neighbors = custNodes[ci].openNeighborhood('node[NodeType="Prospect"]');
+    //For each customer
+    for(var i=0; i<custNodes.length; i++){
+      typeInd = getTypeIndex(custNodes[i].data().CompanyType);  //Get current customer type index from typeArray
+      closeDate = new Date(custNodes[i].data().closeDate);      //Get the close date 
+      radius = 100+scaleDate(closeDate);                        
+      angle = 2*typeInd*Math.PI/typeArray.length + Math.random()*Math.PI/typeArray.length;   //Set circle disk angle 
+
+      //Set customer node position
+      custNodes[i].position().x = radius*Math.cos(angle);
+      custNodes[i].position().y = radius*Math.sin(angle); 
+
+
+      var neighbors = custNodes[i].openNeighborhood('node[NodeType="Prospect"]');      
       for(var j=0; j<neighbors.length; j++ ){
-        neighbors[j].position().x = custNodes[ci].position().x + ( 200*Math.cos(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
-        neighbors[j].position().y = custNodes[ci].position().y + ( 200*Math.sin(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
-      }
+        neighbors[j].position().x = custNodes[i].position().x + ( 200*Math.cos(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
+        neighbors[j].position().y = custNodes[i].position().y + ( 200*Math.sin(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
+      }            
     }
 
-
+    // Place applikation nodes in list to the right
     for(var ai=0; ai<appNodes.length; ai++){
       appNodes[ai].position().x = 4000;
       appNodes[ai].position().y = -2500 + ( ai*5000/appNodes.length);
     }
+
+    cy.style().update();
 
 
     function scaleDate(_closeDate){
@@ -555,6 +549,16 @@ $(function(){
       
       return result;
     }
+
+    function getTypeIndex(type) { 
+      for(var i = 0; i<typeArray.length; i++)
+        if(type == typeArray[i])
+          return i;
+    }     
+    
+    function onlyUnique(value, index, self) { 
+      return self.indexOf(value) === index;
+    } 
   }
 
 
@@ -562,7 +566,7 @@ $(function(){
   
   $('#debug').on('click', function(){
     positionAlgorithm(); 
-    alert("Position algorithm done, click save to export as json.");
+    //alert("Position algorithm done, click save to export as json.");
   });
 
   $('#save').on('click', function(){
