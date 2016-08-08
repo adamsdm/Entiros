@@ -15,11 +15,6 @@ node:selected{
   border-width: 2;
 }
 
-edge[type="eShape"]:active,
-node[type="eShape"]:active{
-  overlay-opacity: 0;
-}
-
 
 
 node[type="eShape"]{
@@ -48,6 +43,13 @@ node[type="conPointNodeGood"]{
   label: ;
 }
 
+node[type="conPointNodeBad"]{
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  label: ;
+}
+
 node[type="conPointNodeRight"]{
   width: 10px;
   height: 10px;
@@ -66,11 +68,21 @@ edge[type="eShape"]{
   line-color: #e8e8e8;
 }
 
+edge[type="eShape"]:active,
+node[type="eShape"]:active{
+  overlay-opacity: 0;
+}
+
 edge[type="spaghEdge"]{
   curve-style: unbundled-bezier;
   width:1px;
   control-point-distances: 50;
   control-point-weight: .5;
+  line-color: red;
+}
+edge[type="straightSpaghEdge"]{
+  curve-style: haystack;
+  width:1px;
   line-color: red;
 }
 

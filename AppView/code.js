@@ -302,8 +302,8 @@ $('#addProcess').on('click', function(){
   addProcess();
 })
 $('#debug').on('click', function(){
-  readData(graphP.responseJSON[0]);
-  cy.layout(theLayout);
+  // readData(graphP.responseJSON[0]);
+  // cy.layout(theLayout);
 })
 
 $('#clear').on('click', function(){
@@ -372,9 +372,6 @@ function getQueryVariable(variable)
 }
 
 
-//*************************************//
-//** Connection points in middle bar **//
-//*************************************//
 function readData2( data ){
   reset();
 
@@ -396,13 +393,25 @@ function readData2( data ){
     //Connection points
     incMidBarWidth();
     cy.add([
+
+      //Middle bar nodes, edges
       { group: "nodes", data: { type: 'conPointNodeGood', id:'sConP'+i}, position: {x: sourceConPosX, y: 100-i*15 }, selectable: false, locked: true },
       { group: "nodes", data: { type: 'conPointNodeGood', id:'tConP'+i}, position: {x: targetConPosX, y: 100-i*15 }, selectable: false, locked: true },
-
       { group: "edges", data: { source: dataSource, target: 'sConP'+i, type: 'goodIntEdge' } },
       { group: "edges", data: { source: 'sConP'+i, target: 'tConP'+i, type: 'goodIntEdge' } },
       { group: "edges", data: { source: 'tConP'+i, target: dataTarget, type: 'goodIntEdge' } },
+      
+      
+
+      //Edges below, bad edges
       { group: "edges", data: { source: dataSource, target: dataTarget, type: 'spaghEdge' } },
+
+      { group: "nodes", data: { type: 'conPointNodeBad', id:'sBadConP'+i}, position: {x: sourceConPosX, y: 400-i*15 }, selectable: false, locked: true, classes: 'filtered' },
+      { group: "nodes", data: { type: 'conPointNodeBad', id:'tBadConP'+i}, position: {x: targetConPosX, y: 400-i*15 }, selectable: false, locked: true, classes: 'filtered' },
+      { group: "edges", data: { source: dataSource, target: 'sBadConP'+i, type: 'straightSpaghEdge' } },
+      { group: "edges", data: { source: 'sBadConP'+i, target: 'tBadConP'+i, type: 'straightSpaghEdge' } },
+      { group: "edges", data: { source: 'tBadConP'+i, target: dataTarget, type: 'straightSpaghEdge' } },
+
 
       //right side integrations
       { group: "nodes", data: { type: 'conPointNodeRight', id:'intConP'+i, label: data.edges[i].source+' -> '+data.edges[i].target }, 
@@ -538,6 +547,7 @@ $('#filters').on('click', 'input', function(){
   var badIntEdges = $('#badIntEdges').is(':checked');
   var goodIntEdges = $('#goodIntEdges').is(':checked');
   var rightIntEdges = $('#rightIntEdges').is(':checked');
+  var toggleBadGrid = $('#toggleBadGrid').is(':checked');
 
   cy.batch(function(){
     cy.elements().forEach(function( n ){
@@ -555,13 +565,17 @@ $('#filters').on('click', 'input', function(){
         
       } else if( type === 'spaghEdge' ){
         
-        if( !badIntEdges ){ filter(); }
+        if( !badIntEdges || toggleBadGrid ){ filter(); }
         
       } else if( type === 'conPointNodeRight' ){
         
         if( !rightIntEdges ){ filter(); }
 
-      } 
+      } else if( type === 'conPointNodeBad' ){
+        
+        if( !toggleBadGrid ){ filter(); }
+        
+      }  
     });
     // cy.nodes().forEach(function( n ){
     //   var type = n.data('NodeType');
