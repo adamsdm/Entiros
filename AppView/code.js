@@ -45,7 +45,6 @@ function initCy( then ){
   // var hash = window.location.hash.substring(1);
   var hash = getQueryVariable("Company");
 
-
   cy = cytoscape({
     container: document.getElementById('cy'),
     
@@ -103,6 +102,9 @@ function initCy( then ){
   cy.on('select', 'node', function(e){
     var node = this;
     var conEdges = cy.collection();
+    var rightNode = node.connectedEdges('edge[type="rightIntEdge"]').connectedNodes('node[type="conPointNodeRight"]');
+        rightNode = rightNode.add( rightNode.connectedEdges() );
+
 
     if( node.data().type == 'app'){
       conEdges = conEdges.add( node.connectedEdges('edge[type="goodIntEdge"]').connectedNodes().connectedEdges('edge[type="goodIntEdge"]').connectedNodes().connectedEdges('edge[type="goodIntEdge"]') );
@@ -122,7 +124,12 @@ function initCy( then ){
         duration:500
       });
 
-      //console.log(node.data());
+      rightNode.animate({
+        style: {'background-color':'red', 'opacity':'1,0', }
+      }, {
+        duration:500
+      });
+
       showNodeInfo(node);
     }
   });
@@ -137,14 +144,24 @@ function initCy( then ){
     }, {
       duration: 500
     });
-
-    console.log(styleP);
+    cy.edges('edge[type="rightIntEdge"]').animate({
+      style: { 'opacity' : '0.3' }
+    }, {
+      duration: 500
+    });
 
     cy.nodes('node[type="app"]').animate({
       style: {'width':'40px','height':'40px' }
     }, {
       duration:500
     });
+
+    cy.nodes('node[type="conPointNodeRight"]').animate({
+      style: { 'background-color':'black' }
+    }, {
+      duration:500
+    });
+    
 
     hideNodeInfo();
   });

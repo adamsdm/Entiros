@@ -14,7 +14,9 @@ node{
 node:selected{
   border-width: 2;
 }
-edge:active{
+
+edge[type="eShape"]:active,
+node[type="eShape"]:active{
   overlay-opacity: 0;
 }
 
