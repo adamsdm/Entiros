@@ -1,7 +1,7 @@
 
 node{
   label:data(id);
-  background-color:#a9c742;
+  background-color: #a9c742;
   text-valign: center;
   color:white;
   width:40;
@@ -37,16 +37,15 @@ node[type="app"]{
 }
 
 node[type="conPointNodeGood"]{
-  width: 10px;
-  height: 10px;
-  background-color: black;
+  width: 0px;
+  height: 0px;
+  background-color: #a9c742;
   label: ;
 }
 
 node[type="conPointNodeBad"]{
-  width: 10px;
-  height: 10px;
-  background-color: black;
+  width: 0px;
+  height: 0px;
   label: ;
 }
 

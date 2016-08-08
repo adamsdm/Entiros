@@ -573,7 +573,7 @@ $('#filters').on('click', 'input', function(){
 
       } else if( type === 'conPointNodeBad' ){
         
-        if( !toggleBadGrid ){ filter(); }
+        if( !toggleBadGrid || !badIntEdges ){ filter(); }
         
       }  
     });
