@@ -1,0 +1,97 @@
+
+node{
+  label:data(id);
+  background-color:#a9c742;
+  text-valign: center;
+  color:white;
+  width:40;
+  height: 40;
+  text-outline-width: 2;
+  text-outline-color: #a9c742;
+}
+
+
+node:selected{
+  
+  
+  border-width: 2;
+}
+
+node[type="eShape"]{
+  label: ;
+  text-rotation: 0;
+  background-color: #e8e8e8;
+  width: 30;
+  height: 30;
+  z-index: 0;
+}
+
+node[type="app"]{
+    color: black;
+    font-size: 10;
+
+    text-outline-width: 0;
+    text-rotation: -.7;
+    text-valign: bottom;
+    text-halign: left;
+}
+
+node[type="conPointNodeGood"]{
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  label: ;
+}
+
+node[type="conPointNodeRight"]{
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  label: data(label);  
+  color: black;
+  font-size: 10;
+  text-outline-width: 0;
+  text-halign: right;
+  text-margin-x: 10px;
+}
+
+edge[type="eShape"]{
+  curve-style: haystack;
+  width: 30px;
+  line-color: #e8e8e8;
+}
+
+edge[type="spaghEdge"]{
+  curve-style: unbundled-bezier;
+  width:1px;
+  control-point-distances: 50;
+  control-point-weight: .5;
+  line-color: red;
+}
+
+edge[type="goodIntEdge"]{
+  curve-style: haystack;
+  width:1px;
+  line-color: #a9c742;
+}
+edge[type="rightIntEdge"]{
+  curve-style: haystack;
+  width:1px;
+  line-color: #b1b2b4;
+  line-style: dashed;
+  opacity: 0.3;
+}
+
+#a, #b, #c{
+  text-valign: center;
+  text-halign: left;
+  text-margin-x: -20;
+}
+
+#aEnd, #bEnd, #cEnd{
+  width:1px;
+}
+
+.filtered {
+  display: none;
+}

@@ -8,14 +8,14 @@ $(function(){
   // get exported json from cytoscape desktop via ajax
   var graphP = $.ajax({
     //url: './data/dataCalcsPolCoordRESULT.json', 
-    url: './data/pyFormatedData.json', 
+    url: './CompView/data/pyFormatedData.json', 
     type: 'GET',
     dataType: 'json'
   });
 
   // also get style via ajax
   var styleP = $.ajax({
-    url: './data/style.cycss', 
+    url: './CompView/data/style.cycss', 
     type: 'GET',
     dataType: 'text'
   });
@@ -48,7 +48,7 @@ $(function(){
           },{duration: layoutDuration});
         });
         
-        cy.elements('.levelTwo').removeClass('filtered');
+        //cy.elements('.levelTwo').removeClass('filtered');
         cy.elements().removeClass('highlighted').removeClass('faded').removeClass('levelTwo');
       });
     }, layoutDuration);
