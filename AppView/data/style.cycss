@@ -84,7 +84,7 @@ edge[type="rightIntEdge"]{
   width:1px;
   line-color: #b1b2b4;
   line-style: dashed;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 #a, #b, #c{

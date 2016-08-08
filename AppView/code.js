@@ -5,6 +5,8 @@ var noProc = 0;
 var noSyst = 0;
 var noApps = 0;
 
+var layoutDuration = 500;
+
 var cy;
 
 var theLayout = {
@@ -115,19 +117,19 @@ function initCy( then ){
       conEdges.animate({
         style: { 'line-color' : 'blue' }
       }, {
-        duration: 500
+        duration: layoutDuration
       });
 
       node.animate({
         style: {'width':'50px','height':'50px',  }
       }, {
-        duration:500
+        duration: layoutDuration
       });
 
       rightNode.animate({
         style: {'background-color':'red', 'opacity':'1,0', }
       }, {
-        duration:500
+        duration: layoutDuration
       });
 
       showNodeInfo(node);
@@ -142,24 +144,24 @@ function initCy( then ){
     cy.edges('edge[type="goodIntEdge"]').animate({
       style: { 'line-color' : '#a9c742' }
     }, {
-      duration: 500
+      duration: layoutDuration
     });
     cy.edges('edge[type="rightIntEdge"]').animate({
-      style: { 'opacity' : '0.3' }
+      style: { 'opacity' : '0.2' }
     }, {
-      duration: 500
+      duration: layoutDuration
     });
 
     cy.nodes('node[type="app"]').animate({
       style: {'width':'40px','height':'40px' }
     }, {
-      duration:500
+      duration: layoutDuration
     });
 
     cy.nodes('node[type="conPointNodeRight"]').animate({
       style: { 'background-color':'black' }
     }, {
-      duration:500
+      duration: layoutDuration
     });
     
 
