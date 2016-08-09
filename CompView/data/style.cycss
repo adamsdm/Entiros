@@ -73,16 +73,26 @@ edge[interaction = "RelToEdge"] {
 	z-index: 9;
 	width: 4;
 }
-edge[interaction = "cp"] {
-	line-color: white;
-	width: 4;
+edge[interaction = "RelToEdge"].highlighted {
+	label: Related to;
+	text-rotation: autorotate;
+	color:black;
+	text-outline-color: white;
+	text-outline-width: 1px;
 }
-
  
 edge[interaction = "apTeAtEdge"] {
 	line-color: white;
 	opacity: 0.2;
 	width: 4;
+}
+
+edge[interaction = "apTeAtEdge"].highlighted {
+	label: App team at;
+	text-rotation: autorotate;
+	color:black;
+	text-outline-color: white;
+	text-outline-width: 1px;
 }
  
 
@@ -90,6 +100,13 @@ edge[interaction = "apTeAtEdge"] {
 edge[interaction = "intAtEdge"] {
 	line-color: #87888a;
 	width: 4;
+}
+edge[interaction = "intAtEdge"].highlighted {
+	label: Integrated at;
+	text-rotation: autorotate;
+	color:black;
+	text-outline-color: white;
+	text-outline-width: 1px;
 }
  
 node[NodeType = "Cider"] {
