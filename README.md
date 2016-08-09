@@ -1,4 +1,4 @@
-# Entiros Company View ![Entiros logo](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Entiros")
+# Entiros Company View ![Entiros logo](http://www.entiros.se/sites/all/themes/entiros/logo.png "Entiros")
 
 
 1. Navigate to local repo
