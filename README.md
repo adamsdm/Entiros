@@ -1,4 +1,5 @@
-# Entiros Company View
+# Entiros Company View ![Entiros logo](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Entiros")
+
 
 1. Navigate to local repo
 2. Start php-server ( https://gist.github.com/willurd/5720255 )
