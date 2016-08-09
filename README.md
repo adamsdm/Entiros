@@ -1,5 +1,5 @@
 # Entiros Company View
-* <a href=#install-localy> Instal Localy </a>
+* <a href=#install-localy> Install Localy </a>
 * <a href=#company-view> Company View </a>
 * <a href=#application-view> Application View </a>
 
@@ -10,7 +10,7 @@
 
 
 ###Company View
-When adding data to company view, the data should be in well-formatted .JSON. It is important that all entries are seperated by a ',' except the lasat entry.
+When adding data to company view, the data should be in well-formatted .JSON. It is important that all entries are seperated by a ',' except the last entry.
 
 1. Update the URL to the data-file in demo.js (line 11).
 2. When the data is read for the first time all node positions is set to {x: 0, y:0}, run `positionAlgorithm()`.
