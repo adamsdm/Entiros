@@ -1,5 +1,7 @@
 # Entiros Company View
-<a href=#Install-localy> Instal Localy </a>
+* <a href=#install-localy> Instal Localy </a>
+* <a href=#company-view> Company View </a>
+* <a href=#application-view> Application View </a>
 
 ##Install localy
 1. Navigate to local repo
