@@ -1,12 +1,12 @@
 # Entiros Company View
 
-
+##Install localy
 1. Navigate to local repo
 2. Start php-server ( https://gist.github.com/willurd/5720255 )
 3. Navigate to localhost:#PORT_NUMBER
 
 
-##Company View
+###Company View
 When adding data to company view, the data should be in well-formatted .JSON. It is important that all entries are seperated by a ',' except the lasat entry.
 
 1. Update the URL to the data-file in demo.js (line 11).
