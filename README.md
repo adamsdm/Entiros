@@ -14,6 +14,7 @@ When adding data to company view, the data should be in well-formatted .JSON. It
 3. There is also no connections between the nodes, run `addEdges()` (demo.js:420-421)
 4. Save the data by pressing the save button, copy the generated .JSON code and update the datafile with the new code.
 
+####data.json 
 ```JSON
 {
   "elements": {
@@ -66,6 +67,7 @@ To add data to the Application View is more simple.
 Just add the data to the `data.json` file in well formatted JSON format.
 The script will then automatically position the nodes and add an option in the select-company dropdown menu
 
+####data.json 
 ```JSON
 [
   {
@@ -83,5 +85,4 @@ The script will then automatically position the nodes and add an option in the s
     //Next entry
   }
 ]
-
 ```
