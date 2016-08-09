@@ -10,8 +10,8 @@
 When adding data to company view, the data should be in well-formatted .JSON. It is important that all entries are seperated by a ',' except the lasat entry.
 
 1. Update the URL to the data-file in demo.js (line 11).
-2. When the data is read for the first time all node positions is set to {x: 0, y:0}, run ```positionAlgorithm()```.
-3. There is also no connections between the nodes, run ```addEdges()``` (demo.js:420-421)
+2. When the data is read for the first time all node positions is set to {x: 0, y:0}, run `positionAlgorithm()`.
+3. There is also no connections between the nodes, run `addEdges()` (demo.js:420-421)
 4. Save the data by pressing the save button, copy the generated .JSON code and update the datafile with the new code.
 
 ```JSON
@@ -61,4 +61,27 @@ When adding data to company view, the data should be in well-formatted .JSON. It
 }
 ```
 
+###Application View
+To add data to the Application View is more simple.
+Just add the data to the `data.json` file in well formatted JSON format.
+The script will then automatically position the nodes and add an option in the select-company dropdown menu
 
+```JSON
+[
+  {
+    "id": "Gant",
+    "type":"Customer",
+    "Applications": ["En applikation","En annan applikation med ett långt namn","Appen","En till","och en sista"],
+    "edges":[
+      {"source":"En applikation", "target":"En annan applikation med ett långt namn"},
+      {"source":"En applikation", "target":"Appen"},
+      {"source":"En annan applikation med ett långt namn", "target":"En till"},
+      {"source":"En annan applikation med ett långt namn", "target":"och en sista"}
+    ]
+  },
+  {
+    //Next entry
+  }
+]
+
+```
