@@ -1,4 +1,4 @@
-# Entiros Company View ![Entiros logo](http://www.entiros.se/sites/all/themes/entiros/logo.png "Entiros")
+# Entiros Company View
 
 
 1. Navigate to local repo
