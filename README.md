@@ -1,5 +1,5 @@
 # Entiros Company View
-<a href=#Install+localy> Instal Localy </a>
+<a href=#Install-localy> Instal Localy </a>
 
 ##Install localy
 1. Navigate to local repo
