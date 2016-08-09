@@ -8,7 +8,7 @@
 ##Company View
 When adding data to company view, the data should be in well-formatted .JSON.
 
-'''
+'''JSON
 {
   "elements": {
     "nodes": [
