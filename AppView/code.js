@@ -58,18 +58,26 @@ function initCy( then ){
       nodes: [
         // eShape
         { data: { id: 'a', type: 'eShape' }, position: { x: 0, y:   0 }, grabbable: false, locked: true, selectable: false },
-        { data: { id: 'b', type: 'eShape' }, position: { x: 0, y: 100 }, grabbable: false, locked: true, selectable: false },
-        { data: { id: 'c', type: 'eShape' }, position: { x: 0, y: 200 }, grabbable: false, locked: true, selectable: false },
+        { data: { id: 'aCornerBG', type: 'eShapeCorner' }, position: { x: 22, y:   22 }, grabbable: false, locked: true, selectable: false },
+        { data: { id: 'aCorner',   type: 'eShapeCorner' }, position: { x: 30, y:   30 }, grabbable: false, locked: true, selectable: false },
+
+        { data: { id: 'b', type: 'eShape' }, position: { x: 0, y: 60 }, grabbable: false, locked: true, selectable: false },
+        { data: { id: 'bCornerBG', type: 'eShapeCorner' }, position: { x: 22, y:   98 }, grabbable: false, locked: true, selectable: false },
+        { data: { id: 'bCorner',   type: 'eShapeCorner' }, position: { x: 30, y:   90 }, grabbable: false, locked: true, selectable: false },
+
+        { data: { id: 'c', type: 'eShape' }, position: { x: 0, y: 120 }, grabbable: false, locked: true, selectable: false },
         { data: { id: 'aEnd', type: 'eShape' }, position: { x: 200, y:   0 }, style :{ shape:'square' }, grabbable: false, locked: true, selectable: false },
-        { data: { id: 'bEnd', type: 'eShape' }, position: { x: 175, y: 100 }, style :{ shape:'square' }, grabbable: false, locked: true, selectable: false },
-        { data: { id: 'cEnd', type: 'eShape' }, position: { x: 200, y: 200 }, style :{ shape:'square' }, grabbable: false, locked: true, selectable: false },
+        { data: { id: 'bEnd', type: 'eShape' }, position: { x: 175, y: 60 }, style :{ shape:'square' }, grabbable: false, locked: true, selectable: false },
+        { data: { id: 'cEnd', type: 'eShape' }, position: { x: 200, y: 120 }, style :{ shape:'square' }, grabbable: false, locked: true, selectable: false },
 
       ],
       edges: [
         { data: { type: 'eShape', source: 'a', target: 'aEnd', id: 'EtopBar' } },
         { data: { type: 'eShape', source: 'b', target: 'bEnd', id: 'EmidBar'  } },
         { data: { type: 'eShape', source: 'c', target: 'cEnd', id: 'EbotBar'  } },
-        { data: { type: 'eShape', source: 'a', target: 'c' } },
+        { data: { type: 'eShape', source: 'a', target: 'c' },  id: 'EBackBone'},
+
+
       ]
     },
     
@@ -103,13 +111,16 @@ function initCy( then ){
   //Event listeners
   cy.on('select', 'node', function(e){
     var node = this;
-    var conEdges = cy.collection();
-    var rightNode = node.connectedEdges('edge[type="rightIntEdge"]').connectedNodes('node[type="conPointNodeRight"]');
+    var conEdges = node.connectedEdges('edge[type="goodIntEdge"]').connectedNodes().connectedEdges('edge[type="goodIntEdge"]').connectedNodes().connectedEdges('edge[type="goodIntEdge"]');
+    var conNodes = conEdges.connectedNodes('node[type="app"][id!="'+node.id()+'"]');
+    var rightNode = node.connectedEdges('edge[type="rightIntEdge"]').connectedNodes('node[type="conPointNodeRightGood"]');
         rightNode = rightNode.add( rightNode.connectedEdges() );
 
 
+    console.log(conNodes);
+
+
     if( node.data().type == 'app'){
-      conEdges = conEdges.add( node.connectedEdges('edge[type="goodIntEdge"]').connectedNodes().connectedEdges('edge[type="goodIntEdge"]').connectedNodes().connectedEdges('edge[type="goodIntEdge"]') );
 
       conEdges.style({
         'z-index':'9999'
@@ -121,6 +132,11 @@ function initCy( then ){
       });
 
       node.animate({
+        style: {'width':'50px','height':'50px',  }
+      }, {
+        duration: layoutDuration
+      });
+      conNodes.animate({
         style: {'width':'50px','height':'50px',  }
       }, {
         duration: layoutDuration
@@ -158,7 +174,7 @@ function initCy( then ){
       duration: layoutDuration
     });
 
-    cy.nodes('node[type="conPointNodeRight"]').animate({
+    cy.nodes('node[type="conPointNodeRightGood"]').animate({
       style: { 'background-color':'black' }
     }, {
       duration: layoutDuration
@@ -179,10 +195,16 @@ function initCy( then ){
       hideNodeInfo();
   });
 
-  cy.on('select', 'edge', function(e){
+  cy.on('tap', 'edge', function(e){
     var edge = this;
 
     console.log(edge.data());
+  });
+
+  cy.on('tap', 'node', function(e){
+    var node = this;
+
+    console.log(node.data());
   });
 }
 
@@ -228,7 +250,7 @@ var addProcess = function(){
   console.log("Add Process");
 
   noProc++;
-  var position={ x: noProc*60, y: 100 };
+  var position={ x: noProc*60, y: 60 };
   if(position.x > cy.$('#aEnd').position().x){
     cy.$('#aEnd').position().x += 60;
     cy.$('#bEnd').position().x += 60;
@@ -249,7 +271,7 @@ var addSystem = function(){
 
 
   noSyst++;
-  var position={ x: noSyst*60, y: 200 };
+  var position={ x: noSyst*60, y: 120 };
   if(position.x > cy.$('#aEnd').position().x){
     cy.$('#aEnd').position().x += 60;
     cy.$('#bEnd').position().x += 60;
@@ -329,7 +351,7 @@ function hideNodeInfo(){
 
 function reset(){
 
-  cy.remove( cy.elements("node[type != 'eShape']") );
+  cy.remove( cy.elements("node[type != 'eShape'][type != 'eShapeCorner']") );
   cy.$('#aEnd').position().x = 200;
   cy.$('#bEnd').position().x = 175;
   cy.$('#cEnd').position().x = 200;
@@ -348,8 +370,8 @@ function reset(){
   cy.$('#aEnd').position().y = 0;
 
   //move middle bar to initial position
-  cy.$('#b').position().y=100;
-  cy.$('#bEnd').position().y=100;
+  cy.$('#b').position().y=60;
+  cy.$('#bEnd').position().y=60;
 
   noApps = 0;
   noSyst = 0;
@@ -395,8 +417,8 @@ function readData2( data ){
     cy.add([
 
       //Middle bar nodes, edges
-      { group: "nodes", data: { type: 'conPointNodeGood', id:'sConP'+i}, position: {x: sourceConPosX, y: 100-i*15 }, selectable: false, locked: true },
-      { group: "nodes", data: { type: 'conPointNodeGood', id:'tConP'+i}, position: {x: targetConPosX, y: 100-i*15 }, selectable: false, locked: true },
+      { group: "nodes", data: { type: 'conPointNodeGood', id:'sConP'+i}, position: {x: sourceConPosX, y: 60-i*15 }, selectable: false, locked: true },
+      { group: "nodes", data: { type: 'conPointNodeGood', id:'tConP'+i}, position: {x: targetConPosX, y: 60-i*15 }, selectable: false, locked: true },
       { group: "edges", data: { source: dataSource, target: 'sConP'+i, type: 'goodIntEdge' } },
       { group: "edges", data: { source: 'sConP'+i, target: 'tConP'+i, type: 'goodIntEdge' } },
       { group: "edges", data: { source: 'tConP'+i, target: dataTarget, type: 'goodIntEdge' } },
@@ -410,18 +432,27 @@ function readData2( data ){
       { group: "nodes", data: { type: 'conPointNodeBad', id:'tBadConP'+i}, position: {x: targetConPosX, y: 400+i*15 }, selectable: false, locked: true, classes: 'filtered' },
       { group: "edges", data: { source: dataSource, target: 'sBadConP'+i, type: 'straightSpaghEdge' } },
       { group: "edges", data: { source: 'sBadConP'+i, target: 'tBadConP'+i, type: 'straightSpaghEdge' } },
-      { group: "edges", data: { source: 'tBadConP'+i, target: dataTarget, type: 'straightSpaghEdge' } },
-
-
-      //right side integrations
-      { group: "nodes", data: { type: 'conPointNodeRight', id:'intConP'+i, label: data.edges[i].source+' -> '+data.edges[i].target }, 
-        position: {x: cy.$('#aEnd').position().x + 70, y: cy.$('#cEnd').position().y-i*300/data.edges.length } }, //Connection point
-
-      { group: "edges", data: { source: data.edges[i].source, target: 'intConP'+i, type: 'rightIntEdge' } },            //int edge source->conP
-      { group: "edges", data: { source: 'intConP'+i, target: data.edges[i].target, type: 'rightIntEdge' } }             //int edge source->conP      
+      { group: "edges", data: { source: 'tBadConP'+i, target: dataTarget, type: 'straightSpaghEdge' } },  
+    
     ]);
-  }
 
+    //Right side integration list
+    cy.add([
+      //Good
+      { group: "nodes", data: { type: 'conPointNodeRightGood', id:'intConPGood'+i, label: data.edges[i].source+' -> '+data.edges[i].target }, 
+        position: { x: cy.$('#aEnd').position().x + 10, y: cy.$("#sConP"+String(i) ).position().y } }, //Connection point
+
+      { group: "edges", data: { source: data.edges[i].source, target: 'intConPGood'+i, type: 'rightIntEdge' }, classes: 'filtered' },            //int edge source->conP
+      { group: "edges", data: { source: 'intConPGood'+i, target: data.edges[i].target, type: 'rightIntEdge' }, classes: 'filtered' },             //int edge source->conP  
+
+      //Bad
+      { group: "nodes", data: { type: 'conPointNodeRightBad', id:'intConPBad'+i, label: data.edges[i].source+' -> '+data.edges[i].target }, classes: 'filtered', 
+        position: { x: cy.$('#aEnd').position().x + 10, y: cy.$("#sBadConP"+String(i) ).position().y } }, //Connection point
+
+      { group: "edges", data: { source: data.edges[i].source, target: 'intConPBad'+i, type: 'rightIntEdge' }, classes: 'filtered'  },            //int edge source->conP
+      { group: "edges", data: { source: 'intConPBad'+i, target: data.edges[i].target, type: 'rightIntEdge' }, classes: 'filtered'  },             //int edge source->conP     
+    ]);  
+}
 
 
   //Add data to each app containing connected targets
@@ -466,6 +497,8 @@ function incMidBarWidth(){
   //move top bar
   cy.$('#a').position().y -= stepSize;
   cy.$('#aEnd').position().y -= stepSize;
+  cy.$('#aCorner').position().y -= stepSize;
+  cy.$('#aCornerBG').position().y -= stepSize;
 
   cy.layout(theLayout);
 }
@@ -546,8 +579,9 @@ $('#filters').on('click', 'input', function(){
     
   var badIntEdges = $('#badIntEdges').is(':checked');
   var goodIntEdges = $('#goodIntEdges').is(':checked');
-  var rightIntEdges = $('#rightIntEdges').is(':checked');
+  var intInfo = $('#intInfo').is(':checked');
   var toggleBadGrid = $('#toggleBadGrid').is(':checked');
+  var toggleRightIntEdge = $('#toggleRightIntEdge').is(':checked');
 
   cy.batch(function(){
     cy.elements().forEach(function( n ){
@@ -559,21 +593,28 @@ $('#filters').on('click', 'input', function(){
         n.addClass('filtered');
       };
 
-      if( type === 'conPointNodeGood' ){
+      if( type === 'conPointNodeGood' || type=== 'conPointNodeRightGood'){
         
         if( !goodIntEdges ){ filter(); }
         
+      }  else if( type === 'conPointNodeRightGood' ){
+        
+        if( !intInfo ){ filter(); }
+
+
+
+
       } else if( type === 'spaghEdge' ){
         
         if( !badIntEdges || toggleBadGrid ){ filter(); }
         
-      } else if( type === 'conPointNodeRight' ){
-        
-        if( !rightIntEdges ){ filter(); }
-
-      } else if( type === 'conPointNodeBad' ){
+      } else if( type === 'conPointNodeBad' || type === 'conPointNodeRightBad' ){
         
         if( !toggleBadGrid || !badIntEdges ){ filter(); }
+        
+      } else if( type === 'rightIntEdge' ){
+        
+        if( !toggleRightIntEdge ){ filter(); }
         
       }  
     });

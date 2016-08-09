@@ -42,7 +42,7 @@
   {
     "id": "33",
     "type":"Customer",
-    "Applications": ["Applikation 1", "Applikation 2", "Applikation 3","Applikation 4"],
+    "Applications": ["Applikation 2", "Applikation 1", "Applikation 3","Applikation 4"],
     "edges":[
       {"source":"Applikation 1", "target":"Applikation 2"},
       {"source":"Applikation 2", "target":"Applikation 3"},

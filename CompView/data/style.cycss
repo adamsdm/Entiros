@@ -46,6 +46,8 @@ node[NodeType = "Customer"] {
 node[NodeType = "Application"] {
 	background-color: #fff;
 	text-outline-color: #fff;
+	text-halign: right;
+	text-margin-x: 10px;
 }
 
 node[NodeType = "Evangelist"]{
@@ -73,6 +75,17 @@ edge[interaction = "RelToEdge"] {
 	z-index: 9;
 	width: 4;
 }
+edge[interaction = "apTeAtEdge"] {
+	line-color: white;
+	opacity: 0.2;
+	width: 4;
+}
+edge[interaction = "intAtEdge"] {
+	line-color: #87888a;
+	width: 4;
+}
+
+/*
 edge[interaction = "RelToEdge"].highlighted {
 	label: Related to;
 	text-rotation: autorotate;
@@ -80,26 +93,12 @@ edge[interaction = "RelToEdge"].highlighted {
 	text-outline-color: white;
 	text-outline-width: 1px;
 }
- 
-edge[interaction = "apTeAtEdge"] {
-	line-color: white;
-	opacity: 0.2;
-	width: 4;
-}
-
 edge[interaction = "apTeAtEdge"].highlighted {
 	label: App team at;
 	text-rotation: autorotate;
 	color:black;
 	text-outline-color: white;
 	text-outline-width: 1px;
-}
- 
-
- 
-edge[interaction = "intAtEdge"] {
-	line-color: #87888a;
-	width: 4;
 }
 edge[interaction = "intAtEdge"].highlighted {
 	label: Integrated at;
@@ -108,6 +107,7 @@ edge[interaction = "intAtEdge"].highlighted {
 	text-outline-color: white;
 	text-outline-width: 1px;
 }
+*/
  
 node[NodeType = "Cider"] {
 	background-color: #A4EB34;

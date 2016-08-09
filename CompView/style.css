@@ -48,6 +48,21 @@ html, body {
 #search {
   width: 14em;
 }
+#reusability-div{
+  position: absolute;
+  left: 210px;
+  background-color: white;
+  top: 0px;
+  margin: 0.5em;
+  max-height: 34px;
+  padding: 0 1.4em 0 1.4em;
+  border-radius: 5px;
+}
+
+#reusability{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 body.has-start #clear {
   visibility: visible;
@@ -115,6 +130,7 @@ body.calc #loading {
   border: 1px solid #ccc;
   width: 14em;
   display: none;
+  z-index: 9998;
 }
 
 #info p {
@@ -131,6 +147,7 @@ body.calc #loading {
 
 #reset,
 #filter,
+#filterType,
 #save,
 #debug {
   width: 3em;
@@ -159,27 +176,31 @@ body.calc #loading {
   right: 4em;
 }
 
-#save {
+#filterType {
   right: 8em;
 }
-#debug {
+
+#save {
   right: 12em;
+}
+#debug {
+  right: 16em;
 }
 
 #reset i {
   transform: rotate(45deg);
 }
 
-#filters label, #lvl2Filter label {
+#filters label, #lvl2Filter label, #filtersType label {
   font-weight: normal;
   padding: 0 0.25em;
 }
 
-#filters strong {
+#filters strong, #filtersType strong{
   display: block;
 }
 
-#filters hr {
+#filters hr, #filtersType hr {
   margin: 0.25em 0;
 }
 

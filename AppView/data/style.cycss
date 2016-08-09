@@ -26,6 +26,9 @@ node[type="eShape"]{
   z-index: 0;
 }
 
+
+
+
 node[type="app"]{
     color: black;
     font-size: 10;
@@ -37,19 +40,32 @@ node[type="app"]{
 }
 
 node[type="conPointNodeGood"]{
-  width: 0px;
-  height: 0px;
-  background-color: #a9c742;
+  width: 4px;
+  height: 4px;
+  background-color: black;
   label: ;
 }
 
 node[type="conPointNodeBad"]{
-  width: 0px;
-  height: 0px;
+  width: 4px;
+  height: 4px;
+  background-color: black;
   label: ;
 }
 
-node[type="conPointNodeRight"]{
+node[type="conPointNodeRightGood"]{
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  label: data(label);  
+  color: black;
+  font-size: 10;
+  text-outline-width: 0;
+  text-halign: right;
+  text-margin-x: 10px;
+}
+
+node[type="conPointNodeRightBad"]{
   width: 10px;
   height: 10px;
   background-color: black;
@@ -69,7 +85,7 @@ edge[type="eShape"]{
 
 edge[type="eShape"]:active,
 node[type="eShape"]:active{
-  overlay-opacity: 0;
+  overlay-opacity: 0.5;
 }
 
 edge[type="spaghEdge"]{
@@ -111,3 +127,21 @@ edge[type="rightIntEdge"]{
 .filtered {
   display: none;
 }
+
+#aCorner, #bCorner{
+  label: ;
+  text-rotation: 0;
+  background-color: white;
+  width: 30;
+  height: 30;
+  z-index: 999;
+}
+
+#aCornerBG, #bCornerBG{
+  label: ;
+  height:15;
+  width:15;
+  shape: rectangle;
+  background-color: #e8e8e8;
+}
+

@@ -41,7 +41,7 @@ $(function(){
 
 
     reset();
-    setTimeout( function(){
+    //setTimeout( function(){
       cy.batch( function(){
         cy.$('.highlighted').forEach(function(n){
           n.animate({
@@ -52,11 +52,10 @@ $(function(){
         //cy.elements('.levelTwo').removeClass('filtered');
         cy.elements().removeClass('highlighted').removeClass('faded').removeClass('levelTwo');
       });
-    }, layoutDuration);
+    //}, layoutDuration);
 
     //setTimeout(function(){ reset(); }, layoutDuration);
   }
-
 
   function highlight( node ){
     inCompFocusView = true;
@@ -177,6 +176,11 @@ $(function(){
 
     }, layoutDuration );
 
+    cy.batch(function(){ 
+      cy.elements().addClass('faded');
+      node.closedNeighborhood().closedNeighborhood().removeClass('faded').addClass('highlighted');
+    });
+
     //Update viewport to fit elements
     setTimeout( function(){
       cy.animate({
@@ -191,10 +195,6 @@ $(function(){
        
 
     //highlight relevant nodes, and fade irrelevant nodes
-    cy.batch(function(){ 
-        cy.elements().removeClass('highlighted').removeClass('focused').addClass('faded');
-        node.closedNeighborhood().closedNeighborhood().removeClass('faded').addClass('highlighted');
-    });
 
 
     // var conNodes = node.connectedEdges().connectedNodes("node[id!='"+node.id()+"']");
@@ -332,6 +332,20 @@ $(function(){
     } //for i
   }
 
+  function calcReusability(){
+    var appNodes = cy.nodes('node[NodeType="Application"]');
+    var noApps = appNodes.length;
+    var noConnections = 0;
+    var reusability = 0;
+
+    for(var i=0; i<appNodes.length; i++){
+      noConnections += appNodes[i].connectedEdges().length;
+    }
+
+    reusability = Math.floor((1 -(noApps/noConnections))*100);
+
+    return reusability;
+  }
 
   function initCy( then ){
     var loading = document.getElementById('loading');
@@ -379,6 +393,8 @@ $(function(){
       // });
 
     });
+
+    $('#reusability').text("App Reusability: "+calcReusability()+'%');
     
     cy.on('tap', function(){
       $('#search').blur();
@@ -386,10 +402,13 @@ $(function(){
 
     cy.on('select', 'node', function(e){
       var node = this;
-
-      cy.nodes().removeClass('hidden');
-      highlight( node );
       showNodeInfo( node );
+
+      setTimeout( function(){
+        cy.nodes().removeClass('hidden');
+        highlight( node );
+      }, layoutDuration);
+
     });
 
     cy.on('unselect', 'node', function(e){
@@ -398,6 +417,7 @@ $(function(){
       clear();
       hideNodeInfo();
     });
+     
 
     cy.on('mouseover', 'node', function(e){
       var node = this;
@@ -479,7 +499,7 @@ $(function(){
     }
   }).on('typeahead:selected', function(e, entry, dataset){
     var n = cy.getElementById(entry.id);
-    
+
     n.select();
     showNodeInfo( n );
   });
@@ -564,7 +584,7 @@ $(function(){
 
   
   $('#debug').on('click', function(){
-    positionAlgorithm(); 
+    //positionAlgorithm(); 
     //alert("Position algorithm done, click save to export as json.");
   });
 
@@ -581,8 +601,9 @@ $(function(){
     reset();
   });
   
-  $('#filters').on('click', 'input', function(){
-    
+  function doFiltering(){
+    console.log("Clicked filters");
+
     var cust = $('#cust').is(':checked');
     var evan = $('#evan').is(':checked');
     var subs = $('#subs').is(':checked');
@@ -675,7 +696,13 @@ $(function(){
       });
       
     }); 
-    
+  }
+
+  $('#filters').on('click', 'input', function(){
+    doFiltering();
+  });
+  $('#filtersType').on('click', 'input', function(){
+    doFiltering();
   });
 
   $('#lvl2Filter').on('click', 'input', function(){
@@ -712,6 +739,31 @@ $(function(){
     },
 
     content: $('#filters')
+  });
+
+  $('#filterType').qtip({
+    position: {
+      my: 'top center',
+      at: 'bottom center'
+    },
+    
+    show: {
+      event: 'click'
+    },
+    
+    hide: {
+      event: 'unfocus'
+    },
+    
+    style: {
+      classes: 'qtip-bootstrap',
+      tip: {
+        width: 16,
+        height: 8
+      }
+    },
+
+    content: $('#filtersType')
   });
 
 
