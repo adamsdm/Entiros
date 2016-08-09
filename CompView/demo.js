@@ -26,7 +26,8 @@ $(function(){
     '{{#if Country}}<p class="ac-country"><i class="fa fa-map-marker"></i> {{Country}}</p>{{/if}}',
     '{{#if WebsiteURL}}<p class="ac-more"><i class="fa fa-external-link"></i><a target="_blank" href="http://www.{{WebsiteURL}}">{{id}}</a></p>{{/if}}',
     '{{#if AnnRevenue}}<p class="ac-more"><i class="fa fa-usd"></i> {{AnnRevenue}}</p>{{/if}}',
-    '{{#if CompanyType}}<p class="ac-more"><i class="fa fa-usd"></i> {{CompanyType}}</p>{{/if}}',    
+    '{{#if CompanyType}}<p class="ac-more"><i class="fa fa-briefcase"></i> {{CompanyType}}</p>{{/if}}',
+    '<p class="ac-more"><i class="fa fa-at"></i><a target="_blank" href="/AppView.html?Company={{id}}"> Go to Application View</a></p>',
 
   ].join(''));
 
