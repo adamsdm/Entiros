@@ -290,7 +290,7 @@ var addSystem = function(){
 var addApp = function(_appId){
 
   noApps++;
-  var position={ x: noApps*60, y: 275 };
+  var position={ x: noApps*60, y: 200 };
   if(position.x > cy.$('#aEnd').position().x-60){
     cy.$('#aEnd').position().x += 60;
     cy.$('#bEnd').position().x += 60;
