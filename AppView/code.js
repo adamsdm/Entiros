@@ -551,16 +551,17 @@ $('#search').typeahead({
       return 0;
     }
     
-     var res = cy.nodes("[type!='conPointNodeGood'][type!='conPointNodeBad'][type!='eShape'][type!='eShapeCorner'][type!='conPointNodeRightGood'][type!='conPointNodeRightBad']").stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
-
+     //var res = cy.nodes("[type!='conPointNodeGood'][type!='conPointNodeBad'][type!='eShape'][type!='eShapeCorner'][type!='conPointNodeRightGood'][type!='conPointNodeRightBad']").stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
+     var res = cy.nodes("[type='app']").stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
     // $("#btnSearch").click( function() {
       cy.batch(function(){
         cy.elements().removeClass('hidden');
-        cy.elements().not( cy.elements().stdFilter( anyFieldMatches ) ).not(cy.$("node[type='eShape'],node[type='eShapeCorner'], edge[type='eShape']")).addClass('hidden');
+        if(query.length>0)
+          cy.elements().not( cy.elements("[type='app']").stdFilter( anyFieldMatches ) ).not(cy.$("node[type='eShape'],node[type='eShapeCorner'], edge[type='eShape']")).addClass('hidden');
       });
     // });
     
-
+    console.log(res);
     cb( res );
   },
   templates: {
