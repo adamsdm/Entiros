@@ -354,6 +354,7 @@ function clear(){
   cy.$('#bEnd').position().x = 175;
   cy.$('#cEnd').position().x = 200;
 
+
   cy.$("#bEnd").style({
     'height': 30
   })
@@ -366,6 +367,8 @@ function clear(){
   //move top bar to initial position
   cy.$('#a').position().y = 0;
   cy.$('#aEnd').position().y = 0;
+  cy.$('#aCorner').position().y = 30;
+  cy.$('#aCornerBG').position().y = 22;
 
   //move middle bar to initial position
   cy.$('#b').position().y=60;
@@ -393,7 +396,6 @@ function getQueryVariable(variable)
 
 
 function readData2( data ){
-  clear();
 
   //Add application nodes
   for(var i=0; i<data.Applications.length; i++){
@@ -553,15 +555,17 @@ $('#search').typeahead({
     
      //var res = cy.nodes("[type!='conPointNodeGood'][type!='conPointNodeBad'][type!='eShape'][type!='eShapeCorner'][type!='conPointNodeRightGood'][type!='conPointNodeRightBad']").stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
      var res = cy.nodes("[type='app']").stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
-    // $("#btnSearch").click( function() {
+    
       cy.batch(function(){
         cy.elements().removeClass('hidden');
         if(query.length>0)
           cy.elements().not( cy.elements("[type='app']").stdFilter( anyFieldMatches ) ).not(cy.$("node[type='eShape'],node[type='eShapeCorner'], edge[type='eShape']")).addClass('hidden');
       });
-    // });
     
-    console.log(res);
+    $("#btnSearch").click( function() {
+      // var temp = cy.nodes("[type='app']").stdFilter( anyFieldMatches );
+    });
+
     cb( res );
   },
   templates: {

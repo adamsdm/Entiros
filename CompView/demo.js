@@ -61,9 +61,10 @@ $(function(){
     inCompFocusView = true;
     $('#lvl2Filter').show();
     
-    var intAtNodes = node.connectedEdges('edge[interaction="intAtEdge"]').connectedNodes("node[id!='"+node.id()+"']");
-    var aTeAtNodes = node.connectedEdges('edge[interaction="apTeAtEdge"]').connectedNodes("node[id!='"+node.id()+"']");
-    var relToNodes = node.connectedEdges('edge[interaction="RelToEdge"]').connectedNodes("node[id!='"+node.id()+"']");
+    var intAtNodes = node.connectedEdges('edge[interaction="intAtEdge"]').connectedNodes("node[id!='"+node.id()+"'][NodeType!='Application']");
+    var aTeAtNodes = node.connectedEdges('edge[interaction="apTeAtEdge"]').connectedNodes("node[id!='"+node.id()+"'][NodeType!='Application']");
+    var relToNodes = node.connectedEdges('edge[interaction="RelToEdge"]').connectedNodes("node[id!='"+node.id()+"'][NodeType!='Application']");
+    var appNodes = node.connectedEdges('edge[interaction="hasAppEdge"]').connectedNodes("node[id!='"+node.id()+"'][NodeType='Application']")
 
     var posX;
     var posY;
@@ -121,7 +122,9 @@ $(function(){
 
       //Int at nodes
       for(var i=0; i<intAtNodes.length; i++){
-        var secondLvlNodes = intAtNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
+        var secondLvlNodes = intAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
+        appNodes = appNodes.add( intAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") ); // add intAtNodes[i]:s applications
+
         for(var j=0; j<secondLvlNodes.length; j++){
           spacing = lvl2width/secondLvlNodes.length;
           secondLvlNodes[j].addClass('levelTwo');
@@ -139,7 +142,9 @@ $(function(){
 
       // Ap te at nodes
       for(var i=0; i<aTeAtNodes.length; i++){
-        var secondLvlNodes = aTeAtNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
+        var secondLvlNodes = aTeAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
+        appNodes = appNodes = appNodes.add( aTeAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") );
+        
         for(var j=0; j<secondLvlNodes.length; j++){
           spacing = lvl2width/secondLvlNodes.length;          
           secondLvlNodes[j].addClass('levelTwo');
@@ -157,7 +162,9 @@ $(function(){
 
       // Related to nodes
       for(var i=0; i<relToNodes.length; i++){
-        var secondLvlNodes = relToNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
+        var secondLvlNodes = relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
+        appNodes = appNodes = appNodes.add( relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") );
+
         for(var j=0; j<secondLvlNodes.length; j++){
           spacing = lvl2width/secondLvlNodes.length;          
           secondLvlNodes[j].addClass('levelTwo');
@@ -171,8 +178,22 @@ $(function(){
             duration: layoutDuration 
          });
         }
-      }      
+      } 
 
+      //Application nodes
+      for(var i=0; i<appNodes.length; i++){
+        appNodes[i].animate({
+            position: { 
+              x: node.position().x + 800,
+              y: node.position().y - 200+(i+1)*400/appNodes.length
+            } 
+          }, {
+            duration: layoutDuration 
+         });
+      } 
+
+
+      console.log(appNodes.length);
 
     }, layoutDuration );
 
@@ -403,6 +424,17 @@ $(function(){
     cy.on('select', 'node', function(e){
       var node = this;
       showNodeInfo( node );
+
+      console.log(node.position());
+
+      cy.animate({
+        center: {
+          eles: node
+        }
+      }, {
+        duration: layoutDuration
+      });
+
 
       setTimeout( function(){
         cy.nodes().removeClass('hidden');
