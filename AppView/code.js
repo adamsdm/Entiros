@@ -6,12 +6,13 @@ var noSyst = 0;
 var noApps = 0;
 
 var layoutDuration = 500;
+var layoutPadding  = 50;
 
 var cy;
 
 var theLayout = {
     name: 'preset',
-    padding: 50,
+    padding: layoutPadding,
     fit: true
   }
 
@@ -326,7 +327,7 @@ $('#debug').on('click', function(){
 })
 
 $('#clear').on('click', function(){
-  reset();
+  clear();
 })
 
 
@@ -346,7 +347,7 @@ function hideNodeInfo(){
   $('#info').hide();
 }
 
-function reset(){
+function clear(){
 
   cy.remove( cy.elements("node[type != 'eShape'][type != 'eShapeCorner']") );
   cy.$('#aEnd').position().x = 200;
@@ -392,7 +393,7 @@ function getQueryVariable(variable)
 
 
 function readData2( data ){
-  reset();
+  clear();
 
   //Add application nodes
   for(var i=0; i<data.Applications.length; i++){
@@ -550,12 +551,14 @@ $('#search').typeahead({
       return 0;
     }
     
-    var res = cy.nodes().stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
+     var res = cy.nodes("[type!='conPointNodeGood'][type!='conPointNodeBad'][type!='eShape'][type!='eShapeCorner'][type!='conPointNodeRightGood'][type!='conPointNodeRightBad']").stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
 
-    cy.batch(function(){
-      cy.elements().stdFilter( anyFieldMatches ).removeClass('hidden');
-      cy.elements().not( cy.elements().stdFilter( anyFieldMatches ) ).not(cy.$("node[type='eShape'],node[type='eShapeCorner'], edge[type='eShape']")).addClass('hidden');
-    });
+    // $("#btnSearch").click( function() {
+      cy.batch(function(){
+        cy.elements().removeClass('hidden');
+        cy.elements().not( cy.elements().stdFilter( anyFieldMatches ) ).not(cy.$("node[type='eShape'],node[type='eShapeCorner'], edge[type='eShape']")).addClass('hidden');
+      });
+    // });
     
 
     cb( res );
@@ -625,6 +628,20 @@ function doFiltering(){
   
   }); 
 }
+
+function reset(){
+  cy.animate({
+    fit: {
+      eles: cy.elements(),
+      padding: layoutPadding
+    },
+    duration: layoutDuration
+  });
+}
+
+$('#reset').on('click', function(){
+  reset();
+});
 
 $('#filter').qtip({
   position: {

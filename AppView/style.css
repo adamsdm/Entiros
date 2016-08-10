@@ -3,11 +3,11 @@ body {
 }
 
 #cy {
-  height: 90%;
+  height: 95%;
   width: 100%;
   position: absolute;
   left: 0;
-  top: 10%;
+  top: 5%;
   background: white;
 }
 
@@ -55,6 +55,14 @@ body {
   z-index: 9999;
   margin: 0.5em;
   width: 14em;
+}
+#btnSearch{
+  position: absolute;
+  left: 200px;
+  top: 0;
+  z-index: 9999;
+  margin: 0.5em;
+  width: 8em;  
 }
 
 #search {
@@ -121,35 +129,28 @@ body {
   z-index: 999;
 }
 
-#filter{
+#filter, 
+#filterToggle,
+#reset{
   width: 3em;
   margin: 0.5em;
   position: absolute;
   top: 0;
-  right: 4em;
   z-index: 999;
+}
+
+#filter{
+  right: 4em;
 }
 #filterToggle{
-  width: 3em;
-  margin: 0.5em;
-  position: absolute;
-  top: 0;
   right: 8em;
-  z-index: 999;
 }
-
-#appFilter{
-  background-color: white;
-  padding: 5px;
-  position: absolute;;
-  z-index: 999;
-  top: 3em;
+#reset {
   right: 0;
-  margin: 0.5em;
-  border-radius: 0.25em;
-
 }
-
+#reset i {
+    transform: rotate(45deg);
+}
 
 #filters label, #filtersToggle label {
   font-weight: normal;

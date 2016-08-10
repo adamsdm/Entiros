@@ -30,8 +30,10 @@
 
 	<div id="search-wrapper">
     	<input type="text" class="form-control" id="search" autofocus placeholder="Search">
-  </div>
-  <div id="info"></div>
+  	</div>
+  	
+  	<!-- <button id="btnSearch" class="btn btn-primary">Search</button>  -->
+  	<div id="info"></div>
 
 <form id="compSelect">
   <select id="compSelectList" name="Company" class="form-control" onchange="this.form.submit()">
@@ -41,7 +43,7 @@
 
   <button id="filter" class="btn btn-default"><i class="fa fa-filter"></i></button>
   <button id="filterToggle" class="btn btn-default"><i class="fa fa-eye"></i></button>
-
+  <button id="reset" class="btn btn-default"><i class="fa fa-arrows-h"></i></button>
 
   <div id="filters" style="display:none">
     <strong>Integrations</strong>
@@ -53,6 +55,7 @@
     <input id="toggleBadGrid" type="checkbox" unchecked></input><label for="toggleBadGrid">Bad int grid </label><br />
     <input id="toggleRightIntEdge" type="checkbox" unchecked></input><label for="toggleRightIntEdge">Right int edge </label><br />
   </div>  
+
 
 	
 	<button id="addExperience">Add Experience</button>
