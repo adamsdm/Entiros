@@ -129,6 +129,15 @@ body {
   right: 4em;
   z-index: 999;
 }
+#filterToggle{
+  width: 3em;
+  margin: 0.5em;
+  position: absolute;
+  top: 0;
+  right: 8em;
+  z-index: 999;
+}
+
 #appFilter{
   background-color: white;
   padding: 5px;
@@ -142,16 +151,16 @@ body {
 }
 
 
-#filters label, #appFilter label {
+#filters label, #filtersToggle label {
   font-weight: normal;
   padding: 0 0.25em;
 }
 
-#filters strong {
+#filters strong, #filtersToggle strong {
   display: block;
 }
 
-#filters hr {
+#filters hr, #filtersToggle hr {
   margin: 0.25em 0;
 }
 

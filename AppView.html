@@ -40,11 +40,16 @@
 </form>
 
   <button id="filter" class="btn btn-default"><i class="fa fa-filter"></i></button>
+  <button id="filterToggle" class="btn btn-default"><i class="fa fa-eye"></i></button>
+
 
   <div id="filters" style="display:none">
     <strong>Integrations</strong>
     <input id="badIntEdges" type="checkbox" checked></input><label for="badIntEdges">Bad integration</label><br />
     <input id="goodIntEdges" type="checkbox" checked></input><label for="goodIntEdges">Good integration</label><br />
+  </div>  
+  <div id="filtersToggle" style="display:none">
+    <strong>Toggle</strong>
     <input id="toggleBadGrid" type="checkbox" unchecked></input><label for="toggleBadGrid">Bad int grid </label><br />
     <input id="toggleRightIntEdge" type="checkbox" unchecked></input><label for="toggleRightIntEdge">Right int edge </label><br />
   </div>  

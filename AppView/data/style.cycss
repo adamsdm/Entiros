@@ -124,10 +124,6 @@ edge[type="rightIntEdge"]{
   width:1px;
 }
 
-.filtered {
-  display: none;
-}
-
 #aCorner, #bCorner{
   label: ;
   text-rotation: 0;
@@ -145,3 +141,9 @@ edge[type="rightIntEdge"]{
   background-color: #e8e8e8;
 }
 
+.filtered {
+  display: none;
+}
+.hidden {
+  display:none;
+}

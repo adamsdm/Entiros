@@ -119,6 +119,8 @@ function initCy( then ){
 
     console.log(conNodes);
 
+    cy.elements().removeClass('hidden');
+
 
     if( node.data().type == 'app'){
 
@@ -435,7 +437,7 @@ function readData2( data ){
     cy.add([
       //Good
       { group: "nodes", data: { type: 'conPointNodeRightGood', id:'intConPGood'+i, label: data.edges[i].source+' -> '+data.edges[i].target }, 
-        position: { x: cy.$('#aEnd').position().x + 10, y: cy.$("#sConP"+String(i) ).position().y } }, //Connection point
+        position: { x: cy.$('#aEnd').position().x + 10, y: cy.$("#sConP"+String(i) ).position().y }, selectable: false }, //Connection point
 
       { group: "edges", data: { source: data.edges[i].source, target: 'intConPGood'+i, type: 'rightIntEdge' }, classes: 'filtered'  },            //int edge source->conP
       { group: "edges", data: { source: 'intConPGood'+i, target: data.edges[i].target, type: 'rightIntEdge' }, classes: 'filtered'  },             //int edge source->conP  
@@ -505,7 +507,7 @@ function incMidBarWidth(){
 
 
 $('#search').typeahead({
-  minLength: 1,
+  minLength: 0,
   highlight: true,
 },
 {
@@ -550,10 +552,10 @@ $('#search').typeahead({
     
     var res = cy.nodes().stdFilter( anyFieldMatches ).sort( sortByName ).map( getData );
 
-    // cy.batch(function(){
-    //   cy.elements().stdFilter( anyFieldMatches ).removeClass('filtered');
-    //   cy.elements().not( cy.elements().stdFilter( anyFieldMatches ) ).addClass('filtered');
-    // });
+    cy.batch(function(){
+      cy.elements().stdFilter( anyFieldMatches ).removeClass('hidden');
+      cy.elements().not( cy.elements().stdFilter( anyFieldMatches ) ).not(cy.$("node[type='eShape'],node[type='eShapeCorner'], edge[type='eShape']")).addClass('hidden');
+    });
     
 
     cb( res );
@@ -571,6 +573,13 @@ $('#search').typeahead({
 });
 
 $('#filters').on('click', 'input', function(){
+  doFiltering();
+});
+$('#filtersToggle').on('click', 'input', function(){
+  doFiltering();
+});
+
+function doFiltering(){
     
   var badIntEdges = $('#badIntEdges').is(':checked');
   var goodIntEdges = $('#goodIntEdges').is(':checked');
@@ -613,100 +622,9 @@ $('#filters').on('click', 'input', function(){
         
       }  
     });
-    // cy.nodes().forEach(function( n ){
-    //   var type = n.data('NodeType');
-    //   var CompanyType = n.data('CompanyType');
-
-    //   n.removeClass('filtered');
-      
-    //   var filter = function(){
-    //     n.addClass('filtered');
-    //   };
-
-    //   if( type === 'Customer' ){
-        
-    //     if( !cust ){ filter(); }
-        
-    //   } else if( type === 'Evangelist' ){
-        
-    //     if( !evan ){ filter(); }
-        
-    //   } else if( type === 'Subscriber' ){
-        
-    //     if( !subs ){ filter(); }
-        
-    //   } else if( type === 'Lead' ){
-        
-    //     if( !lead ){ filter(); }
-        
-    //   } else if( type === 'Marketing Qualified Lead' ){
-        
-    //     if( !markQualLead ){ filter(); }
-        
-    //   } else if( type === 'Sales Qualified Lead' ){
-        
-    //     if( !saleQualLead ){ filter(); }
-        
-    //   } else if( type === 'Prospect' ){
-        
-    //     if( !prosp ){ filter(); }
-    //   }
-
-
-
-
-
-
-    //   if( CompanyType === 'Clothing' ){
-        
-    //     if( !cloth ){ filter(); }
-        
-    //   } else if( CompanyType === 'Cars' ){
-        
-    //     if( !cars ){ filter(); }
-        
-    //   } else if( CompanyType === 'Food' ){
-        
-    //     if( !food ){ filter(); }
-        
-    //   } else if( CompanyType === 'Electronics' ){
-        
-    //     if( !elect ){ filter(); }
-        
-    //   } else if( CompanyType === 'Candy' ){
-        
-    //     if( !candy ){ filter(); }
-        
-    //   }   
-    // });
-  }); 
   
-});
-
-$('#appFilter').on('click', 'input', function(){
-
-  var app = $('#app').is(':checked');
-
-
-  cy.batch(function(){
-    
-    cy.nodes().forEach(function( n ){
-      var type = n.data('NodeType');
-      
-      n.removeClass('filtered');
-      
-      var filter = function(){
-        n.addClass('filtered');
-      };
-
-      if( type === 'Application' ){
-        
-        if( !app ){ filter(); }
-        
-      } 
-    });
   }); 
-});
+}
 
 $('#filter').qtip({
   position: {
@@ -731,6 +649,31 @@ $('#filter').qtip({
   },
 
   content: $('#filters')
+});
+
+$('#filterToggle').qtip({
+  position: {
+    my: 'top center',
+    at: 'bottom center'
+  },
+  
+  show: {
+    event: 'click'
+  },
+  
+  hide: {
+    event: 'unfocus'
+  },
+  
+  style: {
+    classes: 'qtip-bootstrap',
+    tip: {
+      width: 16,
+      height: 8
+    }
+  },
+
+  content: $('#filtersToggle')
 });
 
 
