@@ -113,8 +113,8 @@ function initCy( then ){
     var node = this;
     var conEdges = node.connectedEdges('edge[type="goodIntEdge"]').connectedNodes().connectedEdges('edge[type="goodIntEdge"]').connectedNodes().connectedEdges('edge[type="goodIntEdge"]');
     var conNodes = conEdges.connectedNodes('node[type="app"][id!="'+node.id()+'"]');
-    var rightNode = node.connectedEdges('edge[type="rightIntEdge"]').connectedNodes('node[type="conPointNodeRightGood"]');
-        rightNode = rightNode.add( rightNode.connectedEdges() );
+    var rightNodeGood = node.connectedEdges('edge[type="rightIntEdge"]').connectedNodes('node[type="conPointNodeRightGood"]');
+        rightNodeGood = rightNodeGood.add( rightNodeGood.connectedEdges() );
 
 
     console.log(conNodes);
@@ -142,8 +142,8 @@ function initCy( then ){
         duration: layoutDuration
       });
 
-      rightNode.animate({
-        style: {'background-color':'red', 'opacity':'1,0', }
+      rightNodeGood.animate({
+        style: {'background-color':'#a9c742'}
       }, {
         duration: layoutDuration
       });
@@ -162,11 +162,6 @@ function initCy( then ){
     }, {
       duration: layoutDuration
     });
-    cy.edges('edge[type="rightIntEdge"]').animate({
-      style: { 'opacity' : '0.2' }
-    }, {
-      duration: layoutDuration
-    });
 
     cy.nodes('node[type="app"]').animate({
       style: {'width':'40px','height':'40px' }
@@ -175,7 +170,7 @@ function initCy( then ){
     });
 
     cy.nodes('node[type="conPointNodeRightGood"]').animate({
-      style: { 'background-color':'black' }
+      style: { 'background-color':'#e8e8e8' }
     }, {
       duration: layoutDuration
     });
@@ -428,8 +423,8 @@ function readData2( data ){
       //Edges below, bad edges
       { group: "edges", data: { source: dataSource, target: dataTarget, type: 'spaghEdge' } },
 
-      { group: "nodes", data: { type: 'conPointNodeBad', id:'sBadConP'+i}, position: {x: sourceConPosX, y: 400+i*15 }, selectable: false, locked: true, classes: 'filtered' },
-      { group: "nodes", data: { type: 'conPointNodeBad', id:'tBadConP'+i}, position: {x: targetConPosX, y: 400+i*15 }, selectable: false, locked: true, classes: 'filtered' },
+      { group: "nodes", data: { type: 'conPointNodeBad', id:'sBadConP'+i}, position: {x: sourceConPosX, y: 300+i*15 }, selectable: false, locked: true, classes: 'filtered' },
+      { group: "nodes", data: { type: 'conPointNodeBad', id:'tBadConP'+i}, position: {x: targetConPosX, y: 300+i*15 }, selectable: false, locked: true, classes: 'filtered' },
       { group: "edges", data: { source: dataSource, target: 'sBadConP'+i, type: 'straightSpaghEdge' } },
       { group: "edges", data: { source: 'sBadConP'+i, target: 'tBadConP'+i, type: 'straightSpaghEdge' } },
       { group: "edges", data: { source: 'tBadConP'+i, target: dataTarget, type: 'straightSpaghEdge' } },  
@@ -442,15 +437,15 @@ function readData2( data ){
       { group: "nodes", data: { type: 'conPointNodeRightGood', id:'intConPGood'+i, label: data.edges[i].source+' -> '+data.edges[i].target }, 
         position: { x: cy.$('#aEnd').position().x + 10, y: cy.$("#sConP"+String(i) ).position().y } }, //Connection point
 
-      { group: "edges", data: { source: data.edges[i].source, target: 'intConPGood'+i, type: 'rightIntEdge' }, classes: 'filtered' },            //int edge source->conP
-      { group: "edges", data: { source: 'intConPGood'+i, target: data.edges[i].target, type: 'rightIntEdge' }, classes: 'filtered' },             //int edge source->conP  
+      { group: "edges", data: { source: data.edges[i].source, target: 'intConPGood'+i, type: 'rightIntEdge' }, classes: 'filtered'  },            //int edge source->conP
+      { group: "edges", data: { source: 'intConPGood'+i, target: data.edges[i].target, type: 'rightIntEdge' }, classes: 'filtered'  },             //int edge source->conP  
 
       //Bad
       { group: "nodes", data: { type: 'conPointNodeRightBad', id:'intConPBad'+i, label: data.edges[i].source+' -> '+data.edges[i].target }, classes: 'filtered', 
         position: { x: cy.$('#aEnd').position().x + 10, y: cy.$("#sBadConP"+String(i) ).position().y } }, //Connection point
 
-      { group: "edges", data: { source: data.edges[i].source, target: 'intConPBad'+i, type: 'rightIntEdge' }, classes: 'filtered'  },            //int edge source->conP
-      { group: "edges", data: { source: 'intConPBad'+i, target: data.edges[i].target, type: 'rightIntEdge' }, classes: 'filtered'  },             //int edge source->conP     
+      { group: "edges", data: { source: data.edges[i].source, target: 'intConPBad'+i, type: 'rightIntEdge' } },            //int edge source->conP
+      { group: "edges", data: { source: 'intConPBad'+i, target: data.edges[i].target, type: 'rightIntEdge' } },             //int edge source->conP     
     ]);  
 }
 

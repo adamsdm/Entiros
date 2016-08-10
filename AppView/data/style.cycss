@@ -56,7 +56,7 @@ node[type="conPointNodeBad"]{
 node[type="conPointNodeRightGood"]{
   width: 10px;
   height: 10px;
-  background-color: black;
+  background-color: #e8e8e8;
   label: data(label);  
   color: black;
   font-size: 10;
@@ -68,7 +68,7 @@ node[type="conPointNodeRightGood"]{
 node[type="conPointNodeRightBad"]{
   width: 10px;
   height: 10px;
-  background-color: black;
+  background-color: red;
   label: data(label);  
   color: black;
   font-size: 10;
