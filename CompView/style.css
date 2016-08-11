@@ -173,11 +173,11 @@ body.calc #loading {
 }
 
 #filter {
-  right: 4em;
+  right: 8em;
 }
 
 #filterType {
-  right: 8em;
+  right: 4em;
 }
 
 #save {
@@ -191,6 +191,10 @@ body.calc #loading {
   transform: rotate(45deg);
 }
 
+#filters{
+  max-height: 500px;
+  overflow-y: scroll;
+}
 #filters label, #lvl2Filter label, #filtersType label {
   font-weight: normal;
   padding: 0 0.25em;

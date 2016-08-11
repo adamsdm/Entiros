@@ -58,7 +58,6 @@ $(function(){
   }
 
   function highlight( node ){
-    inCompFocusView = true;
     $('#lvl2Filter').show();
     
     var intAtNodes = node.connectedEdges('edge[interaction="intAtEdge"]').connectedNodes("node[id!='"+node.id()+"'][NodeType!='Application']");
@@ -143,7 +142,7 @@ $(function(){
       // Ap te at nodes
       for(var i=0; i<aTeAtNodes.length; i++){
         var secondLvlNodes = aTeAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
-        appNodes = appNodes = appNodes.add( aTeAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") );
+        appNodes = appNodes.add( aTeAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") );
         
         for(var j=0; j<secondLvlNodes.length; j++){
           spacing = lvl2width/secondLvlNodes.length;          
@@ -163,7 +162,7 @@ $(function(){
       // Related to nodes
       for(var i=0; i<relToNodes.length; i++){
         var secondLvlNodes = relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
-        appNodes = appNodes = appNodes.add( relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") );
+        appNodes = appNodes.add( relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") );
 
         for(var j=0; j<secondLvlNodes.length; j++){
           spacing = lvl2width/secondLvlNodes.length;          
@@ -193,106 +192,43 @@ $(function(){
       } 
 
 
-      console.log(appNodes.length);
-
     }, layoutDuration );
+
+  
+    var allRelElements = node.closedNeighborhood();
+    allRelElements = allRelElements.add(node.closedNeighborhood("[NodeType!='Application']").closedNeighborhood())
+    //console.log(allRelElements.filter("[NodeType='Application']"));
+
 
     cy.batch(function(){ 
       cy.elements().addClass('faded');
-      node.closedNeighborhood().closedNeighborhood().removeClass('faded').addClass('highlighted');
+      allRelElements.removeClass('faded').addClass('highlighted');
     });
+
 
     //Update viewport to fit elements
     setTimeout( function(){
       cy.animate({
         fit: {
-          eles: node.closedNeighborhood().closedNeighborhood(),
+          eles: allRelElements,
           padding: 30
         }
       }, {
         duration: layoutDuration
       });
     }, 2*layoutDuration+100 );
-       
-
-    //highlight relevant nodes, and fade irrelevant nodes
-
-
-    // var conNodes = node.connectedEdges().connectedNodes("node[id!='"+node.id()+"']");
-    // var posX;
-    // var posY;
-    // var lvl1width = 1200;
-    // var lvl2width = 200;
-    // var spacing = lvl1width/conNodes.length;
-
-
-    // //First level
-    // for(var i=0; i<conNodes.length; i++){ 
-    //   posX = node.position().x +i*spacing-((conNodes.length-1)/2*spacing);        
-    //   posY = node.position().y+200;
-
-    //    conNodes[i].animate({
-    //       position: { x: posX, y: posY } 
-    //     }, {
-    //       duration: layoutDuration 
-    //    });
-
-    // }
-
-
-
-    // //Second level
-    // setTimeout( function(){
-    //   for(var i=0; i<conNodes.length; i++){ 
-    //     var secondLvlNodes = conNodes[i].openNeighborhood("node[id!='"+node.id()+"']");
-
-    //     for(var j=0; j<secondLvlNodes.length; j++){
-    //       spacing = lvl2width/secondLvlNodes.length;
-    //       secondLvlNodes[j].addClass('levelTwo');
-
-    //       secondLvlNodes[j].animate({
-    //         position: { 
-    //           x: conNodes[i].position().x +j*spacing-((secondLvlNodes.length-1)/2*spacing),
-    //           y: node.position().y+400 
-    //         } 
-    //       }, {
-    //         duration: layoutDuration 
-    //      });
-    //     }
-    //    }
-    //   }, layoutDuration );
-
-
-    // //Update viewport to fit elements
-    // setTimeout( function(){
-    //   cy.animate({
-    //     fit: {
-    //       eles: node.closedNeighborhood().closedNeighborhood(),
-    //       padding: 20
-    //     }
-    //   }, {
-    //     duration: layoutDuration
-    //   });
-    // }, 2*layoutDuration+100 );
-       
-
-    // //highlight relevant nodes, and fade irrelevant nodes
-    // cy.batch(function(){ 
-    //     cy.elements().removeClass('highlighted').addClass('faded');
-    //     node.closedNeighborhood().closedNeighborhood().removeClass('faded').addClass('highlighted');
-    // });
 
   }
 
 
   function focus( node ){
 
-    //var nhood = node.closedNeighborhood().closedNeighborhood(); //Get two levels of connected nodes
-    var nhood = node.closedNeighborhood().closedNeighborhood();
+    var allRelElements = node.closedNeighborhood();
+    allRelElements = allRelElements.add(node.closedNeighborhood("[NodeType!='Application']").closedNeighborhood())
 
     cy.batch(function(){
-      nhood.removeClass('faded').addClass('focused');
-      nhood.addClass('focused');
+      allRelElements.removeClass('faded').addClass('focused');
+      allRelElements.addClass('focused');
     });
   }
 
@@ -314,6 +250,7 @@ $(function(){
     var nodes = cy.elements('node');
     var intAt;
     var apTeAt;
+    var RelTo;
     var thisId;
 
     //Loop through all the nodes
@@ -321,6 +258,7 @@ $(function(){
       intAt = nodes[i].data().CompanyRelationIntegratedAt;
       apTeAt = nodes[i].data().CompanyRelationAppTeamAt;
       RelTo = nodes[i].data().CompanyRelationRelatedTo;
+      hasAp = nodes[i].data().hasApplication;
 
       thisId = nodes[i].data().id;
 
@@ -349,7 +287,15 @@ $(function(){
             data:{ source: thisId, target: RelTo[j], interaction: "RelToEdge" }
           })
         } //for j    
-      }      
+      } 
+      if(hasAp){
+        for(var j=0; j<hasAp.length; j++){
+          cy.add({
+            group:"edges",
+            data:{ source: thisId, target: hasAp[j], interaction: "hasAppEdge" }
+          })
+        } //for j    
+      }     
     } //for i
   }
 
@@ -422,6 +368,7 @@ $(function(){
     });
 
     cy.on('select', 'node', function(e){
+      inCompFocusView =true;
       var node = this;
       showNodeInfo( node );
 
@@ -447,6 +394,7 @@ $(function(){
       var node = this;
 
       clear();
+      unfocus();
       hideNodeInfo();
     });
      
@@ -616,7 +564,9 @@ $(function(){
 
   
   $('#debug').on('click', function(){
-    //positionAlgorithm(); 
+    positionAlgorithm(); 
+    cy.remove('edge');
+    addEdges();
     //alert("Position algorithm done, click save to export as json.");
   });
 
@@ -634,100 +584,252 @@ $(function(){
   });
   
   function doFiltering(){
-    console.log("Clicked filters");
+    var cust              = $('#cust').is(':checked');
+    var evan              = $('#evan').is(':checked');
+    var subs              = $('#subs').is(':checked');
+    var lead              = $('#lead').is(':checked');
+    var markQualLead      = $('#markQualLead').is(':checked');
+    var saleQualLead      = $('#saleQualLead').is(':checked');
+    var prosp             = $('#prosp').is(':checked');
+    var app               = $('#app').is(':checked');
 
-    var cust = $('#cust').is(':checked');
-    var evan = $('#evan').is(':checked');
-    var subs = $('#subs').is(':checked');
-    var lead = $('#lead').is(':checked');
-    var markQualLead = $('#markQualLead').is(':checked');
-    var saleQualLead = $('#saleQualLead').is(':checked');
-    var prosp = $('#prosp').is(':checked');
-    var app = $('#app').is(':checked');
-
-    var cloth = $('#cloth').is(':checked');
-    var cars = $('#cars').is(':checked');
-    var food = $('#food').is(':checked');
-    var elect = $('#elect').is(':checked');
-    var candy = $('#candy').is(':checked');
-
-
-
+    var jordbruk          = $('#jordbruk').is(':checked'); //Jordbruk, skogsbruk och fiske
+    var utvinning         = $('#utvinning').is(':checked'); // Utvinning av mineral
+    var tillverkning      = $('#tillverkning ').is(':checked'); // Tillverkning
+    var försörjning       = $('#försörjning').is(':checked'); // Försörjning av el, gas, värme och kyla 
+    var vattenförsörjning = $('#vattenförsörjning').is(':checked'); // Vattenförsörjning; avloppsrening, avfallshantering och sanering
+    var bygg              = $('#bygg').is(':checked'); // Byggverksamhet 
+    var handelRep         = $('#handelRep').is(':checked'); // Handel; reperation av motorfordon och motorcyklar 
+    var transport         = $('#transport').is(':checked'); // Transport och magasinering 
+    var hotell            = $('#hotell').is(':checked'); // Hotell- och restaurangverksamhet 
+    var information       = $('#information').is(':checked'); // Informatinos- och kommunikationsverksamhet 
+    var finans            = $('#finans').is(':checked'); // Finans- och försäkringsverksamhet 
+    var fastighet         = $('#fastighet').is(':checked'); // Fastighetsverksamhet 
+    var verksamhet        = $('#verksamhet').is(':checked'); // Verksamhet inom juridik, ekonomi, vetenskap och teknik 
+    var Uthyrning         = $('#uthyrning').is(':checked'); // Uthyrning, fastighetsservice, resetjänster och andra stödtjänster 
+    var förvaltning       = $('#förvaltning').is(':checked'); // Offentlig förvaltning och FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING
+    var utbilding         = $('#utbilding').is(':checked'); // Utbildning 
+    var vård              = $('#vård').is(':checked'); // Vård och omsorg; sociala tjänster 
+    var kultur            = $('#kultur').is(':checked'); // Kultur, nöje och fritid
+    var service           = $('#service').is(':checked'); // Annan serviceverksamhet
+    var förvärv           = $('#förvärv').is(':checked'); // Förvärvsarbete i hushåll; hushållens produktion av diverse varor och tjänster för eget bruk
+    var ambassad          = $('#ambassad').is(':checked'); // Verksamhet vid internationella orginisationer, utländska ambassader o.d.
+    var other             = $('#other').is(':checked'); // Other
+    var notSet            = $('#notSet').is(':checked');// Not set
 
     cy.batch(function(){
-      
-      cy.nodes().forEach(function( n ){
-        var type = n.data('NodeType');
-        var CompanyType = n.data('CompanyType');
+          cy.nodes().forEach(function( n ){
+            var type = n.data('NodeType');
+            var CompanyType = n.data('CompanyType');
 
-        n.removeClass('filtered');
+            n.removeClass('filtered');
+            
+            var filter = function(){
+              n.addClass('filtered');
+            };
+
+            if( type === 'Customer' ){
+              
+              if( !cust ){ filter(); }
+              
+            } else if( type === 'Evangelist' ){
+              
+              if( !evan ){ filter(); }
+              
+            } else if( type === 'Subscriber' ){
+              
+              if( !subs ){ filter(); }
+              
+            } else if( type === 'Lead' ){
+              
+              if( !lead ){ filter(); }
+              
+            } else if( type === 'Marketing Qualified Lead' ){
+              
+              if( !markQualLead ){ filter(); }
+              
+            } else if( type === 'Sales Qualified Lead' ){
+              
+              if( !saleQualLead ){ filter(); }
+              
+            } else if( type === 'Prospect' ){
+              
+              if( !prosp ){ filter(); }
+
+            } else if( type === 'Application' ){
+              
+              if( !app ){ filter(); }
+            }        
+
+
+            if( CompanyType === 'JORDBRUK, SKOGSBRUK OCH FISKE' ){
+              if( !jordbruk ){ filter(); }
+              
+            } else if( CompanyType === 'UTVINNING AV MINERAL' ){
+              if( !utvinning ){ filter(); }
+
+            } else if( CompanyType === 'TILLVERKNING' ){
+              if( !tillverkning ){ filter(); }
+              
+            } else if( CompanyType === 'FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA' ){
+              if( !försörjning ){ filter(); }
+              
+            } else if( CompanyType === 'VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING' ){
+              if( !vattenförsörjning ){ filter(); }
+              
+            } else if( CompanyType === 'BYGGVERKSAMHET' ){
+              if( !bygg ){ filter(); }
+              
+            } else if( CompanyType === 'HANDEL; REPARATION AV MOTORFORDON OCH MOTORCYKLAR' ){
+              if( !handelRep ){ filter(); }
+              
+            } else if( CompanyType === 'TRANSPORT OCH MAGASINERING' ){
+              if( !transport ){ filter(); }
+              
+            } else if( CompanyType === 'HOTELL- OCH RESTAURANGVERKSAMHET' ){
+              if( !hotell ){ filter(); }
+              
+            } else if( CompanyType === 'INFORMATIONS- OCH KOMMUNIKATIONSVERKSAMHET' ){
+              if( !information ){ filter(); }
+              
+            } else if( CompanyType === 'FINANS- OCH FÖRSÄKRINGSVERKSAMHET' ){
+              if( !finans ){ filter(); }
+              
+            } else if( CompanyType === 'FASTIGHETSVERKSAMHET' ){
+              if( !fastighet ){ filter(); }
+              
+            } else if( CompanyType === 'VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK' ){
+              if( !verksamhet ){ filter(); }
+              
+            } else if( CompanyType === 'UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER' ){
+              if( !Uthyrning ){ filter(); }
+              
+            } else if( CompanyType === 'OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING' ){
+              if( !förvaltning ){ filter(); }
+              
+            } else if( CompanyType === 'UTBILDNING' ){
+              if( !utbilding ){ filter(); }
+              
+            } else if( CompanyType === 'VÅRD OCH OMSORG; SOCIALA TJÄNSTER' ){
+              if( !vård ){ filter(); }
+              
+            } else if( CompanyType === 'KULTUR, NÖJE OCH FRITID' ){
+              if( !kultur ){ filter(); }
+              
+            } else if( CompanyType === 'ANNAN SERVICEVERKSAMHET' ){
+              if( !service ){ filter(); }
+              
+            } else if( CompanyType === 'FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK' ){
+              if( !förvärv ){ filter(); }
+              
+            } else if( CompanyType === 'VERKSAMHET VID INTERNATIONELLA ORGANISATIONER, UTLÄNDSKA AMBASSADER O.D.' ){
+              if( !ambassad ){ filter(); }
+              
+            } else if( CompanyType === 'Other' ){
+              if( !other ){ filter(); }
+              
+            } else if( CompanyType === 'Not set' ){
+              if( !notSet ){ filter(); }
+              
+            }
+          });
+          
+        }); 
+
+    // console.log("Clicked filters");
+
+    // var cust = $('#cust').is(':checked');
+    // var evan = $('#evan').is(':checked');
+    // var subs = $('#subs').is(':checked');
+    // var lead = $('#lead').is(':checked');
+    // var markQualLead = $('#markQualLead').is(':checked');
+    // var saleQualLead = $('#saleQualLead').is(':checked');
+    // var prosp = $('#prosp').is(':checked');
+    // var app = $('#app').is(':checked');
+
+    // var cloth = $('#cloth').is(':checked');
+    // var cars = $('#cars').is(':checked');
+    // var food = $('#food').is(':checked');
+    // var elect = $('#elect').is(':checked');
+    // var candy = $('#candy').is(':checked');
+
+
+
+
+    // cy.batch(function(){
+      
+    //   cy.nodes().forEach(function( n ){
+    //     var type = n.data('NodeType');
+    //     var CompanyType = n.data('CompanyType');
+
+    //     n.removeClass('filtered');
         
-        var filter = function(){
-          n.addClass('filtered');
-        };
+    //     var filter = function(){
+    //       n.addClass('filtered');
+    //     };
 
-        if( type === 'Customer' ){
+    //     if( type === 'Customer' ){
           
-          if( !cust ){ filter(); }
+    //       if( !cust ){ filter(); }
           
-        } else if( type === 'Evangelist' ){
+    //     } else if( type === 'Evangelist' ){
           
-          if( !evan ){ filter(); }
+    //       if( !evan ){ filter(); }
           
-        } else if( type === 'Subscriber' ){
+    //     } else if( type === 'Subscriber' ){
           
-          if( !subs ){ filter(); }
+    //       if( !subs ){ filter(); }
           
-        } else if( type === 'Lead' ){
+    //     } else if( type === 'Lead' ){
           
-          if( !lead ){ filter(); }
+    //       if( !lead ){ filter(); }
           
-        } else if( type === 'Marketing Qualified Lead' ){
+    //     } else if( type === 'Marketing Qualified Lead' ){
           
-          if( !markQualLead ){ filter(); }
+    //       if( !markQualLead ){ filter(); }
           
-        } else if( type === 'Sales Qualified Lead' ){
+    //     } else if( type === 'Sales Qualified Lead' ){
           
-          if( !saleQualLead ){ filter(); }
+    //       if( !saleQualLead ){ filter(); }
           
-        } else if( type === 'Prospect' ){
+    //     } else if( type === 'Prospect' ){
           
-          if( !prosp ){ filter(); }
+    //       if( !prosp ){ filter(); }
 
-        } else if( type === 'Application' ){
+    //     } else if( type === 'Application' ){
           
-          if( !app ){ filter(); }
-        }        
-
-
+    //       if( !app ){ filter(); }
+    //     }        
 
 
 
 
-        if( CompanyType === 'Clothing' ){
+
+
+    //     if( CompanyType === 'Clothing' ){
           
-          if( !cloth ){ filter(); }
+    //       if( !cloth ){ filter(); }
           
-        } else if( CompanyType === 'Cars' ){
+    //     } else if( CompanyType === 'Cars' ){
           
-          if( !cars ){ filter(); }
+    //       if( !cars ){ filter(); }
           
-        } else if( CompanyType === 'Food' ){
+    //     } else if( CompanyType === 'Food' ){
           
-          if( !food ){ filter(); }
+    //       if( !food ){ filter(); }
           
-        } else if( CompanyType === 'Electronics' ){
+    //     } else if( CompanyType === 'Electronics' ){
           
-          if( !elect ){ filter(); }
+    //       if( !elect ){ filter(); }
           
-        } else if( CompanyType === 'Candy' ){
+    //     } else if( CompanyType === 'Candy' ){
           
-          if( !candy ){ filter(); }
+    //       if( !candy ){ filter(); }
           
-        }   
-      });
+    //     }   
+    //   });
       
-    }); 
+    // }); 
   }
 
   $('#filters').on('click', 'input', function(){

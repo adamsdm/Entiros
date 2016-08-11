@@ -4,7 +4,7 @@ import json
 csvfile = open('CSVData.csv', 'r')
 jsonfile = open('pyFormatedData.json', 'w')
 
-fieldnames = ("id","Strength","CompanyType","Company Domain Name","City","NodeType","CompanyRelationIntegratedAt","CompanyRelationAppTeamAt","Country","WebsiteURL","AnnRevenue","closeDate")
+fieldnames = ("id","Strength","CompanyType","Company Domain Name","City","NodeType","CompanyRelationIntegratedAt","CompanyRelationAppTeamAt","CompanyRelationRelatedTo","hasApplication","Country","WebsiteURL","AnnRevenue","closeDate")
 reader = csv.DictReader( csvfile, fieldnames)
 
 jsonfile.write('{\n "elements":  {\n  "nodes": [')
@@ -24,7 +24,11 @@ jsonfile.write('\n     "NodeType": "'+row1["NodeType"]+'",')
 if row1["CompanyRelationIntegratedAt"]:
 	jsonfile.write('\n     "CompanyRelationIntegratedAt": '+row1["CompanyRelationIntegratedAt"]+',')
 if row1["CompanyRelationAppTeamAt"]:
-	jsonfile.write('\n     "CompanyRelationAppTeamAt": '+row1["CompanyRelationAppTeamAt"]+',')	
+	jsonfile.write('\n     "CompanyRelationAppTeamAt": '+row1["CompanyRelationAppTeamAt"]+',')
+if row1["CompanyRelationRelatedTo"]:
+	jsonfile.write('\n     "CompanyRelationRelatedTo": '+row1["CompanyRelationRelatedTo"]+',')
+if row1["hasApplication"]:
+	jsonfile.write('\n     "hasApplication": '+row1["hasApplication"]+',')	
 jsonfile.write('\n     "Country": "'+row1["Country"]+'",')
 jsonfile.write('\n     "WebsiteURL": "'+row1["WebsiteURL"]+'",')
 if row1["AnnRevenue"]:
@@ -58,6 +62,10 @@ for row in reader:
 		jsonfile.write('\n     "CompanyRelationIntegratedAt": '+row["CompanyRelationIntegratedAt"]+',')
 	if row["CompanyRelationAppTeamAt"]:
 		jsonfile.write('\n     "CompanyRelationAppTeamAt": '+row["CompanyRelationAppTeamAt"]+',')
+	if row["CompanyRelationRelatedTo"]:
+		jsonfile.write('\n     "CompanyRelationRelatedTo": '+row["CompanyRelationRelatedTo"]+',')
+	if row["hasApplication"]:
+		jsonfile.write('\n     "hasApplication": '+row["hasApplication"]+',')
 	jsonfile.write('\n     "Country": "'+row["Country"]+'",')
 	jsonfile.write('\n     "WebsiteURL": "'+row["WebsiteURL"]+'",')
 	if row["AnnRevenue"]:
