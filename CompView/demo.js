@@ -278,6 +278,26 @@ $(function(){
         }
       }
     }
+
+    //
+    function posLvl2Nodes(theNodes){
+      for(var i=0; i<theNodes.length; i++){
+        var secondLvlNodes = theNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
+        appNodes = appNodes.add( theNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") ); // add intAtNodes[i]:s applications
+
+        var lvl1angle = Math.acos( (theNodes[i].position().x-node.position().x)/lvl1Radius );
+        if(theNodes[i].position().y-node.position().y>0)
+          lvl1angle*=-1;
+
+        lvl2DiskA = (PI/4)/relToNodes.length;
+
+        minAngle = lvl1angle-lvl2DiskA;
+        maxAngle = lvl1angle+lvl2DiskA;
+        
+        secondLvlNodes.addClass('levelTwo');
+        posNodes(secondLvlNodes, minAngle, maxAngle, lvl2Radius);
+      }
+    }
     
     //************** LEVEL 1 *************//
     
@@ -291,39 +311,9 @@ $(function(){
     //************** LEVEL 2 *************//
     setTimeout( function(){
 
-
-      //relTo nodes
-      for(var i=0; i<relToNodes.length; i++){
-        var secondLvlNodes = relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
-        appNodes = appNodes.add( relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") ); // add intAtNodes[i]:s applications
-
-        var lvl1angle = Math.acos( (relToNodes[i].position().x-node.position().x)/lvl1Radius );
-        if(relToNodes[i].position().y-node.position().y>0)
-          lvl1angle*=-1;
-
-
-        for(var j=0; j<secondLvlNodes.length; j++){
-          if(!secondLvlNodes[j].hasClass('done')){
-            secondLvlNodes[j].addClass('levelTwo');
-            
-            angle = mapToRange(j,0, secondLvlNodes.length, lvl1angle-PI/24, lvl1angle+PI/24);
-            console.log(angle);
-
-            posX = node.position().x + lvl2Radius * Math.cos(angle);
-            posY = node.position().y - lvl2Radius * Math.sin(angle);
-
-            secondLvlNodes[j].animate({
-              position: { 
-                x: posX,
-                y: posY
-              } 
-            }, {
-              duration: layoutDuration 
-            });
-            secondLvlNodes[j].addClass('done');
-          }
-        }
-      }
+      posLvl2Nodes(relToNodes);
+      posLvl2Nodes(intAtNodes);
+      posLvl2Nodes(aTeAtNodes);
 
       
 
@@ -332,7 +322,7 @@ $(function(){
       for(var i=0; i<appNodes.length; i++){
         posX = node.position().x + 1000
         if(appNodes.length==1){ posY = node.position().y }
-        else{ posY = node.position().y - mapToRange(i,0,appNodes.length, -600,600) }
+        else{ posY = node.position().y - mapToRange(i,0,appNodes.length, -600, 600) }
 
         appNodes[i].animate({
             position: { 
