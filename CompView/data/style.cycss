@@ -90,6 +90,16 @@ edge[interaction ="hasAppEdge"] {
 	z-index: 0;
 }
 
+edge.highlighted {
+	opacity: 1.0;
+	width: 4;
+	z-index: 9999;
+}
+
+edge[interaction ="hasAppEdge"].highlighted {
+	opacity: 0.3;
+}
+
 /*
 edge[interaction = "RelToEdge"].highlighted {
 	label: Related to;
@@ -125,12 +135,6 @@ node.highlighted {
     	text-outline-width: 2;
     	text-outline-opacity: 1;
     	z-index: 9999;
-}
- 
-edge.highlighted {
-	opacity: 1.0;
-	width: 4;
-	z-index: 9999;
 }
 
 

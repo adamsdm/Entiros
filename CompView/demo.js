@@ -51,7 +51,7 @@ $(function(){
         });
         
         //cy.elements('.levelTwo').removeClass('filtered');
-        cy.elements().removeClass('highlighted').removeClass('faded').removeClass('levelTwo');
+        cy.elements().removeClass('highlighted').removeClass('faded').removeClass('levelTwo').removeClass('done');
       });
     //}, layoutDuration);
 
@@ -93,7 +93,7 @@ $(function(){
 
     //App team at nodes
     for(var i=0; i<aTeAtNodes.length; i++){
-      posX = node.position().x + levelHeight - 100*i;
+      posX = node.position().x + levelHeight + 100*i;
       posY = node.position().y + levelHeight;
 
       aTeAtNodes[i].animate({
@@ -105,7 +105,7 @@ $(function(){
 
     //Related to nodes
     for(var i=0; i<relToNodes.length; i++){
-      posX = node.position().x - levelHeight + 100*i;
+      posX = node.position().x - levelHeight - 100*i;
       posY = node.position().y + levelHeight;
 
       relToNodes[i].animate({
@@ -115,85 +115,6 @@ $(function(){
        });
     }
 
-    /*******************/
-    /*** Second level ***/
-    /*******************/
-    // setTimeout( function(){
-
-    //   //Int at nodes
-    //   for(var i=0; i<intAtNodes.length; i++){
-    //     var secondLvlNodes = intAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
-    //     appNodes = appNodes.add( intAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") ); // add intAtNodes[i]:s applications
-
-    //     for(var j=0; j<secondLvlNodes.length; j++){
-    //       spacing = lvl2width/secondLvlNodes.length;
-    //       secondLvlNodes[j].addClass('levelTwo');
-
-    //       secondLvlNodes[j].animate({
-    //         position: { 
-    //           x: intAtNodes[i].position().x +j*spacing-((secondLvlNodes.length-1)/2*spacing),
-    //           y: node.position().y-2*levelHeight
-    //         } 
-    //       }, {
-    //         duration: layoutDuration 
-    //      });
-    //     }
-    //   }
-
-    //   // Ap te at nodes
-    //   for(var i=0; i<aTeAtNodes.length; i++){
-    //     var secondLvlNodes = aTeAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
-    //     appNodes = appNodes.add( aTeAtNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") );
-        
-    //     for(var j=0; j<secondLvlNodes.length; j++){
-    //       spacing = lvl2width/secondLvlNodes.length;          
-    //       secondLvlNodes[j].addClass('levelTwo');
-
-    //       secondLvlNodes[j].animate({
-    //         position: { 
-    //           x: aTeAtNodes[i].position().x + j*spacing,
-    //           y: node.position().y+2*levelHeight
-    //         } 
-    //       }, {
-    //         duration: layoutDuration 
-    //      });
-    //     }
-    //   }
-
-    //   // Related to nodes
-    //   for(var i=0; i<relToNodes.length; i++){
-    //     var secondLvlNodes = relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
-    //     appNodes = appNodes.add( relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") );
-
-    //     for(var j=0; j<secondLvlNodes.length; j++){
-    //       spacing = lvl2width/secondLvlNodes.length;          
-    //       secondLvlNodes[j].addClass('levelTwo');
-
-    //       secondLvlNodes[j].animate({
-    //         position: { 
-    //           x: relToNodes[i].position().x - j*spacing,
-    //           y: node.position().y+2*levelHeight
-    //         } 
-    //       }, {
-    //         duration: layoutDuration 
-    //      });
-    //     }
-    //   } 
-
-    //   //Application nodes
-    //   for(var i=0; i<appNodes.length; i++){
-    //     appNodes[i].animate({
-    //         position: { 
-    //           x: node.position().x + 800,
-    //           y: node.position().y - 200+(i+1)*400/appNodes.length
-    //         } 
-    //       }, {
-    //         duration: layoutDuration 
-    //      });
-    //   } 
-
-
-    // }, layoutDuration );
     
     setTimeout( function(){
 
@@ -296,6 +217,162 @@ $(function(){
       });
     }, 2*layoutDuration+100 );
 
+  }
+
+  function highlight2(node){
+    $('#lvl2Filter').show();
+
+    var intAtNodes = node.connectedEdges('edge[interaction="intAtEdge"]').connectedNodes("node[id!='"+node.id()+"'][NodeType!='Application']");
+    var aTeAtNodes = node.connectedEdges('edge[interaction="apTeAtEdge"]').connectedNodes("node[id!='"+node.id()+"'][NodeType!='Application']");
+    var relToNodes = node.connectedEdges('edge[interaction="RelToEdge"]').connectedNodes("node[id!='"+node.id()+"'][NodeType!='Application']");
+    var appNodes   = node.connectedEdges('edge[interaction="hasAppEdge"]').connectedNodes("node[id!='"+node.id()+"'][NodeType='Application']")
+
+    const PI = Math.PI;
+    var angle;
+    var maxAngle;
+    var minAngle;
+    var posX;
+    var posY;
+    var lvl1Radius = 300;
+    var lvl2Radius = 600;
+
+
+    /**
+     * Maps x where x =[min,...,max] to [a,...,b]
+     */
+    function mapToRange(x, min, max, a, b){
+      //****** Mathematical formula ******//
+      //                                  //
+      // range [min,max] -> [a,b]         //
+      //                                  //
+      //**********************************//
+      //           (b-a)(x - min)         //
+      //    f(x) = --------------  + a    //
+      //             max - min            //
+      //**********************************//
+      var fx = (b-a)*(x-min)/(max-min) + a; 
+      return fx;
+    }
+    
+    /**
+     *  positions nodes between minAngle and maxAngle with radius r 
+     */
+    function posNodes(theNodes, minAngle, maxAngle, r){
+      for(var i=0; i<theNodes.length; i++){
+        if(!theNodes[i].hasClass('done')){
+          if (theNodes.length==1){ angle = (minAngle+maxAngle)/2; } //if only one item position it in the center of circle disk
+          else{ angle = mapToRange(i,0, theNodes.length, minAngle, maxAngle); }
+
+          var posX = node.position().x + r * Math.cos(angle);
+          var posY = node.position().y - r * Math.sin(angle);
+
+          theNodes[i].animate({
+            position: { 
+              x: posX,
+              y: posY
+            } 
+          }, {
+            duration: layoutDuration 
+          });
+          theNodes[i].addClass('done');
+        }
+      }
+    }
+    
+    //************** LEVEL 1 *************//
+    
+    posNodes(intAtNodes,  3*PI/12,  9*PI/12, lvl1Radius );
+    posNodes(relToNodes, 11*PI/12, 17*PI/12, lvl1Radius );
+    posNodes(aTeAtNodes, 19*PI/12, 25*PI/12, lvl1Radius );
+
+
+
+
+    //************** LEVEL 2 *************//
+    setTimeout( function(){
+
+
+      //relTo nodes
+      for(var i=0; i<relToNodes.length; i++){
+        var secondLvlNodes = relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
+        appNodes = appNodes.add( relToNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") ); // add intAtNodes[i]:s applications
+
+        var lvl1angle = Math.acos( (relToNodes[i].position().x-node.position().x)/lvl1Radius );
+        if(relToNodes[i].position().y-node.position().y>0)
+          lvl1angle*=-1;
+
+
+        for(var j=0; j<secondLvlNodes.length; j++){
+          if(!secondLvlNodes[j].hasClass('done')){
+            secondLvlNodes[j].addClass('levelTwo');
+            
+            angle = mapToRange(j,0, secondLvlNodes.length, lvl1angle-PI/24, lvl1angle+PI/24);
+            console.log(angle);
+
+            posX = node.position().x + lvl2Radius * Math.cos(angle);
+            posY = node.position().y - lvl2Radius * Math.sin(angle);
+
+            secondLvlNodes[j].animate({
+              position: { 
+                x: posX,
+                y: posY
+              } 
+            }, {
+              duration: layoutDuration 
+            });
+            secondLvlNodes[j].addClass('done');
+          }
+        }
+      }
+
+      
+
+
+      //App nodes
+      for(var i=0; i<appNodes.length; i++){
+        posX = node.position().x + 1000
+        if(appNodes.length==1){ posY = node.position().y }
+        else{ posY = node.position().y - mapToRange(i,0,appNodes.length, -600,600) }
+
+        appNodes[i].animate({
+            position: { 
+              x: posX,
+              y: posY
+            } 
+          }, {
+            duration: layoutDuration 
+         });
+      }
+    }, layoutDuration+100 );    
+
+    var allRelElements = node.closedNeighborhood();
+    allRelElements = allRelElements.add(node.closedNeighborhood("[NodeType!='Application']").closedNeighborhood())
+    
+
+
+
+
+
+    
+
+
+    cy.batch(function(){ 
+      cy.elements().addClass('faded');
+      allRelElements.removeClass('faded').addClass('highlighted');
+    });
+
+
+    //Update viewport to fit elements
+    setTimeout( function(){
+      cy.animate({
+        fit: {
+          eles: allRelElements,
+          padding: 30
+        }
+      }, {
+        duration: layoutDuration
+      });
+    }, 2*layoutDuration+200 );
   }
 
 
@@ -450,19 +527,52 @@ $(function(){
       var node = this;
       showNodeInfo( node );
 
-      if(node.data().NodeType == 'Customer'){
-        cy.animate({
-          center: {
-            eles: node
-          }
-        }, {
-          duration: layoutDuration
-        });
 
+      //Application
+      if(node.data().NodeType == 'Application'){
+        var nodes = node.openNeighborhood();
+        var allRelElements = nodes;
+            allRelElements = allRelElements.add(node);
+        var posX;
+        var posY,
+
+        posX = node.position().x;
+        posY = node.position().y + 400;
+
+
+        nodes.animate({
+          position: {
+            x: posX, 
+            y: posY 
+          }
+        }, { duration:layoutDuration });
+
+
+        cy.elements().not( nodes ).not(node).addClass('faded');
+        nodes.addClass('highlighted');
+        node.addClass('highlighted')
+
+        setTimeout(function(){
+          cy.animate({
+            fit: {
+              eles: cy.elements('.highlighted')
+            }
+          }, {
+            duration: layoutDuration
+          });
+        }, layoutDuration)
+
+
+      }      
+
+
+
+      //Customer
+      if(node.data().NodeType == 'Customer' || node.data().NodeType == 'Prospect'){
 
         setTimeout( function(){
           cy.nodes().removeClass('hidden');
-          highlight( node );
+          highlight2( node );
         }, layoutDuration);
       }
 
@@ -479,6 +589,8 @@ $(function(){
 
     cy.on('mouseover', 'node', function(e){
       var node = this;
+
+      console.log(node.position());
 
       if(!inCompFocusView){
         focus(node);
