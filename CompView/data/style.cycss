@@ -43,6 +43,15 @@ node[NodeType = "Customer"] {
 	height: mapData(AnnRevenue, 1000000, 20000000000, 40, 120);
 }
 
+node[NodeType = "vertInfoNode"] {
+	color: #737373;
+	font-size: 40px;
+	background-color: #737373;
+	text-outline-width: 0;
+	width: 0;
+	height: 0;
+}
+
 node[NodeType = "Application"] {
 	background-color: #fff;
 	text-outline-color: #fff;

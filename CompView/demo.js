@@ -487,27 +487,26 @@ $(function(){
 
     //Prospect style depending on ownership
     cy.style()
-      .selector('node[NodeType="Prospect"][Owner="M&S"]')
+      .selector('node[Owner="M&S"]')
         .style({
           'border-width': '4px',
           'border-color': 'yellow'
         })
     .update();
     cy.style()
-      .selector('node[NodeType="Prospect"][Owner="Team Voyager"]')
+      .selector('node[Owner="Team Voyager"]')
         .style({
           'border-width': '4px',
           'border-color': 'red'
         })
     .update();
     cy.style()
-      .selector('node[NodeType="Prospect"][Owner="Team Enterprise"]')
+      .selector('node[Owner="Team Enterprise"]')
         .style({
           'border-width': '4px',
           'border-color': 'blue'
         })
     .update();        
-
 
 
 
@@ -520,6 +519,8 @@ $(function(){
       //   y: p.y
       // });
 
+
+
     });
 
     $('#reusability').text("App Reusability: "+calcReusability()+'%');
@@ -531,7 +532,7 @@ $(function(){
     cy.on('select', 'node', function(e){
       inCompFocusView =true;
       var node = this;
-      showNodeInfo( node );
+
 
       //Application
       if(node.data().NodeType == 'Application'){
@@ -544,8 +545,7 @@ $(function(){
         
         posY = node.position().y + 400;
 
-        console.log(nodes.filter('node').length);
-
+        showNodeInfo( node );
         for(var i=0; i<nodes.length; i++){
           posX = node.position().x;
           
@@ -603,11 +603,11 @@ $(function(){
     cy.on('mouseover', 'node', function(e){
       var node = this;
 
-      console.log(node);
-
       if(!inCompFocusView){
-        focus(node);
-        showNodeInfo( node );
+        if(node.data().NodeType!='vertInfoNode'){
+          focus(node);
+          showNodeInfo( node );
+        }
       }
 
     });
@@ -698,6 +698,56 @@ $(function(){
     });
   }
 
+  function addVertInfoNodes(){
+    var custNodes = cy.elements('node[NodeType="Customer"]');
+    var radius;
+    var angle;   
+    var textAngle;   
+    var typeArray = [];  
+    var typeInd;
+    var halign;
+
+    //Get unique company types and store them in typeArray
+    for(var i=0; i<custNodes.length; i++){
+        typeArray.push(custNodes[i].data().CompanyType);
+    }
+    typeArray = typeArray.filter( onlyUnique );
+
+    cy.remove('node[NodeType="vertInfoNode"]');
+    //for each type
+    for(var i=0; i<typeArray.length; i++){
+      radius = 3500;                        
+      angle = 2*i*Math.PI/typeArray.length;    
+      
+      textAngle = angle;
+      halign = 'right';
+
+      console.log(Math.PI/2)
+      if(angle>Math.PI/2){
+        textAngle+=Math.PI;
+        halign = 'left';
+      } 
+      if(angle>3*Math.PI/2){
+        textAngle+=Math.PI
+        halign = 'right';
+      }
+
+      cy.add([
+        { group: "nodes", 
+          data: { id: typeArray[i], CompanyType: typeArray[i], NodeType: 'vertInfoNode' }, 
+          position: { x: radius*Math.cos(angle), y: radius*Math.sin(angle) }, 
+          locked: true, selectable: false,
+          style:{'text-rotation': textAngle, 'text-halign': halign} }
+      ]);
+    }
+
+    cy.style().update();
+
+    function onlyUnique(value, index, self) { 
+      return self.indexOf(value) === index;
+    } 
+  }
+
   function positionAlgorithm(){
     var custNodes = cy.elements('node[NodeType="Customer"]');
     var appNodes = cy.elements('node[NodeType="Application"]');
@@ -783,10 +833,12 @@ $(function(){
 
   
   $('#debug').on('click', function(){
-    cy.remove('edge');
-    addEdges();
-    positionAlgorithm(); 
-    //alert("Position algorithm done, click save to export as json.");
+    // cy.remove('edge');
+    // addEdges();
+    // positionAlgorithm(); 
+    
+    //addVertInfoNodes();
+
   });
 
   $('#save').on('click', function(){
@@ -817,6 +869,8 @@ $(function(){
     var prosp             = $('#prosp').is(':checked');
     var app               = $('#app').is(':checked');
     var rel               = $('#rel').is(':checked');
+    var own               = $('#own').is(':checked');
+    var vertinf           = $('#vertinf').is(':checked');
 
 
     var jordbruk          = $('#jordbruk').is(':checked'); //Jordbruk, skogsbruk och fiske
@@ -842,6 +896,28 @@ $(function(){
     var ambassad          = $('#ambassad').is(':checked'); // Verksamhet vid internationella orginisationer, utländska ambassader o.d.
     var other             = $('#other').is(':checked'); // Other
     var notSet            = $('#notSet').is(':checked');// Not set
+
+
+
+    if(!rel ){
+      cy.edges().addClass('filtered');
+    } else {
+      cy.edges().removeClass('filtered');
+    }
+
+    if(!own){
+      cy.style()
+      .selector('node')
+        .style({
+          'border-width': '0px'
+      }).update();
+    } else {
+      cy.style()
+      .selector('node')
+        .style({
+          'border-width': '4px'
+      }).update();
+    }
 
     cy.batch(function(){
       cy.nodes().forEach(function( n ){
@@ -886,14 +962,12 @@ $(function(){
         } else if( type === 'Application' ){
           
           if( !app ){ filter(); }
-        } 
 
-        if(!rel ){
-          cy.edges().addClass('filtered');
-        } else {
-          cy.edges().removeClass('filtered');
-        }        
+        } else if( type === 'vertInfoNode' ){
+          
+          if( !vertinf ){ filter(); }
 
+        }
 
 
         if( Owner === 'Team Voyager' ){
