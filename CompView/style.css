@@ -168,6 +168,20 @@ body.calc #loading {
 
 }
 
+#qtip-2-content{
+  background-color: #e6e6e6;
+}
+#qtip-2-content p, #qtip-2-content h1{
+  margin-bottom: 0;
+}
+#legend {
+  width: 3em;
+  margin: 0.5em;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  z-index: 999;
+}
 #reset {
   right: 0;
 }

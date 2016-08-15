@@ -458,7 +458,11 @@ $(function(){
         x: n.position.x,
         y: n.position.y
       };
+        
+      
     });
+
+
 
     loading.classList.add('loaded');
 
@@ -479,7 +483,34 @@ $(function(){
       // boxSelectionEnabled: false,
       // autolock: true
     });
-    
+
+
+    //Prospect style depending on ownership
+    cy.style()
+      .selector('node[NodeType="Prospect"][Owner="M&S"]')
+        .style({
+          'border-width': '4px',
+          'border-color': 'yellow'
+        })
+    .update();
+    cy.style()
+      .selector('node[NodeType="Prospect"][Owner="Team Voyager"]')
+        .style({
+          'border-width': '4px',
+          'border-color': 'red'
+        })
+    .update();
+    cy.style()
+      .selector('node[NodeType="Prospect"][Owner="Team Enterprise"]')
+        .style({
+          'border-width': '4px',
+          'border-color': 'blue'
+        })
+    .update();        
+
+
+
+
     cy.on('free', 'node', function( e ){
       // var n = e.cyTarget;
       // var p = n.position();
@@ -1020,6 +1051,31 @@ $(function(){
     },
 
     content: $('#filtersType')
+  });
+
+  $('#legend').qtip({
+    position: {
+      my: 'bottom left',
+      at: 'top right'
+    },
+    
+    show: {
+      event: 'click'
+    },
+    
+    hide: {
+      event: 'unfocus'
+    },
+    
+    style: {
+      classes: 'qtip-bootstrap',
+      tip: {
+        width: 16,
+        height: 8
+      }
+    },
+
+    content: $('#legends')
   });
 
 

@@ -48,13 +48,32 @@
   <button id="filterType" class="btn btn-default"><i class="fa fa-eye"></i></button>
   <button id="save" class="btn btn-default"><i class="fa fa-floppy-o"></i></button>
   <button id="debug" class="btn btn-default"><i class="fa fa-dot-circle-o"></i></button>
+  <button id="legend" class="btn btn-default"><i class="fa fa-question-circle"></i></button>
+
+  <div id="legends">
+    <strong>Node Type</strong><br />
+    <i class="fa fa-circle" aria-hidden="true" style="color: #a9c742;"></i> Customer <br />
+    <i class="fa fa-circle" aria-hidden="true" style="color: #87888a;"></i> Prospect <br />
+    <i class="fa fa-circle" aria-hidden="true" style="color: white;"></i> Application <br /><br />
+
+    <strong>Relations</strong><br />
+    <p style="color: #a9c742; display: inline;"> ─ Related to</p><br />
+    <p style="color: #87888a; display: inline;"> ─ Integrated at</p><br />
+    <p style="color: white; display: inline;">  ─ App team at</p><br /><br />
+
+    <strong>Team</strong><br />
+    <i class="fa fa-circle-o" aria-hidden="true" style="color: red;"></i> Team Voyager <br />
+    <i class="fa fa-circle-o" aria-hidden="true" style="color: blue;"></i> Team Enterprise <br />
+    <i class="fa fa-circle-o" aria-hidden="true" style="color: yellow;"></i> M&S <br />
+
+  </div>
 
   
   <div id="filters">
     <strong>Team</strong>
     <input id="tVoyager" type="checkbox" checked></input><label for="tVoyager">Team Voyager</label><br />
     <input id="tEnterprise" type="checkbox" checked></input><label for="tEnterprise">Team Enterprise</label><br />
-    <input id="tMS" type="checkbox" checked></input><label for="tMS">M&S</label><br /><br />
+    <input id="tMS" type="checkbox" checked></input><label for="tMS">M&S</label><br />
 
     <strong>Business</strong>
     <input id="jordbruk" type="checkbox" checked></input><label for="jordbruk">Jordbruk, skogsbruk och fiske</label><br />
