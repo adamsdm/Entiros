@@ -521,7 +521,6 @@ $(function(){
           
           if(nodes.filter('node').length>1) 
             posX += mapToRange(i, 0, nodes.length, -600, 600);
-          
 
           nodes[i].animate({
             position: {
