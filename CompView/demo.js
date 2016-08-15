@@ -236,23 +236,6 @@ $(function(){
     var lvl1Radius = 300;
     var lvl2Radius = 600;
 
-
-    /**
-     * Maps x where x =[min,...,max] to [a,...,b]
-     */
-    function mapToRange(x, min, max, a, b){
-      //****** Mathematical formula ******//
-      //                                  //
-      // range [min,max] -> [a,b]         //
-      //                                  //
-      //**********************************//
-      //           (b-a)(x - min)         //
-      //    f(x) = --------------  + a    //
-      //             max - min            //
-      //**********************************//
-      var fx = (b-a)*(x-min)/(max-min) + a; 
-      return fx;
-    }
     
     /**
      *  positions nodes between minAngle and maxAngle with radius r 
@@ -280,16 +263,19 @@ $(function(){
     }
 
     //
-    function posLvl2Nodes(theNodes){
+    function posLvl2Nodes(theNodes, minAngle, maxAngle){
       for(var i=0; i<theNodes.length; i++){
         var secondLvlNodes = theNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType!='Application']");
+
         appNodes = appNodes.add( theNodes[i].openNeighborhood("node[id!='"+node.id()+"'][NodeType='Application']") ); // add intAtNodes[i]:s applications
+
 
         var lvl1angle = Math.acos( (theNodes[i].position().x-node.position().x)/lvl1Radius );
         if(theNodes[i].position().y-node.position().y>0)
           lvl1angle*=-1;
 
-        lvl2DiskA = (PI/4)/relToNodes.length;
+        if(theNodes.length>1) { lvl2DiskA = (PI/4)/theNodes.length }
+        else { lvl2DiskA = (PI/4/secondLvlNodes.length); }
 
         minAngle = lvl1angle-lvl2DiskA;
         maxAngle = lvl1angle+lvl2DiskA;
@@ -311,11 +297,10 @@ $(function(){
     //************** LEVEL 2 *************//
     setTimeout( function(){
 
-      posLvl2Nodes(relToNodes);
-      posLvl2Nodes(intAtNodes);
-      posLvl2Nodes(aTeAtNodes);
+      posLvl2Nodes(relToNodes, 11*PI/12, 17*PI/12);
+      posLvl2Nodes(intAtNodes, 3*PI/12, 9*PI/12);
+      posLvl2Nodes(aTeAtNodes, 19*PI/12, 25*PI/12);
 
-      
 
 
       //App nodes
@@ -526,21 +511,30 @@ $(function(){
         var posX;
         var posY,
 
-        posX = node.position().x;
+        
         posY = node.position().y + 400;
 
+        console.log(nodes.filter('node').length);
 
-        nodes.animate({
-          position: {
-            x: posX, 
-            y: posY 
-          }
-        }, { duration:layoutDuration });
+        for(var i=0; i<nodes.length; i++){
+          posX = node.position().x;
+          
+          if(nodes.filter('node').length>1) 
+            posX += mapToRange(i, 0, nodes.length, -600, 600);
+          
 
+          nodes[i].animate({
+            position: {
+              x: posX, 
+              y: posY 
+            }
+          }, { duration:layoutDuration });
+        }
 
         cy.elements().not( nodes ).not(node).addClass('faded');
+        cy.elements().removeClass('focused');
         nodes.addClass('highlighted');
-        node.addClass('highlighted')
+        node.addClass('highlighted');
 
         setTimeout(function(){
           cy.animate({
@@ -561,7 +555,7 @@ $(function(){
       if(node.data().NodeType == 'Customer' || node.data().NodeType == 'Prospect'){
 
         setTimeout( function(){
-          cy.nodes().removeClass('hidden');
+          cy.elements().removeClass('focused');
           highlight2( node );
         }, layoutDuration);
       }
@@ -580,7 +574,7 @@ $(function(){
     cy.on('mouseover', 'node', function(e){
       var node = this;
 
-      console.log(node.position());
+      console.log(node);
 
       if(!inCompFocusView){
         focus(node);
@@ -661,6 +655,7 @@ $(function(){
     var n = cy.getElementById(entry.id);
 
     n.select();
+    cy.elements().removeClass('hidden');
     showNodeInfo( n );
   });
 
@@ -740,7 +735,22 @@ $(function(){
     } 
   }
 
-
+  /**
+  * Maps x where x =[min,...,max] to [a,...,b]
+  */
+  function mapToRange(x, min, max, a, b){
+    //****** Mathematical formula ******//
+    //                                  //
+    // range [min,max] -> [a,b]         //
+    //                                  //
+    //**********************************//
+    //           (b-a)(x - min)         //
+    //    f(x) = --------------  + a    //
+    //             max - min            //
+    //**********************************//
+    var fx = (b-a)*(x-min)/(max-min) + a; 
+    return fx;
+  }
 
   
   $('#debug').on('click', function(){
