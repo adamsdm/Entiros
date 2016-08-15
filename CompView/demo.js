@@ -502,7 +502,6 @@ $(function(){
       var node = this;
       showNodeInfo( node );
 
-
       //Application
       if(node.data().NodeType == 'Application'){
         var nodes = node.openNeighborhood();
