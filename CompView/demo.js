@@ -752,13 +752,14 @@ $(function(){
 
   
   $('#debug').on('click', function(){
-    positionAlgorithm(); 
     cy.remove('edge');
     addEdges();
+    positionAlgorithm(); 
     //alert("Position algorithm done, click save to export as json.");
   });
 
   $('#save').on('click', function(){
+
     //Open JSON file in new tab
     var data = JSON.stringify(cy.json(),null,2);
     var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
@@ -784,6 +785,8 @@ $(function(){
     var saleQualLead      = $('#saleQualLead').is(':checked');
     var prosp             = $('#prosp').is(':checked');
     var app               = $('#app').is(':checked');
+    var rel               = $('#rel').is(':checked');
+
 
     var jordbruk          = $('#jordbruk').is(':checked'); //Jordbruk, skogsbruk och fiske
     var utvinning         = $('#utvinning').is(':checked'); // Utvinning av mineral
@@ -852,6 +855,12 @@ $(function(){
         } else if( type === 'Application' ){
           
           if( !app ){ filter(); }
+        } 
+
+        if(!rel ){
+          cy.edges().addClass('filtered');
+        } else {
+          cy.edges().removeClass('filtered');
         }        
 
 
