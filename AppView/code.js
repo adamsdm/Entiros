@@ -204,6 +204,7 @@ function initCy( then ){
     var node = this;
 
     console.log(node.data());
+    console.log(node.position().y);
   });
 }
 
@@ -370,7 +371,7 @@ $('#addProcess').on('click', function(){
   addProcess();
 })
 $('#debug').on('click', function(){
-  incBotBarWidth();  
+  incBotBarWidth(10);  
 })
 
 $('#clear').on('click', function(){
@@ -523,36 +524,93 @@ function readData2( data ){
       { group: "edges", data: { source: data.edges[i].source, target: 'intConPBad'+i, type: 'rightIntEdge' } },            //int edge source->conP
       { group: "edges", data: { source: 'intConPBad'+i, target: data.edges[i].target, type: 'rightIntEdge' } },             //int edge source->conP     
     ]);  
-    incMidBarWidth();
+    incMidBarWidth(15);
   }
 
   
+  var initTopBarPos = cy.$('#a').position().y;
+  var initMidBarPos = cy.$('#b').position().y;
+  var initBotBarPos = cy.$('#c').position().y;
+
+  var topBarWidth = parseInt( cy.$("#aEnd").style().height );
+  var midBarWidth = parseInt( cy.$("#bEnd").style().height );
+  var botBarWidth = parseInt( cy.$("#cEnd").style().height );
 
   //For each application
   for(var i=0; i< applications.length; i++){
     var contracts = applications[i].contracts;
     var services  = applications[i].services;
 
-    //Add backbones lines
+    
     if(contracts.length>0){
-      var contractNode = cy.$('#'+applications[i].id +'-contractNode');
+      var contractNode = cy.$("[id='"+applications[i].id+"-contractNode']");
       var backPosX = contractNode.position().x;
-      var backPosY = cy.$('#a').position().y-80; 
+      var backPosY = cy.$('#a').position().y-80;
+
+    
+      //Add backbones lines
       cy.add([
-        { group: "nodes", data: { type: 'backbone', id: applications[i].id+'topContBackbone' }, position: {x: backPosX, y: backPosY } },
+        { group: "nodes", data: { type: 'backboneTop', id: applications[i].id+'topContBackbone' }, position: {x: backPosX, y: backPosY } },
         { group: "edges", data: { source: contractNode.id(), target: applications[i].id+'topContBackbone', type: 'backbone' }  },            //int edge source->conP  
       ]);
     }
+
+    // for each service
     for(var j=0; j<services.length; j++){
-      var serviceNode = cy.$('#'+applications[i].id +'-serviceNode'+j);
+
+      var serviceNode = cy.$("[id='"+applications[i].id+"-serviceNode"+j+"']");
       var backPosX = serviceNode.position().x;
       var backPosY = cy.$('#a').position().y-80; 
+
+      //Add the backbone
       cy.add([
-        { group: "nodes", data: { type: 'backbone', id: applications[i].id+'topServBackbone'+j }, position: {x: backPosX, y: backPosY } },
+        { group: "nodes", data: { type: 'backboneTop', id: applications[i].id+'topServBackbone'+j }, position: {x: backPosX, y: backPosY } },
         { group: "edges", data: { source: serviceNode.id(), target: applications[i].id+'topServBackbone'+j, type: 'backbone' }  },            //int edge source->conP  
       ]);
-    }
 
+
+      //add service nodes
+      if(services[j].type == "Experience" )  { posY = initTopBarPos - 10*(noExpe+1) + topBarWidth/2 ; noExpe++; }
+      else if(services[j].type == "Process" ){ posY = initMidBarPos - 10*(noProc+1) + midBarWidth/2 ; noProc++; }
+      else if( services[j].type == "System" ){ posY = initBotBarPos - 10*(noSyst+1) + botBarWidth/2 ; noSyst++; }
+      else { posY = 1000; } //If no type, position node off to find it easy
+
+      posX = serviceNode.position().x;      
+      cy.add([
+        { group: "nodes", data: { type: 'service', serviceType: services[j].type, id: services[j].id }, position: {x: posX, y: posY } }
+      ]);
+    }
+  }
+
+
+  //When all services has been added, increase bars width
+  var newBotWidth = 10*(noSyst+1);
+  var newMidWidth = 10*(noProc+1);
+  var newTopWidth = 10*(noExpe+1);
+  
+  //Only increase if the new width > than current width
+  if( newBotWidth > botBarWidth  ){ incBotBarWidth(newBotWidth - botBarWidth); } 
+  if( newMidWidth > midBarWidth  ){ incMidBarWidth(newMidWidth - midBarWidth); }
+  if( newTopWidth > topBarWidth  ){ incTopBarWidth(newTopWidth - topBarWidth); }
+  
+
+  //finaly, loop through applications again, and insert contracts
+  for(var i=0; i<applications.length; i++){
+    var contracts = applications[i].contracts;
+
+    for(var j=0; j<contracts.length; j++){
+      var target = cy.$( "[id='"+contracts[j].target+"']" );
+      var contractNode = cy.$("[id='"+applications[i].id+"-contractNode']");
+
+      posX = contractNode.position().x;
+      posY = target.position().y;
+
+      cy.add([
+        { group: "nodes", data: { type: 'contract', id: contracts[j].id }, position: {x: posX, y: posY } },
+        { group: "edges", data: { source: contracts[j].id, target: target.id(), type: 'contractServiceEdge' } }
+      ]);
+
+    }
   }
 
   //Add data to each app containing connected targets
@@ -576,9 +634,8 @@ function readData2( data ){
 
 
 //Increases the middle bar width and moves top bar up
-function incMidBarWidth(){
+function incMidBarWidth( stepSize ){
   var currH = parseInt( cy.$("#bEnd").style().height );
-  var stepSize=layoutBarIncW;
   var newH = currH+stepSize;
 
   cy.$("#bEnd").style({
@@ -600,12 +657,23 @@ function incMidBarWidth(){
   cy.$('#aCorner').position().y -= stepSize;
   cy.$('#aCornerBG').position().y -= stepSize;
 
+  //Move backboneTop nodes
+  var topBackboneNodes = cy.$('node[type="backboneTop"]');
+  
+  topBackboneNodes.forEach(function(n){
+    n.position().y -= stepSize;
+  })
+
+  var experiences = cy.$('node[type="service"][serviceType="Experience"]');
+  experiences.forEach(function(n){
+    n.position().y -= stepSize;
+  })
+
   cy.layout(theLayout);
 }
 
-function incTopBarWidth(){
+function incTopBarWidth( stepSize ){
   var currH = parseInt( cy.$("#aEnd").style().height );
-  var stepSize=layoutBarIncW;
   var newH = currH+stepSize;
 
   cy.$("#aEnd").style({
@@ -623,12 +691,18 @@ function incTopBarWidth(){
   cy.$('#a').position().y -= stepSize/2;
   cy.$('#aEnd').position().y -= stepSize/2;
 
+  //Move backboneTop nodes
+  var topBackboneNodes = cy.$('node[type="backboneTop"]');
+  
+  topBackboneNodes.forEach(function(n){
+    n.position().y -= stepSize;
+  })
+
   cy.layout(theLayout);
 }
 
-function incBotBarWidth(){
+function incBotBarWidth( stepSize ){
   var currH = parseInt( cy.$("#cEnd").style().height );
-  var stepSize=layoutBarIncW;
   var newH = currH+stepSize;
 
   cy.$("#c").style({
@@ -659,12 +733,31 @@ function incBotBarWidth(){
 
   //Move conpoints in middlebar
   var middleConPoints = cy.$('node[type="conPointNodeGood"]');
-      middleConPoints = middleConPoints.add(cy.$('node[type="conPointNodeRightGood"]'))
-  
+      middleConPoints = middleConPoints.add(cy.$('node[type="conPointNodeRightGood"]') );
   middleConPoints.forEach(function(n){
     n.position().y -= stepSize;
   })
 
+
+  //Move backboneTop nodes
+  var topBackboneNodes = cy.$('node[type="backboneTop"]');
+  topBackboneNodes.forEach(function(n){
+    n.position().y -= stepSize;
+  })
+
+
+  //Move processes
+  var processes = cy.$('node[type="service"][serviceType="Process"]');
+  processes.forEach(function(n){
+    n.position().y -= stepSize;
+  })
+
+
+  //Move experiences
+  var experiences = cy.$('node[type="service"][serviceType="Experience"]');
+  experiences.forEach(function(n){
+    n.position().y -= stepSize;
+  })
   cy.layout(theLayout);
 }
 
@@ -769,6 +862,7 @@ function doFiltering(){
   var intInfo = $('#intInfo').is(':checked');
   var toggleBadGrid = $('#toggleBadGrid').is(':checked');
   var toggleRightIntEdge = $('#toggleRightIntEdge').is(':checked');
+  var detailedInf = $('#detailedInf').is(':checked');
 
   cy.batch(function(){
     cy.elements().forEach(function( n ){
@@ -790,7 +884,10 @@ function doFiltering(){
 
 
 
-
+      } else if( type === 'backbone' || type === 'backboneTop' || type === 'appBodyNode' || type === 'service' || type === 'contract' ){
+        
+        if( !detailedInf ){ filter(); }
+      
       } else if( type === 'spaghEdge' ){
         
         if( !badIntEdges || toggleBadGrid ){ filter(); }
@@ -803,7 +900,7 @@ function doFiltering(){
         
         if( !toggleRightIntEdge ){ filter(); }
         
-      }  
+      }   
     });
   
   }); 

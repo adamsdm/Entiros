@@ -20,25 +20,25 @@
     "id": "Example comp",
     "type": "Customer",
     "Applications" : [
-      {"id": "App1", "appType": "other", 
-        "services":[ {"id":"s1"}, {"id":"s2"}, {"id":"s3"} ], 
-        "contracts":[ {"id":"c1"}, {"id":"c2"} ] 
+      {"id": "En App", "appType": "other", 
+        "services":[ {"id":"s1", "type": "Experience"}, {"id":"s2", "type":"Experience"}, {"id":"s3", "type":"System"} ], 
+        "contracts":[ {"id":"c1", "target":"s5"}, {"id":"c2","target":"s7"} ] 
       },
       {"id": "App2", "appType": "other", 
-        "services":[{"id":"s4"},{"id":"s5"},{"id":"s6"}], 
-        "contracts":[{"id":"c3"},{"id":"c4"}] 
+        "services":[ {"id":"s4", "type":"System"}, {"id":"s5", "type":"Process"}, {"id":"s6", "type":"System"} ], 
+        "contracts":[ {"id":"c3", "target":"s1"}, {"id":"c4", "target":"s12"} ] 
       },
       {"id": "App3", "appType": "middleware", 
-        "services":[{"id":"s7"},{"id":"s8"},{"id":"s9"}], 
-        "contracts":[{"id":"c3"},{"id":"c4"}] 
+        "services":[ {"id":"s7", "type":"Experience"}, {"id":"s8", "type":"System"}, {"id":"s9", "type":"Process" } ], 
+        "contracts":[ {"id":"c5","target":"s2"}, {"id":"c6","target":"s11"}, {"id":"c7","target":"s3"}, {"id":"c8","target":"s4"}]  
       },
       {"id": "App4", "appType": "middleware", 
-        "services":[{"id":"s10"},{"id":"s11"},{"id":"s12"}], 
-        "contracts":[{"id":"c3"},{"id":"c4"}] 
+        "services":[{"id":"s10", "type":"Experience"},{"id":"s11", "type":"Process"},{"id":"s12", "type":"Experience"}], 
+        "contracts":[{"id":"c9","target":"s9"},{"id":"c10","target":"s6"} ] 
       }
     ],
     "edges": [
-      {"source":"App1", "target":"App2"},
+      {"source":"En App", "target":"App2"},
       {"source":"App2", "target":"App3"},
       {"source":"App3", "target":"App4"}
     ]

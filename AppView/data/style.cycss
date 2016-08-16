@@ -67,7 +67,27 @@ node[type="conPointNodeGood"]{
   label: ;
 }
 
+node[type="contract"]{
+  width: 10px;
+  height: 10px;
+  shape: rectangle;
+  background-color: #a9c742;
+  label: ;
+}
+node[type="service"]{
+  width: 10px;
+  height: 10px;
+  background-color: #a9c742;
+  label: ;
+}
 
+edge[type="contractServiceEdge"]{
+  width:1px;
+  curve-style: bezier;
+  target-arrow-shape: triangle;
+  line-color: #66ccff;
+  target-arrow-color: #66ccff;
+}
 
 node[type="conPointNodeBad"]{
   width: 4px;
@@ -137,9 +157,9 @@ edge[type="backbone"]{
   line-style: dashed;
   opacity: 0.2;
 }
-node[type="backbone"]{
-  width: 0px;
-  height: 0px;
+node[type="backboneTop"]{
+  width: 5px;
+  height: 5px;
   label: ;
 }
 
