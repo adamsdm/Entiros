@@ -530,8 +530,8 @@ function readData2( data ){
 
   //For each application
   for(var i=0; i< applications.length; i++){
-    var services  = applications[i].services;
     var contracts = applications[i].contracts;
+    var services  = applications[i].services;
 
     //Add backbones lines
     if(contracts.length>0){
@@ -541,6 +541,15 @@ function readData2( data ){
       cy.add([
         { group: "nodes", data: { type: 'backbone', id: applications[i].id+'topContBackbone' }, position: {x: backPosX, y: backPosY } },
         { group: "edges", data: { source: contractNode.id(), target: applications[i].id+'topContBackbone', type: 'backbone' }  },            //int edge source->conP  
+      ]);
+    }
+    for(var j=0; j<services.length; j++){
+      var serviceNode = cy.$('#'+applications[i].id +'-serviceNode'+j);
+      var backPosX = serviceNode.position().x;
+      var backPosY = cy.$('#a').position().y-80; 
+      cy.add([
+        { group: "nodes", data: { type: 'backbone', id: applications[i].id+'topServBackbone'+j }, position: {x: backPosX, y: backPosY } },
+        { group: "edges", data: { source: serviceNode.id(), target: applications[i].id+'topServBackbone'+j, type: 'backbone' }  },            //int edge source->conP  
       ]);
     }
 
