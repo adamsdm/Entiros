@@ -37,7 +37,28 @@ node[type="app"]{
     text-rotation: -.7;
     text-valign: bottom;
     text-halign: left;
+    z-index: 9999;
 }
+
+node[type="appBodyNode"]{
+  label: ;
+  z-index: 0;
+}
+
+edge[type="appBodyEdge"]{
+  curve-style: haystack;
+  width: 40px;
+  line-color: #a9c742;
+}
+
+node[appType="middleware"]{
+  background-color: #66ccff;
+}
+edge[appType="middleware"]{
+  curve-style: haystack;
+  line-color: #66ccff;
+}
+
 
 node[type="conPointNodeGood"]{
   width: 4px;
@@ -45,6 +66,8 @@ node[type="conPointNodeGood"]{
   background-color: black;
   label: ;
 }
+
+
 
 node[type="conPointNodeBad"]{
   width: 4px;
@@ -106,6 +129,21 @@ edge[type="goodIntEdge"]{
   width:1px;
   line-color: #a9c742;
 }
+
+edge[type="backbone"]{
+  curve-style: haystack;
+  width:1px;
+  line-color: #b1b2b4;
+  line-style: dashed;
+  opacity: 0.2;
+}
+node[type="backbone"]{
+  width: 0px;
+  height: 0px;
+  label: ;
+}
+
+
 edge[type="rightIntEdge"]{
   curve-style: haystack;
   width:1px;

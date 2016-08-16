@@ -3,10 +3,11 @@ $(function(){ // on dom ready
 var noExpe = 0;
 var noProc = 0;
 var noSyst = 0;
-var noApps = 0;
+var noAppNodes = 1;
 
 var layoutDuration = 500;
 var layoutPadding  = 50;
+var layoutBarIncW = 15;
 
 var cy;
 
@@ -118,8 +119,6 @@ function initCy( then ){
         rightNodeGood = rightNodeGood.add( rightNodeGood.connectedEdges() );
 
 
-    console.log(conNodes);
-
     cy.elements().removeClass('hidden');
 
 
@@ -184,6 +183,8 @@ function initCy( then ){
 
   cy.on('mouseover', 'node[type="app"]', function(e){
     var node = this;
+
+    console.log(node);
     if(cy.$(':selected').length<1)
       showNodeInfo(node);
   });
@@ -285,21 +286,68 @@ var addSystem = function(){
   cy.layout( theLayout );
 }
 
-var addApp = function(_appId){
+var addApp = function(appData){
+  var appType = appData.appType;
+  var _appId = appData.id;
+  var services = appData.services;
+  var contracts = appData.contracts;
+  var spacing = 60;
+  var internalNodeSpace = 15;
 
-  noApps++;
-  var position={ x: noApps*60, y: 200 };
-  if(position.x > cy.$('#aEnd').position().x-60){
-    cy.$('#aEnd').position().x += 60;
-    cy.$('#bEnd').position().x += 60;
-    cy.$('#cEnd').position().x += 60;
+  var posX = noAppNodes*spacing;
+  var posY = 225;
+  if(appData.appType == 'middleware') 
+    posY=200;
+
+  var position={ x: posX, y: posY };
+
+  if(position.x > cy.$('#aEnd').position().x-spacing){
+    cy.$('#aEnd').position().x += spacing;
+    cy.$('#bEnd').position().x += spacing;
+    cy.$('#cEnd').position().x += spacing;
   }
 
+  //Add the first node
+  noAppNodes++;
   cy.add({
     group: "nodes",
-    data: { id: _appId, type: 'app' },
+    data: { id: _appId, appType: appType, type:'app', services: services, contracts: contracts },
     position: position
   });
+
+  //Add point for the contract node
+  if(contracts.length>0){
+    noAppNodes+=0.3;
+    var intPosX = posX +internalNodeSpace;
+    cy.add([
+        {group: "nodes", data: { id: _appId+'-'+'contractNode', appType: appType, type:'appBodyNode' }, position: {x: intPosX, y: posY} },
+        {group: "edges", data: { source: _appId, target: _appId+'-'+'contractNode', type: 'appBodyEdge', appType: appType  } }
+      ]
+    );
+
+    if(intPosX > cy.$('#aEnd').position().x-spacing){
+      cy.$('#aEnd').position().x += spacing;
+      cy.$('#bEnd').position().x += spacing;
+      cy.$('#cEnd').position().x += spacing;
+    }   
+  }
+
+  //Add points for service nodes
+  for(var i=0; i<services.length; i++){
+    noAppNodes+=0.3;
+    var intPosX = posX +(i+2)*internalNodeSpace;
+    cy.add([
+        {group: "nodes", data: { id: _appId+'-'+'serviceNode'+i, appType: appType, type:'appBodyNode' }, position: {x: intPosX, y: posY} },
+        {group: "edges", data: { source: _appId, target: _appId+'-'+'serviceNode'+i, type: 'appBodyEdge', appType: appType  } }
+      ]
+    );
+
+    if(intPosX > cy.$('#aEnd').position().x-spacing){
+      cy.$('#aEnd').position().x += spacing;
+      cy.$('#bEnd').position().x += spacing;
+      cy.$('#cEnd').position().x += spacing;
+    }
+  }
   
   cy.layout( theLayout );
 }
@@ -315,15 +363,14 @@ $('#addSystem').on('click', function(){
 })
 
 $('#addApp').on('click', function(){
-  addApp('App'+noApps);
+  addApp('App'+noAppNodes);
 })
 
 $('#addProcess').on('click', function(){
   addProcess();
 })
 $('#debug').on('click', function(){
-  // readData(graphP.responseJSON[0]);
-  // cy.layout(theLayout);
+  incBotBarWidth();  
 })
 
 $('#clear').on('click', function(){
@@ -355,14 +402,31 @@ function clear(){
   cy.$('#cEnd').position().x = 200;
 
 
+  cy.$("#aEnd").style({
+    'height': 30
+  })
   cy.$("#bEnd").style({
     'height': 30
   })
+  cy.$("#cEnd").style({
+    'height': 30
+  })
+  cy.$("#a").style({
+    'height': 30
+  })
+  cy.$("#c").style({
+    'height': 30
+  })    
 
-  //middle bar width
   cy.$("#EmidBar").style({ 
       'width': 30
   })
+  cy.$("#EtopBar").style({ 
+      'width': 30
+  })
+  cy.$("#EbotBar").style({ 
+      'width': 30
+  })    
 
   //move top bar to initial position
   cy.$('#a').position().y = 0;
@@ -374,7 +438,13 @@ function clear(){
   cy.$('#b').position().y=60;
   cy.$('#bEnd').position().y=60;
 
-  noApps = 0;
+  //move bottom bar to initial position
+  cy.$('#c').position().y=120;
+  cy.$('#cEnd').position().y=120;
+  cy.$('#bCorner').position().y = 90;
+  cy.$('#bCornerBG').position().y = 98;  
+
+  noAppNodes = 0;
   noSyst = 0;
   noProc = 0;
   noExpe = 0;
@@ -396,10 +466,11 @@ function getQueryVariable(variable)
 
 
 function readData2( data ){
+  var applications = data.Applications;
 
   //Add application nodes
-  for(var i=0; i<data.Applications.length; i++){
-    addApp(String(data.Applications[i]));
+  for(var i=0; i<applications.length; i++){
+    addApp(applications[i]);
   }
 
   //Add application connections
@@ -409,16 +480,16 @@ function readData2( data ){
     var dataSource = data.edges[i].source;
     var dataTarget = data.edges[i].target;
 
+
     var sourceConPosX = cy.$("[id='"+String(dataSource)+"']").position().x;
     var targetConPosX = cy.$("[id='"+String(dataTarget)+"']").position().x;
 
     //Connection points
-    incMidBarWidth();
     cy.add([
 
       //Middle bar nodes, edges
-      { group: "nodes", data: { type: 'conPointNodeGood', id:'sConP'+i}, position: {x: sourceConPosX, y: 60-i*15 }, selectable: false, locked: true },
-      { group: "nodes", data: { type: 'conPointNodeGood', id:'tConP'+i}, position: {x: targetConPosX, y: 60-i*15 }, selectable: false, locked: true },
+      { group: "nodes", data: { type: 'conPointNodeGood', id:'sConP'+i}, position: {x: sourceConPosX, y: 60-i*layoutBarIncW }, selectable: false, locked: true },
+      { group: "nodes", data: { type: 'conPointNodeGood', id:'tConP'+i}, position: {x: targetConPosX, y: 60-i*layoutBarIncW }, selectable: false, locked: true },
       { group: "edges", data: { source: dataSource, target: 'sConP'+i, type: 'goodIntEdge' } },
       { group: "edges", data: { source: 'sConP'+i, target: 'tConP'+i, type: 'goodIntEdge' } },
       { group: "edges", data: { source: 'tConP'+i, target: dataTarget, type: 'goodIntEdge' } },
@@ -426,10 +497,10 @@ function readData2( data ){
       
 
       //Edges below, bad edges
-      { group: "edges", data: { source: dataSource, target: dataTarget, type: 'spaghEdge' } },
+      { group: "edges", data: { source: dataSource, target: dataTarget, type: 'spaghEdge' }, style: { 'control-point-distances': 0.5*Math.abs(sourceConPosX - targetConPosX ) } },
 
-      { group: "nodes", data: { type: 'conPointNodeBad', id:'sBadConP'+i}, position: {x: sourceConPosX, y: 300+i*15 }, selectable: false, locked: true, classes: 'filtered' },
-      { group: "nodes", data: { type: 'conPointNodeBad', id:'tBadConP'+i}, position: {x: targetConPosX, y: 300+i*15 }, selectable: false, locked: true, classes: 'filtered' },
+      { group: "nodes", data: { type: 'conPointNodeBad', id:'sBadConP'+i}, position: {x: sourceConPosX, y: 300+i*layoutBarIncW }, selectable: false, locked: true, classes: 'filtered' },
+      { group: "nodes", data: { type: 'conPointNodeBad', id:'tBadConP'+i}, position: {x: targetConPosX, y: 300+i*layoutBarIncW }, selectable: false, locked: true, classes: 'filtered' },
       { group: "edges", data: { source: dataSource, target: 'sBadConP'+i, type: 'straightSpaghEdge' } },
       { group: "edges", data: { source: 'sBadConP'+i, target: 'tBadConP'+i, type: 'straightSpaghEdge' } },
       { group: "edges", data: { source: 'tBadConP'+i, target: dataTarget, type: 'straightSpaghEdge' } },  
@@ -452,8 +523,28 @@ function readData2( data ){
       { group: "edges", data: { source: data.edges[i].source, target: 'intConPBad'+i, type: 'rightIntEdge' } },            //int edge source->conP
       { group: "edges", data: { source: 'intConPBad'+i, target: data.edges[i].target, type: 'rightIntEdge' } },             //int edge source->conP     
     ]);  
-}
+    incMidBarWidth();
+  }
 
+  
+
+  //For each application
+  for(var i=0; i< applications.length; i++){
+    var services  = applications[i].services;
+    var contracts = applications[i].contracts;
+
+    //Add backbones lines
+    if(contracts.length>0){
+      var contractNode = cy.$('#'+applications[i].id +'-contractNode');
+      var backPosX = contractNode.position().x;
+      var backPosY = cy.$('#a').position().y-80; 
+      cy.add([
+        { group: "nodes", data: { type: 'backbone', id: applications[i].id+'topContBackbone' }, position: {x: backPosX, y: backPosY } },
+        { group: "edges", data: { source: contractNode.id(), target: applications[i].id+'topContBackbone', type: 'backbone' }  },            //int edge source->conP  
+      ]);
+    }
+
+  }
 
   //Add data to each app containing connected targets
   var applications = cy.$('node[type="app"]');
@@ -478,7 +569,7 @@ function readData2( data ){
 //Increases the middle bar width and moves top bar up
 function incMidBarWidth(){
   var currH = parseInt( cy.$("#bEnd").style().height );
-  var stepSize=15;
+  var stepSize=layoutBarIncW;
   var newH = currH+stepSize;
 
   cy.$("#bEnd").style({
@@ -503,6 +594,70 @@ function incMidBarWidth(){
   cy.layout(theLayout);
 }
 
+function incTopBarWidth(){
+  var currH = parseInt( cy.$("#aEnd").style().height );
+  var stepSize=layoutBarIncW;
+  var newH = currH+stepSize;
+
+  cy.$("#aEnd").style({
+      'height': currH+stepSize
+  })
+  cy.$("#a").style({
+      'height': currH+stepSize
+  })
+  //middle bar width
+  cy.$("#EtopBar").style({ 
+      'width': currH+stepSize
+  })
+
+  //move top bar
+  cy.$('#a').position().y -= stepSize/2;
+  cy.$('#aEnd').position().y -= stepSize/2;
+
+  cy.layout(theLayout);
+}
+
+function incBotBarWidth(){
+  var currH = parseInt( cy.$("#cEnd").style().height );
+  var stepSize=layoutBarIncW;
+  var newH = currH+stepSize;
+
+  cy.$("#c").style({
+      'height': currH+stepSize
+  })
+  cy.$("#cEnd").style({
+      'height': currH+stepSize
+  })
+  cy.$("#EbotBar").style({ 
+      'width': currH+stepSize
+  })
+
+    //move bot bar
+  cy.$('#c').position().y -= stepSize/2;
+  cy.$('#cEnd').position().y -= stepSize/2;
+  cy.$('#bCorner').position().y -= stepSize;
+  cy.$('#bCornerBG').position().y -= stepSize;
+
+  //move middle bar
+  cy.$('#b').position().y-=stepSize;
+  cy.$('#bEnd').position().y-=stepSize;
+
+  //move top bar
+  cy.$('#a').position().y -= stepSize;
+  cy.$('#aEnd').position().y -= stepSize;
+  cy.$('#aCorner').position().y -= stepSize;
+  cy.$('#aCornerBG').position().y -= stepSize;
+
+  //Move conpoints in middlebar
+  var middleConPoints = cy.$('node[type="conPointNodeGood"]');
+      middleConPoints = middleConPoints.add(cy.$('node[type="conPointNodeRightGood"]'))
+  
+  middleConPoints.forEach(function(n){
+    n.position().y -= stepSize;
+  })
+
+  cy.layout(theLayout);
+}
 
 
 
@@ -562,9 +717,7 @@ $('#search').typeahead({
           cy.elements().not( cy.elements("[type='app']").stdFilter( anyFieldMatches ) ).not(cy.$("node[type='eShape'],node[type='eShapeCorner'], edge[type='eShape']")).addClass('hidden');
       });
     
-    $("#btnSearch").click( function() {
-      // var temp = cy.nodes("[type='app']").stdFilter( anyFieldMatches );
-    });
+
 
     cb( res );
   },
@@ -586,6 +739,19 @@ $('#filters').on('click', 'input', function(){
 $('#filtersToggle').on('click', 'input', function(){
   doFiltering();
 });
+
+$("#btnSearch").click( function() { 
+  var result = cy.nodes("[type='app']").not( cy.nodes('.hidden') );
+  focView(result);
+});
+
+
+function focView(data){
+  var newDataSet = data.clone();
+  clear();
+  console.log( newDataSet[0].data() );
+  
+}
 
 function doFiltering(){
     
