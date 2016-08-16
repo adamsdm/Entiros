@@ -570,9 +570,9 @@ function readData2( data ){
 
 
       //add service nodes
-      if(services[j].type == "Experience" )  { posY = initTopBarPos - 10*(noExpe+1) + topBarWidth/2 ; noExpe++; }
-      else if(services[j].type == "Process" ){ posY = initMidBarPos - 10*(noProc+1) + midBarWidth/2 ; noProc++; }
-      else if( services[j].type == "System" ){ posY = initBotBarPos - 10*(noSyst+1) + botBarWidth/2 ; noSyst++; }
+      if(services[j].type == "Experience" )  { posY = initTopBarPos - 13*(noExpe+1) + topBarWidth/2 ; noExpe++; }
+      else if(services[j].type == "Process" ){ posY = initMidBarPos - 13*(noProc+1) + midBarWidth/2 ; noProc++; }
+      else if( services[j].type == "System" ){ posY = initBotBarPos - 13*(noSyst+1) + botBarWidth/2 ; noSyst++; }
       else { posY = 1000; } //If no type, position node off to find it easy
 
       posX = serviceNode.position().x;      
@@ -584,9 +584,9 @@ function readData2( data ){
 
 
   //When all services has been added, increase bars width
-  var newBotWidth = 10*(noSyst+1);
-  var newMidWidth = 10*(noProc+1);
-  var newTopWidth = 10*(noExpe+1);
+  var newBotWidth = 13*(noSyst+1);
+  var newMidWidth = 13*(noProc+1);
+  var newTopWidth = 13*(noExpe+1);
   
   //Only increase if the new width > than current width
   if( newBotWidth > botBarWidth  ){ incBotBarWidth(newBotWidth - botBarWidth); } 
@@ -612,6 +612,14 @@ function readData2( data ){
 
     }
   }
+
+  //filtered per default
+  cy.elements("[type='backbone']").addClass('filtered');
+  cy.elements("[type='backboneTop']").addClass('filtered');
+  cy.elements("[type='appBodyNode']").addClass('filtered');
+  cy.elements("[type='service']").addClass('filtered');
+  cy.elements("[type='contract']").addClass('filtered');
+
 
   //Add data to each app containing connected targets
   var applications = cy.$('node[type="app"]');
@@ -845,6 +853,20 @@ $('#filtersToggle').on('click', 'input', function(){
 $("#btnSearch").click( function() { 
   var result = cy.nodes("[type='app']").not( cy.nodes('.hidden') );
   focView(result);
+});
+
+$('#detailedInf').change(function(){
+  if ($(this).prop('checked') == true) {
+    $('#badIntEdges').prop('checked', false);
+    $('#goodIntEdges').prop('checked', false);
+    doFiltering();
+  }
+
+  else {
+    $('#badIntEdges').prop('checked', true);
+    $('#goodIntEdges').prop('checked', true);
+    doFiltering();    
+  }
 });
 
 
