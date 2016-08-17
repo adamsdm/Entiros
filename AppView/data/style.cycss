@@ -80,6 +80,11 @@ node[type="service"]{
   background-color: #a9c742;
   label: ;
 }
+edge[type="serviceBody"]{
+  width:10px;
+  curve-style: haystack;
+  line-color: #a9c742;
+}
 
 edge[type="contractServiceEdge"]{
   width:1px;

@@ -29,18 +29,40 @@
         "contracts":[ {"id":"c3", "target":"s1"}, {"id":"c4", "target":"s12"} ] 
       },
       {"id": "App3", "appType": "other", 
-        "services":[ {"id":"s7", "type":"Experience"}, {"id":"s8", "type":"System"}, {"id":"s9", "type":"Process" } ], 
-        "contracts":[ {"id":"c5","target":"s2"}, {"id":"c6","target":"s11"}, {"id":"c7","target":"s3"}, {"id":"c8","target":"s4"}]  
+        "services":[ {"id":"s7", "type":"Experience"}, {"id":"s9", "type":"Process" } ], 
+        "contracts":[ {"id":"c5","target":"s2"}, {"id":"c6","target":"s11"}, {"id":"c7","target":"s3"}, {"id":"c8","target":"s4"}, {"id":"c12","target":"s5"}]  
       },
       {"id": "App4", "appType": "other", 
-        "services":[{"id":"s10", "type":"Experience"},{"id":"s11", "type":"Process"},{"id":"s12", "type":"Experience"}], 
-        "contracts":[{"id":"c9","target":"s9"},{"id":"c10","target":"s6"} ] 
+        "services":[{"id":"s11", "type":"Process"},{"id":"s12", "type":"Experience"}], 
+        "contracts":[{"id":"c9","target":"s9"},{"id":"c10","target":"s6"},{"id":"c11","target":"s5"} ] 
       }
     ],
     "edges": [
       {"source":"En App", "target":"App2"},
       {"source":"App2", "target":"App3"},
       {"source":"App3", "target":"App4"}
+    ]
+  },
+  {
+    "id": "Another ex",
+    "type": "Customer",
+    "Applications" : [
+      {"id": "En App", "appType": "middleware", 
+        "services":[{"id":"s0", "type":"Experience"},{"id":"s1", "type":"Process"} ],
+        "contracts":[ {"id":"c2", "target":"s0"},{"id":"c4", "target":"s1"} ] 
+      },
+      {"id": "App4", "appType": "other", 
+        "services":[{"id":"s100", "type":"Experience"}],
+        "contracts":[ {"id":"c1", "target":"s0"},{"id":"c5", "target":"s1"} ] 
+
+      },
+      {"id": "En till", "appType": "middleware", 
+        "services":[{"id":"s101", "type":"Experience"} ],
+        "contracts":[ {"id":"c3", "target":"s0"},{"id":"c6", "target":"s1"} ] 
+      }
+    ],
+    "edges": [
+      {"source":"En App", "target":"App4"}
     ]
   }
 ]

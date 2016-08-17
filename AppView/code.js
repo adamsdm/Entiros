@@ -205,7 +205,6 @@ function initCy( then ){
     var node = this;
 
     console.log(node.data());
-    console.log(node.position().y);
   });
 }
 
@@ -529,6 +528,8 @@ function readData2( data ){
   }
 
   
+  var nodeSpacing = 13;
+
   var initTopBarPos = cy.$('#a').position().y;
   var initMidBarPos = cy.$('#b').position().y;
   var initBotBarPos = cy.$('#c').position().y;
@@ -571,9 +572,9 @@ function readData2( data ){
 
 
       //add service nodes
-      if(services[j].type == "Experience" )  { posY = initTopBarPos - 13*(noExpe+1) + topBarWidth/2 ; noExpe++; }
-      else if(services[j].type == "Process" ){ posY = initMidBarPos - 13*(noProc+1) + midBarWidth/2 ; noProc++; }
-      else if( services[j].type == "System" ){ posY = initBotBarPos - 13*(noSyst+1) + botBarWidth/2 ; noSyst++; }
+      if(services[j].type == "Experience" )  { posY = initTopBarPos + topBarWidth/2 ; noExpe++; }
+      else if(services[j].type == "Process" ){ posY = initMidBarPos + midBarWidth/2 ; noProc++; }
+      else if( services[j].type == "System" ){ posY = initBotBarPos + botBarWidth/2 ; noSyst++; } // - nodeSpacing*(noSyst+1)
       else { posY = 1000; } //If no type, position node off to find it easily
 
       posX = serviceNode.position().x;      
@@ -584,35 +585,80 @@ function readData2( data ){
   }
 
 
-  //When all services has been added, increase bars width
-  var newBotWidth = 13*(noSyst+1);
-  var newMidWidth = 13*(noProc+1);
-  var newTopWidth = 13*(noExpe+1);
-  
-  //Only increase if the new width > than current width
-  if( newBotWidth > botBarWidth  ){ incBotBarWidth(newBotWidth - botBarWidth); } 
-  if( newMidWidth > midBarWidth  ){ incMidBarWidth(newMidWidth - midBarWidth); }
-  if( newTopWidth > topBarWidth  ){ incTopBarWidth(newTopWidth - topBarWidth); }
-  
 
-  //finaly, loop through applications again, and insert contracts
+  
+  var noReusedServices = 0;
+
+  //Add contracts
   for(var i=0; i<applications.length; i++){
     var contracts = applications[i].contracts;
 
     for(var j=0; j<contracts.length; j++){
       var target = cy.$( "[id='"+contracts[j].target+"']" );
+      var noTargetCons = target.connectedEdges("[type='contractServiceEdge']").length
       var contractNode = cy.$("[id='"+applications[i].id+"-contractNode']");
 
       posX = contractNode.position().x;
       posY = target.position().y;
 
+      //if target already has a connection -> reused service
+      if( noTargetCons > 0){
+
+        if(target.data().serviceType == "Experience")   { noExpe++; console.log("Haj");}
+        else if(target.data().serviceType == "Process") { noProc++; }
+        else if(target.data().serviceType == "System")  { noSyst++; }
+
+        noReusedServices++;
+
+        cy.add([
+          { group: "nodes", data: { type: 'service', serviceType: target.data().serviceType, id: target.id()+'-'+noReusedServices }, position: {x: target.position().x, y: target.position().y } },
+          { group: "edges", data: { source: target.id(), target: target.id()+'-'+noReusedServices, type: 'serviceBody' } }
+        ]);
+
+        target = cy.$( "[id='"+target.id()+"-"+noReusedServices+"']" );
+      } 
+
       cy.add([
-        { group: "nodes", data: { type: 'contract', id: contracts[j].id }, position: {x: posX, y: posY } },
+        { group: "nodes", data: { type: 'contract', contractType: target.data().serviceType, id: contracts[j].id, target: target.id() }, position: {x: posX, y: posY } },
         { group: "edges", data: { source: contracts[j].id, target: target.id(), type: 'contractServiceEdge' } }
       ]);
 
     }
   }
+
+  //Position all services
+  var allExp = cy.$("node[type='service'][serviceType='Experience']");
+  var allPro = cy.$("node[type='service'][serviceType='Process']");
+  var allSys = cy.$("node[type='service'][serviceType='System']");
+  var allCon = cy.$("node[type='contract']");
+
+  for(var i=0; i<allExp.length; i++){
+    allExp[i].position().y -= nodeSpacing*(i+1);
+  }
+  for(var i=0; i<allPro.length; i++){
+    allPro[i].position().y -= nodeSpacing*(i+1);
+  }
+  for(var i=0; i<allSys.length; i++){
+    allSys[i].position().y -= nodeSpacing*(i+1);
+  }
+  for(var i=0; i<allCon.length; i++){
+    var target = cy.$( "[id='"+allCon[i].data().target+"']" );
+    allCon[i].position().y = target.position().y;
+  }
+
+
+  //When all services has been added, increase bars width
+  var newBotWidth = nodeSpacing*(noSyst+1);
+  var newMidWidth = nodeSpacing*(noProc+1);
+  var newTopWidth = nodeSpacing*(noExpe+1);
+  
+  //Only increase if the new width > than current width
+  if( newBotWidth > botBarWidth  ){ incBotBarWidth(newBotWidth - botBarWidth); } 
+  if( newMidWidth > midBarWidth  ){ incMidBarWidth(newMidWidth - midBarWidth); }
+  if( newTopWidth > topBarWidth  ){ incTopBarWidth(newTopWidth - topBarWidth); }
+
+
+
 
   //filtered per default
   // cy.elements("[type='backbone']").addClass('filtered');
@@ -678,6 +724,12 @@ function incMidBarWidth( stepSize ){
 
   var experiences = cy.$('node[type="service"][serviceType="Experience"]');
   experiences.forEach(function(n){
+    n.position().y -= stepSize;
+  })
+
+    //Move experience contracts
+  var expContracts = cy.$('node[type="contract"][contractType="Experience"]');
+  expContracts.forEach(function(n){
     n.position().y -= stepSize;
   })
 
@@ -768,6 +820,20 @@ function incBotBarWidth( stepSize ){
   //Move experiences
   var experiences = cy.$('node[type="service"][serviceType="Experience"]');
   experiences.forEach(function(n){
+    n.position().y -= stepSize;
+  })
+  cy.layout(theLayout);
+
+  //Move experience contracts
+  var expContracts = cy.$('node[type="contract"][contractType="Experience"]');
+  expContracts.forEach(function(n){
+    n.position().y -= stepSize;
+  })
+  cy.layout(theLayout);
+
+  //Move process contracts
+  var proContracts = cy.$('node[type="contract"][contractType="Process"]');
+  proContracts.forEach(function(n){
     n.position().y -= stepSize;
   })
   cy.layout(theLayout);
