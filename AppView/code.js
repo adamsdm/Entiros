@@ -46,8 +46,8 @@ Promise.all([ graphP, styleP ]).then(initCy);
 function initCy( then ){
   var expJson = then[0];
   var styleJson = then[1];
-  // var hash = window.location.hash.substring(1);
   var hash = getQueryVariable("Company");
+
 
   cy = cytoscape({
     container: document.getElementById('cy'),
@@ -100,12 +100,25 @@ function initCy( then ){
     return false;
   }
 
+  function compareApps(a,b){
+    if(b.appType == 'middleware'){
+      return 1;
+    }
+    if(a.appType == 'middleware'){
+      return -1;
+    }
+    return 0;
+  }
+
+
   if (hash){
-      hash=hash.replace('+',' ');
+      hash=hash.replace(/\+/g,' ');
       var comp = getCompData(hash);
 
-    if (comp)
+    if (comp){
+      comp.Applications.sort(compareApps); // sort applications such that middleware-apps comes first
       readData2(comp);
+    }
     else
       alert("Company with name "+hash+" not found in dataset.");
   }
@@ -465,6 +478,53 @@ function getQueryVariable(variable)
        return(false);
 }
 
+function genAppConnections( data ){
+  var apps = data.Applications;
+  var theEdges = [];
+  
+  for(var i=0; i<apps.length; i++){     //For each application
+    var contracts = apps[i].contracts;
+    //console.log(apps[i].id + ", has connections to: ");
+    for(var j=0; j<contracts.length; j++){ // For each contract
+      var targetApp = getAppWithServiceID(apps, contracts[j].target).id;
+      var connection = {};
+      connection.source = apps[i].id;
+      connection.target = targetApp;
+      //console.log(connection);
+      //Only add connection if a connection between the nodes doesnt already exist
+      if( !connectionInArray(connection, theEdges) )
+        theEdges.push(connection);
+    }
+  }
+    
+  data.edges = theEdges;
+
+  // var targetApp = getAppWithServiceID(apps, 's1');
+  function connectionInArray(theConnection, theEdges){
+    for(var i=0; i<theEdges.length; i++){
+      if(theConnection.source == theEdges[i].source && theConnection.target == theEdges[i].target)
+        return true;
+      if(theConnection.source == theEdges[i].target && theConnection.target == theEdges[i].source)
+        return true;
+      if(theConnection.source == theConnection.target ) //Do not add edges to itself
+        return true;
+    }
+    return false;
+  }
+
+  // Given a set of apps, and an ID, returns the app containing service with id: theId
+  function getAppWithServiceID(apps, theId){
+    for(var i=0;i<apps.length; i++){
+      var services = apps[i].services;
+      for(var j=0; j<services.length; j++){
+        if(theId==services[j].id)
+          return apps[i];
+      }
+    }
+  }
+}
+
+
 
 function readData2( data ){
   var applications = data.Applications;
@@ -473,6 +533,8 @@ function readData2( data ){
   for(var i=0; i<applications.length; i++){
     addApp(applications[i]);
   }
+
+  genAppConnections(data);
 
   //Add application connections
   //for each edge
@@ -604,7 +666,7 @@ function readData2( data ){
       //if target already has a connection -> reused service
       if( noTargetCons > 0){
 
-        if(target.data().serviceType == "Experience")   { noExpe++; console.log("Haj");}
+        if(target.data().serviceType == "Experience")   { noExpe++; }
         else if(target.data().serviceType == "Process") { noProc++; }
         else if(target.data().serviceType == "System")  { noSyst++; }
 
@@ -661,14 +723,14 @@ function readData2( data ){
 
 
   //filtered per default
-  // cy.elements("[type='backbone']").addClass('filtered');
-  // cy.elements("[type='backboneTop']").addClass('filtered');
-  // cy.elements("[type='appBodyNode']").addClass('filtered');
-  // cy.elements("[type='service']").addClass('filtered');
-  // cy.elements("[type='contract']").addClass('filtered');
-  cy.elements("[type='spaghEdge']").addClass('filtered');
-  cy.elements("[type='conPointNodeGood']").addClass('filtered');
-  cy.elements("[type='conPointNodeRightGood']").addClass('filtered');
+  cy.elements("[type='backbone']").addClass('filtered');
+  cy.elements("[type='backboneTop']").addClass('filtered');
+  cy.elements("[type='appBodyNode']").addClass('filtered');
+  cy.elements("[type='service']").addClass('filtered');
+  cy.elements("[type='contract']").addClass('filtered');
+  // cy.elements("[type='spaghEdge']").addClass('filtered');
+  // cy.elements("[type='conPointNodeGood']").addClass('filtered');
+  // cy.elements("[type='conPointNodeRightGood']").addClass('filtered');
 
 
   //Add data to each app containing connected targets

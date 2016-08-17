@@ -36,15 +36,10 @@
         "services":[{"id":"s11", "type":"Process"},{"id":"s12", "type":"Experience"}], 
         "contracts":[{"id":"c9","target":"s9"},{"id":"c10","target":"s6"},{"id":"c11","target":"s5"} ] 
       }
-    ],
-    "edges": [
-      {"source":"En App", "target":"App2"},
-      {"source":"App2", "target":"App3"},
-      {"source":"App3", "target":"App4"}
     ]
   },
   {
-    "id": "Another ex",
+    "id": "Another ex comp",
     "type": "Customer",
     "Applications" : [
       {"id": "En App", "appType": "middleware", 
@@ -60,9 +55,6 @@
         "services":[{"id":"s101", "type":"Experience"} ],
         "contracts":[ {"id":"c3", "target":"s0"},{"id":"c6", "target":"s1"} ] 
       }
-    ],
-    "edges": [
-      {"source":"En App", "target":"App4"}
     ]
   }
 ]
