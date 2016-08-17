@@ -185,7 +185,7 @@ function initCy( then ){
   cy.on('mouseover', 'node[type="app"]', function(e){
     var node = this;
 
-//    console.log(node);
+    console.log(node);
     if(cy.$(':selected').length<1)
       showNodeInfo(node);
   });
@@ -204,8 +204,8 @@ function initCy( then ){
   cy.on('tap', 'node', function(e){
     var node = this;
 
- //   console.log(node.data());
-//    console.log(node.position().y);
+    console.log(node.data());
+    console.log(node.position().y);
   });
 }
 
@@ -615,11 +615,14 @@ function readData2( data ){
   }
 
   //filtered per default
-  cy.elements("[type='backbone']").addClass('filtered');
-  cy.elements("[type='backboneTop']").addClass('filtered');
-  cy.elements("[type='appBodyNode']").addClass('filtered');
-  cy.elements("[type='service']").addClass('filtered');
-  cy.elements("[type='contract']").addClass('filtered');
+  // cy.elements("[type='backbone']").addClass('filtered');
+  // cy.elements("[type='backboneTop']").addClass('filtered');
+  // cy.elements("[type='appBodyNode']").addClass('filtered');
+  // cy.elements("[type='service']").addClass('filtered');
+  // cy.elements("[type='contract']").addClass('filtered');
+  cy.elements("[type='spaghEdge']").addClass('filtered');
+  cy.elements("[type='conPointNodeGood']").addClass('filtered');
+  cy.elements("[type='conPointNodeRightGood']").addClass('filtered');
 
 
   //Add data to each app containing connected targets
