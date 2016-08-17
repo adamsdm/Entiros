@@ -198,8 +198,7 @@ function initCy( then ){
 
   cy.on('mouseover', 'node', function(e){
     var node = this;
-
-    console.log(node);
+    
     if(cy.$(':selected').length<1){ //if no node is selected
       if( node.data().type == 'app'){
           showNodeInfo(node);
