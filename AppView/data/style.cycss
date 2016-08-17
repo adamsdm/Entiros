@@ -44,6 +44,9 @@ node[type="appBodyNode"]{
   label: ;
   z-index: 0;
 }
+node[type="appBodyNode"]:selected{
+  border-width: 0;
+}
 
 edge[type="appBodyEdge"]{
   curve-style: haystack;
@@ -163,8 +166,8 @@ edge[type="backbone"]{
   opacity: 0.2;
 }
 node[type="backboneTop"]{
-  width: 5px;
-  height: 5px;
+  width: 0px;
+  height: 0px;
   label: ;
 }
 

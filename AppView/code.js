@@ -134,76 +134,86 @@ function initCy( then ){
 
     cy.elements().removeClass('hidden');
 
-
-
-
     if( node.data().type == 'app'){
+      if($('#detailedInf').prop('checked')==false){ 
 
-      conEdges.style({
-        'z-index':'9999'
-      });
-      conEdges.animate({
-        style: { 'line-color' : 'blue' }
-      }, {
-        duration: layoutDuration
-      });
+        conEdges.style({
+          'z-index':'9999'
+        });
 
-      node.animate({
-        style: {'width':'50px','height':'50px',  }
-      }, {
-        duration: layoutDuration
-      });
-      conNodes.animate({
-        style: {'width':'50px','height':'50px',  }
-      }, {
-        duration: layoutDuration
-      });
+        conEdges.style({
+          'line-color' : 'blue'
+        });
 
-      rightNodeGood.animate({
-        style: {'background-color':'#a9c742'}
-      }, {
-        duration: layoutDuration
-      });
+        node.style({
+          'width':'50px','height':'50px'
+        });
+        conNodes.style({
+          'width':'50px','height':'50px'
+        });
 
-      showNodeInfo(node);
+        rightNodeGood.style({
+          'background-color':'#a9c742'
+        });
+
+        showNodeInfo(node);
+      }
     }
+
+
+    if( node.data().type == 'appBodyNode'){
+      var parentId = node.id().substring( 0, node.id().indexOf('-') );
+      var parent   = cy.nodes('[id="'+parentId+'"]')
+      parent.select();
+      showNodeInfo(parent);
+    }
+
   });
+
+  
 
   cy.on('unselect', 'node', function(e){
 
     cy.edges('edge[type="goodIntEdge"]').style({
       'z-index':'0'
     });
-    cy.edges('edge[type="goodIntEdge"]').animate({
-      style: { 'line-color' : '#a9c742' }
-    }, {
-      duration: layoutDuration
+
+    cy.edges('edge[type="goodIntEdge"]').style({
+     'line-color' : '#a9c742'
     });
 
-    cy.nodes('node[type="app"]').animate({
-      style: {'width':'40px','height':'40px' }
-    }, {
-      duration: layoutDuration
+    cy.nodes('node[type="app"]').style({
+      'width':'40px','height':'40px' 
     });
 
-    cy.nodes('node[type="conPointNodeRightGood"]').animate({
-      style: { 'background-color':'#e8e8e8' }
-    }, {
-      duration: layoutDuration
+  
+      
+    cy.nodes('node[type="conPointNodeRightGood"]').style({
+      'background-color':'#e8e8e8'
     });
+  
 
     hideNodeInfo();
   });
 
-  cy.on('mouseover', 'node[type="app"]', function(e){
+  cy.on('mouseover', 'node', function(e){
     var node = this;
 
     console.log(node);
-    if(cy.$(':selected').length<1)
-      showNodeInfo(node);
+    if(cy.$(':selected').length<1){ //if no node is selected
+      if( node.data().type == 'app'){
+          showNodeInfo(node);
+      }
+
+      if( node.data().type == 'appBodyNode'){
+        var parentId = node.id().substring( 0, node.id().indexOf('-') );
+        var parent   = cy.nodes('[id="'+parentId+'"]')
+        showNodeInfo(parent);
+      }
+    }
   });
 
-  cy.on('mouseout', 'node[type="app"]', function(e){
+  cy.on('mouseout', function(e){
     if(cy.$(':selected').length<1)
       hideNodeInfo();
   });
@@ -219,13 +229,31 @@ function initCy( then ){
 
     console.log(node.data());
   });
-}
+
+
+  //Default settings
+  cy.elements("[type='app']").lock();
+  cy.elements("[type='appBodyNode']").addClass('filtered');
+  cy.elements("[type='backbone']").addClass('filtered');
+  cy.elements("[type='backboneTop']").addClass('filtered').lock().unselectify();
+  cy.elements("[type='contract']").addClass('filtered').lock().unselectify();
+  cy.elements("[type='conPointNodeRightGood']").lock().unselectify();
+  cy.elements("[type='conPointNodeRightBad']").lock().unselectify();
+  cy.elements("[type='eShape']").unselectify();
+  cy.elements("[type='goodIntEdge']").unselectify();
+  cy.elements("[type='service']").addClass('filtered').lock().unselectify();
+  cy.elements("[type='straightSpaghEdge']").unselectify();
+  cy.elements("[type='spaghEdge']").unselectify();
+  
+
+} // initCy
 
 
 var infoTemplate = Handlebars.compile([
   '<p class="ac-name"> Name: {{id}}</p>',
   '{{#if connectedNodes}}<p class="ac-more"><i class="fa fa-cog"></i> Integrated with: {{connectedNodes}}</p>{{/if}}',    
-
+  '<p class="ac-more"><i class="fa fa-file-text-o"></i> Contracts: <ul>{{#each contracts}} <li>{{id}} <i class="fa fa-long-arrow-right"></i> {{target}}</li> {{/each}}</ul>  </p>',
+  '<p class="ac-more"><i class="fa fa-tag"></i> Services: <ul>{{#each services}} <li>{{id}}</li> {{/each}}</ul>  </p>'
 ].join(''));
 
 
@@ -718,19 +746,7 @@ function readData2( data ){
   if( newBotWidth > botBarWidth  ){ incBotBarWidth(newBotWidth - botBarWidth); } 
   if( newMidWidth > midBarWidth  ){ incMidBarWidth(newMidWidth - midBarWidth); }
   if( newTopWidth > topBarWidth  ){ incTopBarWidth(newTopWidth - topBarWidth); }
-
-
-
-
-  //filtered per default
-  cy.elements("[type='backbone']").addClass('filtered');
-  cy.elements("[type='backboneTop']").addClass('filtered');
-  cy.elements("[type='appBodyNode']").addClass('filtered');
-  cy.elements("[type='service']").addClass('filtered');
-  cy.elements("[type='contract']").addClass('filtered');
-  // cy.elements("[type='spaghEdge']").addClass('filtered');
-  // cy.elements("[type='conPointNodeGood']").addClass('filtered');
-  // cy.elements("[type='conPointNodeRightGood']").addClass('filtered');
+  
 
 
   //Add data to each app containing connected targets
@@ -991,12 +1007,27 @@ $('#detailedInf').change(function(){
   if ($(this).prop('checked') == true) {
     $('#badIntEdges').prop('checked', false);
     $('#goodIntEdges').prop('checked', false);
+
+    $('#contracts').prop('checked', true);
+    $('#services').prop('checked', true);
+    $('#contracts').prop('disabled', false);
+    $('#services').prop('disabled', false);
+
+
+    cy.elements().unselect();
+    
     doFiltering();
   }
 
   else {
     $('#badIntEdges').prop('checked', true);
     $('#goodIntEdges').prop('checked', true);
+    
+    $('#contracts').prop('checked', false);
+    $('#services').prop('checked', false);
+    $('#contracts').prop('disabled', true);
+    $('#services').prop('disabled', true);    
+    
     doFiltering();    
   }
 });
@@ -1017,6 +1048,8 @@ function doFiltering(){
   var toggleBadGrid = $('#toggleBadGrid').is(':checked');
   var toggleRightIntEdge = $('#toggleRightIntEdge').is(':checked');
   var detailedInf = $('#detailedInf').is(':checked');
+  var contracts = $('#contracts').is(':checked');
+  var services = $('#services').is(':checked');
 
   cy.batch(function(){
     cy.elements().forEach(function( n ){
@@ -1038,9 +1071,17 @@ function doFiltering(){
 
 
 
-      } else if( type === 'backbone' || type === 'backboneTop' || type === 'appBodyNode' || type === 'service' || type === 'contract' ){
+      } else if( type === 'backbone' || type === 'backboneTop' || type === 'appBodyNode' ){
         
         if( !detailedInf ){ filter(); }
+      
+      }else if( type === 'service' ){
+        
+        if( !contracts ){ filter(); }
+      
+      }else if( type === 'contract' ){
+        
+        if( !services ){ filter(); }
       
       } else if( type === 'spaghEdge' ){
         
