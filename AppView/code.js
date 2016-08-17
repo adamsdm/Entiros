@@ -5,7 +5,7 @@ var noProc = 0;
 var noSyst = 0;
 var noAppNodes = 1;
 
-var layoutDuration = 500;
+var layoutDuration = 100;
 var layoutPadding  = 50;
 var layoutBarIncW = 15;
 
@@ -122,6 +122,8 @@ function initCy( then ){
     cy.elements().removeClass('hidden');
 
 
+
+
     if( node.data().type == 'app'){
 
       conEdges.style({
@@ -176,7 +178,6 @@ function initCy( then ){
     }, {
       duration: layoutDuration
     });
-    
 
     hideNodeInfo();
   });
@@ -184,7 +185,7 @@ function initCy( then ){
   cy.on('mouseover', 'node[type="app"]', function(e){
     var node = this;
 
-    console.log(node);
+//    console.log(node);
     if(cy.$(':selected').length<1)
       showNodeInfo(node);
   });
@@ -203,8 +204,8 @@ function initCy( then ){
   cy.on('tap', 'node', function(e){
     var node = this;
 
-    console.log(node.data());
-    console.log(node.position().y);
+ //   console.log(node.data());
+//    console.log(node.position().y);
   });
 }
 
@@ -573,7 +574,7 @@ function readData2( data ){
       if(services[j].type == "Experience" )  { posY = initTopBarPos - 13*(noExpe+1) + topBarWidth/2 ; noExpe++; }
       else if(services[j].type == "Process" ){ posY = initMidBarPos - 13*(noProc+1) + midBarWidth/2 ; noProc++; }
       else if( services[j].type == "System" ){ posY = initBotBarPos - 13*(noSyst+1) + botBarWidth/2 ; noSyst++; }
-      else { posY = 1000; } //If no type, position node off to find it easy
+      else { posY = 1000; } //If no type, position node off to find it easily
 
       posX = serviceNode.position().x;      
       cy.add([
@@ -994,16 +995,4 @@ $('#filterToggle').qtip({
 
 
 }); // on dom ready
-
-
-
-
-
-
-
-
-
-
-
-
 
