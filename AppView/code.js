@@ -167,6 +167,27 @@ function initCy( then ){
       parent.select();
       showNodeInfo(parent);
     }
+    if( node.data().type == 'contract' ){
+      showNodeInfo(node);
+      var conServEdge = node.connectedEdges()[0];
+      conServEdge.style({
+        'width':'5px',
+        'line-color':'#0099e6',
+        'target-arrow-color':'#0099e6'
+      });
+    }
+    if( node.data().type=='service'){
+      showNodeInfo(node);
+      var conServEdge = node.openNeighborhood().openNeighborhood().openNeighborhood();
+      conServEdge = conServEdge.filter( "edge[type='contractServiceEdge']" );
+      console.log(conServEdge);      
+      conServEdge.style({
+        'width':'5px',
+        'line-color':'#0099e6',
+        'target-arrow-color':'#0099e6'
+      });
+    }
+
 
   });
 
@@ -175,11 +196,14 @@ function initCy( then ){
   cy.on('unselect', 'node', function(e){
 
     cy.edges('edge[type="goodIntEdge"]').style({
-      'z-index':'0'
+      'z-index':'0',
+      'line-color' : '#a9c742'
     });
 
-    cy.edges('edge[type="goodIntEdge"]').style({
-     'line-color' : '#a9c742'
+    cy.edges('edge[type="contractServiceEdge"]').style({
+      'width':'1px',
+      'line-color': '#66ccff',
+      'target-arrow-color': '#66ccff'
     });
 
     cy.nodes('node[type="app"]').style({
@@ -200,7 +224,7 @@ function initCy( then ){
     var node = this;
     
     if(cy.$(':selected').length<1){ //if no node is selected
-      if( node.data().type == 'app'){
+      if( node.data().type == 'app' || node.data().type == 'contract' || node.data().type == 'service'){
           showNodeInfo(node);
       }
 
@@ -217,12 +241,13 @@ function initCy( then ){
       hideNodeInfo();
   });
 
+  // Debug purpose only
   cy.on('tap', 'edge', function(e){
     var edge = this;
 
     console.log(edge.data());
   });
-
+  // Debug purpose only
   cy.on('tap', 'node', function(e){
     var node = this;
 
@@ -232,30 +257,61 @@ function initCy( then ){
 
   //Default settings
   cy.elements("[type='app']").lock();
-  cy.elements("[type='appBodyNode']").addClass('filtered');
+  cy.elements("[type='appBodyNode']").addClass('filtered').lock();
+  cy.elements("[type='appBodyNode']").addClass('filtered').unselectify();
   cy.elements("[type='backbone']").addClass('filtered');
   cy.elements("[type='backboneTop']").addClass('filtered').lock().unselectify();
-  cy.elements("[type='contract']").addClass('filtered').lock().unselectify();
+  cy.elements("[type='contract']").addClass('filtered').lock();
   cy.elements("[type='conPointNodeRightGood']").lock().unselectify();
   cy.elements("[type='conPointNodeRightBad']").lock().unselectify();
   cy.elements("[type='eShape']").unselectify();
   cy.elements("[type='goodIntEdge']").unselectify();
-  cy.elements("[type='service']").addClass('filtered').lock().unselectify();
+  cy.elements("[type='service']").addClass('filtered').lock();
   cy.elements("[type='straightSpaghEdge']").unselectify();
   cy.elements("[type='spaghEdge']").unselectify();
+  cy.elements("[type='servInfoNode']").addClass('filtered').unselectify();
+  cy.elements("[type='contInfoNode']").addClass('filtered').unselectify();
+
+
+  // cy.elements("[type='conPointNodeRightGood']").addClass('filtered');
+  // cy.elements("[type='conPointNodeGood']").addClass('filtered');
+  // cy.elements("[type='spaghEdge']").addClass('filtered');
+
+
   
 
 } // initCy
 
 
-var infoTemplate = Handlebars.compile([
+var appInfoTemplate = Handlebars.compile([
   '<p class="ac-name"> Name: {{id}}</p>',
   '{{#if connectedNodes}}<p class="ac-more"><i class="fa fa-cog"></i> Integrated with: {{connectedNodes}}</p>{{/if}}',    
   '<p class="ac-more"><i class="fa fa-file-text-o"></i> Contracts: <ul>{{#each contracts}} <li>{{id}} <i class="fa fa-long-arrow-right"></i> {{target}}</li> {{/each}}</ul>  </p>',
   '<p class="ac-more"><i class="fa fa-tag"></i> Services: <ul>{{#each services}} <li>{{id}}</li> {{/each}}</ul>  </p>'
 ].join(''));
 
+var contractInfoTemplate = Handlebars.compile([
+  '<p class="ac-name"> Name: {{id}}</p>',
+  '<p class="ac-more"><i class="fa fa-file-text-o"></i> Contract',
+  '<p class="ac-more"><i class="fa fa-dot-circle-o"></i> Target: {{target}}'
+].join(''));
 
+var serviceInfoTemplate = Handlebars.compile([
+  '<p class="ac-name"> Name: {{id}}</p>',
+  '{{#if connectedNodes}}<p class="ac-more"><i class="fa fa-cog"></i> Integrated with: {{connectedNodes}}</p>{{/if}}',    
+  '<p class="ac-more"><i class="fa fa-tag"></i> Service',
+  '<p class="ac-more"><i class="fa fa-question-circle"></i> Service type: {{serviceType}}'
+].join(''));
+
+
+function showNodeInfo( node ){
+  if(node.data().type=='app')
+    $('#info').html( appInfoTemplate( node.data() ) ).show();
+  if(node.data().type=='contract')
+    $('#info').html(  contractInfoTemplate( node.data() ) ).show();
+  if(node.data().type=='service')
+    $('#info').html( serviceInfoTemplate( node.data() ) ).show();
+}
 
 
 var addCompOptions = function(optName) {
@@ -427,9 +483,7 @@ $('#clear').on('click', function(){
 
 
 
-function showNodeInfo( node ){
-  $('#info').html( infoTemplate( node.data() ) ).show();
-}
+
 
 function hideNodeInfo(){
   $('#info').hide();
@@ -748,6 +802,25 @@ function readData2( data ){
   
 
 
+  //Add info nodes on side of the graph
+  var allServices = cy.$("node[type='service']");
+  var allContracts = cy.$("node[type='contract']");
+
+  for(var i=0; i<allServices.length; i++){
+    var label = allServices[i].id();
+    
+    if(label.indexOf('-') > -1) // if sharedservice, e.g. id= 's5-1', then remove '-1' else do nothing  
+      label = label.substring( 0, label.indexOf('-') );
+         
+    cy.add({ group: "nodes", data: { type: 'servInfoNode', label: label }, position: { x: -50, y: allServices[i].position().y } });
+  }
+  for(var i=0; i<allContracts.length; i++){
+    var label = allContracts[i].id();
+         
+    cy.add({ group: "nodes", data: { type: 'contInfoNode', label: label }, position: { x: cy.$("#aEnd").position().x+50, y: allServices[i].position().y } });
+  }  
+
+
   //Add data to each app containing connected targets
   var applications = cy.$('node[type="app"]');
   for(var i=0; i<applications.length; i++){
@@ -979,7 +1052,7 @@ $('#search').typeahead({
     cb( res );
   },
   templates: {
-    suggestion: infoTemplate
+    suggestion: appInfoTemplate
   }
 }).on('typeahead:selected', function(e, entry, dataset){
   var n = cy.getElementById(entry.id);
@@ -1070,17 +1143,17 @@ function doFiltering(){
 
 
 
-      } else if( type === 'backbone' || type === 'backboneTop' || type === 'appBodyNode' ){
+      } else if( type === 'backbone' || type === 'backboneTop' || type === 'appBodyNode' || type === 'servInfoNode' || type === 'contInfoNode' ){
         
         if( !detailedInf ){ filter(); }
       
       }else if( type === 'service' ){
         
-        if( !contracts ){ filter(); }
+        if( !services ){ filter(); }
       
       }else if( type === 'contract' ){
         
-        if( !services ){ filter(); }
+        if( !contracts ){ filter(); }
       
       } else if( type === 'spaghEdge' ){
         

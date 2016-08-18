@@ -77,12 +77,24 @@ node[type="contract"]{
   background-color: #a9c742;
   label: ;
 }
+node[type="contract"]:selected{
+  border-width: 0px;
+  width:12px;
+  height: 12px;
+}
 node[type="service"]{
   width: 10px;
   height: 10px;
   background-color: #a9c742;
   label: ;
 }
+node[type="service"]:selected{
+  border-width: 0px;
+  width:12px;
+  height: 12px;
+
+}
+
 edge[type="serviceBody"]{
   width:10px;
   curve-style: haystack;
@@ -115,6 +127,29 @@ node[type="conPointNodeRightGood"]{
   text-halign: right;
   text-margin-x: 10px;
 }
+node[type="servInfoNode"]{
+  width: 10px;
+  height: 10px;
+  background-color: #e8e8e8;
+  label: data(label);  
+  color: black;
+  font-size: 10;
+  text-outline-width: 0;
+  text-halign: left;
+  text-margin-x: -10px;
+}
+node[type="contInfoNode"]{
+  width: 10px;
+  height: 10px;
+  background-color: #e8e8e8;
+  label: data(label);  
+  color: black;
+  font-size: 10;
+  text-outline-width: 0;
+  text-halign: right;
+  text-margin-x: 10px;
+}
+
 
 node[type="conPointNodeRightBad"]{
   width: 10px;
@@ -135,8 +170,9 @@ edge[type="eShape"]{
 }
 
 edge[type="eShape"]:active,
-node[type="eShape"]:active{
-  overlay-opacity: 0.5;
+node[type="eShape"]:active,
+node[type="eShapeCorner"]:active{
+  overlay-opacity: 0.0;
 }
 
 edge[type="spaghEdge"]{
