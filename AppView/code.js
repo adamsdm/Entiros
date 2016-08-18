@@ -168,17 +168,24 @@ function initCy( then ){
       showNodeInfo(parent);
     }
     if( node.data().type == 'contract' ){
-      showNodeInfo(node);
       var conServEdge = node.connectedEdges()[0];
+      var infoNode = cy.$('node[label="'+node.id()+'"]');
+      
+      showNodeInfo(node);
       conServEdge.style({
         'width':'5px',
         'line-color':'#0099e6',
         'target-arrow-color':'#0099e6'
       });
+      infoNode.style({
+        'background-color':'#666666'
+      });
     }
     if( node.data().type=='service'){
-      showNodeInfo(node);
       var conServEdge = node.openNeighborhood().openNeighborhood().openNeighborhood();
+      var infoNode = cy.$('node[label="'+node.id()+'"]');
+
+      showNodeInfo(node);
       conServEdge = conServEdge.filter( "edge[type='contractServiceEdge']" );
       console.log(conServEdge);      
       conServEdge.style({
@@ -186,8 +193,10 @@ function initCy( then ){
         'line-color':'#0099e6',
         'target-arrow-color':'#0099e6'
       });
+      infoNode.style({
+        'background-color':'#666666'
+      });
     }
-
 
   });
   
@@ -214,12 +223,12 @@ function initCy( then ){
     cy.nodes('node[type="app"]').style({
       'width':'40px','height':'40px' 
     });
-
-  
-      
-    cy.nodes('node[type="conPointNodeRightGood"]').style({
+    cy.nodes('node[type="servInfoNode"]').style({
       'background-color':'#e8e8e8'
     });
+    cy.nodes('node[type="contInfoNode"]').style({
+      'background-color':'#e8e8e8'
+    });    
   
 
     hideNodeInfo();
@@ -261,22 +270,37 @@ function initCy( then ){
 
 
   //Default settings
+  // cy.elements("[type='app']").lock();
+  // cy.elements("[type='appBodyNode']").addClass('filtered').lock();
+  // cy.elements("[type='appBodyEdge']").addClass('filtered').unselectify();
+  // cy.elements("[type='backbone']").addClass('filtered').unselectify();
+  // cy.elements("[type='backboneTop']").addClass('filtered').lock().unselectify();
+  // cy.elements("[type='contract']").addClass('filtered').lock();
+  // cy.elements("[type='conPointNodeRightGood']").lock().unselectify();
+  // cy.elements("[type='conPointNodeRightBad']").lock().unselectify();
+  // cy.elements("[type='eShape']").unselectify();
+  // cy.elements("[type='goodIntEdge']").unselectify();
+  // cy.elements("[type='service']").addClass('filtered').lock();
+  // cy.elements("[type='straightSpaghEdge']").unselectify();
+  // cy.elements("[type='spaghEdge']").unselectify();
+  // cy.elements("[type='servInfoNode']").addClass('filtered').unselectify();
+  // cy.elements("[type='contInfoNode']").addClass('filtered').unselectify();
+
   cy.elements("[type='app']").lock();
   cy.elements("[type='appBodyNode']").addClass('filtered').lock();
-  cy.elements("[type='appBodyEdge']").addClass('filtered').unselectify();
-  cy.elements("[type='backbone']").addClass('filtered').unselectify();
-  cy.elements("[type='backboneTop']").addClass('filtered').lock().unselectify();
+  cy.elements("[type='appBodyEdge']").addClass('filtered');
+  cy.elements("[type='backbone']").addClass('filtered');
+  cy.elements("[type='backboneTop']").addClass('filtered').lock();
   cy.elements("[type='contract']").addClass('filtered').lock();
-  cy.elements("[type='conPointNodeRightGood']").lock().unselectify();
-  cy.elements("[type='conPointNodeRightBad']").lock().unselectify();
-  cy.elements("[type='eShape']").unselectify();
-  cy.elements("[type='goodIntEdge']").unselectify();
+  cy.elements("[type='conPointNodeRightGood']").lock();
+  cy.elements("[type='conPointNodeRightBad']").lock();
+  cy.elements("[type='eShape']");
+  cy.elements("[type='goodIntEdge']");
   cy.elements("[type='service']").addClass('filtered').lock();
-  cy.elements("[type='straightSpaghEdge']").unselectify();
-  cy.elements("[type='spaghEdge']").unselectify();
-  cy.elements("[type='servInfoNode']").addClass('filtered').unselectify();
-  cy.elements("[type='contInfoNode']").addClass('filtered').unselectify();
-
+  cy.elements("[type='straightSpaghEdge']");
+  cy.elements("[type='spaghEdge']");
+  cy.elements("[type='servInfoNode']").addClass('filtered');
+  cy.elements("[type='contInfoNode']").addClass('filtered');
 
   // cy.elements("[type='conPointNodeRightGood']").addClass('filtered');
   // cy.elements("[type='conPointNodeGood']").addClass('filtered');
@@ -816,13 +840,13 @@ function readData2( data ){
     
     if(label.indexOf('-') > -1) // if sharedservice, e.g. id= 's5-1', then remove '-1' else do nothing  
       label = label.substring( 0, label.indexOf('-') );
-         
-    cy.add({ group: "nodes", data: { type: 'servInfoNode', label: label }, position: { x: -50, y: allServices[i].position().y } });
+                                    //add id to avoid multiple info nodes for reused services
+    cy.add({ group: "nodes", data: { id: 'servInfoNode'+label, type: 'servInfoNode', label: label }, position: { x: -50, y: allServices[i].position().y } });
   }
   for(var i=0; i<allContracts.length; i++){
     var label = allContracts[i].id();
          
-    cy.add({ group: "nodes", data: { type: 'contInfoNode', label: label }, position: { x: cy.$("#aEnd").position().x+50, y: allServices[i].position().y } });
+    cy.add({ group: "nodes", data: { type: 'contInfoNode', label: label }, position: { x: cy.$("#aEnd").position().x+50, y: allContracts[i].position().y } });
   }  
 
 
@@ -1080,6 +1104,8 @@ $("#btnSearch").click( function() {
   focView(result);
 });
 
+
+//When detailed info checkbox is toggled
 $('#detailedInf').change(function(){
   if ($(this).prop('checked') == true) {
     $('#badIntEdges').prop('checked', false);
@@ -1092,7 +1118,7 @@ $('#detailedInf').change(function(){
 
 
     cy.elements().unselect();
-    
+      
     doFiltering();
   }
 
@@ -1108,7 +1134,6 @@ $('#detailedInf').change(function(){
     doFiltering();    
   }
 });
-
 
 function focView(data){
   var newDataSet = data.clone();

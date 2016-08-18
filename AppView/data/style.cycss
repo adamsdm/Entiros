@@ -140,6 +140,7 @@ node[type="servInfoNode"]{
   text-margin-x: -10px;
 }
 node[type="contInfoNode"]{
+  shape: square;
   width: 10px;
   height: 10px;
   background-color: #e8e8e8;
@@ -171,6 +172,12 @@ edge[type="eShape"]{
 }
 
 edge[type="eShape"]:active,
+edge[type="contractServiceEdge"]:active,
+edge[type="backbone"]:active,
+edge[type="goodIntEdge"]:active,
+edge[type="badIntEdge"]:active,
+edge[type="spaghEdge"]:active,
+edge[type="straightSpaghEdge"]:active,
 node[type="eShape"]:active,
 node[type="eShapeCorner"]:active{
   overlay-opacity: 0.0;
