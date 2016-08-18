@@ -722,7 +722,6 @@ $(function(){
       textAngle = angle;
       halign = 'right';
 
-      console.log(Math.PI/2)
       if(angle>Math.PI/2){
         textAngle+=Math.PI;
         halign = 'left';
