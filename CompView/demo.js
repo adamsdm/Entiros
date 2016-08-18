@@ -464,8 +464,8 @@ $(function(){
 
 
 
-    //loading.classList.add('loaded');
-    $('#loading').fadeOut(2000);
+    loading.classList.add('loaded');
+    
 
     var cy = window.cy = cytoscape({
       container: document.getElementById('cy'),
