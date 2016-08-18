@@ -619,7 +619,7 @@ $(function(){
         hideNodeInfo();
       }
     });
-
+    addVertInfoNodes();
     // cy.remove('edge');
     // addEdges();
   }
