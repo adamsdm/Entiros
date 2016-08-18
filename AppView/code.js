@@ -163,8 +163,8 @@ function initCy( then ){
 
     if( node.data().type == 'appBodyNode'){
       var parentId = node.id().substring( 0, node.id().indexOf('-') );
-      var parent   = cy.nodes('[id="'+parentId+'"]')
-      parent.select();
+      var parent   = cy.nodes('[id="'+parentId+'"]');
+      //parent.select();
       showNodeInfo(parent);
     }
     if( node.data().type == 'contract' ){
@@ -235,7 +235,7 @@ function initCy( then ){
 
       if( node.data().type == 'appBodyNode'){
         var parentId = node.id().substring( 0, node.id().indexOf('-') );
-        var parent   = cy.nodes('[id="'+parentId+'"]')
+        var parent   = cy.nodes('[id="'+parentId+'"]');
         showNodeInfo(parent);
       }
     }
@@ -263,7 +263,7 @@ function initCy( then ){
   //Default settings
   cy.elements("[type='app']").lock();
   cy.elements("[type='appBodyNode']").addClass('filtered').lock();
-  cy.elements("[type='appBodyNode']").addClass('filtered').unselectify();
+  cy.elements("[type='appBodyEdge']").addClass('filtered').unselectify();
   cy.elements("[type='backbone']").addClass('filtered').unselectify();
   cy.elements("[type='backboneTop']").addClass('filtered').lock().unselectify();
   cy.elements("[type='contract']").addClass('filtered').lock();

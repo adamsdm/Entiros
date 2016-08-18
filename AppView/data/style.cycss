@@ -45,7 +45,7 @@ node[type="appBodyNode"]{
   z-index: 0;
 }
 node[type="appBodyNode"]:selected{
-  border-width: 0;
+  border-width: 2;
 }
 
 edge[type="appBodyEdge"]{
