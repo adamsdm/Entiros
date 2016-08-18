@@ -99,6 +99,7 @@ edge[type="serviceBody"]{
   width:10px;
   curve-style: haystack;
   line-color: #a9c742;
+  z-index: 9999;
 }
 
 edge[type="contractServiceEdge"]{
