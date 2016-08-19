@@ -2,7 +2,6 @@
 * <a href=#install-localy> Install Localy </a>
 * <a href=#company-view> Company View </a>
 * <a href=#application-view> Application View </a>
-
 * <a href=#update-data> Update data </a>
 
 ##Install localy
