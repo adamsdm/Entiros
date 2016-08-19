@@ -19,7 +19,8 @@ When adding data to company view, the data should be in well-formatted .JSON. It
 4. Save the data by pressing the save button, copy the generated .JSON code and update the datafile with the new code.
 
 ##Update data
-Here are the steps to update the input data for the company view
+<b>Here are the steps to update the input data for the company view</b>:
+
 1. Download the CSV file containing the correct fields from hubspot
 2. Run HubspotCSVtoJSON.py script to convert the CSV file to a JSON file that cytoscape can interpret
 3. Make sure that the input-, output-file in the script are correct
