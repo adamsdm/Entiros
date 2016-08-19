@@ -7,8 +7,7 @@ $(function(){
 
   // get exported json from cytoscape desktop via ajax
   var graphP = $.ajax({
-    //url: './data/dataCalcsPolCoordRESULT.json', 
-    url: './CompView/data/pyFormatedData.json', 
+    url: './CompView/data/HubspotData/RESULT.json', 
     type: 'GET',
     dataType: 'json'
   });
@@ -23,6 +22,7 @@ $(function(){
   var infoTemplate = Handlebars.compile([
     '<p class="ac-name">{{id}}</p>',
     '{{#if NodeType}}<p class="ac-node-type"><i class="fa fa-info-circle"></i> {{NodeType}}</p>{{/if}}',
+    '{{#if LifecycleStage}}<p class="ac-node-type"><i class="fa fa-info-circle"></i> {{LifecycleStage}}</p>{{/if}}',
     '{{#if Country}}<p class="ac-country"><i class="fa fa-map-marker"></i> {{Country}}</p>{{/if}}',
     '{{#if WebsiteURL}}<p class="ac-more"><i class="fa fa-external-link"></i><a target="_blank" href="http://www.{{WebsiteURL}}">{{id}}</a></p>{{/if}}',
     '{{#if AnnRevenue}}<p class="ac-more"><i class="fa fa-usd"></i> {{AnnRevenue}}</p>{{/if}}',
@@ -451,9 +451,10 @@ $(function(){
     var elements = expJson.elements;
 
 
+
     elements.nodes.forEach(function(n){
       var data = n.data;
-              
+      console.log(data.NodeType);
       n.data.orgPos = {
         x: n.position.x,
         y: n.position.y
@@ -484,7 +485,6 @@ $(function(){
       // boxSelectionEnabled: false,
       // autolock: true
     });
-
 
     //Prospect style depending on ownership
     cy.style()
@@ -582,7 +582,7 @@ $(function(){
 
 
       //Customer
-      if(node.data().NodeType == 'Customer' || node.data().NodeType == 'Prospect'){
+      if(node.data().NodeType == 'Customer' || node.data().NodeType == 'Prospect' || node.data().NodeType == 'Employer'){
 
         setTimeout( function(){
           cy.elements().removeClass('focused');
@@ -639,7 +639,7 @@ $(function(){
         return str.match( q );
       }
       
-      var fields = ['id', 'NodeType', 'Country', 'CompanyType', 'Milk'];
+      var fields = ['id', 'NodeType', 'Country', 'CompanyType', 'LifecycleStage'];
       
       function anyFieldMatches( n ){
         for( var i = 0; i < fields.length; i++ ){
@@ -757,36 +757,82 @@ $(function(){
     var typeArray = [];  
     var typeInd;
 
+    var vendors = cy.$('node[NodeType="Vendor"]');
+    var resellers = cy.$('node[NodeType="Reseller"]');
+    var partners = cy.$('node[NodeType="Partner"]');
+    var others = cy.$('node[NodeType="Other"]');
+    var employers = cy.$('node[NodeType="Employer"]');
+    var prospects = cy.$('node[NodeType="Prospect"]');
+
+
+    console.log(others.length);
+
+    for(var i=0;i<vendors.length; i++){
+      vendors[i].position().x = 250;
+      vendors[i].position().y = i*250;
+    }
+    for(var i=0; i<resellers.position; i++ ){
+      resellers[i].position().x = 500;
+      resellers[i].position().y = i*250;
+    }   
+    for(var i=0;i<partners.length; i++){
+      partners[i].position().x = 750;
+      partners[i].position().y = i*250;
+    }
+    for(var i=0; i<others.length; i++){
+      others[i].position().x = 1000;
+      others[i].position().y = i*250;
+    }
+    for(var i=0; i<employers.length; i++){
+      employers[i].position().x = 1250;
+      employers[i].position().y = i*250;
+    }
+    for(var i=0; i<prospects.length; i++){
+      prospects[i].position().x = -250;
+      prospects[i].position().y = i*250;
+    }
+    for(var i=0; i<custNodes.length; i++){
+      custNodes[i].position().y = i*250;
+    }
+
+
+    //add nodes with other lifecycle stage than customer
+    // custNodes = custNodes.add( cy.elements('node[NodeType="Partner"]') );
+    // custNodes = custNodes.add( cy.elements('node[NodeType="Reseller"]') );
+    // custNodes = custNodes.add( cy.elements('node[NodeType="Vendor"]') );
+    // custNodes = custNodes.add( cy.elements('node[NodeType="Other"]') );
+    // custNodes = custNodes.add( cy.elements('node[NodeType="Employer"]') );
+
     //Get unique company types and store them in typeArray
-    for(var i=0; i<custNodes.length; i++){
-        typeArray.push(custNodes[i].data().CompanyType);
-    }
-    typeArray = typeArray.filter( onlyUnique );
+    // for(var i=0; i<custNodes.length; i++){
+    //     typeArray.push(custNodes[i].data().CompanyType);
+    // }
+    // typeArray = typeArray.filter( onlyUnique );
 
-    //For each customer
-    for(var i=0; i<custNodes.length; i++){
-      typeInd = getTypeIndex(custNodes[i].data().CompanyType);  //Get current customer type index from typeArray
-      closeDate = new Date(custNodes[i].data().closeDate);      //Get the close date 
-      radius = 100+scaleDate(closeDate);                        
-      angle = 2*typeInd*Math.PI/typeArray.length + Math.random()*Math.PI/typeArray.length;   //Set circle disk angle 
+    // //For each customer
+    // for(var i=0; i<custNodes.length; i++){
+    //   typeInd = getTypeIndex(custNodes[i].data().CompanyType);  //Get current customer type index from typeArray
+    //   closeDate = new Date(custNodes[i].data().closeDate);      //Get the close date 
+    //   radius = 100+scaleDate(closeDate);                        
+    //   angle = 2*typeInd*Math.PI/typeArray.length + Math.random()*Math.PI/typeArray.length;   //Set circle disk angle 
 
-      //Set customer node position
-      custNodes[i].position().x = radius*Math.cos(angle);
-      custNodes[i].position().y = radius*Math.sin(angle); 
+    //   //Set customer node position
+    //   custNodes[i].position().x = radius*Math.cos(angle);
+    //   custNodes[i].position().y = radius*Math.sin(angle); 
 
-      //Set prospect locations
-      var neighbors = custNodes[i].openNeighborhood('node[NodeType="Prospect"]');      
-      for(var j=0; j<neighbors.length; j++ ){
-        neighbors[j].position().x = custNodes[i].position().x + ( 200*Math.cos(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
-        neighbors[j].position().y = custNodes[i].position().y + ( 200*Math.sin(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
-      }            
-    }
+    //   //Set prospect locations
+    //   var neighbors = custNodes[i].openNeighborhood('node[NodeType="Prospect"]');      
+    //   for(var j=0; j<neighbors.length; j++ ){
+    //     neighbors[j].position().x = custNodes[i].position().x + ( 200*Math.cos(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
+    //     neighbors[j].position().y = custNodes[i].position().y + ( 200*Math.sin(angle+Math.random()*Math.PI/4 - Math.random()*Math.PI/4) );
+    //   }            
+    // }
 
-    // Place applikation nodes in list to the right
-    for(var ai=0; ai<appNodes.length; ai++){
-      appNodes[ai].position().x = 4000;
-      appNodes[ai].position().y = -2500 + ( ai*5000/appNodes.length);
-    }
+    // // Place applikation nodes in list to the right
+    // for(var ai=0; ai<appNodes.length; ai++){
+    //   appNodes[ai].position().x = 4000;
+    //   appNodes[ai].position().y = -2500 + ( ai*5000/appNodes.length);
+    // }
 
     cy.style().update();
 
@@ -815,7 +861,7 @@ $(function(){
   }
 
   /**
-  * Maps x where x =[min,...,max] to [a,...,b]
+  * Maps x where x ∈ [min,...,max] to [a,...,b]
   */
   function mapToRange(x, min, max, a, b){
     //****** Mathematical formula ******//
@@ -835,7 +881,7 @@ $(function(){
   $('#debug').on('click', function(){
     // cy.remove('edge');
     // addEdges();
-    // positionAlgorithm(); 
+    positionAlgorithm(); 
     
     //addVertInfoNodes();
 
@@ -856,23 +902,31 @@ $(function(){
   });
   
   function doFiltering(){
+    //Team checkboxes
     var tVoyager          = $('#tVoyager').is(':checked');
     var tEnterprise       = $('#tEnterprise').is(':checked');
     var tMS               = $('#tMS').is(':checked');
 
+    //Type checkboxes
     var cust              = $('#cust').is(':checked');
+    var app               = $('#app').is(':checked');
+    var prosp             = $('#prosp').is(':checked');
+
+    //lifecycle checkboxes
+    var lifeCust          = $('#lifeCust').is(':checked');
+    var oppu              = $('#oppu').is(':checked');
+    var lifeOther             = $('#lifeOther').is(':checked');
     var evan              = $('#evan').is(':checked');
     var subs              = $('#subs').is(':checked');
-    var lead              = $('#lead').is(':checked');
     var markQualLead      = $('#markQualLead').is(':checked');
     var saleQualLead      = $('#saleQualLead').is(':checked');
-    var prosp             = $('#prosp').is(':checked');
-    var app               = $('#app').is(':checked');
+    
+    //info checkboxes
     var rel               = $('#rel').is(':checked');
     var own               = $('#own').is(':checked');
     var vertinf           = $('#vertinf').is(':checked');
 
-
+    //company type checkboxes
     var jordbruk          = $('#jordbruk').is(':checked'); //Jordbruk, skogsbruk och fiske
     var utvinning         = $('#utvinning').is(':checked'); // Utvinning av mineral
     var tillverkning      = $('#tillverkning ').is(':checked'); // Tillverkning
@@ -897,7 +951,7 @@ $(function(){
     var other             = $('#other').is(':checked'); // Other
     var notSet            = $('#notSet').is(':checked');// Not set
 
-
+    console.log(other);
 
     if(!rel ){
       cy.edges().addClass('filtered');
@@ -924,6 +978,7 @@ $(function(){
         var type = n.data('NodeType');
         var Owner = n.data('Owner');
         var CompanyType = n.data('CompanyType');
+        var lifeCycle = n.data('LifecycleStage');
 
         n.removeClass('filtered');
         
@@ -985,6 +1040,39 @@ $(function(){
         }
 
 
+        //Lifecycle filtering
+        if(lifeCycle === 'Customer'){
+
+          if(!lifeCust){ filter(); }
+        
+        } else if(lifeCycle === 'Evangelist')  {
+
+          if(!evan){ filter(); }
+
+        } else if(lifeCycle === 'Marketing Qualified Lead')  {
+
+          if(!markQualLead){ filter(); }
+
+        } else if(lifeCycle === 'Opportunity')  {
+
+          if(!oppu){ filter(); }
+
+        } else if(lifeCycle === 'Other')  {
+
+          if(!lifeOther){ filter(); }
+
+        } else if(lifeCycle === 'Sales Qualified Lead')  {
+
+          if(!saleQualLead){ filter(); }
+
+        } else if(lifeCycle === 'Subscriber')  {
+
+          if(!subs){ filter(); }
+        
+        }
+
+
+        //Company type filtering
         if( CompanyType === 'JORDBRUK, SKOGSBRUK OCH FISKE' ){
           if( !jordbruk ){ filter(); }
           

@@ -1,0 +1,1731 @@
+{
+ "elements":  {
+  "nodes": [
+   {
+    "data": {
+     "id": "Kaller",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "kaller.com",
+     "City": "TranÃ¥s",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "kaller.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-07 10:55"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Vattenfall Eldistribution",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "vattenfall.se",
+     "City": "Ume?",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "",
+     "WebsiteURL": "vattenfall.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-07 11:02"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Tradedoubler",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "www.tradedoubler.com/",
+     "City": "",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "www.tradedoubler.com/",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-07 10:55"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "CRM Toolbox",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "crmtoolbox.com",
+     "City": "",
+     "NodeType": "Vendor",
+     "LifecycleStage": "Subscriber",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Germany",
+     "WebsiteURL": "crmtoolbox.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "op5 AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "op5.se",
+     "City": "Kista",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "op5.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-06 16:58"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Markup Digital Ltd",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "usemarkup.com",
+     "City": "Glasgow",
+     "NodeType": "Vendor",
+     "LifecycleStage": "Subscriber",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "United Kingdom",
+     "WebsiteURL": "usemarkup.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Boss Media (out of business)",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "bossmedia.se",
+     "City": "",
+     "NodeType": "Customer",
+     "LifecycleStage": "Other",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "bossmedia.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Ericsson",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "ericsson.se",
+     "City": "Stockholm",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "ericsson.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-06 16:56"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Tactel AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "tactel.se",
+     "City": "Malm",
+     "NodeType": "Vendor",
+     "LifecycleStage": "Other",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "tactel.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Bilprovningen",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "bilprovningen.se",
+     "City": "Ume?",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "bilprovningen.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-06 11:42"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Ambu A/S",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "ambu.com",
+     "City": "Ballerup",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Denmark",
+     "WebsiteURL": "ambu.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-06 11:38"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Folksam",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "folksam.se",
+     "City": "Stockholm",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "folksam.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-06 16:47"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Tranås Kommun",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "tranas.se",
+     "City": "",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "tranas.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-07 11:01"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "A.P.C.",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "apc.fr",
+     "City": "Paris",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "France",
+     "WebsiteURL": "apc.fr",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-06 12:08"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "ELLOS GROUP",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "ellos.se",
+     "City": "Borås",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "ellos.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-06 16:42"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "skandiafastigheter.se",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "skandiafastigheter.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Sales Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "skandiafastigheter.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "teracomboxergroup.com",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "terracomboxergroup.com",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "terracomboxergroup.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Strömberg Distribution AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "strd.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "strd.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "MTR Stockholm AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "mtr.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "mtr.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "DIOS FASTIGHETER AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "dios.se",
+     "City": "Östersund",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "dios.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Bilia Personbilar AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "bilia.se",
+     "City": "Solna",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "bilia.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "AFA Försäkring",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "afaforsakring.se",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "afaforsakring.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Entiros AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "entiros.se",
+     "City": "Tranås",
+     "NodeType": "Other",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "entiros.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "GANT AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "gant.com",
+     "City": "New York",
+     "NodeType": "Customer",
+     "LifecycleStage": "Evangelist",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "gant.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-06 16:48"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "SBAB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "sbab.se",
+     "City": "Stockholm",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "sbab.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-07 10:41"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Keolis Sverige AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "keolis.se",
+     "City": "Stockholm",
+     "NodeType": "Customer",
+     "LifecycleStage": "Evangelist",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "keolis.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Schibsted Centralen AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "schibsted.se",
+     "City": "Stockholm",
+     "NodeType": "Customer",
+     "LifecycleStage": "Evangelist",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "schibsted.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Volvo Cars Corporation",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "volvocars.com",
+     "City": "Rockleigh",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "volvocars.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-06-19 16:41"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Taberg Media Group",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "http://tabergmediagroup.se/",
+     "City": "",
+     "NodeType": "Customer",
+     "LifecycleStage": "Evangelist",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "http://tabergmediagroup.se/",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Montico",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "montico.se",
+     "City": "Tranås",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "montico.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-06 12:03"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Bliwa Livförsäkring",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "bliwa.se",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "bliwa.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Resursbanken",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "resursbanken.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "",
+     "WebsiteURL": "resursbanken.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Recipharm",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "recipharm.com",
+     "City": "Haninge",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "recipharm.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-07 10:24"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Keolis Network",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "Keolis.se",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "Keolis.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "GANT Network",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "gant.com",
+     "City": "New York",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "United States",
+     "WebsiteURL": "gant.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Schibsted Network",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "schibsted.se",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "schibsted.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "JOOR Network",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "jooraccess.com",
+     "City": "New York",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "United States",
+     "WebsiteURL": "jooraccess.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "ICA Gruppen",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "ica.se",
+     "City": "Solna",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "ica.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Systembolaget AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "systembolaget.se",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "systembolaget.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "stralfors.se",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "stralfors.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "stralfors.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "DEKRA Trkiye",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "dekra.com",
+     "City": "Stuttgart",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Germany",
+     "WebsiteURL": "dekra.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Telge",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "telge.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "telge.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Diligentia (Skandiafastigheter)",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "diligentia.se",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "diligentia.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Telge Energi AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "telgeenergi.se",
+     "City": "Sodertalje",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "telgeenergi.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Trafikfrvaltningen Stockholms lns landsting",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "sl.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Sales Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "sl.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Skandia Norden",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "skandia.se",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "skandia.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "postnord.se",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "postnord.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "postnord.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "envoritainer.com",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "envoritainer.com",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "envoritainer.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "V-TAB AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "v-tab.se",
+     "City": "Hisings Backa",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Sales Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "v-tab.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "K-rauta Sverige",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "k-rauta.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Finland",
+     "WebsiteURL": "k-rauta.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "dekra.se",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "dekra.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Sales Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Germany",
+     "WebsiteURL": "dekra.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Nobina Europe AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "nobina.com",
+     "City": "Solna",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "nobina.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Bankgirot",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "bankgirot.se",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Sales Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "bankgirot.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Reitan Convenience Sweden",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "reitangruppen.no",
+     "City": "Trondheim",
+     "NodeType": "Customer",
+     "LifecycleStage": "Customer",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "Norway",
+     "WebsiteURL": "reitangruppen.no",
+     "AnnRevenue": 13000000000,
+     "closeDate": "2016-07-07 10:26"
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "ICA",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "ica.se",
+     "City": "Solna",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "ica.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Scania",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "scania.com",
+     "City": "Södertälje",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Sales Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "scania.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "neuwerld.se",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "neuwerld.se",
+     "City": "",
+     "NodeType": "Employer",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Anneli Magg",
+     "Country": "",
+     "WebsiteURL": "neuwerld.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Intrum Justitia",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "intrum.com",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Sales Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "intrum.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Västtrafik AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "vasttrafik.se",
+     "City": "Skövde",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Marketing Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "vasttrafik.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Västtrafik AB",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "vasttrafik.se",
+     "City": "Skövde",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Sales Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Adam Söderström",
+     "Country": "Sweden",
+     "WebsiteURL": "vasttrafik.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Spotify",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "spotify.com",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Sales Qualified Lead",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "spotify.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "MuleSoft, INC.",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "mulesoft.com",
+     "City": "San Francisco",
+     "NodeType": "Vendor",
+     "LifecycleStage": "",
+     "hasApplication": [400],
+     "Owner": "Gustav Rosen",
+     "Country": "United States",
+     "WebsiteURL": "mulesoft.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Filippa K",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "filippa-k.com",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "filippa-k.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "hm.com",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "hm.com",
+     "City": "Fremont",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "United States",
+     "WebsiteURL": "hm.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "HansAndersson Recycling",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "hansandersson.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "hansandersson.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "clearon.se",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "clearon.se",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "clearon.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Martin & Servera",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "martinservera.se",
+     "City": "Stockholm",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "martinservera.se",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "ISS A/S",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "se.issworld.com",
+     "City": "London",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Niels Wildenberg",
+     "Country": "Denmark",
+     "WebsiteURL": "se.issworld.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   },
+   {
+    "data": {
+     "id": "Kavat",
+     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "Company Domain Name": "kavat.com",
+     "City": "",
+     "NodeType": "Prospect",
+     "LifecycleStage": "Opportunity",
+     "hasApplication": [400],
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "kavat.com",
+     "AnnRevenue": 13000000000,
+     "closeDate": ""
+    },
+    "position": {
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+   }
+  ]
+ }
+}

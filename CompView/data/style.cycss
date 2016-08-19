@@ -36,7 +36,12 @@ node {
 
 
  
-node[NodeType = "Customer"] {
+node[NodeType = "Customer"],
+node[NodeType = "Partner"],
+node[NodeType = "Reseller"],
+node[NodeType = "Vendor"],
+node[NodeType = "Other"],
+node[NodeType = "Employer"] {
 	background-color: #a9c742;
 	text-outline-color: #a9c742;
 	width: mapData(AnnRevenue, 1000000, 20000000000, 40, 120);
@@ -68,12 +73,6 @@ node[NodeType = "Evangelist"]{
 node[NodeType = "Sales Qualified Lead"] {
 	background-color: #b1b2b4;
 	text-outline-color: #a9c742;
-	width: 30;
-	height: 30;
-}
-node[NodeType = "Other"] {
-	background-color: #b1b2b4;
-	text-outline-color: #b1b2b4;
 	width: 30;
 	height: 30;
 }
