@@ -1,7 +1,7 @@
 
 $(function(){
 
-  var layoutPadding = 100;
+  var layoutPadding = 50;
   var layoutDuration = 700;
   var inCompFocusView = false;
 
@@ -1204,13 +1204,13 @@ $(function(){
         } else if( CompanyType === 'FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK' ){
           if( !förvärv ){ filter(); }
           
-        } else if( CompanyType === 'VERKSAMHET VID INTERNATIONELLA ORGANISATIONER, UTLÄNDSKA AMBASSADER O.D.' ){
+        } else if( CompanyType === 'VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.' ){
           if( !ambassad ){ filter(); }
           
-        } else if( CompanyType === 'Other' ){
+        } else if( CompanyType === 'OTHER' ){
           if( !other ){ filter(); }
           
-        } else if( CompanyType === 'Not set' ){
+        } else if( CompanyType === 'NOT SET' ){
           if( !notSet ){ filter(); }
           
         }

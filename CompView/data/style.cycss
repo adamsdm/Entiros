@@ -54,7 +54,8 @@ node[NodeType = "Vendor"] {
 }
 
 node[id="Entiros AB"]{
-	background-image: url(https://farm8.staticflickr.com/7272/7633179468_3e19e45a0c_b.jpg);
+	background-color: black;
+	background-image: url(./CompView/img/snurran_4F.png);
 	background-fit: cover;
 }
 
