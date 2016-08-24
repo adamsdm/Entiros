@@ -29,7 +29,7 @@
    {
     "data": {
      "id": "Vattenfall Eldistribution",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "TILLVERKNING",
      "Company Domain Name": "vattenfall.se",
      "City": "Ume?",
      "NodeType": "Customer",
@@ -54,7 +54,7 @@
    {
     "data": {
      "id": "Tradedoubler",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA",
      "Company Domain Name": "www.tradedoubler.com/",
      "City": "",
      "NodeType": "Customer",
@@ -79,7 +79,7 @@
    {
     "data": {
      "id": "CRM Toolbox",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING",
      "Company Domain Name": "crmtoolbox.com",
      "City": "",
      "NodeType": "Vendor",
@@ -104,7 +104,7 @@
    {
     "data": {
      "id": "op5 AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "BYGGVERKSAMHET",
      "Company Domain Name": "op5.se",
      "City": "Kista",
      "NodeType": "Customer",
@@ -129,7 +129,7 @@
    {
     "data": {
      "id": "Markup Digital Ltd",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR",
      "Company Domain Name": "usemarkup.com",
      "City": "Glasgow",
      "NodeType": "Vendor",
@@ -154,7 +154,7 @@
    {
     "data": {
      "id": "Boss Media (out of business)",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "TRANSPORT OCH MAGASINERING",
      "Company Domain Name": "bossmedia.se",
      "City": "",
      "NodeType": "Customer",
@@ -179,7 +179,7 @@
    {
     "data": {
      "id": "Ericsson",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "HOTELL- OCH RESTAURANGVERKSAMHET",
      "Company Domain Name": "ericsson.se",
      "City": "Stockholm",
      "NodeType": "Customer",
@@ -204,7 +204,7 @@
    {
     "data": {
      "id": "Tactel AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET",
      "Company Domain Name": "tactel.se",
      "City": "Malm",
      "NodeType": "Vendor",
@@ -229,7 +229,7 @@
    {
     "data": {
      "id": "Bilprovningen",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FINANS- OCH FÖRSÄKRINGSVERKSAMHET",
      "Company Domain Name": "bilprovningen.se",
      "City": "Ume?",
      "NodeType": "Customer",
@@ -254,7 +254,7 @@
    {
     "data": {
      "id": "Ambu A/S",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FASTIGHETSVERKSAMHET",
      "Company Domain Name": "ambu.com",
      "City": "Ballerup",
      "NodeType": "Customer",
@@ -279,7 +279,7 @@
    {
     "data": {
      "id": "Folksam",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK",
      "Company Domain Name": "folksam.se",
      "City": "Stockholm",
      "NodeType": "Customer",
@@ -304,7 +304,7 @@
    {
     "data": {
      "id": "Tranås Kommun",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER",
      "Company Domain Name": "tranas.se",
      "City": "",
      "NodeType": "Customer",
@@ -329,7 +329,7 @@
    {
     "data": {
      "id": "A.P.C.",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING",
      "Company Domain Name": "apc.fr",
      "City": "Paris",
      "NodeType": "Customer",
@@ -354,7 +354,7 @@
    {
     "data": {
      "id": "ELLOS GROUP",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "UTBILDNING",
      "Company Domain Name": "ellos.se",
      "City": "Borås",
      "NodeType": "Customer",
@@ -379,7 +379,7 @@
    {
     "data": {
      "id": "skandiafastigheter.se",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
      "Company Domain Name": "skandiafastigheter.se",
      "City": "",
      "NodeType": "Prospect",
@@ -404,7 +404,7 @@
    {
     "data": {
      "id": "teracomboxergroup.com",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "KULTUR, NÖJE OCH FRITID",
      "Company Domain Name": "terracomboxergroup.com",
      "City": "",
      "NodeType": "Prospect",
@@ -429,7 +429,7 @@
    {
     "data": {
      "id": "Strömberg Distribution AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "ANNAN SERVICEVERKSAMHET",
      "Company Domain Name": "strd.se",
      "City": "",
      "NodeType": "Prospect",
@@ -454,7 +454,7 @@
    {
     "data": {
      "id": "MTR Stockholm AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
      "Company Domain Name": "mtr.se",
      "City": "",
      "NodeType": "Prospect",
@@ -479,7 +479,7 @@
    {
     "data": {
      "id": "DIOS FASTIGHETER AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
      "Company Domain Name": "dios.se",
      "City": "Östersund",
      "NodeType": "Prospect",
@@ -504,7 +504,7 @@
    {
     "data": {
      "id": "Bilia Personbilar AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "OTHER",
      "Company Domain Name": "bilia.se",
      "City": "Solna",
      "NodeType": "Prospect",
@@ -529,7 +529,7 @@
    {
     "data": {
      "id": "AFA Försäkring",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "NOT SET",
      "Company Domain Name": "afaforsakring.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -579,7 +579,7 @@
    {
     "data": {
      "id": "GANT AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "UTVINNING AV MINERAL",
      "Company Domain Name": "gant.com",
      "City": "New York",
      "NodeType": "Customer",
@@ -604,7 +604,7 @@
    {
     "data": {
      "id": "SBAB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "TILLVERKNING",
      "Company Domain Name": "sbab.se",
      "City": "Stockholm",
      "NodeType": "Customer",
@@ -629,7 +629,7 @@
    {
     "data": {
      "id": "Keolis Sverige AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA",
      "Company Domain Name": "keolis.se",
      "City": "Stockholm",
      "NodeType": "Customer",
@@ -654,7 +654,7 @@
    {
     "data": {
      "id": "Schibsted Centralen AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING",
      "Company Domain Name": "schibsted.se",
      "City": "Stockholm",
      "NodeType": "Customer",
@@ -679,7 +679,7 @@
    {
     "data": {
      "id": "Volvo Cars Corporation",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "BYGGVERKSAMHET",
      "Company Domain Name": "volvocars.com",
      "City": "Rockleigh",
      "NodeType": "Customer",
@@ -704,7 +704,7 @@
    {
     "data": {
      "id": "Taberg Media Group",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR",
      "Company Domain Name": "http://tabergmediagroup.se/",
      "City": "",
      "NodeType": "Customer",
@@ -729,7 +729,7 @@
    {
     "data": {
      "id": "Montico",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "TRANSPORT OCH MAGASINERING",
      "Company Domain Name": "montico.se",
      "City": "Tranås",
      "NodeType": "Customer",
@@ -754,7 +754,7 @@
    {
     "data": {
      "id": "Bliwa Livförsäkring",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "HOTELL- OCH RESTAURANGVERKSAMHET",
      "Company Domain Name": "bliwa.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -779,7 +779,7 @@
    {
     "data": {
      "id": "Resursbanken",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET",
      "Company Domain Name": "resursbanken.se",
      "City": "",
      "NodeType": "Prospect",
@@ -804,7 +804,7 @@
    {
     "data": {
      "id": "Recipharm",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FINANS- OCH FÖRSÄKRINGSVERKSAMHET",
      "Company Domain Name": "recipharm.com",
      "City": "Haninge",
      "NodeType": "Customer",
@@ -829,7 +829,7 @@
    {
     "data": {
      "id": "Keolis Network",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FASTIGHETSVERKSAMHET",
      "Company Domain Name": "Keolis.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -854,7 +854,7 @@
    {
     "data": {
      "id": "GANT Network",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK",
      "Company Domain Name": "gant.com",
      "City": "New York",
      "NodeType": "Prospect",
@@ -879,7 +879,7 @@
    {
     "data": {
      "id": "Schibsted Network",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER",
      "Company Domain Name": "schibsted.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -904,7 +904,7 @@
    {
     "data": {
      "id": "JOOR Network",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING",
      "Company Domain Name": "jooraccess.com",
      "City": "New York",
      "NodeType": "Prospect",
@@ -929,7 +929,7 @@
    {
     "data": {
      "id": "ICA Gruppen",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "UTBILDNING",
      "Company Domain Name": "ica.se",
      "City": "Solna",
      "NodeType": "Prospect",
@@ -954,7 +954,7 @@
    {
     "data": {
      "id": "Systembolaget AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
      "Company Domain Name": "systembolaget.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -979,7 +979,7 @@
    {
     "data": {
      "id": "stralfors.se",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "KULTUR, NÖJE OCH FRITID",
      "Company Domain Name": "stralfors.se",
      "City": "",
      "NodeType": "Prospect",
@@ -1004,7 +1004,7 @@
    {
     "data": {
      "id": "DEKRA Trkiye",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "ANNAN SERVICEVERKSAMHET",
      "Company Domain Name": "dekra.com",
      "City": "Stuttgart",
      "NodeType": "Prospect",
@@ -1029,7 +1029,7 @@
    {
     "data": {
      "id": "Telge",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
      "Company Domain Name": "telge.se",
      "City": "",
      "NodeType": "Prospect",
@@ -1054,7 +1054,7 @@
    {
     "data": {
      "id": "Diligentia (Skandiafastigheter)",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
      "Company Domain Name": "diligentia.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -1079,7 +1079,7 @@
    {
     "data": {
      "id": "Telge Energi AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "OTHER",
      "Company Domain Name": "telgeenergi.se",
      "City": "Sodertalje",
      "NodeType": "Prospect",
@@ -1104,7 +1104,7 @@
    {
     "data": {
      "id": "Trafikfrvaltningen Stockholms lns landsting",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "NOT SET",
      "Company Domain Name": "sl.se",
      "City": "",
      "NodeType": "Prospect",
@@ -1154,7 +1154,7 @@
    {
     "data": {
      "id": "postnord.se",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "UTVINNING AV MINERAL",
      "Company Domain Name": "postnord.se",
      "City": "",
      "NodeType": "Prospect",
@@ -1179,7 +1179,7 @@
    {
     "data": {
      "id": "envoritainer.com",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "TILLVERKNING",
      "Company Domain Name": "envoritainer.com",
      "City": "",
      "NodeType": "Prospect",
@@ -1204,7 +1204,7 @@
    {
     "data": {
      "id": "V-TAB AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA",
      "Company Domain Name": "v-tab.se",
      "City": "Hisings Backa",
      "NodeType": "Prospect",
@@ -1229,7 +1229,7 @@
    {
     "data": {
      "id": "K-rauta Sverige",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING",
      "Company Domain Name": "k-rauta.se",
      "City": "",
      "NodeType": "Prospect",
@@ -1254,7 +1254,7 @@
    {
     "data": {
      "id": "dekra.se",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "BYGGVERKSAMHET",
      "Company Domain Name": "dekra.se",
      "City": "",
      "NodeType": "Prospect",
@@ -1279,7 +1279,7 @@
    {
     "data": {
      "id": "Nobina Europe AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR",
      "Company Domain Name": "nobina.com",
      "City": "Solna",
      "NodeType": "Prospect",
@@ -1304,7 +1304,7 @@
    {
     "data": {
      "id": "Bankgirot",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "TRANSPORT OCH MAGASINERING",
      "Company Domain Name": "bankgirot.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -1329,7 +1329,7 @@
    {
     "data": {
      "id": "Reitan Convenience Sweden",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "HOTELL- OCH RESTAURANGVERKSAMHET",
      "Company Domain Name": "reitangruppen.no",
      "City": "Trondheim",
      "NodeType": "Customer",
@@ -1354,7 +1354,7 @@
    {
     "data": {
      "id": "ICA",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET",
      "Company Domain Name": "ica.se",
      "City": "Solna",
      "NodeType": "Prospect",
@@ -1379,7 +1379,7 @@
    {
     "data": {
      "id": "Scania",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FINANS- OCH FÖRSÄKRINGSVERKSAMHET",
      "Company Domain Name": "scania.com",
      "City": "Södertälje",
      "NodeType": "Prospect",
@@ -1404,7 +1404,7 @@
    {
     "data": {
      "id": "neuwerld.se",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FASTIGHETSVERKSAMHET",
      "Company Domain Name": "neuwerld.se",
      "City": "",
      "NodeType": "Employer",
@@ -1429,7 +1429,7 @@
    {
     "data": {
      "id": "Intrum Justitia",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK",
      "Company Domain Name": "intrum.com",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -1454,7 +1454,7 @@
    {
     "data": {
      "id": "Västtrafik AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER",
      "Company Domain Name": "vasttrafik.se",
      "City": "Skövde",
      "NodeType": "Prospect",
@@ -1479,7 +1479,7 @@
    {
     "data": {
      "id": "Västtrafik AB",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING",
      "Company Domain Name": "vasttrafik.se",
      "City": "Skövde",
      "NodeType": "Prospect",
@@ -1504,7 +1504,7 @@
    {
     "data": {
      "id": "Spotify",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "UTBILDNING",
      "Company Domain Name": "spotify.com",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -1529,7 +1529,7 @@
    {
     "data": {
      "id": "MuleSoft, INC.",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
      "Company Domain Name": "mulesoft.com",
      "City": "San Francisco",
      "NodeType": "Vendor",
@@ -1554,7 +1554,7 @@
    {
     "data": {
      "id": "Filippa K",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "KULTUR, NÖJE OCH FRITID",
      "Company Domain Name": "filippa-k.com",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -1579,7 +1579,7 @@
    {
     "data": {
      "id": "hm.com",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "ANNAN SERVICEVERKSAMHET",
      "Company Domain Name": "hm.com",
      "City": "Fremont",
      "NodeType": "Prospect",
@@ -1604,7 +1604,7 @@
    {
     "data": {
      "id": "HansAndersson Recycling",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
      "Company Domain Name": "hansandersson.se",
      "City": "",
      "NodeType": "Prospect",
@@ -1629,7 +1629,7 @@
    {
     "data": {
      "id": "clearon.se",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
      "Company Domain Name": "clearon.se",
      "City": "",
      "NodeType": "Prospect",
@@ -1654,7 +1654,7 @@
    {
     "data": {
      "id": "Martin & Servera",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "OTHER",
      "Company Domain Name": "martinservera.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
@@ -1679,7 +1679,7 @@
    {
     "data": {
      "id": "ISS A/S",
-     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
+     "CompanyType": "NOT SET",
      "Company Domain Name": "se.issworld.com",
      "City": "London",
      "NodeType": "Prospect",

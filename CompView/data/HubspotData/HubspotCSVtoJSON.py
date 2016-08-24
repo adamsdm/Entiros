@@ -1,14 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
 import csv
 import json
+import random 
+import datetime 
+
 
 csvfile = open('hubspotCSV.csv', 'r')
 jsonfile = open('RESULT.json', 'w')
 
 fieldnames = ("Name","City","Lifecycle Stage","Type","Company Relation - Integrated at","Company Relation - App team at","Company Relation - Related to","HubSpot Owner","Country","Website URL","Close Date","Industry")
-
-
-
+indType = ("JORDBRUK, SKOGSBRUK OCH FISKE","UTVINNING AV MINERAL","TILLVERKNING","FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA","VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING","BYGGVERKSAMHET","HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR","TRANSPORT OCH MAGASINERING","HOTELL- OCH RESTAURANGVERKSAMHET","INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET","FINANS- OCH FÖRSÄKRINGSVERKSAMHET","FASTIGHETSVERKSAMHET","VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK","UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER","OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING","UTBILDNING","VÅRD OCH OMSORG; SOCIALA TJÄNSTER","KULTUR, NÖJE OCH FRITID","ANNAN SERVICEVERKSAMHET","FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK","VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.","OTHER","NOT SET")
 reader = csv.DictReader( csvfile, fieldnames)
+
+
 
 jsonfile.write('{\n "elements":  {\n  "nodes": [')
 next(reader) #Skip first line containing fieldnames
@@ -19,7 +26,7 @@ i=1
 jsonfile.write('\n   {')
 jsonfile.write('\n    "data": {')
 jsonfile.write('\n     "id": "'+row1["Name"]+'",')
-jsonfile.write('\n     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",')												#Missing data
+jsonfile.write('\n     "CompanyType": "'+indType[0]+'",')																	#Missing data
 jsonfile.write('\n     "Company Domain Name": "'+row1["Website URL"]+'",')
 jsonfile.write('\n     "City": "'+row1["City"]+'",')
 jsonfile.write('\n     "NodeType": "'+row1["Type"]+'",')	
@@ -30,11 +37,11 @@ if row1["Company Relation - App team at"]:
 	jsonfile.write('\n     "CompanyRelationAppTeamAt": "['+row1["Company Relation - App team at"]+'"],')
 if row1["Company Relation - Related to"]:
 	jsonfile.write('\n     "CompanyRelationRelatedTo": "['+row1["Company Relation - Related to"]+'"],')
-jsonfile.write('\n     "hasApplication": [400],')																		#Missing data
+jsonfile.write('\n     "hasApplication": [400],')																			#Missing data
 jsonfile.write('\n     "Owner": "'+row1["HubSpot Owner"]+'",')
 jsonfile.write('\n     "Country": "'+row1["Country"]+'",')
 jsonfile.write('\n     "WebsiteURL": "'+row1["Website URL"]+'",')
-jsonfile.write('\n     "AnnRevenue": 13000000000,')																		#Missing data
+jsonfile.write('\n     "AnnRevenue": 13000000000,')																			#Missing data
 jsonfile.write('\n     "closeDate": "'+row1["Close Date"]+'"')	
 jsonfile.write('\n    },')
 jsonfile.write('\n    "position": {')
@@ -54,7 +61,7 @@ for row in reader:
 	jsonfile.write(',\n   {')
 	jsonfile.write('\n    "data": {')
 	jsonfile.write('\n     "id": "'+row["Name"]+'",')
-	jsonfile.write('\n     "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",')												#Missing data
+	jsonfile.write('\n     "CompanyType": "'+indType[i%23]+'",')															#Missing data
 	jsonfile.write('\n     "Company Domain Name": "'+row["Website URL"]+'",')
 	jsonfile.write('\n     "City": "'+row["City"]+'",')
 	jsonfile.write('\n     "NodeType": "'+row["Type"]+'",')	

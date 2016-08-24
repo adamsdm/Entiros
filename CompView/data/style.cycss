@@ -39,13 +39,23 @@ node {
 node[NodeType = "Customer"],
 node[NodeType = "Partner"],
 node[NodeType = "Reseller"],
-node[NodeType = "Vendor"],
 node[NodeType = "Other"],
 node[NodeType = "Employer"] {
 	background-color: #a9c742;
 	text-outline-color: #a9c742;
 	width: mapData(AnnRevenue, 1000000, 20000000000, 40, 120);
 	height: mapData(AnnRevenue, 1000000, 20000000000, 40, 120);
+}
+node[NodeType = "Vendor"] {
+	background-color: #66ccff;
+	text-outline-color: #66ccff;
+	width: mapData(AnnRevenue, 1000000, 20000000000, 40, 120);
+	height: mapData(AnnRevenue, 1000000, 20000000000, 40, 120);
+}
+
+node[id="Entiros AB"]{
+	background-image: url(https://farm8.staticflickr.com/7272/7633179468_3e19e45a0c_b.jpg);
+	background-fit: cover;
 }
 
 node[NodeType = "vertInfoNode"] {

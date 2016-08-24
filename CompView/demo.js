@@ -454,7 +454,6 @@ $(function(){
 
     elements.nodes.forEach(function(n){
       var data = n.data;
-      console.log(data.NodeType);
       n.data.orgPos = {
         x: n.position.x,
         y: n.position.y
@@ -533,10 +532,10 @@ $(function(){
     cy.on('select', 'node', function(e){
       inCompFocusView =true;
       var node = this;
-
+      var type = node.data().NodeType;
 
       //Application
-      if(node.data().NodeType == 'Application'){
+      if(type == 'Application'){
         var nodes = node.openNeighborhood();
         var allRelElements = nodes;
             allRelElements = allRelElements.add(node);
@@ -582,7 +581,7 @@ $(function(){
 
 
       //Customer
-      if(node.data().NodeType == 'Customer' || node.data().NodeType == 'Prospect' || node.data().NodeType == 'Employer'){
+      if(type == 'Customer' || type == 'Prospect' || type == 'Employer' || type == 'Partner' || type == 'Reseller' || type == 'Vendor' || type == 'Other' ){
 
         setTimeout( function(){
           cy.elements().removeClass('focused');
@@ -620,7 +619,8 @@ $(function(){
         hideNodeInfo();
       }
     });
-    addVertInfoNodes();
+    
+    //addVertInfoNodes();
     // cy.remove('edge');
     // addEdges();
   }
@@ -765,45 +765,117 @@ $(function(){
     var prospects = cy.$('node[NodeType="Prospect"]');
 
 
-    console.log(others.length);
+    // console.log(others.length);
 
-    for(var i=0;i<vendors.length; i++){
-      vendors[i].position().x = 250;
-      vendors[i].position().y = i*250;
+    // for(var i=0;i<vendors.length; i++){
+    //   vendors[i].position().x = 250;
+    //   vendors[i].position().y = i*250;
+    // }
+    // for(var i=0; i<resellers.position; i++ ){
+    //   resellers[i].position().x = 500;
+    //   resellers[i].position().y = i*250;
+    // }   
+    // for(var i=0;i<partners.length; i++){
+    //   partners[i].position().x = 750;
+    //   partners[i].position().y = i*250;
+    // }
+    // for(var i=0; i<others.length; i++){
+    //   others[i].position().x = 1000;
+    //   others[i].position().y = i*250;
+    // }
+    // for(var i=0; i<employers.length; i++){
+    //   employers[i].position().x = 1250;
+    //   employers[i].position().y = i*250;
+    // }
+    // for(var i=0; i<prospects.length; i++){
+    //   prospects[i].position().x = -250;
+    //   prospects[i].position().y = i*250;
+    // }
+    // for(var i=0; i<custNodes.length; i++){
+    //   custNodes[i].position().y = i*250;
+    // }
+
+
+    var allNotProspNodes = custNodes.add(vendors).add(resellers).add(partners).add(others).add(employers);
+    indType = ["JORDBRUK, SKOGSBRUK OCH FISKE","UTVINNING AV MINERAL","TILLVERKNING","FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA","VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING","BYGGVERKSAMHET","HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR","TRANSPORT OCH MAGASINERING","HOTELL- OCH RESTAURANGVERKSAMHET","INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET","FINANS- OCH FÖRSÄKRINGSVERKSAMHET","FASTIGHETSVERKSAMHET","VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK","UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER","OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING","UTBILDNING","VÅRD OCH OMSORG; SOCIALA TJÄNSTER","KULTUR, NÖJE OCH FRITID","ANNAN SERVICEVERKSAMHET","FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK","VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.","OTHER","NOT SET"];
+
+    for(var i=0; i<allNotProspNodes.length; i++){
+      var compType = allNotProspNodes[i].data().CompanyType;
+      var radius = 100+Math.random()*2400;
+      var angle;
+      var typeInd;
+
+      switch (compType){
+        case indType[0]:  typeInd = 0;  break; 
+        case indType[1]:  typeInd = 1;  break;
+        case indType[2]:  typeInd = 2;  break;
+        case indType[3]:  typeInd = 3;  break;
+        case indType[4]:  typeInd = 4;  break;
+        case indType[5]:  typeInd = 5;  break;
+        case indType[6]:  typeInd = 6;  break;
+        case indType[7]:  typeInd = 7;  break;
+        case indType[8]:  typeInd = 8;  break;
+        case indType[9]:  typeInd = 9;  break;
+        case indType[10]: typeInd = 10; break;
+        case indType[11]: typeInd = 11; break;
+        case indType[12]: typeInd = 12; break;
+        case indType[13]: typeInd = 13; break;
+        case indType[14]: typeInd = 14; break;
+        case indType[15]: typeInd = 15; break;
+        case indType[16]: typeInd = 16; break;
+        case indType[17]: typeInd = 17; break;
+        case indType[18]: typeInd = 18; break;
+        case indType[19]: typeInd = 19; break;
+        case indType[20]: typeInd = 20; break;
+        case indType[21]:  typeInd = 21; break;
+        default: typeInd = 22; break;
+      }
+
+      angle = 2*typeInd*Math.PI/23 + Math.random()*Math.PI/23;   //Set circle disk angle 
+
+      allNotProspNodes[i].position().x = radius*Math.cos(angle);
+      allNotProspNodes[i].position().y = radius*Math.sin(angle); 
+
+      
     }
-    for(var i=0; i<resellers.position; i++ ){
-      resellers[i].position().x = 500;
-      resellers[i].position().y = i*250;
-    }   
-    for(var i=0;i<partners.length; i++){
-      partners[i].position().x = 750;
-      partners[i].position().y = i*250;
+
+
+
+    var textAngle;
+    var halign;
+
+    for(var i=0; i<indType.length; i++){
+      angle = 2*i*Math.PI/23
+      textAngle = angle;
+      halign = 'right';
+
+      if(angle>Math.PI/2){
+        textAngle+=Math.PI;
+        halign = 'left';
+      } 
+      if(angle>3*Math.PI/2){
+        textAngle+=Math.PI
+        halign = 'right';
+      }
+
+      cy.add([
+        { group: "nodes", data: { id: indType[i], CompanyType: indType[i], NodeType: 'vertInfoNode' }, 
+          position: { x: 3000*Math.cos(angle), y: 3000*Math.sin(angle) }, 
+          locked: true, selectable: false,
+          style:{'text-rotation': textAngle, 'text-halign': halign} }
+      ]);
     }
-    for(var i=0; i<others.length; i++){
-      others[i].position().x = 1000;
-      others[i].position().y = i*250;
-    }
-    for(var i=0; i<employers.length; i++){
-      employers[i].position().x = 1250;
-      employers[i].position().y = i*250;
-    }
-    for(var i=0; i<prospects.length; i++){
-      prospects[i].position().x = -250;
-      prospects[i].position().y = i*250;
-    }
-    for(var i=0; i<custNodes.length; i++){
-      custNodes[i].position().y = i*250;
-    }
+
 
 
     //add nodes with other lifecycle stage than customer
     // custNodes = custNodes.add( cy.elements('node[NodeType="Partner"]') );
     // custNodes = custNodes.add( cy.elements('node[NodeType="Reseller"]') );
-    // custNodes = custNodes.add( cy.elements('node[NodeType="Vendor"]') );
+    // custNodes = custNodes.add( cy.elements('node[NodeType="Venr"]') );
     // custNodes = custNodes.add( cy.elements('node[NodeType="Other"]') );
     // custNodes = custNodes.add( cy.elements('node[NodeType="Employer"]') );
 
-    //Get unique company types and store them in typeArray
+    // //Get unique company types and store them in typeArray
     // for(var i=0; i<custNodes.length; i++){
     //     typeArray.push(custNodes[i].data().CompanyType);
     // }
@@ -834,7 +906,7 @@ $(function(){
     //   appNodes[ai].position().y = -2500 + ( ai*5000/appNodes.length);
     // }
 
-    cy.style().update();
+     cy.style().update();
 
 
     function scaleDate(_closeDate){
@@ -951,7 +1023,6 @@ $(function(){
     var other             = $('#other').is(':checked'); // Other
     var notSet            = $('#notSet').is(':checked');// Not set
 
-    console.log(other);
 
     if(!rel ){
       cy.edges().addClass('filtered');
