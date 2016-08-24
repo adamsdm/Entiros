@@ -33,10 +33,10 @@ jsonfile.write('\n     "NodeType": "'+row1["Type"]+'",')
 jsonfile.write('\n     "LifecycleStage": "'+row1["Lifecycle Stage"]+'",')	
 if row1["Company Relation - Integrated at"]:
 	jsonfile.write('\n     "CompanyRelationIntegratedAt": "['+row1["Company Relation - Integrated at"]+']",')
-if row1["Company Relation - App team at"]:
-	jsonfile.write('\n     "CompanyRelationAppTeamAt": "['+row1["Company Relation - App team at"]+'"],')
+if row1["Company Relation - Integrated at"]:
+	jsonfile.write('\n     "CompanyRelationAppTeamAt": "['+row1["Company Relation - App team at"]+']",')
 if row1["Company Relation - Related to"]:
-	jsonfile.write('\n     "CompanyRelationRelatedTo": "['+row1["Company Relation - Related to"]+'"],')
+	jsonfile.write('\n     "CompanyRelationRelatedTo": "['+row1["Company Relation - Related to"]+']",')
 jsonfile.write('\n     "hasApplication": [400],')																			#Missing data
 jsonfile.write('\n     "Owner": "'+row1["HubSpot Owner"]+'",')
 jsonfile.write('\n     "Country": "'+row1["Country"]+'",')
@@ -66,12 +66,12 @@ for row in reader:
 	jsonfile.write('\n     "City": "'+row["City"]+'",')
 	jsonfile.write('\n     "NodeType": "'+row["Type"]+'",')	
 	jsonfile.write('\n     "LifecycleStage": "'+row["Lifecycle Stage"]+'",')	
-	if row1["Company Relation - Integrated at"]:
+	if row["Company Relation - Integrated at"]:
 		jsonfile.write('\n     "CompanyRelationIntegratedAt": "['+row["Company Relation - Integrated at"]+']",') 			#Missing data
-	if row1["Company Relation - App team at"]:
-		jsonfile.write('\n     "CompanyRelationAppTeamAt": "['+row["Company Relation - App team at"]+'"],')					#Missing data
-	if row1["Company Relation - Related to"]:
-		jsonfile.write('\n     "CompanyRelationRelatedTo": "['+row["Company Relation - Related to"]+'"],')					#Missing data
+	if row["Company Relation - Integrated at"]:
+		jsonfile.write('\n     "CompanyRelationAppTeamAt": "['+row["Company Relation - App team at"]+']",')					#Missing data
+	if row["Company Relation - Related to"]:	
+		jsonfile.write('\n     "CompanyRelationRelatedTo": "['+row["Company Relation - Related to"]+']",')					#Missing data
 	jsonfile.write('\n     "hasApplication": [400],')																		#Missing data
 	jsonfile.write('\n     "Owner": "'+row["HubSpot Owner"]+'",')
 	jsonfile.write('\n     "Country": "'+row["Country"]+'",')
