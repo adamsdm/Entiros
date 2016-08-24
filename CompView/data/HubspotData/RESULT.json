@@ -5,16 +5,16 @@
     "data": {
      "id": "Kaller",
      "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "kaller.com",
      "City": "TranÃ¥s",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "1000000.0",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "kaller.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "kaller.com"
+     "closeDate": "1876"
     },
     "position": {
     },
@@ -30,16 +30,16 @@
     "data": {
      "id": "Vattenfall Eldistribution",
      "CompanyType": "TILLVERKNING",
-     "Company Domain Name": "",
+     "Company Domain Name": "vattenfall.se",
      "City": "Ume?",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "",
+     "Owner": "Gustav Rosen",
+     "Country": "",
+     "WebsiteURL": "vattenfall.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "vattenfall.se"
+     "closeDate": "1972"
     },
     "position": {
     },
@@ -55,16 +55,16 @@
     "data": {
      "id": "CRM Toolbox",
      "CompanyType": "FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA",
-     "Company Domain Name": "Germany",
+     "Company Domain Name": "crmtoolbox.com",
      "City": "",
      "NodeType": "Vendor",
      "LifecycleStage": "Subscriber",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Germany",
+     "Owner": "Gustav Rosen",
+     "Country": "Germany",
+     "WebsiteURL": "crmtoolbox.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "crmtoolbox.com"
+     "closeDate": ""
     },
     "position": {
     },
@@ -80,16 +80,16 @@
     "data": {
      "id": "Markup Digital Ltd",
      "CompanyType": "VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING",
-     "Company Domain Name": "United Kingdom",
+     "Company Domain Name": "usemarkup.com",
      "City": "Glasgow",
      "NodeType": "Vendor",
      "LifecycleStage": "Subscriber",
      "hasApplication": [400],
-     "Owner": "1.0E7",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "United Kingdom",
+     "Owner": "Gustav Rosen",
+     "Country": "United Kingdom",
+     "WebsiteURL": "usemarkup.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "usemarkup.com"
+     "closeDate": "2012"
     },
     "position": {
     },
@@ -105,16 +105,16 @@
     "data": {
      "id": "Boss Media (out of business)",
      "CompanyType": "BYGGVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "bossmedia.se",
      "City": "",
      "NodeType": "Customer",
      "LifecycleStage": "Other",
      "hasApplication": [400],
-     "Owner": "0.0",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "bossmedia.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "bossmedia.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -130,16 +130,17 @@
     "data": {
      "id": "Tactel AB",
      "CompanyType": "HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "tactel.se",
      "City": "Malm",
      "NodeType": "Vendor",
      "LifecycleStage": "Other",
+     "CompanyRelationAppTeamAt": "GANT",
      "hasApplication": [400],
-     "Owner": "5.0E7",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "tactel.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "tactel.se"
+     "closeDate": "1995"
     },
     "position": {
     },
@@ -155,16 +156,16 @@
     "data": {
      "id": "Bilprovningen",
      "CompanyType": "TRANSPORT OCH MAGASINERING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "bilprovningen.se",
      "City": "Ume?",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "7.0E8",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "bilprovningen.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "bilprovningen.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -180,16 +181,16 @@
     "data": {
      "id": "Ambu A/S",
      "CompanyType": "HOTELL- OCH RESTAURANGVERKSAMHET",
-     "Company Domain Name": "Denmark",
+     "Company Domain Name": "ambu.com",
      "City": "Ballerup",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "5.0E7",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Denmark",
+     "Owner": "Gustav Rosen",
+     "Country": "Denmark",
+     "WebsiteURL": "ambu.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "ambu.com"
+     "closeDate": "1937"
     },
     "position": {
     },
@@ -205,16 +206,16 @@
     "data": {
      "id": "Folksam",
      "CompanyType": "INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "folksam.se",
      "City": "Stockholm",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "folksam.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "folksam.se"
+     "closeDate": "1908"
     },
     "position": {
     },
@@ -230,16 +231,16 @@
     "data": {
      "id": "Filippa K",
      "CompanyType": "FINANS- OCH FÖRSÄKRINGSVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "filippa-k.com",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "1.0E8",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "Sweden",
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "filippa-k.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "filippa-k.com"
+     "closeDate": "1993"
     },
     "position": {
     },
@@ -255,16 +256,16 @@
     "data": {
      "id": "hm.com",
      "CompanyType": "FASTIGHETSVERKSAMHET",
-     "Company Domain Name": "United States",
+     "Company Domain Name": "hm.com",
      "City": "Fremont",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "United States",
+     "Owner": "Mikael Lindvall",
+     "Country": "United States",
+     "WebsiteURL": "hm.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "hm.com"
+     "closeDate": "1947"
     },
     "position": {
     },
@@ -280,16 +281,16 @@
     "data": {
      "id": "HansAndersson Recycling",
      "CompanyType": "VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK",
-     "Company Domain Name": "",
+     "Company Domain Name": "hansandersson.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "",
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "hansandersson.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "hansandersson.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -305,16 +306,16 @@
     "data": {
      "id": "clearon.se",
      "CompanyType": "UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "clearon.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "clearon.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "clearon.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -330,16 +331,16 @@
     "data": {
      "id": "Martin & Servera",
      "CompanyType": "OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "martinservera.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "Sweden",
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "martinservera.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "martinservera.se"
+     "closeDate": "1994"
     },
     "position": {
     },
@@ -355,16 +356,16 @@
     "data": {
      "id": "ISS A/S",
      "CompanyType": "UTBILDNING",
-     "Company Domain Name": "Denmark",
+     "Company Domain Name": "se.issworld.com",
      "City": "London",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Denmark",
+     "Owner": "Niels Wildenberg",
+     "Country": "Denmark",
+     "WebsiteURL": "se.issworld.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "se.issworld.com"
+     "closeDate": "1901"
     },
     "position": {
     },
@@ -380,16 +381,17 @@
     "data": {
      "id": "MuleSoft, INC.",
      "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
-     "Company Domain Name": "United States",
+     "Company Domain Name": "mulesoft.com",
      "City": "San Francisco",
      "NodeType": "Vendor",
      "LifecycleStage": "",
+     "CompanyRelationAppTeamAt": "GANT; Schibsted; Keolis",
      "hasApplication": [400],
-     "Owner": "1.0E7",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "United States",
+     "Owner": "Gustav Rosen",
+     "Country": "United States",
+     "WebsiteURL": "mulesoft.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "mulesoft.com"
+     "closeDate": "2006"
     },
     "position": {
     },
@@ -405,16 +407,16 @@
     "data": {
      "id": "Tradedoubler",
      "CompanyType": "KULTUR, NÖJE OCH FRITID",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "www.tradedoubler.com/",
      "City": "",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "1.2E8",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "www.tradedoubler.com/",
      "AnnRevenue": 13000000000,
-     "closeDate": "www.tradedoubler.com/"
+     "closeDate": "1999"
     },
     "position": {
     },
@@ -430,16 +432,16 @@
     "data": {
      "id": "Ericsson",
      "CompanyType": "ANNAN SERVICEVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "ericsson.se",
      "City": "Stockholm",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "ericsson.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "ericsson.se"
+     "closeDate": "1876"
     },
     "position": {
     },
@@ -455,16 +457,16 @@
     "data": {
      "id": "ELLOS GROUP",
      "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "ellos.se",
      "City": "Borås",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "2.5E8",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "Sweden",
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "ellos.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "ellos.se"
+     "closeDate": "1947"
     },
     "position": {
     },
@@ -480,16 +482,16 @@
     "data": {
      "id": "Reitan Convenience Sweden",
      "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
-     "Company Domain Name": "Norway",
+     "Company Domain Name": "reitangruppen.no",
      "City": "Trondheim",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "Norway",
+     "Owner": "Mikael Lindvall",
+     "Country": "Norway",
+     "WebsiteURL": "reitangruppen.no",
      "AnnRevenue": 13000000000,
-     "closeDate": "reitangruppen.no"
+     "closeDate": "1948"
     },
     "position": {
     },
@@ -505,16 +507,16 @@
     "data": {
      "id": "op5 AB",
      "CompanyType": "OTHER",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "op5.se",
      "City": "Kista",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "1.0E7",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "op5.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "op5.se"
+     "closeDate": "2004"
     },
     "position": {
     },
@@ -530,16 +532,16 @@
     "data": {
      "id": "Tranås Kommun",
      "CompanyType": "NOT SET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "tranas.se",
      "City": "",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "tranas.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "tranas.se"
+     "closeDate": "1919"
     },
     "position": {
     },
@@ -555,16 +557,16 @@
     "data": {
      "id": "ICA",
      "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "ica.se",
      "City": "Solna",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "Sweden",
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "ica.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "ica.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -580,16 +582,16 @@
     "data": {
      "id": "Bliwa Livförsäkring",
      "CompanyType": "UTVINNING AV MINERAL",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "bliwa.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "5.0E7",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "bliwa.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "bliwa.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -605,16 +607,16 @@
     "data": {
      "id": "Recipharm",
      "CompanyType": "TILLVERKNING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "recipharm.com",
      "City": "Haninge",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "recipharm.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "recipharm.com"
+     "closeDate": "1995"
     },
     "position": {
     },
@@ -630,16 +632,16 @@
     "data": {
      "id": "Strömberg Distribution AB",
      "CompanyType": "FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA",
-     "Company Domain Name": "",
+     "Company Domain Name": "strd.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "",
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "strd.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "strd.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -655,16 +657,16 @@
     "data": {
      "id": "DIOS FASTIGHETER AB",
      "CompanyType": "VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "dios.se",
      "City": "Östersund",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "2.0E8",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "dios.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "dios.se"
+     "closeDate": "1921"
     },
     "position": {
     },
@@ -680,17 +682,17 @@
     "data": {
      "id": "MTR Stockholm AB",
      "CompanyType": "BYGGVERKSAMHET",
-     "Company Domain Name": "",
+     "Company Domain Name": "mtr.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
-     "CompanyRelationRelatedTo": "[Keolis]",
+     "CompanyRelationRelatedTo": "Keolis",
      "hasApplication": [400],
-     "Owner": "1.0E7",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "",
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "mtr.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "mtr.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -706,16 +708,16 @@
     "data": {
      "id": "teracomboxergroup.com",
      "CompanyType": "HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "terracomboxergroup.com",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "terracomboxergroup.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "terracomboxergroup.com"
+     "closeDate": ""
     },
     "position": {
     },
@@ -731,16 +733,16 @@
     "data": {
      "id": "envoritainer.com",
      "CompanyType": "TRANSPORT OCH MAGASINERING",
-     "Company Domain Name": "",
+     "Company Domain Name": "envoritainer.com",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "",
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "envoritainer.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "envoritainer.com"
+     "closeDate": ""
     },
     "position": {
     },
@@ -756,16 +758,16 @@
     "data": {
      "id": "Nobina Europe AB",
      "CompanyType": "HOTELL- OCH RESTAURANGVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "nobina.com",
      "City": "Solna",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "nobina.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "nobina.com"
+     "closeDate": ""
     },
     "position": {
     },
@@ -781,16 +783,16 @@
     "data": {
      "id": "Scania",
      "CompanyType": "INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "scania.com",
      "City": "Södertälje",
      "NodeType": "Prospect",
      "LifecycleStage": "Sales Qualified Lead",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "scania.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "scania.com"
+     "closeDate": "2014"
     },
     "position": {
     },
@@ -806,16 +808,16 @@
     "data": {
      "id": "Skandiafastigheter",
      "CompanyType": "FINANS- OCH FÖRSÄKRINGSVERKSAMHET",
-     "Company Domain Name": "",
+     "Company Domain Name": "skandiafastigheter.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Sales Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "",
+     "Owner": "Björn Moreau",
+     "Country": "",
+     "WebsiteURL": "skandiafastigheter.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "skandiafastigheter.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -831,16 +833,16 @@
     "data": {
      "id": "Diligentia (Skandiafastigheter)",
      "CompanyType": "FASTIGHETSVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "diligentia.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "5.0E7",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "diligentia.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "diligentia.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -856,16 +858,16 @@
     "data": {
      "id": "Intrum Justitia",
      "CompanyType": "VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "intrum.com",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Sales Qualified Lead",
      "hasApplication": [400],
-     "Owner": "5.0E7",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "intrum.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "intrum.com"
+     "closeDate": "1923"
     },
     "position": {
     },
@@ -881,16 +883,16 @@
     "data": {
      "id": "Resursbanken",
      "CompanyType": "UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER",
-     "Company Domain Name": "",
+     "Company Domain Name": "resursbanken.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "",
+     "Owner": "Niels Wildenberg",
+     "Country": "",
+     "WebsiteURL": "resursbanken.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "resursbanken.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -906,16 +908,16 @@
     "data": {
      "id": "AFA Försäkring",
      "CompanyType": "OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "afaforsakring.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "2.5E8",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "afaforsakring.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "afaforsakring.se"
+     "closeDate": "1997"
     },
     "position": {
     },
@@ -931,16 +933,16 @@
     "data": {
      "id": "Spotify",
      "CompanyType": "UTBILDNING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "spotify.com",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Sales Qualified Lead",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "spotify.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "spotify.com"
+     "closeDate": "2006"
     },
     "position": {
     },
@@ -956,16 +958,16 @@
     "data": {
      "id": "DEKRA",
      "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
-     "Company Domain Name": "Germany",
+     "Company Domain Name": "dekra.com",
      "City": "Stuttgart",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Germany",
+     "Owner": "Björn Moreau",
+     "Country": "Germany",
+     "WebsiteURL": "dekra.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "dekra.com"
+     "closeDate": "1925"
     },
     "position": {
     },
@@ -981,16 +983,16 @@
     "data": {
      "id": "V-TAB AB",
      "CompanyType": "KULTUR, NÖJE OCH FRITID",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "v-tab.se",
      "City": "Hisings Backa",
      "NodeType": "Prospect",
      "LifecycleStage": "Sales Qualified Lead",
      "hasApplication": [400],
-     "Owner": "2.5E8",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "v-tab.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "v-tab.se"
+     "closeDate": "2005"
     },
     "position": {
     },
@@ -1006,16 +1008,16 @@
     "data": {
      "id": "A.P.C.",
      "CompanyType": "ANNAN SERVICEVERKSAMHET",
-     "Company Domain Name": "France",
+     "Company Domain Name": "apc.fr",
      "City": "Paris",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "2.5E8",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "France",
+     "Owner": "Mikael Lindvall",
+     "Country": "France",
+     "WebsiteURL": "apc.fr",
      "AnnRevenue": 13000000000,
-     "closeDate": "apc.fr"
+     "closeDate": "1987"
     },
     "position": {
     },
@@ -1031,16 +1033,16 @@
     "data": {
      "id": "Bilia Personbilar AB",
      "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "bilia.se",
      "City": "Solna",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "bilia.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "bilia.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -1056,16 +1058,16 @@
     "data": {
      "id": "GANT AB",
      "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "gant.com",
      "City": "New York",
      "NodeType": "Customer",
      "LifecycleStage": "Evangelist",
      "hasApplication": [400],
-     "Owner": "1.4E9",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "Sweden",
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "gant.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "gant.com"
+     "closeDate": "2009"
     },
     "position": {
     },
@@ -1081,16 +1083,16 @@
     "data": {
      "id": "Keolis Sverige AB",
      "CompanyType": "OTHER",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "keolis.se",
      "City": "Stockholm",
      "NodeType": "Customer",
      "LifecycleStage": "Evangelist",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "keolis.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "keolis.se"
+     "closeDate": "1994"
     },
     "position": {
     },
@@ -1106,16 +1108,16 @@
     "data": {
      "id": "Schibsted Centralen AB",
      "CompanyType": "NOT SET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "schibsted.se",
      "City": "Stockholm",
      "NodeType": "Customer",
      "LifecycleStage": "Evangelist",
      "hasApplication": [400],
-     "Owner": "1.0E7",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "schibsted.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "schibsted.se"
+     "closeDate": "2010"
     },
     "position": {
     },
@@ -1131,16 +1133,16 @@
     "data": {
      "id": "Volvo Cars Corporation",
      "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "volvocars.com",
      "City": "Rockleigh",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "2.0E10",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "volvocars.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "volvocars.com"
+     "closeDate": "1927"
     },
     "position": {
     },
@@ -1156,16 +1158,16 @@
     "data": {
      "id": "Taberg Media Group",
      "CompanyType": "UTVINNING AV MINERAL",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "http://tabergmediagroup.se/",
      "City": "",
      "NodeType": "Customer",
      "LifecycleStage": "Evangelist",
      "hasApplication": [400],
-     "Owner": "5.0E8",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "http://tabergmediagroup.se/",
      "AnnRevenue": 13000000000,
-     "closeDate": "http://tabergmediagroup.se/"
+     "closeDate": ""
     },
     "position": {
     },
@@ -1181,16 +1183,16 @@
     "data": {
      "id": "Montico",
      "CompanyType": "TILLVERKNING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "montico.se",
      "City": "Tranås",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "2.5E8",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "montico.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "montico.se"
+     "closeDate": "1996"
     },
     "position": {
     },
@@ -1206,16 +1208,16 @@
     "data": {
      "id": "Keolis Network",
      "CompanyType": "FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "Keolis.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "Keolis.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "Keolis.se"
+     "closeDate": "1994"
     },
     "position": {
     },
@@ -1231,16 +1233,16 @@
     "data": {
      "id": "GANT Network",
      "CompanyType": "VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING",
-     "Company Domain Name": "United States",
+     "Company Domain Name": "gant.com",
      "City": "New York",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "5.0E7",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "United States",
+     "Owner": "Mikael Lindvall",
+     "Country": "United States",
+     "WebsiteURL": "gant.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "gant.com"
+     "closeDate": "2009"
     },
     "position": {
     },
@@ -1256,16 +1258,16 @@
     "data": {
      "id": "Schibsted Network",
      "CompanyType": "BYGGVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "schibsted.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "1.0E7",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "schibsted.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "schibsted.se"
+     "closeDate": "2010"
     },
     "position": {
     },
@@ -1281,16 +1283,16 @@
     "data": {
      "id": "JOOR Network",
      "CompanyType": "HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR",
-     "Company Domain Name": "United States",
+     "Company Domain Name": "jooraccess.com",
      "City": "New York",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "1.0E7",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "United States",
+     "Owner": "Mikael Lindvall",
+     "Country": "United States",
+     "WebsiteURL": "jooraccess.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "jooraccess.com"
+     "closeDate": "2010"
     },
     "position": {
     },
@@ -1306,16 +1308,16 @@
     "data": {
      "id": "ICA Gruppen",
      "CompanyType": "TRANSPORT OCH MAGASINERING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "ica.se",
      "City": "Solna",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "Sweden",
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "ica.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "ica.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -1331,16 +1333,16 @@
     "data": {
      "id": "stralfors.se",
      "CompanyType": "HOTELL- OCH RESTAURANGVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "stralfors.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "stralfors.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "stralfors.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -1356,16 +1358,16 @@
     "data": {
      "id": "Telge",
      "CompanyType": "INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "telge.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "2.5E8",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "telge.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "telge.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -1381,16 +1383,16 @@
     "data": {
      "id": "Telge Energi AB",
      "CompanyType": "FINANS- OCH FÖRSÄKRINGSVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "telgeenergi.se",
      "City": "Sodertalje",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "telgeenergi.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "telgeenergi.se"
+     "closeDate": "1994"
     },
     "position": {
     },
@@ -1406,16 +1408,16 @@
     "data": {
      "id": "postnord.se",
      "CompanyType": "FASTIGHETSVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "postnord.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "postnord.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "postnord.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -1431,16 +1433,16 @@
     "data": {
      "id": "neuwerld.se",
      "CompanyType": "VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK",
-     "Company Domain Name": "",
+     "Company Domain Name": "neuwerld.se",
      "City": "",
      "NodeType": "Employer",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Anneli Magg",
-     "WebsiteURL": "",
+     "Owner": "Anneli Magg",
+     "Country": "",
+     "WebsiteURL": "neuwerld.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "neuwerld.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -1456,18 +1458,17 @@
     "data": {
      "id": "Västtrafik AB",
      "CompanyType": "UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "vasttrafik.se",
      "City": "Skövde",
      "NodeType": "Prospect",
      "LifecycleStage": "Sales Qualified Lead",
-     "CompanyRelationIntegratedAt": "[Keolis]",
-     "CompanyRelationAppTeamAt": "[]",
+     "CompanyRelationIntegratedAt": "Keolis",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Adam Söderström",
-     "WebsiteURL": "Sweden",
+     "Owner": "Adam Söderström",
+     "Country": "Sweden",
+     "WebsiteURL": "vasttrafik.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "vasttrafik.se"
+     "closeDate": "1998"
     },
     "position": {
     },
@@ -1483,16 +1484,16 @@
     "data": {
      "id": "Skandia Norden",
      "CompanyType": "OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "skandia.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "skandia.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "skandia.se"
+     "closeDate": "1855"
     },
     "position": {
     },
@@ -1508,16 +1509,16 @@
     "data": {
      "id": "SBAB",
      "CompanyType": "UTBILDNING",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "sbab.se",
      "City": "Stockholm",
      "NodeType": "Customer",
      "LifecycleStage": "Customer",
      "hasApplication": [400],
-     "Owner": "5.0E7",
-     "Country": "Niels Wildenberg",
-     "WebsiteURL": "Sweden",
+     "Owner": "Niels Wildenberg",
+     "Country": "Sweden",
+     "WebsiteURL": "sbab.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "sbab.se"
+     "closeDate": "1985"
     },
     "position": {
     },
@@ -1533,16 +1534,16 @@
     "data": {
      "id": "Resurs Bank",
      "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "resurs.se",
      "City": "Helsingborg",
      "NodeType": "",
      "LifecycleStage": "",
      "hasApplication": [400],
-     "Owner": "1.0E8",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "resurs.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "resurs.se"
+     "closeDate": "2001"
     },
     "position": {
     },
@@ -1558,16 +1559,16 @@
     "data": {
      "id": "Västtrafik AB",
      "CompanyType": "KULTUR, NÖJE OCH FRITID",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "vasttrafik.se",
      "City": "Skövde",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "vasttrafik.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "vasttrafik.se"
+     "closeDate": "1998"
     },
     "position": {
     },
@@ -1583,16 +1584,16 @@
     "data": {
      "id": "Systembolaget AB",
      "CompanyType": "ANNAN SERVICEVERKSAMHET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "systembolaget.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "2.0E8",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "Sweden",
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "systembolaget.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "systembolaget.se"
+     "closeDate": "1955"
     },
     "position": {
     },
@@ -1608,16 +1609,16 @@
     "data": {
      "id": "Bankgirot",
      "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "bankgirot.se",
      "City": "Stockholm",
      "NodeType": "Prospect",
      "LifecycleStage": "Sales Qualified Lead",
      "hasApplication": [400],
-     "Owner": "1.0E8",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "bankgirot.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "bankgirot.se"
+     "closeDate": "1959"
     },
     "position": {
     },
@@ -1633,16 +1634,16 @@
     "data": {
      "id": "K-rauta Sverige",
      "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
-     "Company Domain Name": "Finland",
+     "Company Domain Name": "k-rauta.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "1.0E9",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Finland",
+     "Owner": "Björn Moreau",
+     "Country": "Finland",
+     "WebsiteURL": "k-rauta.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "k-rauta.se"
+     "closeDate": "1940"
     },
     "position": {
     },
@@ -1658,16 +1659,16 @@
     "data": {
      "id": "Trafikfrvaltningen Stockholms lns landsting",
      "CompanyType": "OTHER",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "sl.se",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Sales Qualified Lead",
      "hasApplication": [400],
-     "Owner": "2.5E8",
-     "Country": "Björn Moreau",
-     "WebsiteURL": "Sweden",
+     "Owner": "Björn Moreau",
+     "Country": "Sweden",
+     "WebsiteURL": "sl.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "sl.se"
+     "closeDate": ""
     },
     "position": {
     },
@@ -1683,16 +1684,16 @@
     "data": {
      "id": "Entiros AB",
      "CompanyType": "NOT SET",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "entiros.se",
      "City": "Tranås",
      "NodeType": "Other",
      "LifecycleStage": "Marketing Qualified Lead",
      "hasApplication": [400],
-     "Owner": "2.0E7",
-     "Country": "Gustav Rosen",
-     "WebsiteURL": "Sweden",
+     "Owner": "Gustav Rosen",
+     "Country": "Sweden",
+     "WebsiteURL": "entiros.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "entiros.se"
+     "closeDate": "2009"
     },
     "position": {
     },
@@ -1708,16 +1709,16 @@
     "data": {
      "id": "Kavat",
      "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
-     "Company Domain Name": "Sweden",
+     "Company Domain Name": "kavat.com",
      "City": "",
      "NodeType": "Prospect",
      "LifecycleStage": "Opportunity",
      "hasApplication": [400],
-     "Owner": "1.0E7",
-     "Country": "Mikael Lindvall",
-     "WebsiteURL": "Sweden",
+     "Owner": "Mikael Lindvall",
+     "Country": "Sweden",
+     "WebsiteURL": "kavat.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "kavat.com"
+     "closeDate": ""
     },
     "position": {
     },

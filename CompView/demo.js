@@ -28,6 +28,7 @@ $(function(){
     '{{#if AnnRevenue}}<p class="ac-more"><i class="fa fa-usd"></i> {{AnnRevenue}}</p>{{/if}}',
     '{{#if CompanyType}}<p class="ac-more"><i class="fa fa-briefcase"></i> {{CompanyType}}</p>{{/if}}',
     '{{#if Owner}}<p class="ac-more"><i class="fa fa-users"></i> {{Owner}}</p>{{/if}}',
+    '{{#if closeDate}}<p class="ac-more"><i class="fa fa-calendar-o"></i> {{closeDate}}</p>{{/if}}',
     '<p class="ac-more"><i class="fa fa-at"></i><a target="_blank" href="/AppView.html?Company={{id}}"> Go to Application View</a></p>',
 
   ].join(''));
