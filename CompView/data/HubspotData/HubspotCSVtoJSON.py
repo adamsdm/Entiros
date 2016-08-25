@@ -42,7 +42,7 @@ jsonfile.write('\n     "Owner": "'+row1["HubSpot Owner"]+'",')
 jsonfile.write('\n     "Country": "'+row1["Country"]+'",')
 jsonfile.write('\n     "WebsiteURL": "'+row1["Website URL"]+'",')
 jsonfile.write('\n     "AnnRevenue": 13000000000,')																			#Missing data
-jsonfile.write('\n     "closeDate": "'+row1["Year Founded"]+'"')	
+jsonfile.write('\n     "yearFounded": "'+row1["Year Founded"]+'"')	
 jsonfile.write('\n    },')
 jsonfile.write('\n    "position": {')
 jsonfile.write('\n    },')
@@ -77,7 +77,7 @@ for row in reader:
 	jsonfile.write('\n     "Country": "'+row["Country"]+'",')
 	jsonfile.write('\n     "WebsiteURL": "'+row["Website URL"]+'",')
 	jsonfile.write('\n     "AnnRevenue": 13000000000,')																		#Missing data
-	jsonfile.write('\n     "closeDate": "'+row["Year Founded"]+'"')	
+	jsonfile.write('\n     "yearFounded": "'+row["Year Founded"]+'"')	
 	jsonfile.write('\n    },')
 	jsonfile.write('\n    "position": {')
 	jsonfile.write('\n    },')

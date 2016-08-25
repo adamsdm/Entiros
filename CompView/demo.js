@@ -28,7 +28,7 @@ $(function(){
     '{{#if AnnRevenue}}<p class="ac-more"><i class="fa fa-usd"></i> {{AnnRevenue}}</p>{{/if}}',
     '{{#if CompanyType}}<p class="ac-more"><i class="fa fa-briefcase"></i> {{CompanyType}}</p>{{/if}}',
     '{{#if Owner}}<p class="ac-more"><i class="fa fa-users"></i> {{Owner}}</p>{{/if}}',
-    '{{#if closeDate}}<p class="ac-more"><i class="fa fa-calendar-o"></i> {{closeDate}}</p>{{/if}}',
+    '{{#if yearFounded}}<p class="ac-more"><i class="fa fa-calendar-o"></i> {{yearFounded}}</p>{{/if}}',
     '<p class="ac-more"><i class="fa fa-at"></i><a target="_blank" href="/AppView.html?Company={{id}}"> Go to Application View</a></p>',
 
   ].join(''));
@@ -754,7 +754,7 @@ $(function(){
     var appNodes = cy.elements('node[NodeType="Application"]');
     var radius;
     var angle; 
-    var closeDate;  
+    var yearFounded;  
     var typeArray = [];  
     var typeInd;
 
@@ -800,11 +800,28 @@ $(function(){
     var allNotProspNodes = custNodes.add(vendors).add(resellers).add(partners).add(others).add(employers);
     indType = ["JORDBRUK, SKOGSBRUK OCH FISKE","UTVINNING AV MINERAL","TILLVERKNING","FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA","VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING","BYGGVERKSAMHET","HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR","TRANSPORT OCH MAGASINERING","HOTELL- OCH RESTAURANGVERKSAMHET","INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET","FINANS- OCH FÖRSÄKRINGSVERKSAMHET","FASTIGHETSVERKSAMHET","VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK","UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER","OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING","UTBILDNING","VÅRD OCH OMSORG; SOCIALA TJÄNSTER","KULTUR, NÖJE OCH FRITID","ANNAN SERVICEVERKSAMHET","FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK","VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.","OTHER","NOT SET"];
 
+    var compType;
+    var radius
+    var minRadius = 200;
+    var angle;
+    var typeInd;
+    var yearFounded;
+    var startDate
+    var endDate;
+
     for(var i=0; i<allNotProspNodes.length; i++){
-      var compType = allNotProspNodes[i].data().CompanyType;
-      var radius = 100+Math.random()*2400;
-      var angle;
-      var typeInd;
+      compType = allNotProspNodes[i].data().CompanyType;
+      radius = 100+Math.random()*2400;
+      yearFounded = allNotProspNodes[i].data().yearFounded;
+      startDate = 1870;
+      endDate = 2016;
+
+      if(yearFounded)
+        radius = mapToRange(yearFounded, 1870,2016,0,1)*2000;
+      
+      if(radius<minRadius || !yearFounded){
+        radius = minRadius;
+      } 
 
       switch (compType){
         case indType[0]:  typeInd = 0;  break; 
@@ -885,8 +902,8 @@ $(function(){
     // //For each customer
     // for(var i=0; i<custNodes.length; i++){
     //   typeInd = getTypeIndex(custNodes[i].data().CompanyType);  //Get current customer type index from typeArray
-    //   closeDate = new Date(custNodes[i].data().closeDate);      //Get the close date 
-    //   radius = 100+scaleDate(closeDate);                        
+    //   yearFounded = new Date(custNodes[i].data().yearFounded);      //Get the close date 
+    //   radius = 100+scaleDate(yearFounded);                        
     //   angle = 2*typeInd*Math.PI/typeArray.length + Math.random()*Math.PI/typeArray.length;   //Set circle disk angle 
 
     //   //Set customer node position
@@ -909,15 +926,14 @@ $(function(){
 
      cy.style().update();
 
-
-    function scaleDate(_closeDate){
+    function scaleDate(_yearFounded){
       var maxRad = 3000;
       var startDate = new Date(2013,1,1);
       var endDate   = new Date(2016,8,0);
       
       // Get time returns time (in ms) since jan 1, 1970
-      // Map closeDate between startDate - endDate from value 0-1 and scale with maxRad 
-      var result = (_closeDate.getTime()-startDate.getTime() ) / (endDate.getTime()-startDate.getTime())*maxRad;
+      // Map yearFounded between startDate - endDate from value 0-1 and scale with maxRad 
+      var result = (_yearFounded.getTime()-startDate.getTime() ) / (endDate.getTime()-startDate.getTime())*maxRad;
       
       return result;
     }

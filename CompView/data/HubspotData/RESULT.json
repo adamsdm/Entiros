@@ -14,7 +14,7 @@
      "Country": "Sweden",
      "WebsiteURL": "kaller.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "1876"
+     "yearFounded": "1876"
     },
     "position": {
     },
@@ -39,7 +39,7 @@
      "Country": "",
      "WebsiteURL": "vattenfall.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1972"
+     "yearFounded": "1972"
     },
     "position": {
     },
@@ -64,7 +64,7 @@
      "Country": "Germany",
      "WebsiteURL": "crmtoolbox.com",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -89,7 +89,7 @@
      "Country": "United Kingdom",
      "WebsiteURL": "usemarkup.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "2012"
+     "yearFounded": "2012"
     },
     "position": {
     },
@@ -114,7 +114,7 @@
      "Country": "Sweden",
      "WebsiteURL": "bossmedia.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -140,7 +140,7 @@
      "Country": "Sweden",
      "WebsiteURL": "tactel.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1995"
+     "yearFounded": "1995"
     },
     "position": {
     },
@@ -165,7 +165,7 @@
      "Country": "Sweden",
      "WebsiteURL": "bilprovningen.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -190,7 +190,7 @@
      "Country": "Denmark",
      "WebsiteURL": "ambu.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "1937"
+     "yearFounded": "1937"
     },
     "position": {
     },
@@ -215,7 +215,7 @@
      "Country": "Sweden",
      "WebsiteURL": "folksam.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1908"
+     "yearFounded": "1908"
     },
     "position": {
     },
@@ -240,7 +240,7 @@
      "Country": "Sweden",
      "WebsiteURL": "filippa-k.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "1993"
+     "yearFounded": "1993"
     },
     "position": {
     },
@@ -265,7 +265,7 @@
      "Country": "United States",
      "WebsiteURL": "hm.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "1947"
+     "yearFounded": "1947"
     },
     "position": {
     },
@@ -290,7 +290,7 @@
      "Country": "",
      "WebsiteURL": "hansandersson.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -315,7 +315,7 @@
      "Country": "Sweden",
      "WebsiteURL": "clearon.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -340,7 +340,7 @@
      "Country": "Sweden",
      "WebsiteURL": "martinservera.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1994"
+     "yearFounded": "1994"
     },
     "position": {
     },
@@ -365,7 +365,7 @@
      "Country": "Denmark",
      "WebsiteURL": "se.issworld.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "1901"
+     "yearFounded": "1901"
     },
     "position": {
     },
@@ -391,7 +391,7 @@
      "Country": "United States",
      "WebsiteURL": "mulesoft.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "2006"
+     "yearFounded": "2006"
     },
     "position": {
     },
@@ -416,7 +416,7 @@
      "Country": "Sweden",
      "WebsiteURL": "www.tradedoubler.com/",
      "AnnRevenue": 13000000000,
-     "closeDate": "1999"
+     "yearFounded": "1999"
     },
     "position": {
     },
@@ -441,7 +441,7 @@
      "Country": "Sweden",
      "WebsiteURL": "ericsson.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1876"
+     "yearFounded": "1876"
     },
     "position": {
     },
@@ -466,7 +466,7 @@
      "Country": "Sweden",
      "WebsiteURL": "ellos.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1947"
+     "yearFounded": "1947"
     },
     "position": {
     },
@@ -491,7 +491,7 @@
      "Country": "Norway",
      "WebsiteURL": "reitangruppen.no",
      "AnnRevenue": 13000000000,
-     "closeDate": "1948"
+     "yearFounded": "1948"
     },
     "position": {
     },
@@ -516,7 +516,7 @@
      "Country": "Sweden",
      "WebsiteURL": "op5.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "2004"
+     "yearFounded": "2004"
     },
     "position": {
     },
@@ -541,7 +541,7 @@
      "Country": "Sweden",
      "WebsiteURL": "tranas.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1919"
+     "yearFounded": "1919"
     },
     "position": {
     },
@@ -566,7 +566,7 @@
      "Country": "Sweden",
      "WebsiteURL": "ica.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -591,7 +591,7 @@
      "Country": "Sweden",
      "WebsiteURL": "bliwa.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -616,7 +616,7 @@
      "Country": "Sweden",
      "WebsiteURL": "recipharm.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "1995"
+     "yearFounded": "1995"
     },
     "position": {
     },
@@ -641,7 +641,7 @@
      "Country": "",
      "WebsiteURL": "strd.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -666,7 +666,7 @@
      "Country": "Sweden",
      "WebsiteURL": "dios.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1921"
+     "yearFounded": "1921"
     },
     "position": {
     },
@@ -692,7 +692,7 @@
      "Country": "",
      "WebsiteURL": "mtr.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -717,7 +717,7 @@
      "Country": "Sweden",
      "WebsiteURL": "terracomboxergroup.com",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -742,7 +742,7 @@
      "Country": "",
      "WebsiteURL": "envoritainer.com",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -767,7 +767,7 @@
      "Country": "Sweden",
      "WebsiteURL": "nobina.com",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -792,7 +792,7 @@
      "Country": "Sweden",
      "WebsiteURL": "scania.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "2014"
+     "yearFounded": "2014"
     },
     "position": {
     },
@@ -817,7 +817,7 @@
      "Country": "",
      "WebsiteURL": "skandiafastigheter.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -842,7 +842,7 @@
      "Country": "Sweden",
      "WebsiteURL": "diligentia.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -867,7 +867,7 @@
      "Country": "Sweden",
      "WebsiteURL": "intrum.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "1923"
+     "yearFounded": "1923"
     },
     "position": {
     },
@@ -892,7 +892,7 @@
      "Country": "",
      "WebsiteURL": "resursbanken.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -917,7 +917,7 @@
      "Country": "Sweden",
      "WebsiteURL": "afaforsakring.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1997"
+     "yearFounded": "1997"
     },
     "position": {
     },
@@ -942,7 +942,7 @@
      "Country": "Sweden",
      "WebsiteURL": "spotify.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "2006"
+     "yearFounded": "2006"
     },
     "position": {
     },
@@ -967,7 +967,7 @@
      "Country": "Germany",
      "WebsiteURL": "dekra.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "1925"
+     "yearFounded": "1925"
     },
     "position": {
     },
@@ -992,7 +992,7 @@
      "Country": "Sweden",
      "WebsiteURL": "v-tab.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "2005"
+     "yearFounded": "2005"
     },
     "position": {
     },
@@ -1017,7 +1017,7 @@
      "Country": "France",
      "WebsiteURL": "apc.fr",
      "AnnRevenue": 13000000000,
-     "closeDate": "1987"
+     "yearFounded": "1987"
     },
     "position": {
     },
@@ -1042,7 +1042,7 @@
      "Country": "Sweden",
      "WebsiteURL": "bilia.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -1067,7 +1067,7 @@
      "Country": "Sweden",
      "WebsiteURL": "gant.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "2009"
+     "yearFounded": "2009"
     },
     "position": {
     },
@@ -1092,7 +1092,7 @@
      "Country": "Sweden",
      "WebsiteURL": "keolis.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1994"
+     "yearFounded": "1994"
     },
     "position": {
     },
@@ -1117,7 +1117,7 @@
      "Country": "Sweden",
      "WebsiteURL": "schibsted.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "2010"
+     "yearFounded": "2010"
     },
     "position": {
     },
@@ -1142,7 +1142,7 @@
      "Country": "Sweden",
      "WebsiteURL": "volvocars.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "1927"
+     "yearFounded": "1927"
     },
     "position": {
     },
@@ -1167,7 +1167,7 @@
      "Country": "Sweden",
      "WebsiteURL": "http://tabergmediagroup.se/",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -1192,7 +1192,7 @@
      "Country": "Sweden",
      "WebsiteURL": "montico.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1996"
+     "yearFounded": "1996"
     },
     "position": {
     },
@@ -1217,7 +1217,7 @@
      "Country": "Sweden",
      "WebsiteURL": "Keolis.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1994"
+     "yearFounded": "1994"
     },
     "position": {
     },
@@ -1242,7 +1242,7 @@
      "Country": "United States",
      "WebsiteURL": "gant.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "2009"
+     "yearFounded": "2009"
     },
     "position": {
     },
@@ -1267,7 +1267,7 @@
      "Country": "Sweden",
      "WebsiteURL": "schibsted.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "2010"
+     "yearFounded": "2010"
     },
     "position": {
     },
@@ -1292,7 +1292,7 @@
      "Country": "United States",
      "WebsiteURL": "jooraccess.com",
      "AnnRevenue": 13000000000,
-     "closeDate": "2010"
+     "yearFounded": "2010"
     },
     "position": {
     },
@@ -1317,7 +1317,7 @@
      "Country": "Sweden",
      "WebsiteURL": "ica.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -1342,7 +1342,7 @@
      "Country": "Sweden",
      "WebsiteURL": "stralfors.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -1367,7 +1367,7 @@
      "Country": "Sweden",
      "WebsiteURL": "telge.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -1392,7 +1392,7 @@
      "Country": "Sweden",
      "WebsiteURL": "telgeenergi.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1994"
+     "yearFounded": "1994"
     },
     "position": {
     },
@@ -1417,7 +1417,7 @@
      "Country": "Sweden",
      "WebsiteURL": "postnord.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -1442,7 +1442,7 @@
      "Country": "",
      "WebsiteURL": "neuwerld.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -1468,7 +1468,7 @@
      "Country": "Sweden",
      "WebsiteURL": "vasttrafik.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1998"
+     "yearFounded": "1998"
     },
     "position": {
     },
@@ -1493,7 +1493,7 @@
      "Country": "Sweden",
      "WebsiteURL": "skandia.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1855"
+     "yearFounded": "1855"
     },
     "position": {
     },
@@ -1518,7 +1518,7 @@
      "Country": "Sweden",
      "WebsiteURL": "sbab.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1985"
+     "yearFounded": "1985"
     },
     "position": {
     },
@@ -1543,7 +1543,7 @@
      "Country": "Sweden",
      "WebsiteURL": "resurs.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "2001"
+     "yearFounded": "2001"
     },
     "position": {
     },
@@ -1568,7 +1568,7 @@
      "Country": "Sweden",
      "WebsiteURL": "vasttrafik.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1998"
+     "yearFounded": "1998"
     },
     "position": {
     },
@@ -1593,7 +1593,7 @@
      "Country": "Sweden",
      "WebsiteURL": "systembolaget.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1955"
+     "yearFounded": "1955"
     },
     "position": {
     },
@@ -1618,7 +1618,7 @@
      "Country": "Sweden",
      "WebsiteURL": "bankgirot.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1959"
+     "yearFounded": "1959"
     },
     "position": {
     },
@@ -1643,7 +1643,7 @@
      "Country": "Finland",
      "WebsiteURL": "k-rauta.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "1940"
+     "yearFounded": "1940"
     },
     "position": {
     },
@@ -1668,7 +1668,7 @@
      "Country": "Sweden",
      "WebsiteURL": "sl.se",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
@@ -1693,7 +1693,7 @@
      "Country": "Sweden",
      "WebsiteURL": "entiros.se",
      "AnnRevenue": 13000000000,
-     "closeDate": "2009"
+     "yearFounded": "2009"
     },
     "position": {
     },
@@ -1718,7 +1718,7 @@
      "Country": "Sweden",
      "WebsiteURL": "kavat.com",
      "AnnRevenue": 13000000000,
-     "closeDate": ""
+     "yearFounded": ""
     },
     "position": {
     },
