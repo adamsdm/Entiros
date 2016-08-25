@@ -520,7 +520,7 @@ $(function(){
       //   y: p.y
       // });
 
-
+    
 
     });
 
@@ -621,9 +621,22 @@ $(function(){
       }
     });
     
+    createApplications(cy.nodes());
+
     //addVertInfoNodes();
     // cy.remove('edge');
     // addEdges();
+  }
+
+  //Dynamicaly add applications
+  function createApplications(data){
+    for(var i=0; i<data.length; i++){
+      var applications = data[i].data().hasApplication;
+      
+      for(var j=0; j<applications.length; j++){
+        cy.add({ group: "nodes", data: { id: applications[j], NodeType: "Application" } }); 
+      }
+    }
   }
   
   $('#search').typeahead({
@@ -640,7 +653,7 @@ $(function(){
         return str.match( q );
       }
       
-      var fields = ['id', 'NodeType', 'Country', 'CompanyType', 'LifecycleStage'];
+      var fields = ['id', 'NodeType', 'Country', 'CompanyType', 'LifecycleStage','yearFounded'];
       
       function anyFieldMatches( n ){
         for( var i = 0; i < fields.length; i++ ){
@@ -766,43 +779,13 @@ $(function(){
     var prospects = cy.$('node[NodeType="Prospect"]');
 
 
-    // console.log(others.length);
-
-    // for(var i=0;i<vendors.length; i++){
-    //   vendors[i].position().x = 250;
-    //   vendors[i].position().y = i*250;
-    // }
-    // for(var i=0; i<resellers.position; i++ ){
-    //   resellers[i].position().x = 500;
-    //   resellers[i].position().y = i*250;
-    // }   
-    // for(var i=0;i<partners.length; i++){
-    //   partners[i].position().x = 750;
-    //   partners[i].position().y = i*250;
-    // }
-    // for(var i=0; i<others.length; i++){
-    //   others[i].position().x = 1000;
-    //   others[i].position().y = i*250;
-    // }
-    // for(var i=0; i<employers.length; i++){
-    //   employers[i].position().x = 1250;
-    //   employers[i].position().y = i*250;
-    // }
-    // for(var i=0; i<prospects.length; i++){
-    //   prospects[i].position().x = -250;
-    //   prospects[i].position().y = i*250;
-    // }
-    // for(var i=0; i<custNodes.length; i++){
-    //   custNodes[i].position().y = i*250;
-    // }
-
-
     var allNotProspNodes = custNodes.add(vendors).add(resellers).add(partners).add(others).add(employers);
     indType = ["JORDBRUK, SKOGSBRUK OCH FISKE","UTVINNING AV MINERAL","TILLVERKNING","FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA","VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING","BYGGVERKSAMHET","HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR","TRANSPORT OCH MAGASINERING","HOTELL- OCH RESTAURANGVERKSAMHET","INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET","FINANS- OCH FÖRSÄKRINGSVERKSAMHET","FASTIGHETSVERKSAMHET","VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK","UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER","OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING","UTBILDNING","VÅRD OCH OMSORG; SOCIALA TJÄNSTER","KULTUR, NÖJE OCH FRITID","ANNAN SERVICEVERKSAMHET","FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK","VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.","OTHER","NOT SET"];
 
     var compType;
     var radius
     var minRadius = 200;
+    var maxRadius = 2800;
     var angle;
     var typeInd;
     var yearFounded;
@@ -817,7 +800,7 @@ $(function(){
       endDate = 2016;
 
       if(yearFounded)
-        radius = mapToRange(yearFounded, 1870,2016,0,1)*2000;
+        radius = mapToRange(yearFounded, 1870,2016,0,1)*maxRadius;
       
       if(radius<minRadius || !yearFounded){
         radius = minRadius;
@@ -918,11 +901,11 @@ $(function(){
     //   }            
     // }
 
-    // // Place applikation nodes in list to the right
-    // for(var ai=0; ai<appNodes.length; ai++){
-    //   appNodes[ai].position().x = 4000;
-    //   appNodes[ai].position().y = -2500 + ( ai*5000/appNodes.length);
-    // }
+    // Place applikation nodes in list to the right
+    for(var ai=0; ai<appNodes.length; ai++){
+      appNodes[ai].position().x = 4000;
+      appNodes[ai].position().y = -2500 + ( ai*5000/appNodes.length);
+    }
 
      cy.style().update();
 
