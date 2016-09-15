@@ -1,6 +1,7 @@
 
 $(function(){
 
+  //default values
   var layoutPadding = 50;
   var layoutDuration = 700;
   var inCompFocusView = false;
