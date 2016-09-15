@@ -383,6 +383,7 @@ $(function(){
     var apTeAt;
     var RelTo;
     var thisId;
+    var hasAp;
 
     //Loop through all the nodes
     for(var i=0; i<nodes.length; i++){
@@ -393,8 +394,11 @@ $(function(){
 
       thisId = nodes[i].data().id;
 
+      
+
       //If curr node has intAt connections, add them
       if(intAt){
+        intAt = intAt.split(";");  //Input has form: "GANT; Schibsted; Keolis", convert it to an array
         for(var j=0; j<intAt.length; j++){
           cy.add({
             group:"edges",
@@ -404,6 +408,7 @@ $(function(){
       }
       //If curr node has apTeAt connections, add them
       if(apTeAt){
+        apTeAt = apTeAt.split(";");
         for(var j=0; j<apTeAt.length; j++){
           cy.add({
             group:"edges",
@@ -412,6 +417,7 @@ $(function(){
         } //for j    
       }
       if(RelTo){
+        RelTo = RelTo.split(";");
         for(var j=0; j<RelTo.length; j++){
           cy.add({
             group:"edges",
@@ -459,10 +465,10 @@ $(function(){
         x: n.position.x,
         y: n.position.y
       };
-        
-      
     });
 
+
+    console.log(elements.nodes[1].data);
 
 
     loading.classList.add('loaded');
@@ -625,7 +631,7 @@ $(function(){
 
     //addVertInfoNodes();
     // cy.remove('edge');
-    // addEdges();
+     addEdges();
   }
 
   //Dynamicaly add applications
