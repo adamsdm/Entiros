@@ -769,6 +769,7 @@ $(function(){
   }
 
   function newDataInit(){
+    window.alert("You should only use this when a new datafile is loaded, otherwise duplicate edges will be added which will be performance degrading");
     positionAlgorithm();
     addEdges();
     setTimeout(function(){ save() }, 1000);
