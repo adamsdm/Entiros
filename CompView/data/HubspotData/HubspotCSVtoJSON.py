@@ -42,7 +42,10 @@ if row1["Systems"]:
 jsonfile.write('\n     "Owner": "'+row1["HubSpot Owner"]+'",')
 jsonfile.write('\n     "Country": "'+row1["Country"]+'",')
 jsonfile.write('\n     "WebsiteURL": "'+row1["Website URL"]+'",')
-jsonfile.write('\n     "AnnRevenue": 13000000000,')																			#Missing data
+if row1["Annual Revenue"]:
+	jsonfile.write('\n     "AnnRevenue": '+row1["Annual Revenue"]+',')	
+else: 
+	jsonfile.write('\n     "AnnRevenue": 130000000,')																		#Missing data
 jsonfile.write('\n     "yearFounded": "'+row1["Year Founded"]+'"')	
 jsonfile.write('\n    },')
 jsonfile.write('\n    "position": {')
@@ -78,7 +81,10 @@ for row in reader:
 	jsonfile.write('\n     "Owner": "'+row["HubSpot Owner"]+'",')
 	jsonfile.write('\n     "Country": "'+row["Country"]+'",')
 	jsonfile.write('\n     "WebsiteURL": "'+row["Website URL"]+'",')
-	jsonfile.write('\n     "AnnRevenue": 13000000000,')																		#Missing data
+	if row["Annual Revenue"]:
+		jsonfile.write('\n     "AnnRevenue": '+row["Annual Revenue"]+',')	
+	else: 
+		jsonfile.write('\n     "AnnRevenue": 130000000,')
 	jsonfile.write('\n     "yearFounded": "'+row["Year Founded"]+'"')	
 	jsonfile.write('\n    },')
 	jsonfile.write('\n    "position": {')
