@@ -628,7 +628,7 @@ $(function(){
     
     createApplications(cy.nodes());
 
-    //addVertInfoNodes();
+    addVertInfoNodes();
     // cy.remove('edge');
     // addEdges();
   }
@@ -776,6 +776,7 @@ $(function(){
     window.alert("You should only use this when a new datafile is loaded, otherwise duplicate edges will be added which will be performance degrading")
     positionAlgorithm();
     addEdges();
+    //addVertInfoNodes();
     setTimeout(function(){ save() }, 1000);
   }
 

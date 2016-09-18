@@ -17,8 +17,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2569.8611130217246,
-          "y": 3.1255327467546965
+          "x": 2569.8543875932382,
+          "y": 6.658509141562637
         },
         "group": "nodes",
         "removed": false,
@@ -36,7 +36,7 @@
           "City": "San Francisco",
           "NodeType": "Vendor",
           "LifecycleStage": "",
-          "CompanyRelationAppTeamAt": "GANT AB;Schibsted Centralen AB;Keolis Sverige AB",
+          "CompanyRelationAppTeamAt": "GANT AB; Schibsted Centralen AB; Keolis Sverige AB",
           "Owner": "Gustav Rosen",
           "Country": "United States",
           "WebsiteURL": "mulesoft.com",
@@ -45,8 +45,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2197.5328541359413,
-          "y": 1404.8689034599947
+          "x": 2224.878023640528,
+          "y": 1361.148434535029
         },
         "group": "nodes",
         "removed": false,
@@ -72,8 +72,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 1487.9157519099435,
-          "y": 1879.617922979419
+          "x": 1569.423826246515,
+          "y": 1812.1163524390329
         },
         "group": "nodes",
         "removed": false,
@@ -99,8 +99,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 246.39394264256265,
-          "y": 685.8509641416576
+          "x": 254.78430225972363,
+          "y": 682.7784994469389
         },
         "group": "nodes",
         "removed": false,
@@ -126,8 +126,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 421.9661523717637,
-          "y": 2379.310592460555
+          "x": 323.0426357101897,
+          "y": 2394.7479584824455
         },
         "group": "nodes",
         "removed": false,
@@ -153,8 +153,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -267.47380282130814,
-          "y": 2227.8366274037257
+          "x": -436.56471717277225,
+          "y": 2200.9565014595714
         },
         "group": "nodes",
         "removed": false,
@@ -180,8 +180,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -992.3474281176656,
-          "y": 1948.1171067913615
+          "x": -978.4925595721957,
+          "y": 1955.1127820989623
         },
         "group": "nodes",
         "removed": false,
@@ -207,8 +207,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -124.90541739826533,
-          "y": 156.20062965482924
+          "x": -120.03220184518213,
+          "y": 159.97584355207337
         },
         "group": "nodes",
         "removed": false,
@@ -236,8 +236,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -2274.8667369524173,
-          "y": 1389.6843707046694
+          "x": -2220.0565677382447,
+          "y": 1475.6660045944188
         },
         "group": "nodes",
         "removed": false,
@@ -263,8 +263,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -190.64976158281584,
-          "y": 60.4373097384015
+          "x": -185.44644266803863,
+          "y": 74.89737580029
         },
         "group": "nodes",
         "removed": false,
@@ -290,8 +290,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -722.8516522211125,
-          "y": 92.6661149838254
+          "x": -728.6860296880344,
+          "y": 10.871528065398374
         },
         "group": "nodes",
         "removed": false,
@@ -317,8 +317,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -2010.8712550695245,
-          "y": -409.05461157391176
+          "x": -2010.8012798817845,
+          "y": -409.39845204952417
         },
         "group": "nodes",
         "removed": false,
@@ -344,8 +344,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -1714.7725702596301,
-          "y": -769.3471638711139
+          "x": -1705.1629080706268,
+          "y": -790.4172842312271
         },
         "group": "nodes",
         "removed": false,
@@ -371,8 +371,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -2023.438686308819,
-          "y": -1735.4933603509444
+          "x": -1975.549494505355,
+          "y": -1789.8171738568744
         },
         "group": "nodes",
         "removed": false,
@@ -399,8 +399,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -1193.9981810947656,
-          "y": -2078.7556770119927
+          "x": -1350.246228884907,
+          "y": -1980.831124187341
         },
         "group": "nodes",
         "removed": false,
@@ -426,8 +426,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -520.4576114051945,
-          "y": -2418.607928920513
+          "x": -568.3557815384302,
+          "y": -2407.802347514973
         },
         "group": "nodes",
         "removed": false,
@@ -453,8 +453,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -6.203727897486739,
-          "y": -2531.4992478547724
+          "x": -141.56137975791245,
+          "y": -2527.5457075768463
         },
         "group": "nodes",
         "removed": false,
@@ -480,8 +480,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 559.2271664771029,
-          "y": -2429.622463274579
+          "x": 601.4923676913894,
+          "y": -2419.5055836644497
         },
         "group": "nodes",
         "removed": false,
@@ -507,8 +507,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 504.43382281977557,
-          "y": -792.8628664297904
+          "x": 538.0643484689213,
+          "y": -770.4360865604309
         },
         "group": "nodes",
         "removed": false,
@@ -534,8 +534,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 1718.5015486908283,
-          "y": -1698.8015647183909
+          "x": 1832.2303828695751,
+          "y": -1575.4701372073155
         },
         "group": "nodes",
         "removed": false,
@@ -562,8 +562,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2328.6915634467828,
-          "y": -1411.9105292548682
+          "x": 2441.777200828837,
+          "y": -1205.827451089696
         },
         "group": "nodes",
         "removed": false,
@@ -581,7 +581,7 @@
           "City": "New York",
           "NodeType": "Prospect",
           "LifecycleStage": "Opportunity",
-          "CompanyRelationAppTeamAt": "GANT AB;A.P.C.",
+          "CompanyRelationAppTeamAt": "GANT AB; A.P.C.",
           "Owner": "Mikael Lindvall",
           "Country": "United States",
           "WebsiteURL": "jooraccess.com",
@@ -590,8 +590,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2609.0932170093033,
-          "y": -633.6322130606807
+          "x": 2632.3132037718883,
+          "y": -528.9464941941753
         },
         "group": "nodes",
         "removed": false,
@@ -618,8 +618,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2677.122751605045,
-          "y": 204.62397051852227
+          "x": 2683.238254947209,
+          "y": 95.33972760600575
         },
         "group": "nodes",
         "removed": false,
@@ -646,8 +646,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2653.7802678742196,
-          "y": 764.2819928794005
+          "x": 2632.6037293627032,
+          "y": 834.3106609314422
         },
         "group": "nodes",
         "removed": false,
@@ -674,8 +674,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 1830.6806831433773,
-          "y": 1264.005293124103
+          "x": 1729.41202957932,
+          "y": 1399.3695639917248
         },
         "group": "nodes",
         "removed": false,
@@ -701,8 +701,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 1394.956626206142,
-          "y": 1708.2844097045129
+          "x": 1493.382196256278,
+          "y": 1622.9446168433146
         },
         "group": "nodes",
         "removed": false,
@@ -728,8 +728,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 567.5220493520422,
-          "y": 1384.054494988567
+          "x": 663.570571318636,
+          "y": 1340.6573829575764
         },
         "group": "nodes",
         "removed": false,
@@ -755,8 +755,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 14.848328661821949,
-          "y": 199.4480562350772
+          "x": 29.899188249816877,
+          "y": 197.75246785312697
         },
         "group": "nodes",
         "removed": false,
@@ -782,8 +782,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -296.6040758705641,
-          "y": 1446.6185828025953
+          "x": -240.17677634451942,
+          "y": 1457.0499023841205
         },
         "group": "nodes",
         "removed": false,
@@ -809,8 +809,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -678.3893237928796,
-          "y": 1834.7662033291724
+          "x": -860.8709899477209,
+          "y": 1756.5535101959
         },
         "group": "nodes",
         "removed": false,
@@ -836,8 +836,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -126.32228483949208,
-          "y": 155.05702290747823
+          "x": -130.9766400586122,
+          "y": 151.14602131368443
         },
         "group": "nodes",
         "removed": false,
@@ -863,8 +863,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -1087.8318701903745,
-          "y": 683.8646061115928
+          "x": -1027.2430925276376,
+          "y": 771.8941677123277
         },
         "group": "nodes",
         "removed": false,
@@ -890,8 +890,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -2200.902557735634,
-          "y": 900.7235104169429
+          "x": -2205.860749001003,
+          "y": 888.5118270916877
         },
         "group": "nodes",
         "removed": false,
@@ -917,8 +917,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -1089.6856330580565,
-          "y": 86.96919611612839
+          "x": -1086.9613305939477,
+          "y": 116.16146417662641
         },
         "group": "nodes",
         "removed": false,
@@ -944,8 +944,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -194.14793809270648,
-          "y": -48.02684805762937
+          "x": -197.94297544037818,
+          "y": -28.610810436089334
         },
         "group": "nodes",
         "removed": false,
@@ -972,8 +972,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -507.2789545996694,
-          "y": -228.0063239534593
+          "x": -486.36091195772167,
+          "y": -269.7626454165896
         },
         "group": "nodes",
         "removed": false,
@@ -999,8 +999,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -146.9183763376529,
-          "y": -135.70184484489442
+          "x": -150.11259276672817,
+          "y": -132.15978773004454
         },
         "group": "nodes",
         "removed": false,
@@ -1026,8 +1026,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -938.4471539752133,
-          "y": -1332.915426163091
+          "x": -759.2280960001335,
+          "y": -1442.5391822587435
         },
         "group": "nodes",
         "removed": false,
@@ -1053,8 +1053,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -304.52377291657234,
-          "y": -1444.9721705491343
+          "x": -398.57638625493354,
+          "y": -1421.9058218647178
         },
         "group": "nodes",
         "removed": false,
@@ -1080,8 +1080,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 5.225934061844114,
-          "y": -594.4975790886356
+          "x": 1.6657180249829693,
+          "y": -594.518214449758
         },
         "group": "nodes",
         "removed": false,
@@ -1107,8 +1107,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 487.53401583619956,
-          "y": -2307.972959468697
+          "x": 580.0899010384126,
+          "y": -2286.465461131944
         },
         "group": "nodes",
         "removed": false,
@@ -1135,8 +1135,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 1282.3694866029505,
-          "y": -2182.671626232125
+          "x": 1354.8031187043337,
+          "y": -2138.465673719855
         },
         "group": "nodes",
         "removed": false,
@@ -1163,8 +1163,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 1519.1251318351299,
-          "y": -1545.5362104440883
+          "x": 1489.1770384460701,
+          "y": -1574.412618131589
         },
         "group": "nodes",
         "removed": false,
@@ -1351,44 +1351,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": 3000,
+          "x": 3500,
           "y": 0
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": false,
-        "locked": true,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "UTVINNING AV MINERAL",
-          "CompanyType": "UTVINNING AV MINERAL",
-          "NodeType": "vertInfoNode"
-        },
-        "position": {
-          "x": 2888.751862043398,
-          "y": 809.3903134710728
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": false,
-        "locked": true,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "TILLVERKNING",
-          "CompanyType": "TILLVERKNING",
-          "NodeType": "vertInfoNode"
-        },
-        "position": {
-          "x": 2563.258213639466,
-          "y": 1558.7518501063007
         },
         "group": "nodes",
         "removed": false,
@@ -1405,8 +1369,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": 2047.6594296559624,
-          "y": 2192.5078928343723
+          "x": 3263.6528029152455,
+          "y": 1264.3458316550352
         },
         "group": "nodes",
         "removed": false,
@@ -1423,8 +1387,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": 1380.1951131934566,
-          "y": 2663.6556552071256
+          "x": 2586.531210272307,
+          "y": 2357.93475276295
         },
         "group": "nodes",
         "removed": false,
@@ -1441,8 +1405,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": 610.3680391579012,
-          "y": 2937.252263046969
+          "x": 1560.084245217884,
+          "y": 3133.071519742718
         },
         "group": "nodes",
         "removed": false,
@@ -1459,8 +1423,116 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": -204.72724009401264,
-          "y": 2993.0063075716175
+          "x": 322.93925812155703,
+          "y": 3485.0696170326205
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": false,
+        "locked": true,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
+          "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
+          "NodeType": "vertInfoNode"
+        },
+        "position": {
+          "x": -957.8204652522901,
+          "y": 3366.3897511048667
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": false,
+        "locked": true,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "ANNAN SERVICEVERKSAMHET",
+          "CompanyType": "ANNAN SERVICEVERKSAMHET",
+          "NodeType": "vertInfoNode"
+        },
+        "position": {
+          "x": -2109.221227327397,
+          "y": 2793.0602954808387
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": false,
+        "locked": true,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
+          "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
+          "NodeType": "vertInfoNode"
+        },
+        "position": {
+          "x": -2975.7599750536488,
+          "y": 1842.5125700707463
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": false,
+        "locked": true,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
+          "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
+          "NodeType": "vertInfoNode"
+        },
+        "position": {
+          "x": -3440.405848893656,
+          "y": 643.1233123579963
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": false,
+        "locked": true,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "UTVINNING AV MINERAL",
+          "CompanyType": "UTVINNING AV MINERAL",
+          "NodeType": "vertInfoNode"
+        },
+        "position": {
+          "x": -3440.405848893656,
+          "y": -643.1233123579954
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": false,
+        "locked": true,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "TILLVERKNING",
+          "CompanyType": "TILLVERKNING",
+          "NodeType": "vertInfoNode"
+        },
+        "position": {
+          "x": -2975.759975053649,
+          "y": -1842.5125700707454
         },
         "group": "nodes",
         "removed": false,
@@ -1477,8 +1549,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": -1004.6388365129585,
-          "y": 2826.7827663564617
+          "x": -2109.2212273274004,
+          "y": -2793.060295480836
         },
         "group": "nodes",
         "removed": false,
@@ -1495,8 +1567,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": -1730.0409663446012,
-          "y": 2450.9096790313265
+          "x": -957.8204652522909,
+          "y": -3366.3897511048667
         },
         "group": "nodes",
         "removed": false,
@@ -1513,8 +1585,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": -2327.1338721132593,
-          "y": 1893.263832978159
+          "x": 322.9392581215585,
+          "y": -3485.0696170326205
         },
         "group": "nodes",
         "removed": false,
@@ -1531,8 +1603,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": -2751.633904516359,
-          "y": 1195.2032695387243
+          "x": 1560.084245217882,
+          "y": -3133.071519742719
         },
         "group": "nodes",
         "removed": false,
@@ -1549,8 +1621,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": -2972.0578381089917,
-          "y": 408.4999472887413
+          "x": 2586.531210272305,
+          "y": -2357.934752762952
         },
         "group": "nodes",
         "removed": false,
@@ -1567,8 +1639,8 @@
           "NodeType": "vertInfoNode"
         },
         "position": {
-          "x": -2972.057838108992,
-          "y": -408.4999472887392
+          "x": 3263.6528029152455,
+          "y": -1264.3458316550357
         },
         "group": "nodes",
         "removed": false,
@@ -1634,24 +1706,6 @@
       },
       {
         "data": {
-          "id": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
-          "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
-          "NodeType": "vertInfoNode"
-        },
-        "position": {
-          "x": -1004.6388365129592,
-          "y": -2826.7827663564613
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": false,
-        "locked": true,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
           "id": "KULTUR, NÖJE OCH FRITID",
           "CompanyType": "KULTUR, NÖJE OCH FRITID",
           "NodeType": "vertInfoNode"
@@ -1659,60 +1713,6 @@
         "position": {
           "x": -204.7272400940114,
           "y": -2993.006307571618
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": false,
-        "locked": true,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "ANNAN SERVICEVERKSAMHET",
-          "CompanyType": "ANNAN SERVICEVERKSAMHET",
-          "NodeType": "vertInfoNode"
-        },
-        "position": {
-          "x": 610.3680391579,
-          "y": -2937.252263046969
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": false,
-        "locked": true,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
-          "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
-          "NodeType": "vertInfoNode"
-        },
-        "position": {
-          "x": 1380.1951131934547,
-          "y": -2663.6556552071265
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": false,
-        "locked": true,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
-          "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
-          "NodeType": "vertInfoNode"
-        },
-        "position": {
-          "x": 2047.6594296559626,
-          "y": -2192.507892834372
         },
         "group": "nodes",
         "removed": false,
@@ -1765,39 +1765,7 @@
           "source": "MuleSoft, INC.",
           "target": "GANT AB",
           "interaction": "apTeAtEdge",
-          "id": "e070ee6f-ef65-47cc-8ba5-8b33df5ca926"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "source": "MuleSoft, INC.",
-          "target": "Schibsted Centralen AB",
-          "interaction": "apTeAtEdge",
-          "id": "10345d49-dc92-42c9-aecf-dd716eaccbeb"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "source": "MuleSoft, INC.",
-          "target": "Keolis Sverige AB",
-          "interaction": "apTeAtEdge",
-          "id": "ef121603-ae42-4cb2-9e23-bea602b4d5a8"
+          "id": "bb559e07-778f-4ec9-89aa-b6a7297582d4"
         },
         "position": {},
         "group": "edges",
@@ -1813,7 +1781,7 @@
           "source": "GANT Network",
           "target": "GANT AB",
           "interaction": "intAtEdge",
-          "id": "ee6d57cc-904f-4c8b-8759-1d0c61ef8c81"
+          "id": "ccf9f702-2ac9-409b-a274-144563f01d8c"
         },
         "position": {},
         "group": "edges",
@@ -1829,7 +1797,7 @@
           "source": "GANT Network",
           "target": "GANT AB",
           "interaction": "RelToEdge",
-          "id": "7562f028-896c-48f2-83e7-0090086a0df3"
+          "id": "f1216e96-ca48-4bfb-abb5-551103c9a4a5"
         },
         "position": {},
         "group": "edges",
@@ -1845,7 +1813,7 @@
           "source": "Tactel AB",
           "target": "GANT AB",
           "interaction": "apTeAtEdge",
-          "id": "93e7ed62-41c9-494b-a0ca-68d8bfff78e8"
+          "id": "c1d755ca-70bb-41f8-a4ed-5625760f971f"
         },
         "position": {},
         "group": "edges",
@@ -1861,7 +1829,7 @@
           "source": "Markup Digital Ltd",
           "target": "GANT AB",
           "interaction": "apTeAtEdge",
-          "id": "c31c14b8-3c13-4d48-9fc1-33460be4b4dc"
+          "id": "0bbb2392-fd46-435d-b55c-f2291ee62d10"
         },
         "position": {},
         "group": "edges",
@@ -1877,23 +1845,7 @@
           "source": "JOOR",
           "target": "GANT AB",
           "interaction": "apTeAtEdge",
-          "id": "53c7fa96-5610-4dc0-bf6b-919dac2287c3"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "source": "JOOR",
-          "target": "A.P.C.",
-          "interaction": "apTeAtEdge",
-          "id": "7a11b01e-8351-4dc9-8fc5-4fcaee451ca4"
+          "id": "512d5749-9ca6-4832-9478-8ece118d9b40"
         },
         "position": {},
         "group": "edges",
@@ -1909,7 +1861,7 @@
           "source": "Schibsted Centralen AB",
           "target": "CRM - Salesforce",
           "interaction": "hasAppEdge",
-          "id": "a260af66-b0a2-400c-9d5c-0d964a982e71"
+          "id": "ba632f7c-8bb6-4064-8cfe-6276ad6ac3b8"
         },
         "position": {},
         "group": "edges",
@@ -1925,7 +1877,7 @@
           "source": "Parsifal Entertainment",
           "target": "CRM - Salesforce",
           "interaction": "hasAppEdge",
-          "id": "3f6390a0-d7b3-4efe-aa89-3df429492888"
+          "id": "b3eaaf31-de30-465a-9b5e-53de90e5ed0e"
         },
         "position": {},
         "group": "edges",
@@ -1941,7 +1893,7 @@
           "source": "Parsifal Entertainment",
           "target": " Marketing - Salesforce",
           "interaction": "hasAppEdge",
-          "id": "e9b24ed6-4773-490b-9b80-699f72c831a9"
+          "id": "eaae8bdd-6aa7-42f1-a0cb-d54bde70a216"
         },
         "position": {},
         "group": "edges",
@@ -1957,7 +1909,7 @@
           "source": "Parsifal Entertainment",
           "target": " Billing - Tract",
           "interaction": "hasAppEdge",
-          "id": "ba1060f3-5b6f-4c02-89dc-b8fd69bfb13b"
+          "id": "a142e3f0-a2be-469c-8aaf-66d2cf4698bf"
         },
         "position": {},
         "group": "edges",
@@ -1973,7 +1925,7 @@
           "source": "Parsifal Entertainment",
           "target": " ERP - NetSuite",
           "interaction": "hasAppEdge",
-          "id": "4ebac9b0-5dfc-4ea9-92ab-d1372dd04501"
+          "id": "a8c4a7cc-c711-4acf-849e-9a80b73c4391"
         },
         "position": {},
         "group": "edges",
@@ -1989,7 +1941,7 @@
           "source": "Parsifal Entertainment",
           "target": " Streaming - ThePlatform",
           "interaction": "hasAppEdge",
-          "id": "8d2fe87e-dc29-46f5-8a57-983add09b3b9"
+          "id": "cef7615e-1355-4ac4-93b0-e3effdde58bc"
         },
         "position": {},
         "group": "edges",
@@ -2005,7 +1957,7 @@
           "source": "Parsifal Entertainment",
           "target": " Portal - Custom",
           "interaction": "hasAppEdge",
-          "id": "dbe9b048-f7f4-4c59-8dc5-2a71828c497b"
+          "id": "86a749c4-4245-44f2-8414-69bced16f0c7"
         },
         "position": {},
         "group": "edges",
@@ -2021,7 +1973,7 @@
           "source": "Parsifal Entertainment",
           "target": " Mobile - Android",
           "interaction": "hasAppEdge",
-          "id": "de802f04-b709-4daa-9fc7-f8d7be974c4f"
+          "id": "5ae845cc-700c-487a-833d-4147d3f44b7b"
         },
         "position": {},
         "group": "edges",
@@ -2037,7 +1989,7 @@
           "source": "Parsifal Entertainment",
           "target": " Mobile - iOS",
           "interaction": "hasAppEdge",
-          "id": "9bba7b5c-1583-43bf-abfc-f4fe1baedb17"
+          "id": "ff985cb4-c20c-4090-8d8a-fede4a64f5ba"
         },
         "position": {},
         "group": "edges",
@@ -2053,7 +2005,7 @@
           "source": "Parsifal Entertainment",
           "target": " Middleware - Mulesoft Anypoint Platform Base Subscription",
           "interaction": "hasAppEdge",
-          "id": "3ec616f4-2893-42ab-a11c-cfc1859e945c"
+          "id": "1134ad74-38a9-4941-a09a-d65ed0cd771b"
         },
         "position": {},
         "group": "edges",
@@ -2069,7 +2021,7 @@
           "source": "Parsifal Entertainment",
           "target": " Middleware - Mulesoft Anypoint Pltaform API Manager & Analytics",
           "interaction": "hasAppEdge",
-          "id": "65872746-f502-46f6-8785-08149f9e0a53"
+          "id": "7a688134-b903-41d7-8766-65457ac086c2"
         },
         "position": {},
         "group": "edges",
@@ -2085,7 +2037,7 @@
           "source": "GANT AB",
           "target": "CRM - Salesforce",
           "interaction": "hasAppEdge",
-          "id": "ab93adeb-4948-4503-8ada-15b500c5bcef"
+          "id": "e8a5520f-355e-41ee-8e26-33b74bd9249b"
         },
         "position": {},
         "group": "edges",
@@ -2101,7 +2053,7 @@
           "source": "GANT AB",
           "target": " Marketing - Salesforce",
           "interaction": "hasAppEdge",
-          "id": "ea66ed21-e9ab-4658-8a92-90908c0bf3fd"
+          "id": "8f3bb34e-57ab-4de4-b3ca-c129191cffb6"
         },
         "position": {},
         "group": "edges",
@@ -2117,7 +2069,7 @@
           "source": "GANT AB",
           "target": " Middleware - Mulesoft Anypoint Platform Base Subscription",
           "interaction": "hasAppEdge",
-          "id": "7811caab-9aeb-4cc7-8e70-4ed43e4c6293"
+          "id": "26200263-ffe6-44f2-866d-882909ed8826"
         },
         "position": {},
         "group": "edges",
@@ -2133,7 +2085,7 @@
           "source": "Åhlens",
           "target": "GANT AB",
           "interaction": "intAtEdge",
-          "id": "910cdecc-b007-492d-8671-da11eb36ae4d"
+          "id": "94b2fc2d-360a-44a6-afa6-d3de03a0d45f"
         },
         "position": {},
         "group": "edges",
@@ -2149,7 +2101,7 @@
           "source": "CRM Toolbox",
           "target": "GANT AB",
           "interaction": "apTeAtEdge",
-          "id": "645db206-6eb2-4816-ba31-654a9a69eab3"
+          "id": "b7a5aaad-02c4-461a-b201-299bf6185a8a"
         },
         "position": {},
         "group": "edges",
@@ -2165,7 +2117,7 @@
           "source": "Cegid",
           "target": "GANT AB",
           "interaction": "apTeAtEdge",
-          "id": "6b9c3ace-e8d3-4f3b-b2a6-677725a086b4"
+          "id": "5808506c-5289-4518-87a1-fc3ed5e87a33"
         },
         "position": {},
         "group": "edges",
@@ -2428,7 +2380,7 @@
   "userPanningEnabled": true,
   "pan": {
     "x": 434,
-    "y": 341
+    "y": 363
   },
   "boxSelectionEnabled": true,
   "renderer": {
