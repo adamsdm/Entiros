@@ -1009,6 +1009,7 @@ $(function(){
     var cust              = $('#cust').is(':checked');
     var app               = $('#app').is(':checked');
     var prosp             = $('#prosp').is(':checked');
+    var vend              = $('#vend').is(':checked');
 
     //lifecycle checkboxes
     var lifeCust          = $('#lifeCust').is(':checked');
@@ -1110,6 +1111,10 @@ $(function(){
         } else if( type === 'Prospect' ){
           
           if( !prosp ){ filter(); }
+        
+        } else if( type === 'Vendor' ){
+          
+          if( !vend ){ filter(); }
 
         } else if( type === 'Application' ){
           
