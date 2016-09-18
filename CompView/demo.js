@@ -1,4 +1,5 @@
 
+
 $(function(){
 
   //default values
@@ -468,10 +469,6 @@ $(function(){
       };
     });
 
-
-    console.log(elements.nodes[1].data);
-
-
     loading.classList.add('loaded');
     
 
@@ -632,16 +629,18 @@ $(function(){
 
     //addVertInfoNodes();
     // cy.remove('edge');
-     addEdges();
+    // addEdges();
   }
 
   //Dynamicaly add applications
   function createApplications(data){
     for(var i=0; i<data.length; i++){
-      var applications = data[i].data().hasApplication;
+      if(data[i].data().NodeType == "Customer"){ //if node is a customer it might have applications
+        var applications = data[i].data().hasApplication;
       
-      for(var j=0; j<applications.length; j++){
-        cy.add({ group: "nodes", data: { id: applications[j], NodeType: "Application" } }); 
+        for(var j=0; j<applications.length; j++){
+          cy.add({ group: "nodes", data: { id: applications[j], NodeType: "Application" } }); 
+        }
       }
     }
   }
@@ -769,6 +768,12 @@ $(function(){
     } 
   }
 
+  function newDataInit(){
+    positionAlgorithm();
+    addEdges();
+    setTimeout(function(){ save() }, 1000);
+  }
+
   function positionAlgorithm(){
     var custNodes = cy.elements('node[NodeType="Customer"]');
     var appNodes = cy.elements('node[NodeType="Application"]');
@@ -786,7 +791,7 @@ $(function(){
     var prospects = cy.$('node[NodeType="Prospect"]');
 
 
-    var allNotProspNodes = custNodes.add(vendors).add(resellers).add(partners).add(others).add(employers);
+    var allNotProspNodes = custNodes.add(vendors).add(resellers).add(partners).add(others).add(employers).add(prospects);
     indType = ["JORDBRUK, SKOGSBRUK OCH FISKE","UTVINNING AV MINERAL","TILLVERKNING","FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA","VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING","BYGGVERKSAMHET","HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR","TRANSPORT OCH MAGASINERING","HOTELL- OCH RESTAURANGVERKSAMHET","INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET","FINANS- OCH FÖRSÄKRINGSVERKSAMHET","FASTIGHETSVERKSAMHET","VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK","UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER","OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING","UTBILDNING","VÅRD OCH OMSORG; SOCIALA TJÄNSTER","KULTUR, NÖJE OCH FRITID","ANNAN SERVICEVERKSAMHET","FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK","VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.","OTHER","NOT SET"];
 
     var compType;
@@ -960,8 +965,8 @@ $(function(){
   $('#debug').on('click', function(){
     // cy.remove('edge');
     // addEdges();
-    positionAlgorithm(); 
-    
+    //positionAlgorithm(); 
+    newDataInit();
     //addVertInfoNodes();
 
   });
@@ -975,6 +980,15 @@ $(function(){
     window.open(url, '_blank');
     window.focus();
   });
+
+  function save(){
+    //Open JSON file in new tab
+    var data = JSON.stringify(cy.json(),null,2);
+    var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
+
+    window.open(url, '_blank');
+    window.focus();
+  }
 
   $('#reset').on('click', function(){
     reset();

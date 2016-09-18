@@ -107,6 +107,7 @@ edge[interaction ="hasAppEdge"] {
 	line-color: white;
 	width: 4;
 	z-index: 0;
+	opacity:0.2;
 }
 
 edge.highlighted {
