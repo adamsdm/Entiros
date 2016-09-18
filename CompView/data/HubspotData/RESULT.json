@@ -3,23 +3,22 @@
     "nodes": [
       {
         "data": {
-          "id": "Västtrafik AB",
+          "id": "op5 AB",
           "CompanyType": "JORDBRUK, SKOGSBRUK OCH FISKE",
-          "Company Domain Name": "vasttrafik.se",
-          "City": "Skövde",
-          "NodeType": "Prospect",
-          "LifecycleStage": "Sales Qualified Lead",
-          "CompanyRelationIntegratedAt": "Keolis Sverige AB",
-          "Owner": "Adam Söderström",
+          "Company Domain Name": "op5.se",
+          "City": "Kista",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
           "Country": "Sweden",
-          "WebsiteURL": "vasttrafik.se",
-          "AnnRevenue": 130000000,
-          "yearFounded": "1998",
+          "WebsiteURL": "op5.se",
+          "AnnRevenue": 10000000,
+          "yearFounded": "2004",
           "orgPos": {}
         },
         "position": {
-          "x": 2433.80828911777,
-          "y": 320.30196679672247
+          "x": 2569.8611130217246,
+          "y": 3.1255327467546965
         },
         "group": "nodes",
         "removed": false,
@@ -31,238 +30,23 @@
       },
       {
         "data": {
-          "id": "SBAB",
+          "id": "MuleSoft, INC.",
           "CompanyType": "TILLVERKNING",
-          "Company Domain Name": "sbab.se",
-          "City": "Stockholm",
-          "NodeType": "Customer",
-          "LifecycleStage": "Customer",
-          "Owner": "Olof Norell",
-          "Country": "Sweden",
-          "WebsiteURL": "sbab.se",
-          "AnnRevenue": 2500000000,
-          "yearFounded": "1985",
+          "Company Domain Name": "mulesoft.com",
+          "City": "San Francisco",
+          "NodeType": "Vendor",
+          "LifecycleStage": "",
+          "CompanyRelationAppTeamAt": "GANT AB;Schibsted Centralen AB;Keolis Sverige AB",
+          "Owner": "Gustav Rosen",
+          "Country": "United States",
+          "WebsiteURL": "mulesoft.com",
+          "AnnRevenue": 10000000,
+          "yearFounded": "2006",
           "orgPos": {}
         },
         "position": {
-          "x": 1711.411366167124,
-          "y": 1391.118524493832
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "Reitan Convenience Sweden",
-          "CompanyType": "FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA",
-          "Company Domain Name": "reitangruppen.no",
-          "City": "Trondheim",
-          "NodeType": "Customer",
-          "LifecycleStage": "Customer",
-          "Owner": "Mikael Lindvall",
-          "Country": "Norway",
-          "WebsiteURL": "reitangruppen.no",
-          "AnnRevenue": 900000000,
-          "yearFounded": "1948",
-          "orgPos": {}
-        },
-        "position": {
-          "x": 889.532574769981,
-          "y": 1202.6719918672288
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "ELLOS GROUP",
-          "CompanyType": "VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING",
-          "Company Domain Name": "ellos.se",
-          "City": "Borås",
-          "NodeType": "Customer",
-          "LifecycleStage": "Customer",
-          "Owner": "Mikael Lindvall",
-          "Country": "Sweden",
-          "WebsiteURL": "ellos.se",
-          "AnnRevenue": 2500000000,
-          "yearFounded": "1947",
-          "orgPos": {}
-        },
-        "position": {
-          "x": 550.1693732513286,
-          "y": 1370.3988334310056
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "Keolis Sverige AB",
-          "CompanyType": "BYGGVERKSAMHET",
-          "Company Domain Name": "keolis.se",
-          "City": "Stockholm",
-          "NodeType": "Customer",
-          "LifecycleStage": "Evangelist",
-          "Owner": "Olof Norell",
-          "Country": "Sweden",
-          "WebsiteURL": "keolis.se",
-          "AnnRevenue": 4200000000,
-          "yearFounded": "1994",
-          "orgPos": {}
-        },
-        "position": {
-          "x": 292.6279495176992,
-          "y": 2360.0092783771306
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "Volvo Cars Corporation",
-          "CompanyType": "HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR",
-          "Company Domain Name": "volvocars.com",
-          "City": "Rockleigh",
-          "NodeType": "Customer",
-          "LifecycleStage": "Customer",
-          "Owner": "Olof Norell",
-          "Country": "Sweden",
-          "WebsiteURL": "volvocars.com",
-          "AnnRevenue": 164000000000,
-          "yearFounded": "1927",
-          "orgPos": {}
-        },
-        "position": {
-          "x": -183.9998895048055,
-          "y": 1077.5539246963199
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "ICA Gruppen",
-          "CompanyType": "TRANSPORT OCH MAGASINERING",
-          "Company Domain Name": "ica.se",
-          "City": "Solna",
-          "NodeType": "Prospect",
-          "LifecycleStage": "Opportunity",
-          "Owner": "Mikael Lindvall",
-          "Country": "Sweden",
-          "WebsiteURL": "ica.se",
-          "AnnRevenue": 100000000000,
-          "yearFounded": "",
-          "orgPos": {}
-        },
-        "position": {
-          "x": -86.50604376279067,
-          "y": 180.32388747060148
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "Systembolaget AB",
-          "CompanyType": "HOTELL- OCH RESTAURANGVERKSAMHET",
-          "Company Domain Name": "systembolaget.se",
-          "City": "Stockholm",
-          "NodeType": "Prospect",
-          "LifecycleStage": "Opportunity",
-          "Owner": "Mikael Lindvall",
-          "Country": "Sweden",
-          "WebsiteURL": "systembolaget.se",
-          "AnnRevenue": 27000000000,
-          "yearFounded": "1955",
-          "orgPos": {}
-        },
-        "position": {
-          "x": -1056.1817083061421,
-          "y": 1241.703182385884
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "ISS A/S",
-          "CompanyType": "INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET",
-          "Company Domain Name": "se.issworld.com",
-          "City": "London",
-          "NodeType": "Prospect",
-          "LifecycleStage": "Opportunity",
-          "Owner": "Olof Norell",
-          "Country": "Denmark",
-          "WebsiteURL": "se.issworld.com",
-          "AnnRevenue": 5000000000,
-          "yearFounded": "1901",
-          "orgPos": {}
-        },
-        "position": {
-          "x": -464.5541958750081,
-          "y": 371.00415230020263
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "Filippa K",
-          "CompanyType": "FINANS- OCH FÖRSÄKRINGSVERKSAMHET",
-          "Company Domain Name": "filippa-k.com",
-          "City": "Stockholm",
-          "NodeType": "Prospect",
-          "LifecycleStage": "Opportunity",
-          "Owner": "Mikael Lindvall",
-          "Country": "Sweden",
-          "WebsiteURL": "filippa-k.com",
-          "AnnRevenue": 500000000,
-          "yearFounded": "1993",
-          "orgPos": {}
-        },
-        "position": {
-          "x": -2196.495549937075,
-          "y": 860.1371386835322
+          "x": 2197.5328541359413,
+          "y": 1404.8689034599947
         },
         "group": "nodes",
         "removed": false,
@@ -275,7 +59,7 @@
       {
         "data": {
           "id": "Recipharm",
-          "CompanyType": "FASTIGHETSVERKSAMHET",
+          "CompanyType": "FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA",
           "Company Domain Name": "recipharm.com",
           "City": "Haninge",
           "NodeType": "Customer",
@@ -288,8 +72,62 @@
           "orgPos": {}
         },
         "position": {
-          "x": -2386.5387439434994,
-          "y": 226.47217229448296
+          "x": 1487.9157519099435,
+          "y": 1879.617922979419
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Folksam",
+          "CompanyType": "VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING",
+          "Company Domain Name": "folksam.se",
+          "City": "Stockholm",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "folksam.se",
+          "AnnRevenue": 12000000000,
+          "yearFounded": "1908",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 246.39394264256265,
+          "y": 685.8509641416576
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Montico",
+          "CompanyType": "BYGGVERKSAMHET",
+          "Company Domain Name": "montico.se",
+          "City": "Tranås",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "montico.se",
+          "AnnRevenue": 364000000,
+          "yearFounded": "1996",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 421.9661523717637,
+          "y": 2379.310592460555
         },
         "group": "nodes",
         "removed": false,
@@ -302,7 +140,7 @@
       {
         "data": {
           "id": "A.P.C.",
-          "CompanyType": "VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK",
+          "CompanyType": "HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR",
           "Company Domain Name": "apc.fr",
           "City": "Paris",
           "NodeType": "Customer",
@@ -315,8 +153,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -2214.777503832848,
-          "y": -359.9428872935761
+          "x": -267.47380282130814,
+          "y": 2227.8366274037257
         },
         "group": "nodes",
         "removed": false,
@@ -329,7 +167,7 @@
       {
         "data": {
           "id": "Martin & Servera",
-          "CompanyType": "UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER",
+          "CompanyType": "TRANSPORT OCH MAGASINERING",
           "Company Domain Name": "martinservera.se",
           "City": "Stockholm",
           "NodeType": "Prospect",
@@ -342,8 +180,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -2003.083349083059,
-          "y": -876.1111667426042
+          "x": -992.3474281176656,
+          "y": 1948.1171067913615
         },
         "group": "nodes",
         "removed": false,
@@ -356,7 +194,7 @@
       {
         "data": {
           "id": "Kavat",
-          "CompanyType": "OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING",
+          "CompanyType": "HOTELL- OCH RESTAURANGVERKSAMHET",
           "Company Domain Name": "kavat.com",
           "City": "Stockholm",
           "NodeType": "Prospect",
@@ -369,8 +207,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -148.70378356163906,
-          "y": -133.74298020626432
+          "x": -124.90541739826533,
+          "y": 156.20062965482924
         },
         "group": "nodes",
         "removed": false,
@@ -383,7 +221,7 @@
       {
         "data": {
           "id": "GANT Network",
-          "CompanyType": "UTBILDNING",
+          "CompanyType": "INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET",
           "Company Domain Name": "gant.com",
           "City": "New York",
           "NodeType": "Prospect",
@@ -398,8 +236,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -1293.1056265856662,
-          "y": -2331.119722272081
+          "x": -2274.8667369524173,
+          "y": 1389.6843707046694
         },
         "group": "nodes",
         "removed": false,
@@ -412,7 +250,7 @@
       {
         "data": {
           "id": "Schibsted Network",
-          "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
+          "CompanyType": "FINANS- OCH FÖRSÄKRINGSVERKSAMHET",
           "Company Domain Name": "schibsted.se",
           "City": "Stockholm",
           "NodeType": "Prospect",
@@ -425,8 +263,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -62.87766799783518,
-          "y": -189.85889198863987
+          "x": -190.64976158281584,
+          "y": 60.4373097384015
         },
         "group": "nodes",
         "removed": false,
@@ -439,7 +277,7 @@
       {
         "data": {
           "id": "Keolis Network",
-          "CompanyType": "KULTUR, NÖJE OCH FRITID",
+          "CompanyType": "FASTIGHETSVERKSAMHET",
           "Company Domain Name": "Keolis.se",
           "City": "Stockholm",
           "NodeType": "Prospect",
@@ -452,8 +290,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": -42.792830348145166,
-          "y": -727.5096519330741
+          "x": -722.8516522211125,
+          "y": 92.6661149838254
         },
         "group": "nodes",
         "removed": false,
@@ -466,7 +304,7 @@
       {
         "data": {
           "id": "Resursbanken",
-          "CompanyType": "ANNAN SERVICEVERKSAMHET",
+          "CompanyType": "VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK",
           "Company Domain Name": "resursbanken.se",
           "City": "Helsingborg",
           "NodeType": "Prospect",
@@ -479,8 +317,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 497.6013603058534,
-          "y": -1990.8093243544276
+          "x": -2010.8712550695245,
+          "y": -409.05461157391176
         },
         "group": "nodes",
         "removed": false,
@@ -493,7 +331,7 @@
       {
         "data": {
           "id": "clearon.se",
-          "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
+          "CompanyType": "UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER",
           "Company Domain Name": "clearon.se",
           "City": "Stockholm",
           "NodeType": "Prospect",
@@ -506,8 +344,90 @@
           "orgPos": {}
         },
         "position": {
-          "x": 918.9276968855723,
-          "y": -1639.4852589053442
+          "x": -1714.7725702596301,
+          "y": -769.3471638711139
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Entiros AB",
+          "CompanyType": "OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING",
+          "Company Domain Name": "entiros.se",
+          "City": "Tranås",
+          "NodeType": "Other",
+          "LifecycleStage": "Marketing Qualified Lead",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "entiros.se",
+          "AnnRevenue": 20000000,
+          "yearFounded": "2009",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -2023.438686308819,
+          "y": -1735.4933603509444
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Tactel AB",
+          "CompanyType": "UTBILDNING",
+          "Company Domain Name": "tactel.se",
+          "City": "Malmö",
+          "NodeType": "Vendor",
+          "LifecycleStage": "Other",
+          "CompanyRelationAppTeamAt": "GANT AB",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "tactel.se",
+          "AnnRevenue": 70000000,
+          "yearFounded": "1995",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -1193.9981810947656,
+          "y": -2078.7556770119927
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Tradedoubler",
+          "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
+          "Company Domain Name": "www.tradedoubler.com/",
+          "City": "Stockholm",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "www.tradedoubler.com/",
+          "AnnRevenue": 1600000000,
+          "yearFounded": "1999",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -520.4576114051945,
+          "y": -2418.607928920513
         },
         "group": "nodes",
         "removed": false,
@@ -520,7 +440,7 @@
       {
         "data": {
           "id": "Bliwa Livförsäkring",
-          "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
+          "CompanyType": "KULTUR, NÖJE OCH FRITID",
           "Company Domain Name": "bliwa.se",
           "City": "Stockholm",
           "NodeType": "Prospect",
@@ -533,8 +453,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 1867.5473913692213,
-          "y": -1709.0329631458605
+          "x": -6.203727897486739,
+          "y": -2531.4992478547724
         },
         "group": "nodes",
         "removed": false,
@@ -547,7 +467,7 @@
       {
         "data": {
           "id": "Taberg Media Group",
-          "CompanyType": "OTHER",
+          "CompanyType": "ANNAN SERVICEVERKSAMHET",
           "Company Domain Name": "http://tabergmediagroup.se/",
           "City": "Taberg",
           "NodeType": "Customer",
@@ -560,8 +480,90 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2273.080560738585,
-          "y": -1024.1606818106238
+          "x": 559.2271664771029,
+          "y": -2429.622463274579
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Tranås Kommun",
+          "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
+          "Company Domain Name": "tranas.se",
+          "City": "Tranås",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "tranas.se",
+          "AnnRevenue": 1000000000,
+          "yearFounded": "1919",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 504.43382281977557,
+          "y": -792.8628664297904
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Boss Media (out of business)",
+          "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
+          "Company Domain Name": "bossmedia.se",
+          "City": "Växjö",
+          "NodeType": "Customer",
+          "LifecycleStage": "Other",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "bossmedia.se",
+          "AnnRevenue": 0,
+          "yearFounded": "1996",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 1718.5015486908283,
+          "y": -1698.8015647183909
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Markup Digital Ltd",
+          "CompanyType": "OTHER",
+          "Company Domain Name": "usemarkup.com",
+          "City": "Glasgow",
+          "NodeType": "Vendor",
+          "LifecycleStage": "Subscriber",
+          "CompanyRelationAppTeamAt": "GANT AB",
+          "Owner": "Gustav Rosen",
+          "Country": "United Kingdom",
+          "WebsiteURL": "usemarkup.com",
+          "AnnRevenue": 5000000,
+          "yearFounded": "2012",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 2328.6915634467828,
+          "y": -1411.9105292548682
         },
         "group": "nodes",
         "removed": false,
@@ -579,7 +581,7 @@
           "City": "New York",
           "NodeType": "Prospect",
           "LifecycleStage": "Opportunity",
-          "CompanyRelationAppTeamAt": "GANT AB; A.P.C.",
+          "CompanyRelationAppTeamAt": "GANT AB;A.P.C.",
           "Owner": "Mikael Lindvall",
           "Country": "United States",
           "WebsiteURL": "jooraccess.com",
@@ -588,8 +590,8 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2620.509540100918,
-          "y": -584.6254755928863
+          "x": 2609.0932170093033,
+          "y": -633.6322130606807
         },
         "group": "nodes",
         "removed": false,
@@ -616,8 +618,36 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2683.707315563431,
-          "y": 81.06935835106319
+          "x": 2677.122751605045,
+          "y": 204.62397051852227
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Parsifal Entertainment",
+          "CompanyType": "UTVINNING AV MINERAL",
+          "Company Domain Name": "parsifalentertainment.com",
+          "City": "Stockholm",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "hasApplication": "CRM - Salesforce; Marketing - Salesforce; Billing - Tract; ERP - NetSuite; Streaming - ThePlatform; Portal - Custom; Mobile - Android; Mobile - iOS; Middleware - Mulesoft Anypoint Platform Base Subscription; Middleware - Mulesoft Anypoint Pltaform API Manager & Analytics",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "parsifalentertainment.com",
+          "AnnRevenue": 1000000,
+          "yearFounded": "2014",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 2653.7802678742196,
+          "y": 764.2819928794005
         },
         "group": "nodes",
         "removed": false,
@@ -630,7 +660,7 @@
       {
         "data": {
           "id": "GANT AB",
-          "CompanyType": "UTVINNING AV MINERAL",
+          "CompanyType": "TILLVERKNING",
           "Company Domain Name": "gant.com",
           "City": "New York",
           "NodeType": "Customer",
@@ -644,8 +674,497 @@
           "orgPos": {}
         },
         "position": {
-          "x": 2117.0065151512044,
-          "y": 683.6552928833399
+          "x": 1830.6806831433773,
+          "y": 1264.005293124103
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "SBAB",
+          "CompanyType": "FÖRSÖRJNING AV EL, GAS, VÄRME OCH KYLA",
+          "Company Domain Name": "sbab.se",
+          "City": "Stockholm",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Olof Norell",
+          "Country": "Sweden",
+          "WebsiteURL": "sbab.se",
+          "AnnRevenue": 2500000000,
+          "yearFounded": "1985",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 1394.956626206142,
+          "y": 1708.2844097045129
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Reitan Convenience Sweden",
+          "CompanyType": "VATTENFÖRSÖRJNING; AVLOPPSRENING, AVFALLSHANTERING OCH SANERING",
+          "Company Domain Name": "reitangruppen.no",
+          "City": "Trondheim",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Mikael Lindvall",
+          "Country": "Norway",
+          "WebsiteURL": "reitangruppen.no",
+          "AnnRevenue": 900000000,
+          "yearFounded": "1948",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 567.5220493520422,
+          "y": 1384.054494988567
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Ericsson",
+          "CompanyType": "BYGGVERKSAMHET",
+          "Company Domain Name": "ericsson.se",
+          "City": "Stockholm",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "ericsson.se",
+          "AnnRevenue": 120000000000,
+          "yearFounded": "1876",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 14.848328661821949,
+          "y": 199.4480562350772
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "ELLOS GROUP",
+          "CompanyType": "HANDEL; REPERATION AV MOTORFORDON OCH MOTORCYKLAR",
+          "Company Domain Name": "ellos.se",
+          "City": "Borås",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Mikael Lindvall",
+          "Country": "Sweden",
+          "WebsiteURL": "ellos.se",
+          "AnnRevenue": 2500000000,
+          "yearFounded": "1947",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -296.6040758705641,
+          "y": 1446.6185828025953
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Vattenfall Eldistribution",
+          "CompanyType": "TRANSPORT OCH MAGASINERING",
+          "Company Domain Name": "vattenfall.se",
+          "City": "Ume?",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
+          "Country": "",
+          "WebsiteURL": "vattenfall.se",
+          "AnnRevenue": 32000000000,
+          "yearFounded": "1972",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -678.3893237928796,
+          "y": 1834.7662033291724
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Kaller",
+          "CompanyType": "HOTELL- OCH RESTAURANGVERKSAMHET",
+          "Company Domain Name": "kaller.com",
+          "City": "Tranås",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "kaller.com",
+          "AnnRevenue": 1200000000,
+          "yearFounded": "1876",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -126.32228483949208,
+          "y": 155.05702290747823
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Ambu A/S",
+          "CompanyType": "INFORMATINOS- OCH KOMMUNIKATIONSVERKSAMHET",
+          "Company Domain Name": "ambu.com",
+          "City": "Ballerup",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
+          "Country": "Denmark",
+          "WebsiteURL": "ambu.com",
+          "AnnRevenue": 2000000000,
+          "yearFounded": "1937",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -1087.8318701903745,
+          "y": 683.8646061115928
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Keolis Sverige AB",
+          "CompanyType": "FINANS- OCH FÖRSÄKRINGSVERKSAMHET",
+          "Company Domain Name": "keolis.se",
+          "City": "Stockholm",
+          "NodeType": "Customer",
+          "LifecycleStage": "Evangelist",
+          "Owner": "Olof Norell",
+          "Country": "Sweden",
+          "WebsiteURL": "keolis.se",
+          "AnnRevenue": 4200000000,
+          "yearFounded": "1994",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -2200.902557735634,
+          "y": 900.7235104169429
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Volvo Cars Corporation",
+          "CompanyType": "FASTIGHETSVERKSAMHET",
+          "Company Domain Name": "volvocars.com",
+          "City": "Rockleigh",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Olof Norell",
+          "Country": "Sweden",
+          "WebsiteURL": "volvocars.com",
+          "AnnRevenue": 164000000000,
+          "yearFounded": "1927",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -1089.6856330580565,
+          "y": 86.96919611612839
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Bilprovningen",
+          "CompanyType": "VERKSAMHET INOM JURIDIK, EKONOMI, VETENSKAP OCH TEKNIK",
+          "Company Domain Name": "bilprovningen.se",
+          "City": "Stockholm",
+          "NodeType": "Customer",
+          "LifecycleStage": "Customer",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "bilprovningen.se",
+          "AnnRevenue": 700000000,
+          "yearFounded": "",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -194.14793809270648,
+          "y": -48.02684805762937
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Åhlens",
+          "CompanyType": "UTHYRNING, FASTIGHETSSERVICE, RESETJÄNSTER OCH ANDRA STÖDTJÄNSTER",
+          "Company Domain Name": "ahlens.se",
+          "City": "Stockholm",
+          "NodeType": "Prospect",
+          "LifecycleStage": "",
+          "CompanyRelationIntegratedAt": "GANT AB",
+          "Owner": "Gustav Rosen",
+          "Country": "Sweden",
+          "WebsiteURL": "ahlens.se",
+          "AnnRevenue": 5000000000,
+          "yearFounded": "1899",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -507.2789545996694,
+          "y": -228.0063239534593
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "ICA Gruppen",
+          "CompanyType": "OFFENTLIG FÖRVALTNING OCH FÖRSVAR; OBLIGATORISK SOCIALFÖRSÄKRING",
+          "Company Domain Name": "ica.se",
+          "City": "Solna",
+          "NodeType": "Prospect",
+          "LifecycleStage": "Opportunity",
+          "Owner": "Mikael Lindvall",
+          "Country": "Sweden",
+          "WebsiteURL": "ica.se",
+          "AnnRevenue": 100000000000,
+          "yearFounded": "",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -146.9183763376529,
+          "y": -135.70184484489442
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Systembolaget AB",
+          "CompanyType": "UTBILDNING",
+          "Company Domain Name": "systembolaget.se",
+          "City": "Stockholm",
+          "NodeType": "Prospect",
+          "LifecycleStage": "Opportunity",
+          "Owner": "Mikael Lindvall",
+          "Country": "Sweden",
+          "WebsiteURL": "systembolaget.se",
+          "AnnRevenue": 27000000000,
+          "yearFounded": "1955",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -938.4471539752133,
+          "y": -1332.915426163091
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "hm.com",
+          "CompanyType": "VÅRD OCH OMSORG; SOCIALA TJÄNSTER",
+          "Company Domain Name": "hm.com",
+          "City": "Fremont",
+          "NodeType": "Prospect",
+          "LifecycleStage": "Opportunity",
+          "Owner": "Gustav Rosen",
+          "Country": "United States",
+          "WebsiteURL": "hm.com",
+          "AnnRevenue": 180000000000,
+          "yearFounded": "1947",
+          "orgPos": {}
+        },
+        "position": {
+          "x": -304.52377291657234,
+          "y": -1444.9721705491343
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "ISS A/S",
+          "CompanyType": "KULTUR, NÖJE OCH FRITID",
+          "Company Domain Name": "se.issworld.com",
+          "City": "London",
+          "NodeType": "Prospect",
+          "LifecycleStage": "Opportunity",
+          "Owner": "Olof Norell",
+          "Country": "Denmark",
+          "WebsiteURL": "se.issworld.com",
+          "AnnRevenue": 5000000000,
+          "yearFounded": "1901",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 5.225934061844114,
+          "y": -594.4975790886356
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Filippa K",
+          "CompanyType": "ANNAN SERVICEVERKSAMHET",
+          "Company Domain Name": "filippa-k.com",
+          "City": "Stockholm",
+          "NodeType": "Prospect",
+          "LifecycleStage": "Opportunity",
+          "Owner": "Mikael Lindvall",
+          "Country": "Sweden",
+          "WebsiteURL": "filippa-k.com",
+          "AnnRevenue": 500000000,
+          "yearFounded": "1993",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 487.53401583619956,
+          "y": -2307.972959468697
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "CRM Toolbox",
+          "CompanyType": "FÖRVÄRVSARBETE I HUSHÅLL; HUSHÅLLENS PRODUKTION AV DIVERSE VAROR OCH TJÄNSTER FÖR EGET BRUK",
+          "Company Domain Name": "crmtoolbox.com",
+          "City": "",
+          "NodeType": "Vendor",
+          "LifecycleStage": "Subscriber",
+          "CompanyRelationAppTeamAt": "GANT AB",
+          "Owner": "Gustav Rosen",
+          "Country": "Germany",
+          "WebsiteURL": "crmtoolbox.com",
+          "AnnRevenue": 2000000,
+          "yearFounded": "2002",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 1282.3694866029505,
+          "y": -2182.671626232125
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "Cegid",
+          "CompanyType": "VERKSAMHET VID INTERNATIONELLA ORGINISATIONER, UTLÄNDSKA AMBASSADER O.D.",
+          "Company Domain Name": "cegid.com",
+          "City": "Lyon",
+          "NodeType": "Vendor",
+          "LifecycleStage": "",
+          "CompanyRelationAppTeamAt": "GANT AB",
+          "Owner": "Gustav Rosen",
+          "Country": "France",
+          "WebsiteURL": "cegid.com",
+          "AnnRevenue": 1000000000,
+          "yearFounded": "1983",
+          "orgPos": {}
+        },
+        "position": {
+          "x": 1519.1251318351299,
+          "y": -1545.5362104440883
         },
         "group": "nodes",
         "removed": false,
@@ -679,7 +1198,109 @@
         },
         "position": {
           "x": 4000,
-          "y": -833.3333333333333
+          "y": -2000
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": " Billing - Tract",
+          "NodeType": "Application"
+        },
+        "position": {
+          "x": 4000,
+          "y": -1500
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": " ERP - NetSuite",
+          "NodeType": "Application"
+        },
+        "position": {
+          "x": 4000,
+          "y": -1000
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": " Streaming - ThePlatform",
+          "NodeType": "Application"
+        },
+        "position": {
+          "x": 4000,
+          "y": -500
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": " Portal - Custom",
+          "NodeType": "Application"
+        },
+        "position": {
+          "x": 4000,
+          "y": 0
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": " Mobile - Android",
+          "NodeType": "Application"
+        },
+        "position": {
+          "x": 4000,
+          "y": 500
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": " Mobile - iOS",
+          "NodeType": "Application"
+        },
+        "position": {
+          "x": 4000,
+          "y": 1000
         },
         "group": "nodes",
         "removed": false,
@@ -696,7 +1317,24 @@
         },
         "position": {
           "x": 4000,
-          "y": 833.3333333333335
+          "y": 1500
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": " Middleware - Mulesoft Anypoint Pltaform API Manager & Analytics",
+          "NodeType": "Application"
+        },
+        "position": {
+          "x": 4000,
+          "y": 2000
         },
         "group": "nodes",
         "removed": false,
@@ -1124,10 +1762,42 @@
     "edges": [
       {
         "data": {
-          "source": "Västtrafik AB",
+          "source": "MuleSoft, INC.",
+          "target": "GANT AB",
+          "interaction": "apTeAtEdge",
+          "id": "e070ee6f-ef65-47cc-8ba5-8b33df5ca926"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "MuleSoft, INC.",
+          "target": "Schibsted Centralen AB",
+          "interaction": "apTeAtEdge",
+          "id": "10345d49-dc92-42c9-aecf-dd716eaccbeb"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "MuleSoft, INC.",
           "target": "Keolis Sverige AB",
-          "interaction": "intAtEdge",
-          "id": "c2cc9b61-d6bb-4eb3-ba45-9cc750efd021"
+          "interaction": "apTeAtEdge",
+          "id": "ef121603-ae42-4cb2-9e23-bea602b4d5a8"
         },
         "position": {},
         "group": "edges",
@@ -1143,7 +1813,7 @@
           "source": "GANT Network",
           "target": "GANT AB",
           "interaction": "intAtEdge",
-          "id": "eb03e136-3670-4371-9069-c3406dccc0af"
+          "id": "ee6d57cc-904f-4c8b-8759-1d0c61ef8c81"
         },
         "position": {},
         "group": "edges",
@@ -1159,7 +1829,39 @@
           "source": "GANT Network",
           "target": "GANT AB",
           "interaction": "RelToEdge",
-          "id": "16960090-5141-4daf-895b-cda58a3669f8"
+          "id": "7562f028-896c-48f2-83e7-0090086a0df3"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Tactel AB",
+          "target": "GANT AB",
+          "interaction": "apTeAtEdge",
+          "id": "93e7ed62-41c9-494b-a0ca-68d8bfff78e8"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Markup Digital Ltd",
+          "target": "GANT AB",
+          "interaction": "apTeAtEdge",
+          "id": "c31c14b8-3c13-4d48-9fc1-33460be4b4dc"
         },
         "position": {},
         "group": "edges",
@@ -1175,7 +1877,23 @@
           "source": "JOOR",
           "target": "GANT AB",
           "interaction": "apTeAtEdge",
-          "id": "26fc5d43-5b1e-403e-a5a8-213595bf5596"
+          "id": "53c7fa96-5610-4dc0-bf6b-919dac2287c3"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "JOOR",
+          "target": "A.P.C.",
+          "interaction": "apTeAtEdge",
+          "id": "7a11b01e-8351-4dc9-8fc5-4fcaee451ca4"
         },
         "position": {},
         "group": "edges",
@@ -1191,7 +1909,167 @@
           "source": "Schibsted Centralen AB",
           "target": "CRM - Salesforce",
           "interaction": "hasAppEdge",
-          "id": "a477c5be-adb1-4ccc-b907-dc9328d6e282"
+          "id": "a260af66-b0a2-400c-9d5c-0d964a982e71"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": "CRM - Salesforce",
+          "interaction": "hasAppEdge",
+          "id": "3f6390a0-d7b3-4efe-aa89-3df429492888"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": " Marketing - Salesforce",
+          "interaction": "hasAppEdge",
+          "id": "e9b24ed6-4773-490b-9b80-699f72c831a9"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": " Billing - Tract",
+          "interaction": "hasAppEdge",
+          "id": "ba1060f3-5b6f-4c02-89dc-b8fd69bfb13b"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": " ERP - NetSuite",
+          "interaction": "hasAppEdge",
+          "id": "4ebac9b0-5dfc-4ea9-92ab-d1372dd04501"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": " Streaming - ThePlatform",
+          "interaction": "hasAppEdge",
+          "id": "8d2fe87e-dc29-46f5-8a57-983add09b3b9"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": " Portal - Custom",
+          "interaction": "hasAppEdge",
+          "id": "dbe9b048-f7f4-4c59-8dc5-2a71828c497b"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": " Mobile - Android",
+          "interaction": "hasAppEdge",
+          "id": "de802f04-b709-4daa-9fc7-f8d7be974c4f"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": " Mobile - iOS",
+          "interaction": "hasAppEdge",
+          "id": "9bba7b5c-1583-43bf-abfc-f4fe1baedb17"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": " Middleware - Mulesoft Anypoint Platform Base Subscription",
+          "interaction": "hasAppEdge",
+          "id": "3ec616f4-2893-42ab-a11c-cfc1859e945c"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Parsifal Entertainment",
+          "target": " Middleware - Mulesoft Anypoint Pltaform API Manager & Analytics",
+          "interaction": "hasAppEdge",
+          "id": "65872746-f502-46f6-8785-08149f9e0a53"
         },
         "position": {},
         "group": "edges",
@@ -1207,7 +2085,7 @@
           "source": "GANT AB",
           "target": "CRM - Salesforce",
           "interaction": "hasAppEdge",
-          "id": "f7c5cf33-e975-4e75-825b-6784e01127ac"
+          "id": "ab93adeb-4948-4503-8ada-15b500c5bcef"
         },
         "position": {},
         "group": "edges",
@@ -1223,7 +2101,7 @@
           "source": "GANT AB",
           "target": " Marketing - Salesforce",
           "interaction": "hasAppEdge",
-          "id": "a5013691-976c-4306-83d2-6eb86d3b8300"
+          "id": "ea66ed21-e9ab-4658-8a92-90908c0bf3fd"
         },
         "position": {},
         "group": "edges",
@@ -1239,7 +2117,55 @@
           "source": "GANT AB",
           "target": " Middleware - Mulesoft Anypoint Platform Base Subscription",
           "interaction": "hasAppEdge",
-          "id": "aa213e32-8ce6-46af-9d42-11193424485e"
+          "id": "7811caab-9aeb-4cc7-8e70-4ed43e4c6293"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Åhlens",
+          "target": "GANT AB",
+          "interaction": "intAtEdge",
+          "id": "910cdecc-b007-492d-8671-da11eb36ae4d"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "CRM Toolbox",
+          "target": "GANT AB",
+          "interaction": "apTeAtEdge",
+          "id": "645db206-6eb2-4816-ba31-654a9a69eab3"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "source": "Cegid",
+          "target": "GANT AB",
+          "interaction": "apTeAtEdge",
+          "id": "6b9c3ace-e8d3-4f3b-b2a6-677725a086b4"
         },
         "position": {},
         "group": "edges",
@@ -1495,14 +2421,14 @@
   ],
   "zoomingEnabled": true,
   "userZoomingEnabled": true,
-  "zoom": 5.131147540983607,
+  "zoom": 3.3684210526315788,
   "minZoom": 1e-50,
   "maxZoom": 1e+50,
   "panningEnabled": true,
   "userPanningEnabled": true,
   "pan": {
-    "x": 640,
-    "y": 363
+    "x": 434,
+    "y": 341
   },
   "boxSelectionEnabled": true,
   "renderer": {
