@@ -400,7 +400,7 @@ $(function(){
 
       //If curr node has intAt connections, add them
       if(intAt){
-        intAt = intAt.split(";");  //Input has form: "GANT; Schibsted; Keolis", convert it to an array
+        intAt = intAt.split(" ;");  //Input has form: "GANT; Schibsted; Keolis", convert it to an array
         for(var j=0; j<intAt.length; j++){
           cy.add({
             group:"edges",
@@ -428,6 +428,7 @@ $(function(){
         } //for j    
       } 
       if(hasAp){
+        hasAp = hasAp.split(";");
         for(var j=0; j<hasAp.length; j++){
           cy.add({
             group:"edges",
@@ -634,15 +635,18 @@ $(function(){
 
   //Dynamicaly add applications
   function createApplications(data){
+
     for(var i=0; i<data.length; i++){
-      if(data[i].data().NodeType == "Customer"){ //if node is a customer it might have applications
+      if( data[i].data().hasApplication ){
+
         var applications = data[i].data().hasApplication;
-      
+        applications =  applications.split(";");
+        
         for(var j=0; j<applications.length; j++){
           cy.add({ group: "nodes", data: { id: applications[j], NodeType: "Application" } }); 
         }
       }
-    }
+    }    
   }
   
   $('#search').typeahead({
@@ -769,7 +773,7 @@ $(function(){
   }
 
   function newDataInit(){
-    window.alert("You should only use this when a new datafile is loaded, otherwise duplicate edges will be added which will be performance degrading");
+    window.alert("You should only use this when a new datafile is loaded, otherwise duplicate edges will be added which will be performance degrading")
     positionAlgorithm();
     addEdges();
     setTimeout(function(){ save() }, 1000);
